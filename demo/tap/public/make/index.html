@@ -46,7 +46,7 @@ label.btn:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:
 .grp:first-child{margin-top:14px}
 .scene{display:grid;grid-template-columns:56px 1fr 8.5em;gap:8px;align-items:start;margin:10px 0 0}
 .scene img,.scene .noimg{width:56px;height:56px;object-fit:cover;border-radius:6px;background:var(--soft)}
-.scene select{width:100%}
+.video>*{min-width:0}.scene>*{min-width:0}.scene textarea{width:100%}.scene select{width:100%}
 @media (max-width:420px){.scene{grid-template-columns:48px 1fr}.scene img,.scene .noimg{width:48px;height:48px}.scene select{grid-column:2;width:auto}}
 video,canvas.preview{width:100%;max-width:240px;aspect-ratio:9/16;background:#000;border-radius:12px;display:block}
 input[type=range]{accent-color:var(--gold);vertical-align:middle}
@@ -81,6 +81,7 @@ label.prod img{width:48px;height:48px;object-fit:cover;border-radius:6px}
     <textarea id="url" rows="3" placeholder="https://your-site.com&#10;https://your-site.com/a-feature" required></textarea></label>
   <p class="note">Put the main page first: the videos send people there. Feature pages give them more to talk about.</p>
   <div class="actions"><button class="primary" id="readBtn">Read the pages</button></div>
+  <p class="status small" id="readStatus"></p>
 </form>
 <div class="card" id="clipBox">
   <h2>From a long video</h2>
@@ -96,7 +97,6 @@ label.prod img{width:48px;height:48px;object-fit:cover;border-radius:6px}
   <p class="status small" id="clipStatus"></p>
 </div>
 </div>
-<p class="status small" id="readStatus"></p>
 
 <section id="pageBox" hidden>
   <div class="card">

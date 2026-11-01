@@ -289,7 +289,7 @@ async function mePage(env, ctx, req, { acct, user }) {
   const kept = new Set((user.kept || []).map(k => k.post));
   const rows = user.posts.map(p => {
     const n = c[p.id] || { p: 0, f: 0 };
-    return `<tr><td>${p.thumb ? `<img class="thumb" src="/t/${user.name}/${shortId(p.id)}" alt="" loading="lazy">` : ""}</td>
+    return `<tr><td>${p.thumb ? `<img class="thumb" src="/t/${user.name}/${shortId(p.id)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</td>
 <td>${p.link ? `<a href="${esc(p.link)}">${esc(p.title)}</a>` : esc(p.title)}<br><span class="note">${esc(net(p.service))} · ${esc(day(p.sentAt))}</span>
 <input type="url" name="d_${esc(p.id)}" value="${esc(user.dest?.[p.id] || "")}" placeholder="${esc(p.found || user.mainDest || "Where should this post send people?")}" aria-label="Destination"></td>
 <td class="num"><span class="n">${n.p}</span><br><span class="note">${n.f ? `+${n.f} fetcher${n.f === 1 ? "" : "s"}` : ""}</span><br>
@@ -304,7 +304,7 @@ ${error ? `<p class="flash bad">Couldn't refresh from Buffer: ${esc(error)} ${er
 ${flash ? `<p class="flash">${esc(flash)}</p>` : ""}
 ${madeSection(user)}
 ${keptSection(user, c)}
-<details class="sec"${total ? " open" : ""}><summary>Bio link and counts</summary>
+<details class="sec"><summary>Bio link and counts${total ? ` · ${total} ${total === 1 ? "person" : "people"}` : ""}</summary>
 <p>Your bio link: <a href="${bio}"><b>${bio}</b></a><br><span class="note">Put it in your Instagram, TikTok or YouTube bio. Visitors pick the post they saw, and Dailies counts it before sending them on.</span></p>
 <p><span class="n">${total}</span> ${total === 1 ? "person" : "people"} so far${total ? "" : ". Nothing is counted until someone taps your bio link"}. ${skip.p} of them skipped straight to the site.</p>
 <form method="post" action="/me">
