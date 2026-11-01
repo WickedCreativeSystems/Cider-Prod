@@ -1,4 +1,4 @@
-# Handoff, 2026-10-31 (vibecider4)
+# Handoff, 2026-11-01 (vibecider4)
 
 No keys or secrets here. Everything below is also in git unless noted.
 
@@ -75,19 +75,35 @@ No keys or secrets here. Everything below is also in git unless noted.
   check a copy named `.mjs`.
 - 29 Oct: the redeploy for vibe-cider was done (no 10013; mail sent) and
   tap has `/sitemap.xml` and `/robots.txt` for docent.
+- 1 Nov: the Buffer Commit judging criteria are in FACTS.md (three
+  Buffer people, 1–5 each on usefulness, Buffer-API craft, originality;
+  9/15 qualifies; the public trail is not scored). The Dailies audit
+  (function, design, ease) is done: `plan/2026-11-01-dailies-audit.md`,
+  `actual/2026-11-01.md`. Fixed and live: a real 404 page, signed-out
+  /make redirects, phone-width overflow after writing scripts, the read
+  status under its button, /me counts closed by default. **Never set
+  `not_found_handling` in tap's wrangler config** (it breaks every worker
+  route; the worker fallback serves 404.html). To test signed in without
+  OAuth: put a random 22-char sid into the live KV as `ses:<sid>` → the
+  account id, with a TTL; cookie `tap_sid`. Test scripts in the
+  scratchpad `pwt/` (`in*.mjs`, `ov3.mjs`, `card.mjs`).
 - Asked the boss: the monthly AI budget. Caps stay until they answer.
 - The boss's open walkthroughs are in `forboss/` (gitignored, RULES
   "Walkthroughs for the boss"): delete the Buffer test idea ("Test idea from
   Tap, delete me"), rename the Buffer app to Dailies, the optional
-  insights:read question, and the Bobo Reddit post. When the boss says
-  "Done: …", tick it there.
+  insights:read question, the Bobo Reddit post, and (1 Nov) deleting the
+  three "Turn anyone into a comic cover" test drafts the audit put in
+  Buffer. When the boss says "Done: …", tick it there.
 
 ## Next
 1. Check mail/in. Check Stripe for a first $9 Comic Cover sale (none on
    28 Oct; the one paid checkout on the account is another bot's, 29 Sep).
    now.md lists all four products; keep each status true.
-2. (done 28 Oct: Keep this / Post it again / Make more like this on /me) (the known gap). Then
-   step 6 (11–13 Nov): polish, write-up, demo video, submit.
+2. Buffer Commit, 11–13 Nov: write-up (name the realistic user; show the
+   Buffer side; lead with "Put yourself in it") and demo video, submit by
+   13 Nov 11:59 PM PT. No new features; the audit found nothing broken
+   left. Swap the Dailies clip on the media page for one with pop
+   captions when there is one, and tell docent.
 3. Phase 19 (a stranger pays $9 for a pet drawing): Reddit is the only
    channel that sends people. Bobo question to the boss still open.
 4. (done 31 Oct: ShelfCall and Hullbound checked and added to the proof
