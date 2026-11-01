@@ -334,3 +334,6 @@ up in the boss's Google Search Console. The boss: "Yes of course"
 - Buffer Commit UI audit: "Go through it and audit the UI one more time to make sure it looks good as well as being functional as possible. Don't change anything, just make a note of anything you would refine and then develop a plan to fix it. Keep in mind this is for a competition. We need it to look as professional as possible." (2026-10-28)
 - Buffer Commit UI plan: "go ahead with the plan" (2026-10-28, on the 7-step plan in plan/2026-10-28-buffer-commit-studio.md).
 - Buffer Commit, next feature (2026-10-28): "My entire tiktok, instagram and youtube are all scrolling a real site. It is not impressive to me at all. I am not saying we can't include that. I just want something that looks impressive to the audience, They are unaware that we are working through headless browsers and stuff. What I would suggest i creating videos from a link combined with videos of creator talking about it. Overlay the creator on top of the scrolling"
+- The boss's browser: "I don't have safari" (2026-11-01, on testing "Put yourself in it" on a phone).
+- Buffer Commit judging: "I don't see where the judging criteria is anyway. I will keep looking" (2026-11-01).
+- Dailies, 2026-11-01: "regardless audit the app for functional, design and user friendliness".
