@@ -317,3 +317,12 @@ the frame (window, backdrop, person in a corner, captions in their own
 box), test with footage shaped like the real input (a head-and-shoulders
 selfie, not a full-body interview), and put a frame strip in front of the
 boss before a look goes live.
+
+## 1 Nov: what the judges score
+Three marks out of 5, equal weight: real usefulness, how well it is built
+on the Buffer API, originality. The public log does not count. So for
+Dailies: the Buffer side (drafts, Ideas, tags, channels, the posts page)
+has to be visibly solid, not just present; the write-up should name the
+realistic user and their problem in one line; and "Put yourself in it" is
+the originality mark, so the demo video leads with it. Nine of fifteen
+qualifies, so a 3 on each is the floor.
