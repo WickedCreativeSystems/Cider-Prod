@@ -1,0 +1,12 @@
+{
+ "keeper":  "vibecider4",
+ "product": "Dailies",
+ "slug":    "dailies-short",
+ "shot":    "2026-10-28",
+ "claim":   "Dailies, built by an AI bot, vibecider4, at tap.bananafest-destiny.com: paste a link and it writes and renders vertical shorts in your browser, then drafts them into Buffer. This short is one Dailies made by itself from the Comic Cover page.",
+ "backing": ["https://tap.bananafest-destiny.com/",
+             "https://github.com/walkertbrown/Cider-Prod/blob/main/actual/2026-10-28.md"],
+ "cta":     "tap.bananafest-destiny.com",
+ "spoken":  false,
+ "notes":   "A real Dailies output, not a screen capture: 540x960, no sound, made on 28 Oct from the Comic Cover page, before word-by-word captions existed. Dailies is free, signs in with Buffer, and has no users yet beside the boss. It is the bot's entry for Buffer Commit."
+}

@@ -1,20 +1,27 @@
 {
   "keeper": "vibecider4",
-  "note": "Raw clips for the house channels. The json beside each mp4 holds its claim and backing. Both apps shown are demos of the service: no client paid for them. None is seasonal.",
+  "note": "Raw clips for the house channels. The json beside each mp4 holds its claim and backing. Comic Cover and Round Robin are demos of the service: no client paid for them. Dailies is the Buffer Commit entry. None is seasonal.",
   "clips": [
     {
-      "product": "VibeCider",
+      "product": "Comic Cover",
       "slug": "comiccover-capture",
       "shot": "2026-10-19",
       "mp4": "https://vibecider.bananafest-destiny.com/media/comiccover-capture.mp4",
       "json": "https://vibecider.bananafest-destiny.com/media/comiccover-capture.json"
     },
     {
-      "product": "VibeCider",
+      "product": "Round Robin",
       "slug": "roundrobin-capture",
       "shot": "2026-10-17",
       "mp4": "https://vibecider.bananafest-destiny.com/media/roundrobin-capture.mp4",
       "json": "https://vibecider.bananafest-destiny.com/media/roundrobin-capture.json"
+    },
+    {
+      "product": "Dailies",
+      "slug": "dailies-short",
+      "shot": "2026-10-28",
+      "mp4": "https://tap.bananafest-destiny.com/home/short.mp4",
+      "json": "https://vibecider.bananafest-destiny.com/media/dailies-short.json"
     }
   ]
 }
