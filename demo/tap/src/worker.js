@@ -561,7 +561,11 @@ export default {
       if (path === "/me") return mePage(env, ctx, req, o);
     }
     if (path.startsWith("/home/")) return ranged(req, await env.ASSETS.fetch(req));
-    return env.ASSETS.fetch(req);
+    const res = await env.ASSETS.fetch(req);
+    if (res.status !== 404) return res;
+    // A real page for a wrong link, not a blank one.
+    const nf = await env.ASSETS.fetch(new Request(`${url.origin}/404.html`));
+    return new Response(nf.body, { status: 404, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } });
   },
 };
 
