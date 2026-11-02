@@ -53,7 +53,7 @@ async function call(name, args, env, ctx) {
     if (args.url) {
       const u = safeHttp(String(args.url));
       if (!u) return fail("url isn't a public web address.");
-      const read = await readPages([u]);
+      const read = await readPages([u], env);
       if (read.error) { page.url = u.href; page.host = u.hostname; unread = `Dailies couldn't read ${u.href} (${read.error}), so the scripts use your notes only; the videos still send people there.\n\n`; }
       else page = { ...read, title: page.title };
     }

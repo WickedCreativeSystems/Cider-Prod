@@ -35,7 +35,8 @@ const decode = s => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;
 const strip = s => decode(s.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
 
 export function safeHttp(s) {
-  try { const u = new URL(String(s).trim()); return /^https?:$/.test(u.protocol) && !/^(localhost|127\.|10\.|192\.168\.|\[)/.test(u.hostname) ? u : null; } catch { return null; }
+  // A bare "your-site.com" is a web address too; people type them without the scheme.
+  try { const t = String(s).trim(), u = new URL(/^[a-z][a-z0-9+.-]*:/i.test(t) ? t : "https://" + t); return /^https?:$/.test(u.protocol) && !/^(localhost|127\.|10\.|192\.168\.|\[)/.test(u.hostname) ? u : null; } catch { return null; }
 }
 
 // ---- Reading a page --------------------------------------------------------
@@ -59,8 +60,15 @@ function jsonLdProducts(html) {
   return out.slice(0, 5);
 }
 
-export async function readPage(url) {
-  const r = await fetch(url.toString(), { headers: { "user-agent": "Mozilla/5.0 (compatible; TapBot/1.0; +https://tap.bananafest-destiny.com)", accept: "text/html,*/*" }, redirect: "follow" });
+// A Worker can't fetch its own hostname (Cloudflare answers 522), so Dailies' own pages
+// come straight from its static assets. Anything else is a normal fetch.
+const OWN = /(^|\.)tap\.bananafest-destiny\.com$/i;
+export function pageFetch(url, init, env) {
+  return OWN.test(url.hostname) && env?.ASSETS ? env.ASSETS.fetch(new Request(url.toString(), { headers: init?.headers })) : fetch(url.toString(), init);
+}
+
+export async function readPage(url, env) {
+  const r = await pageFetch(url, { headers: { "user-agent": "Mozilla/5.0 (compatible; TapBot/1.0; +https://tap.bananafest-destiny.com)", accept: "text/html,*/*" }, redirect: "follow" }, env);
   if (!r.ok) return { error: `The page answered ${r.status}.` };
   if (!(r.headers.get("content-type") || "").includes("html")) return { error: "That link isn't a web page." };
   const html = (await r.text()).slice(0, 1_500_000);
@@ -107,8 +115,8 @@ export async function readStore(u) {
   return products.length ? { name: meta?.name || u.hostname, currency: meta?.currency || "", collection: coll || "", products } : null;
 }
 
-export async function readPages(urls) {
-  const read = await Promise.all(urls.map(u => readPage(u).catch(e => ({ error: `Couldn't read it: ${e.message}` }))));
+export async function readPages(urls, env) {
+  const read = await Promise.all(urls.map(u => readPage(u, env).catch(e => ({ error: `Couldn't read it: ${e.message}` }))));
   const ok = read.filter(p => !p.error);
   const failed = urls.map((u, i) => read[i].error ? `${u.hostname}${u.pathname}: ${read[i].error}` : "").filter(Boolean);
   if (!ok.length) return { error: failed.join(" ") };
@@ -459,7 +467,7 @@ export async function api(req, env, path, { acct, user }, d) {
     const bad = raw.find((x, i) => !urls[i]);
     if (bad) return json({ error: `That isn't a web address: ${bad.slice(0, 80)}` }, 400);
     try {
-      const [page, store] = await Promise.all([readPages(urls), readStore(urls[0]).catch(() => null)]);
+      const [page, store] = await Promise.all([readPages(urls, env), readStore(urls[0]).catch(() => null)]);
       if (store) return json(page.error ? { url: urls[0].href, host: urls[0].hostname, title: store.name, description: "", pages: [], text: "", images: [], products: [],
         suggested: 1, why: "", failed: [page.error], store } : { ...page, store });
       return json(page, page.error ? 422 : 200);
@@ -544,7 +552,7 @@ export async function api(req, env, path, { acct, user }, d) {
   if (path === "/api/img" && req.method === "GET") {
     const u = safeHttp(url.searchParams.get("u"));
     if (!u) return new Response("Bad image", { status: 400 });
-    const r = await fetch(u.toString(), { headers: { "user-agent": "Mozilla/5.0 (compatible; TapBot/1.0)" }, cf: { cacheEverything: true, cacheTtl: 86400 } });
+    const r = await pageFetch(u, { headers: { "user-agent": "Mozilla/5.0 (compatible; TapBot/1.0)" }, cf: { cacheEverything: true, cacheTtl: 86400 } }, env);
     const type = r.headers.get("content-type") || "";
     if (!r.ok || !type.startsWith("image/") || +(r.headers.get("content-length") || 0) > 10_000_000) return new Response("No image", { status: 502 });
     return new Response(r.body, { headers: { "content-type": type, "cache-control": "private, max-age=3600" } });
@@ -620,7 +628,7 @@ export async function api(req, env, path, { acct, user }, d) {
     // testing. A video's posts are remembered by their ids instead (older videos keep their tag).
     // One shared tag, "dailies", marks every post Dailies drafts, so they can be told apart in
     // Buffer; made once per account, and skipped when Buffer won't make it.
-    if (!user.tag) {
+    if (!user.tag?.id) { // asked again on every draft until Buffer has room for it
       const t = await d.gql(token, CREATE_TAG, { i: { organizationId: user.orgId, tag: { name: "dailies", color: "#e8b830" } } });
       user.tag = t.data?.createTag?.tag?.id ? { id: t.data.createTag.tag.id, name: "dailies" } : { id: "", why: d.errText(t) || t.data?.createTag?.__typename || "" };
       await d.putJSON(env, `user:${acct}`, user);
