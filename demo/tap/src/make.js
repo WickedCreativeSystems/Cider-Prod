@@ -403,6 +403,8 @@ export function captionFor(service, caption, hashtags) {
 }
 
 
+const CREATE_TAG = `mutation($i:CreateTagInput!){ createTag(input:$i){ __typename ... on TagActionSuccess { tag { id } } ... on LimitReachedError { message } ... on DuplicateError { message } ... on InvalidInputError { message } }}`;
+
 // Where a post goes: a draft unless asked otherwise. The queue is the channel's own
 // posting schedule in Buffer; a time is an exact moment (UTC in the API, local in the page).
 export function timing(when) {
@@ -616,6 +618,14 @@ export async function api(req, env, path, { acct, user }, d) {
     if (!token) return json({ error: "Buffer access has lapsed. Sign in again." }, 401);
     // No tag per video: Buffer's plans cap tags, and a free account ran out within a day of
     // testing. A video's posts are remembered by their ids instead (older videos keep their tag).
+    // One shared tag, "dailies", marks every post Dailies drafts, so they can be told apart in
+    // Buffer; made once per account, and skipped when Buffer won't make it.
+    if (!user.tag) {
+      const t = await d.gql(token, CREATE_TAG, { i: { organizationId: user.orgId, tag: { name: "dailies", color: "#e8b830" } } });
+      user.tag = t.data?.createTag?.tag?.id ? { id: t.data.createTag.tag.id, name: "dailies" } : { id: "", why: d.errText(t) || t.data?.createTag?.__typename || "" };
+      await d.putJSON(env, `user:${acct}`, user);
+    }
+    const tagIds = [kept.tagId, user.tag.id].filter(Boolean);
     const results = [];
     for (const ch of chosen) {
       const text = captionFor(ch.service, String(caption || "").slice(0, 2000), hashtags);
@@ -623,7 +633,7 @@ export async function api(req, env, path, { acct, user }, d) {
       // (KV takes up to a minute to reach everywhere), so "couldn't be read" gets two more tries.
       let r, post, id, error;
       for (let attempt = 0; ; attempt++) {
-        r = await d.gql(token, CREATE_POST, { i: postInput(ch, { text, video: `${url.origin}/v/${video}.mp4`, title, tagIds: kept.tagId ? [kept.tagId] : [], when }) });
+        r = await d.gql(token, CREATE_POST, { i: postInput(ch, { text, video: `${url.origin}/v/${video}.mp4`, title, tagIds, when }) });
         post = r.data?.createPost?.post; id = post?.id;
         error = id ? "" : (d.errText(r) || r.data?.createPost?.message || r.data?.createPost?.__typename || `HTTP ${r.status}`);
         if (!NOT_YET.test(error) || attempt >= 2) break;
@@ -651,7 +661,7 @@ export async function api(req, env, path, { acct, user }, d) {
       user.made = all.slice(0, 100);
       await d.putJSON(env, `user:${acct}`, user);
     }
-    return json({ results });
+    return json({ results, tagged: !!user.tag?.id, tag: user.tag?.id ? user.tag.name : "" });
   }
   return json({ error: "Not found" }, 404);
 }

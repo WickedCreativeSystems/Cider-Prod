@@ -340,8 +340,9 @@ async function upload(state) {
 async function draft(state, chosen, when) {
   const id = await upload(state);
   const v = state.v, lines = (v.scenes || []).map(x => x.text);
-  const { results } = await call("/api/draft", { video: id, channels: chosen, caption: v.caption, title: v.title, hashtags: v.hashtags, angle: v.angle,
+  const { results, tag } = await call("/api/draft", { video: id, channels: chosen, caption: v.caption, title: v.title, hashtags: v.hashtags, angle: v.angle,
     hook: v.hook || lines[0] || "", lines, link: v.scenes ? pg(v)?.url || "" : "", poster: state.poster, when });
+  for (const r of results) r.tag = tag || "";
   return results;
 }
 
@@ -363,8 +364,8 @@ function whenPick(onchange) {
   const problem = () => value().mode === "time" && !value().dueAt ? "Pick a day and time." : "";
   return { row, value, problem };
 }
-const whenSaid = r => r.state === "scheduled" ? `scheduled for ${new Date(r.dueAt).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`
-  : r.state === "queued" ? "in your Buffer queue" : "in your Buffer drafts";
+const whenSaid = r => (r.state === "scheduled" ? `scheduled for ${new Date(r.dueAt).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`
+  : r.state === "queued" ? "in your Buffer queue" : "in your Buffer drafts") + (r.tag ? `, tagged "${r.tag}"` : "");
 const openBuffer = () => el("a", { href: "https://publish.buffer.com", target: "_blank", rel: "noopener", textContent: "Open Buffer" });
 
 async function showDraft(box, state) {
