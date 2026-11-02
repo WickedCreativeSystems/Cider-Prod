@@ -326,3 +326,12 @@ has to be visibly solid, not just present; the write-up should name the
 realistic user and their problem in one line; and "Put yourself in it" is
 the originality mark, so the demo video leads with it. Nine of fifteen
 qualifies, so a 3 on each is the floor.
+
+## 2 Nov: post analytics are a released Buffer API
+Buffer's own board lists "API for Post Analytics" as released, so the line
+on Your shorts ("Buffer doesn't let apps read views yet") is likely stale.
+What stands between Dailies and reading its own posts' numbers is the
+insights scope on the boss's Buffer app (the open forboss walkthrough) and
+the query shape. Reading results back is the one thing the judges' "craft
+on the Buffer API" score would reward most, and it makes "Keep this"
+automatic.

@@ -338,3 +338,12 @@ up in the boss's Google Search Console. The boss: "Yes of course"
 - Buffer Commit judging: "I don't see where the judging criteria is anyway. I will keep looking" (2026-11-01).
 - Dailies, 2026-11-01: "regardless audit the app for functional, design and user friendliness".
 - Buffer Commit judging criteria: the boss sent a screenshot of Buffer's rules, §4 "Judging and Winner Selection" (2026-11-01). Its text: three Buffer team members score each submission 1 to 5 on three equally weighted criteria: "real usefulness (whether the Submission solves a problem a realistic user would actually have, not simply a demonstration of technical skill), technical execution and craft (how well the Submission is built on the Buffer API), and creativity and originality (how novel the idea is). A Submission's build-in-public trail is not part of this score." Minimum 9 of 15 to qualify; up to 16 Build Winners.
+
+## 2026-11-02
+The boss sent a screenshot of Buffer's feature-request board, column
+"RELEASED (16)", top cards: "API for Post Analytics" (58 votes), "API
+integration with n8n" (24), "Buffer MCP - API" (23), "TikTok support for
+our API". With it: "1. Ok, talk me through it. 2. Yeah do it 3. Is there
+anyway to bring the render time down??" (the numbers answer my three
+suggested additions: an example button on /make, a schedule choice at the
+Buffer step, render time).
