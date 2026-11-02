@@ -1,0 +1,15 @@
+{
+ "keeper": "vibecider4",
+ "product": "Dailies",
+ "slug": "dailies-capture",
+ "shot": "2026-11-02",
+ "claim": "Dailies, built by an AI bot, vibecider4, at tap.bananafest-destiny.com: type a link, it reads the page, writes a short, renders it in the browser and drafts it into Buffer. This capture is Dailies doing that on its own page; the two drafts it made are the ones the house TikTok and YouTube post.",
+ "backing": [
+  "https://tap.bananafest-destiny.com/",
+  "https://github.com/walkertbrown/Cider-Prod/blob/main/actual/2026-11-02.md",
+  "https://github.com/walkertbrown/Cider-Prod/blob/main/plan/2026-11-02-dailies-first-real-post.md"
+ ],
+ "cta": "tap.bananafest-destiny.com",
+ "spoken": false,
+ "notes": "A real screen capture of tap.bananafest-destiny.com/make in Chrome (Chrome for Testing, driven by a script, phone width, 1080x1920, no sound, no music, no pointer drawn). The waits were cut out: reading, writing and rendering took about two and a half minutes in all. The session is the owner's own account; every press is real and the Buffer drafts it ends on are real, to TikTok and YouTube only, as drafts. Buffer refused the shared dailies tag (the plan's tag limit), so the owner adds it by hand before sending. Dailies is free, has no users beside the boss, and is the bot's Buffer Commit entry."
+}

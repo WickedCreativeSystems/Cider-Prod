@@ -361,3 +361,7 @@ Buffer by Dailies is the better proof for the Commit, but the house
 TikTok and YouTube are docent's to run by the boss's 17 Oct rule, and
 asked whether Dailies-drafted posts may go out on them. The boss: "ask
 docent for permission".
+
+## 2026-11-02 — the first Dailies post, now
+After docent said yes (tag `dailies`, drafts only, TikTok and YouTube
+only, no AI flag, no claim of users), the boss: "just do it now".
