@@ -1,4 +1,4 @@
-# Handoff, 2026-11-01 (vibecider4)
+# Handoff, 2026-11-02 (vibecider4)
 
 No keys or secrets here. Everything below is also in git unless noted.
 
@@ -87,6 +87,34 @@ No keys or secrets here. Everything below is also in git unless noted.
   OAuth: put a random 22-char sid into the live KV as `ses:<sid>` → the
   account id, with a TTL; cookie `tap_sid`. Test scripts in the
   scratchpad `pwt/` (`in*.mjs`, `ov3.mjs`, `card.mjs`).
+- 2 Nov: two small additions live on /make (plan
+  `plan/2026-11-02-dailies-additions.md`, log `actual/2026-11-02.md`):
+  "Try it with an example" under the Read button (reads the Comic Cover
+  page), and a choice at the Buffer step: drafts / into the queue / at a
+  time (`timing()` and `timeError()` in `src/make.js`; the card says
+  "scheduled for …" / "in your Buffer queue" / "in your Buffer drafts"
+  and links Open Buffer). Queue and scheduled modes were **not** tested
+  live (a real post would publish); the boss's first press is the test.
+- 2 Nov: render time measured headless (8 cores, no GPU): all of it is the
+  software H.264 encoder (~115 ms a frame at 1080×1920). 24 fps −35%,
+  720p −50%, `latencyMode: realtime` −6%, four parallel encoders slower.
+  Nothing shipped. Waiting on the boss's own render time and device to
+  decide on an optional "Faster (720p)" tick (off by default).
+- 2 Nov: post analytics. Buffer's board shows "API for Post Analytics"
+  released, but the docs say metrics need `insightsRead`, which only
+  personal API keys have; "App Clients cannot read them", and apps for
+  other people should use OAuth, not take a key. Not building a key
+  field. The boss posted the question "Is a metrics scope coming for
+  OAuth apps?" on the Buffer Commit Discord (draft in
+  `outbox/2026-11-02-discord-post-metrics.md`). If Buffer says yes or
+  "a key is fine", build the optional field behind Keep this; otherwise
+  nothing changes.
+- The scratchpad (tmpfs) was wiped ~01:57 UTC 2 Nov and rebuilt:
+  Playwright in `pwt/`, Chrome for Testing in `cft/` (**chmod +x the
+  unzipped binaries** or crashpad fails at launch), ffmpeg-static in
+  `ff/`. Scripts: `pwt/speed.mjs` (render variants), `pwt/ui2.mjs`
+  (signed-in 390 px flow to the Buffer step). The KV test session has
+  expired; make a new one the same way when needed.
 - Asked the boss: the monthly AI budget. Caps stay until they answer.
 - The boss's open walkthroughs are in `forboss/` (gitignored, RULES
   "Walkthroughs for the boss"): delete the Buffer test idea ("Test idea from
@@ -101,8 +129,8 @@ No keys or secrets here. Everything below is also in git unless noted.
    now.md lists all four products; keep each status true.
 2. Buffer Commit, 11–13 Nov: write-up (name the realistic user; show the
    Buffer side; lead with "Put yourself in it") and demo video, submit by
-   13 Nov 11:59 PM PT. No new features; the audit found nothing broken
-   left. Swap the Dailies clip on the media page for one with pop
+   13 Nov 11:59 PM PT. Polish only inside the confines (a link, a store
+   or a long video in; shorts, plans and Buffer posts out). Swap the Dailies clip on the media page for one with pop
    captions when there is one, and tell docent.
 3. Phase 19 (a stranger pays $9 for a pet drawing): Reddit is the only
    channel that sends people. Bobo question to the boss still open.

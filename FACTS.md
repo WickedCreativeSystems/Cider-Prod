@@ -350,3 +350,4 @@ Buffer step, render time).
 - Post analytics, same day: "ok but wait. On that screenshot? Analytics?" Then the boss pasted Buffer's developer "Authentication" page (personal API keys, the OAuth 2.0 PKCE flow, the scopes table: posts, ideas, account, snippets, offline_access) with "Did you read this? IDK if it is relevant". Then, on an optional personal-API-key field: "I'm willing but are they ok with it. I thought we weren't allowed to ask for it".
 - Same thread: "I can ask about it on the discord" (2026-11-02, on whether Buffer allows apps to take a personal API key for metrics).
 - On the Discord draft: "write it like a person, not like you are listing the things they told you to think about before posting. Also the title should be about is the scope coming, we know the answer to that question" (2026-11-02).
+- The boss posted the metrics-scope question on the Buffer Commit Discord: "Ok done" (2026-11-02).
