@@ -7,7 +7,8 @@
     "scan": "node scan.mjs",
     "music": "node gen-music.mjs public/music.wav",
     "still": "node scan.mjs && remotion still src/index.jsx Demo",
-    "render": "node scan.mjs && node gen-music.mjs public/music.wav && remotion render src/index.jsx Demo"
+    "render": "./prep.sh && node scan.mjs && node gen-music.mjs public/music.wav && remotion render src/index.jsx Demo --concurrency=6 --timeout=90000",
+    "prep": "./prep.sh"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.536",

@@ -3,7 +3,7 @@ import React from "react";
 import { AbsoluteFill, Sequence, Audio, OffthreadVideo, staticFile, useCurrentFrame, random } from "remotion";
 import { S } from "./scenes.js";
 import { HAVE } from "./have.js";
-import { Shot, whole, at, kf, snap, out, punch, lin, Press, Slam, Build, Typed, Flash, Shake, Bump, Backdrop, Grain, Mini, Slate, HEAVY, SANS, MONO, GOLD, INK, CREAM } from "./kit.jsx";
+import { Shot, whole, at, kf, snap, out, punch, lin, Press, Slam, Build, Typed, Flash, Shake, Bump, Backdrop, Grain, Mini, Flip, Slate, HEAVY, SANS, MONO, GOLD, INK, CREAM } from "./kit.jsx";
 
 const Scene = ({ k, children }) => <Sequence from={S[k][0]} durationInFrames={S[k][1] - S[k][0]} name={k}>{children}</Sequence>;
 const beats = (from, to, step = 15) => Array.from({ length: Math.ceil((to - from) / step) }, (_, i) => from + i * step);
@@ -238,7 +238,7 @@ const Wall = () => {
       <div style={{ position: "absolute", left: 960, top: 540, transform: `scale(${z}) rotateX(18deg) rotateZ(-7deg) translateY(${-f * 0.8}px)`, transformStyle: "preserve-3d" }}>
         {Array.from({ length: rows * cols }, (_, i) => { const r = Math.floor(i / cols), c = i % cols, cx = (c - (cols - 1) / 2) * gx, cy = (r - (rows - 1) / 2) * gy + (c % 2) * 120;
           const d = Math.hypot(c - 4, r - 2), k = kf(f - d * 4, [[0, 0], [16, 1, punch]]);
-          return <Mini key={i} src={pick(i * 7 + r)} h={h} from={1 + (i % 4) * 3} style={{ left: cx - w / 2, top: cy - h / 2, transform: `scale(${k})`, opacity: k > 0 ? 1 : 0 }} glow={0.35} />; })}
+          return <Flip key={i} src={pick(i * 7 + r)} h={h} start={i * 5} style={{ left: cx - w / 2, top: cy - h / 2, transform: `scale(${k})`, opacity: k > 0 ? 1 : 0 }} glow={0.35} />; })}
       </div>
     </AbsoluteFill>
     <AbsoluteFill style={{ background: "radial-gradient(50% 40% at 50% 50%, rgba(11,10,8,.85), rgba(11,10,8,0))" }} />

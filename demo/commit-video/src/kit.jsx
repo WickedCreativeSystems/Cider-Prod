@@ -1,7 +1,7 @@
 // Building blocks for the demo edit: a camera on a phone recording, kinetic
 // type, flashes and shakes on hits, the backdrop, and phones playing shorts.
 import React from "react";
-import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame, Easing, random } from "remotion";
+import { AbsoluteFill, OffthreadVideo, Sequence, staticFile, useCurrentFrame, Easing, random, Img } from "remotion";
 import { loadFont as anton } from "@remotion/google-fonts/Anton";
 import { loadFont as inter } from "@remotion/google-fonts/Inter";
 import { loadFont as mono } from "@remotion/google-fonts/JetBrainsMono";
@@ -166,3 +166,15 @@ export const Slate = ({ title, note, dur }) => { const f = useCurrentFrame();
       {dur ? <div style={{ fontSize: 26, opacity: 0.6 }}>{dur}</div> : null}
     </div>
   </AbsoluteFill>; };
+
+// A phone for the wall: flips through 8-a-second stills of a short, so 45 of them stay cheap.
+export const Flip = ({ src, h = 500, start = 0, style = {}, glow = 0.35 }) => {
+  const f = useCurrentFrame(), w = h * 9 / 16, r = h * 0.07, name = src.replace(/^shorts\//, "").replace(/\.mp4$/, "");
+  const n = String(1 + ((Math.floor((f + start) / 3.75)) % 40)).padStart(2, "0");
+  return <div style={{ position: "absolute", width: w, height: h, ...style }}>
+    <div style={{ position: "absolute", inset: -h * 0.022, borderRadius: r + h * 0.022, background: "linear-gradient(150deg,#3a3326,#141210 40%,#0d0c0a 70%,#2c271d)",
+      boxShadow: `0 0 0 2px #4a4130, 0 40px 80px rgba(0,0,0,.6), 0 0 ${120 * glow}px rgba(242,194,48,${0.25 * glow})` }} />
+    <div style={{ position: "absolute", inset: 0, borderRadius: r, overflow: "hidden", background: "#000" }}>
+      <Img src={staticFile(`flip/${name}/${n}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
+  </div>;
+};
