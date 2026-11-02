@@ -365,3 +365,4 @@ docent for permission".
 ## 2026-11-02 — the first Dailies post, now
 After docent said yes (tag `dailies`, drafts only, TikTok and YouTube
 only, no AI flag, no claim of users), the boss: "just do it now".
+- On what Dailies costs in tokens (a quarter of a cent a run, about a dollar a day per account at the caps): "That's fine" (2026-11-02).
