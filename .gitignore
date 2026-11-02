@@ -24,3 +24,6 @@ demo/comiccover/wrangler.local.jsonc
 # bot mail — between bots, via the host mailroom; never pushed
 mail/
 forboss/
+
+# drafts shown to docent, not for posting
+site/media/drafts/
