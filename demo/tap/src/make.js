@@ -24,6 +24,8 @@ const WAV_MAX = 20 * 1024 * 1024; // 16 kHz mono 16-bit: about 10 minutes, under
 const VOICE_MODEL = "gpt-4o-mini-tts";
 const VOICES = new Set(["alloy", "ash", "ballad", "coral", "echo", "fable", "nova", "onyx", "sage", "shimmer", "verse"]);
 const VIDEO_TTL = 30 * 86400, VIDEO_MAX = 25 * 1024 * 1024;
+// Buffer's words when it tried to fetch a video that wasn't there yet.
+const NOT_YET = /could not be read|couldn't be read|unable to (?:read|fetch|download)|(?:fetch|download)(?:ing)? (?:the )?video/i;
 const VIDEO_NETS = new Set(["instagram", "tiktok", "youtube", "facebook", "linkedin", "twitter", "threads", "bluesky", "mastodon", "pinterest"]);
 
 const json = (v, status = 200) => new Response(JSON.stringify(v), { status, headers: { "content-type": "application/json", "cache-control": "no-store" } });
@@ -400,7 +402,6 @@ export function captionFor(service, caption, hashtags) {
   }
 }
 
-const CREATE_TAG = `mutation($i:CreateTagInput!){ createTag(input:$i){ __typename ... on TagActionSuccess { tag { id } } } }`;
 
 // Where a post goes: a draft unless asked otherwise. The queue is the channel's own
 // posting schedule in Buffer; a time is an exact moment (UTC in the API, local in the page).
@@ -613,33 +614,40 @@ export async function api(req, env, path, { acct, user }, d) {
     if (!chosen.length) return json({ error: "Pick at least one channel." }, 400);
     const token = await d.accessToken(env, acct);
     if (!token) return json({ error: "Buffer access has lapsed. Sign in again." }, 401);
-    // One Buffer tag per video, so its posts can be found together later (Keep this).
-    if (!kept.tagId && angle) {
-      const t = await d.gql(token, CREATE_TAG, { i: { organizationId: user.orgId, tag: { name: `Dailies: ${String(angle)}`.slice(0, 40), color: "#e8b830" } } });
-      if ((kept.tagId = t.data?.createTag?.tag?.id || "")) await d.putJSON(env, `user:${acct}`, user);
-    }
+    // No tag per video: Buffer's plans cap tags, and a free account ran out within a day of
+    // testing. A video's posts are remembered by their ids instead (older videos keep their tag).
     const results = [];
     for (const ch of chosen) {
       const text = captionFor(ch.service, String(caption || "").slice(0, 2000), hashtags);
-      const r = await d.gql(token, CREATE_POST, { i: postInput(ch, { text, video: `${url.origin}/v/${video}.mp4`, title, tagIds: kept.tagId ? [kept.tagId] : [], when }) });
-      const post = r.data?.createPost?.post, id = post?.id;
-      results.push({ channel: ch.service, ok: !!id, state: when?.mode === "time" ? "scheduled" : when?.mode === "queue" ? "queued" : "draft", dueAt: post?.dueAt || "",
-        error: id ? "" : (d.errText(r) || r.data?.createPost?.message || r.data?.createPost?.__typename || `HTTP ${r.status}`) });
+      // The file was just written; Buffer may fetch it from a location that hasn't seen it yet
+      // (KV takes up to a minute to reach everywhere), so "couldn't be read" gets two more tries.
+      let r, post, id, error;
+      for (let attempt = 0; ; attempt++) {
+        r = await d.gql(token, CREATE_POST, { i: postInput(ch, { text, video: `${url.origin}/v/${video}.mp4`, title, tagIds: kept.tagId ? [kept.tagId] : [], when }) });
+        post = r.data?.createPost?.post; id = post?.id;
+        error = id ? "" : (d.errText(r) || r.data?.createPost?.message || r.data?.createPost?.__typename || `HTTP ${r.status}`);
+        if (!NOT_YET.test(error) || attempt >= 2) break;
+        await new Promise(res => setTimeout(res, 8000 * (attempt + 1)));
+      }
+      if (NOT_YET.test(error)) error = "Buffer couldn't fetch the video yet. Wait a minute and press again.";
+      results.push({ channel: ch.service, ok: !!id, id: id || "", state: when?.mode === "time" ? "scheduled" : when?.mode === "queue" ? "queued" : "draft", dueAt: post?.dueAt || "", error });
     }
     // Remember what was made (outlasting the video file), so a winner can be kept and made again.
-    if (kept.tagId && results.some(x => x.ok)) {
+    if (results.some(x => x.ok)) {
       const str = (x, n) => String(x || "").slice(0, n);
-      const rec = (user.made || []).find(m => m.tagId === kept.tagId) || { tagId: kept.tagId, at: new Date().toISOString() };
+      const rec = (user.made || []).find(m => m.video === video || (kept.tagId && m.tagId === kept.tagId)) || { video, at: new Date().toISOString() };
+      rec.video ||= video;
+      rec.posts = [...new Set([...(rec.posts || []), ...results.filter(x => x.ok).map(x => x.id)])].slice(-40);
       Object.assign(rec, { angle: str(angle, 80), title: str(title, 100), caption: str(caption, 500), hook: str(hook, 140),
         lines: [].concat(lines || []).slice(0, 8).map(l => str(l, 120)), link: safeHttp(link || "")?.href || "" });
       // A small still for its row on /me: a JPEG data URL from the browser, up to 80 KB.
       const jpeg = /^data:image\/jpeg;base64,([A-Za-z0-9+/=]{100,110000})$/.exec(String(poster || ""))?.[1];
       if (jpeg) {
         const bytes = Uint8Array.from(atob(jpeg), c => c.charCodeAt(0));
-        if (bytes[0] === 0xff && bytes[1] === 0xd8) { await env.TAP.put(`pf:${acct}:${rec.tagId}`, bytes); rec.poster = true; }
+        if (bytes[0] === 0xff && bytes[1] === 0xd8) { await env.TAP.put(`pf:${acct}:${rec.tagId || rec.video}`, bytes); rec.poster = true; }
       }
       const all = [rec, ...(user.made || []).filter(m => m !== rec)];
-      await Promise.all(all.slice(100).filter(m => m.poster).map(m => env.TAP.delete(`pf:${acct}:${m.tagId}`)));
+      await Promise.all(all.slice(100).filter(m => m.poster).map(m => env.TAP.delete(`pf:${acct}:${m.tagId || m.video}`)));
       user.made = all.slice(0, 100);
       await d.putJSON(env, `user:${acct}`, user);
     }

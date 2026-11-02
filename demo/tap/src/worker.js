@@ -19,7 +19,7 @@
 //     ses:<sid> → acct · n:<acct>:<post> {p, f} counts. Visitors get no cookie.
 //     v:<id> a rendered MP4 (30 days) · cap:<day>:<acct|all> script runs
 //     key:<sha256> → acct · job:<id> scripts from Claude Code (7 days) · img:<id> a screenshot (7 days)
-//     pf:<acct>:<tag> a drafted video's still (small JPEG), as long as its record
+//     pf:<acct>:<key> a drafted video's still (small JPEG), as long as its record (key: its tag, or the video id)
 
 import { api, serveVideo } from "./make.js";
 import { mcp, sha256 } from "./mcp.js";
@@ -329,7 +329,8 @@ ${keptSection(user, c)}
 // A kept post's record: the original, plus every post carrying its tag,
 // whether Dailies drafted it or the owner tagged it by hand in Buffer.
 function keptStats(user, k, c) {
-  const posts = user.posts.filter(p => p.id === k.post || p.tagIds?.includes(k.tagId));
+  const made = (user.made || []).find(m => madeKey(m) === k.made);
+  const posts = user.posts.filter(p => p.id === k.post || (k.tagId && p.tagIds?.includes(k.tagId)) || made?.posts?.includes(p.id) || k.drafts?.some(d => d.id === p.id));
   const by = {};
   for (const p of posts) by[p.service] = (by[p.service] || 0) + (c[p.id]?.p || 0);
   const people = Object.values(by).reduce((a, b) => a + b, 0);
@@ -342,20 +343,23 @@ function untried(user, k, posts) {
   return (user.channels || []).filter(ch => !ran.has(ch.id));
 }
 
-// The video a sent post came from, if Dailies drafted it (its tag is the video's).
-const madeFor = (user, p) => (user.made || []).find(m => p.tagIds?.includes(m.tagId));
+// The video a sent post came from, if Dailies drafted it: by the post's id, or by the
+// video's tag (videos drafted before November 2026 each had one).
+const madeKey = m => m.tagId || m.video;
+const fromMade = (m, p) => m.posts?.includes(p.id) || (m.tagId && p.tagIds?.includes(m.tagId));
+const madeFor = (user, p) => (user.made || []).find(m => fromMade(m, p));
 
 // Made with Dailies: each drafted video, and the networks it has gone out on.
 function madeSection(user) {
   const made = (user.made || []).slice(0, 30);
   if (!made.length) return `<h2>Made with Dailies</h2><div class="card empty"><p>Nothing drafted yet. Each video you draft shows up here, with the networks it went out on.</p><a class="btn primary" href="/make/">Make shorts</a></div>`;
-  const kept = new Set((user.kept || []).map(k => k.tagId));
+  const kept = new Set((user.kept || []).map(k => k.made || k.tagId));
   const rows = made.map(m => {
-    const sent = user.posts.filter(p => p.tagIds?.includes(m.tagId)).sort((a, b) => a.sentAt < b.sentAt ? -1 : 1);
+    const sent = user.posts.filter(p => fromMade(m, p)).sort((a, b) => a.sentAt < b.sentAt ? -1 : 1);
     const where = sent.length ? `Sent on ${sent.map(p => `${net(p.service)} ${day(p.sentAt)}`).join(", ")}` : "Drafted, not sent yet";
-    const act = kept.has(m.tagId) ? '<span class="badge gold">Kept</span>'
+    const act = kept.has(madeKey(m)) ? '<span class="badge gold">Kept</span>'
       : sent.length ? `<form method="post" action="/me/keep"><button class="sm" name="post" value="${esc(sent[0].id)}">Keep this</button></form>` : "";
-    const poster = m.poster ? `<img class="poster" src="/me/poster/${esc(m.tagId)}" alt="" loading="lazy">` : '<span class="poster" aria-hidden="true">▶</span>';
+    const poster = m.poster ? `<img class="poster" src="/me/poster/${esc(madeKey(m))}" alt="" loading="lazy">` : '<span class="poster" aria-hidden="true">▶</span>';
     return `<div class="made">${poster}<div><b>${esc(m.title || m.angle)}</b>${m.hook ? `<span class="note">${esc(m.hook)}</span>` : ""}<span class="note">${esc(where)}</span></div><div>${act}</div></div>`;
   }).join("");
   return `<h2>Made with Dailies</h2>
@@ -369,7 +373,7 @@ function keptSection(user, c) {
   return `<h2>Kept</h2>` + list.map(({ k, posts, people, best }) => {
     const left = untried(user, k, posts);
     return `<div class="kept card"><h3>${esc(k.title)}</h3>
-<p class="note">${posts.length} post${posts.length === 1 ? "" : "s"}${k.ownTag === false ? "" : ` · <b>${people}</b> ${people === 1 ? "person" : "people"}${best ? ` · best on ${esc(net(best))}` : ""}`} · template and tag "${esc(k.tagName)}" in Buffer${k.drafts?.length ? ` · drafted for ${esc(k.drafts.map(d => net(d.service)).join(", "))}` : ""}</p>
+<p class="note">${posts.length} post${posts.length === 1 ? "" : "s"}${k.made ? "" : ` · <b>${people}</b> ${people === 1 ? "person" : "people"}${best ? ` · best on ${esc(net(best))}` : ""}`} · template${k.tagName ? ` and tag "${esc(k.tagName)}"` : ""} in Buffer${k.drafts?.length ? ` · drafted for ${esc(k.drafts.map(d => net(d.service)).join(", "))}` : ""}</p>
 <div class="actions">${left.length ? `<form method="post" action="/me/again"><button class="sm primary" name="kept" value="${esc(k.post)}">Post it again: draft for ${esc(left.map(ch => net(ch.service)).join(", "))}</button></form>` : ""}
 ${k.like?.link ? `<a class="btn sm" href="/make/?like=${encodeURIComponent(k.post)}">Make more like this</a>` : ""}
 <form method="post" action="/me/forget" onsubmit="return confirm('Forget this, and delete what Dailies made for it in Buffer?')"><button class="sm ghost" name="kept" value="${esc(k.post)}">Forget</button></form></div></div>`;
@@ -402,31 +406,32 @@ async function keep(req, env, { acct, user }) {
   const templateId = t.data?.createPostTemplate?.postTemplate?.id;
   if (!templateId) return done(env, acct, user, `Buffer didn't make the template: ${failText(t, "createPostTemplate")}`);
   const words = p.title.replace(/[^\p{L}\p{N} ]/gu, "").split(/\s+/).slice(0, 4).join(" ").slice(0, 30);
-  let tag, tagName, tagId = made?.tagId;
-  if (made) tagName = `Dailies: ${made.angle}`.slice(0, 40);
+  let tag, tagName = "", tagId = made?.tagId;
+  if (tagId) tagName = `Dailies: ${made.angle}`.slice(0, 40);
   else for (const suffix of ["", ` ${shortId(p.id).slice(-4)}`]) {
-    tagName = `Dailies: ${words}${suffix}`;
+    tagName = made ? `Dailies: ${made.angle}`.slice(0, 40) : `Dailies: ${words}${suffix}`;
     tag = await gql(token, `mutation($o:OrganizationId!,$n:String!){ createTag(input:{organizationId:$o, tag:{name:$n, color:"#e8b830"}}){
       __typename ... on TagActionSuccess { tag { id } } ... on InvalidInputError { message } ... on DuplicateError { message } ... on UnauthorizedError { message } ... on UnexpectedError { message } } }`, { o: user.orgId, n: tagName });
-    if (tag.data?.createTag?.__typename !== "DuplicateError") break;
+    if (tag.data?.createTag?.__typename !== "DuplicateError" || made) break;
   }
-  tagId ||= tag.data?.createTag?.tag?.id;
-  if (!tagId) {
-    await gql(token, "mutation($i:PostTemplateId!){ deletePostTemplate(input:{id:$i}){ __typename } }", { i: templateId });
-    return done(env, acct, user, `Buffer didn't make the tag: ${failText(tag, "createTag")}`);
-  }
+  // A tag groups the kept post with what's drafted from it; without one (Buffer's plans cap
+  // tags), Dailies groups them by their ids instead.
+  const ownTag = !tagId && !!tag?.data?.createTag?.tag?.id;
+  tagId ||= tag?.data?.createTag?.tag?.id || "";
+  if (!tagId) tagName = "";
+  const noTag = tag && !tagId ? failText(tag, "createTag") : "";
   const like = made ? { angle: made.angle, hook: made.hook, lines: made.lines, caption: made.caption, link: made.link }
     : { angle: "", hook: p.title, lines: [], caption: p.text.slice(0, 500), link: p.found || "" };
-  (user.kept ||= []).push({ post: p.id, templateId, tagId, tagName, ownTag: !made, title, like, at: new Date().toISOString(), drafts: [] });
-  return done(env, acct, user, made ? `Kept. Buffer now has a template "${title}", and its posts keep the tag "${tagName}".`
-    : `Kept. Buffer now has a template "${title}" and a tag "${tagName}".`);
+  (user.kept ||= []).push({ post: p.id, templateId, tagId, tagName, ownTag, made: made ? madeKey(made) : "", title, like, at: new Date().toISOString(), drafts: [] });
+  return done(env, acct, user, `Kept. Buffer now has a template "${title}"` + (tagId ? (ownTag ? ` and a tag "${tagName}".` : `, and its posts keep the tag "${tagName}".`)
+    : `. Buffer wouldn't add a tag (${/LimitReached/i.test(noTag) ? "your plan's tag limit is reached" : noTag}), so Dailies tracks it by its posts instead.`));
 }
 
 // One draft per channel the post hasn't run on, with each network's required fields.
 function draftInput(p, k, ch) {
   const video = p.media.find(m => m.kind === "video");
   const i = { channelId: ch.id, text: p.text, mode: "addToQueue", schedulingType: "automatic", saveToDraft: true,
-    tagIds: [k.tagId], assets: p.media.map(m => ({ [m.kind]: { url: m.url } })) };
+    tagIds: k.tagId ? [k.tagId] : [], assets: p.media.map(m => ({ [m.kind]: { url: m.url } })) };
   const title = (p.ytTitle || p.title).slice(0, 100);
   if (ch.service === "instagram") i.metadata = { instagram: { type: video ? "reel" : p.media.length > 1 ? "carousel" : "post", shouldShareToFeed: true } };
   if (ch.service === "youtube") i.metadata = { youtube: { title, categoryId: p.ytCategory || "22" } };
@@ -454,7 +459,7 @@ async function again(req, env, { acct, user }) {
     else failed.push(`${net(ch.service)} (${failText(r, "createPost")})`);
   }
   return done(env, acct, user, [
-    made.length ? `Drafts made in Buffer for ${made.join(", ")}, tagged "${k.tagName}". Check them and send them from Buffer; Dailies never sends.` : "",
+    made.length ? `Drafts made in Buffer for ${made.join(", ")}${k.tagName ? `, tagged "${k.tagName}"` : ""}. Check them and send them from Buffer; Dailies never sends.` : "",
     failed.length ? `Not drafted: ${failed.join("; ")}.` : "",
   ].filter(Boolean).join(" ") || "Nothing left to draft.");
 }
@@ -466,10 +471,10 @@ async function forget(req, env, { acct, user }) {
   const token = await accessToken(env, acct);
   if (token) await Promise.all([
     gql(token, "mutation($i:PostTemplateId!){ deletePostTemplate(input:{id:$i}){ __typename } }", { i: k.templateId }),
-    k.ownTag !== false && gql(token, "mutation($i:TagId!){ deleteTag(input:{id:$i}){ __typename } }", { i: k.tagId }),
+    k.ownTag && k.tagId && gql(token, "mutation($i:TagId!){ deleteTag(input:{id:$i}){ __typename } }", { i: k.tagId }),
   ]);
   user.kept = user.kept.filter(x => x !== k);
-  return done(env, acct, user, token ? `Forgot "${k.title}", and deleted its template${k.ownTag !== false ? " and tag" : ""} in Buffer.` : `Forgot "${k.title}". Buffer access has lapsed, so its template and tag are still in Buffer.`);
+  return done(env, acct, user, token ? `Forgot "${k.title}", and deleted its template${k.ownTag && k.tagId ? " and tag" : ""} in Buffer.` : `Forgot "${k.title}". Buffer access has lapsed, so its template${k.tagName ? " and tag are" : " is"} still in Buffer.`);
 }
 
 const safeUrl = s => { try { const u = new URL(s.trim()); return /^https?:$/.test(u.protocol) ? u.toString() : ""; } catch { return ""; } };

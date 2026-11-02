@@ -109,12 +109,28 @@ No keys or secrets here. Everything below is also in git unless noted.
   `outbox/2026-11-02-discord-post-metrics.md`). If Buffer says yes or
   "a key is fine", build the optional field behind Keep this; otherwise
   nothing changes.
+- 2 Nov, later: two look changes live after frames went to the boss
+  ("that looks fine"): wide and square page images sit whole on a card
+  above the caption instead of being cover-cropped to a sliver, and
+  "The page, on a phone" is a scene's picture choice (the default for a
+  scene without one): the real page in a phone-shaped window, scrolled
+  to what the line is about, via `/api/shot`. Plan
+  `plan/2026-11-02-dailies-phone-view.md`, log `actual/2026-11-02.md`.
+- 2 Nov, later: a stranger's sweep of the untested paths (plan
+  `plan/2026-11-02-dailies-sweep.md`, script `pwt/sweep.mjs`). Two fixes
+  live: Draft all retries when Buffer fetches the video before KV has it
+  everywhere, and **no Buffer tag per drafted video any more** (the
+  boss's plan hit its tag limit; Keep this failed). Posts are tracked by
+  id in `user.made[].posts`; Keep this makes one tag for a winner and
+  survives a refusal. The boss has a walkthrough to delete the sweep's
+  four Instagram drafts, one Idea and the "Dailies:" tags
+  (`forboss/2026-11-02-delete-sweep-tests.md`).
 - The scratchpad (tmpfs) was wiped ~01:57 UTC 2 Nov and rebuilt:
   Playwright in `pwt/`, Chrome for Testing in `cft/` (**chmod +x the
   unzipped binaries** or crashpad fails at launch), ffmpeg-static in
   `ff/`. Scripts: `pwt/speed.mjs` (render variants), `pwt/ui2.mjs`
-  (signed-in 390 px flow to the Buffer step). The KV test session has
-  expired; make a new one the same way when needed.
+  (signed-in 390 px flow to the Buffer step). No KV test session is
+  live; make a new one the same way when needed, and delete it after.
 - Asked the boss: the monthly AI budget. Caps stay until they answer.
 - The boss's open walkthroughs are in `forboss/` (gitignored, RULES
   "Walkthroughs for the boss"): delete the Buffer test idea ("Test idea from

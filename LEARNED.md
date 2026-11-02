@@ -353,3 +353,16 @@ A forum form's prompts ("what are you trying to do, what have you
 tried") are for thinking, not for headings. The boss posts as a person;
 write the draft as one, and put the real open question in the title.
 Don't ask things the docs already answered.
+
+## 2 Nov: a Buffer tag is a budget, not a label
+Buffer caps tags by plan, and a tag per drafted video emptied the boss's
+allowance within a day of testing; the first symptom was a different
+feature (Keep this) failing with LimitReachedError. Anything Dailies
+creates per video in someone else's account has to be free of limits, or
+reused. Keep the grouping in Dailies' own record and ask Buffer for one
+tag only when something is worth keeping, and survive a no.
+
+## 2 Nov: a file written then fetched by someone else isn't there yet
+KV reaches other locations within a minute. Buffer fetched the video a
+second after the upload and got nothing. Any "upload, then hand a URL to
+a third party" step needs a retry on their side of the clock.
