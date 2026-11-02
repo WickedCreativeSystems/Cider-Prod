@@ -143,6 +143,18 @@ No keys or secrets here. Everything below is also in git unless noted.
   (`pwt/xrec.mjs` in the scratchpad; cut recipe in the log). Earlier
   test draft pairs were deleted via Buffer `deletePost`; the KV record
   holds one made row. Test session key deleted.
+- 2 Nov, latest: **the Commit demo video as a motion edit** in
+  `demo/commit-video` (Remotion 4.0.536; plan
+  `plan/2026-11-02-commit-demo-edit.md`, log end of `actual/2026-11-02.md`).
+  `npm run still -- out/x.png --frame=N` for a frame, `npm run render` for
+  the whole (scans `public/shorts`, remakes the music, renders). Footage
+  lives in `public/` (gitignored): link.mp4, store.mp4, talk.mp4 (NASA,
+  public domain, stand-in), shorts/*.mp4. Recorders `pwt/xstore.mjs`,
+  `pwt/xclips.mjs` in the scratchpad. **Still to record after 00:00 UTC**
+  (daily script runs used up): the clips run (save as shorts/clip0-2.mp4)
+  and a plan run (don't save Ideas). A KV test session `ses:<sid>` (sid in
+  scratchpad `sid.txt`) expires about 00:37 UTC; delete it and sid.txt
+  when done. Two placeholder cards wait for the boss's recordings.
 - The scratchpad (tmpfs) was wiped ~01:57 UTC 2 Nov and rebuilt:
   Playwright in `pwt/`, Chrome for Testing in `cft/` (**chmod +x the
   unzipped binaries** or crashpad fails at launch), ffmpeg-static in
