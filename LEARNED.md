@@ -366,3 +366,19 @@ tag only when something is worth keeping, and survive a no.
 KV reaches other locations within a minute. Buffer fetched the video a
 second after the upload and got nothing. Any "upload, then hand a URL to
 a third party" step needs a retry on their side of the clock.
+
+## 2 Nov: a Worker can't fetch its own hostname
+A fetch from a Worker to a hostname routed to the same Worker answers
+522. When the app reads its own pages, serve them from the assets
+binding instead.
+
+## 2 Nov: browser screen recorders capture CSS pixels
+Playwright's recordVideo and the CDP screencast both record the page at
+CSS size and pad it, so a phone layout fills a quarter of a 1080x1920
+frame. For a sharp phone-shaped capture run a headful browser at device
+scale 2 under Xvfb and grab the X screen with ffmpeg, skipping the
+automation infobar by its height.
+
+## 2 Nov: a list file without a final newline loses its last line
+`while read` skips the last line of a file that has no trailing newline.
+Every list written for a shell loop ends with one.

@@ -125,6 +125,23 @@ No keys or secrets here. Everything below is also in git unless noted.
   survives a refusal. The boss has a walkthrough to delete the sweep's
   four Instagram drafts, one Idea and the "Dailies:" tags
   (`forboss/2026-11-02-delete-sweep-tests.md`).
+- 2 Nov, latest: **the first real post through Dailies** (plan
+  `plan/2026-11-02-dailies-first-real-post.md`, log at the end of
+  `actual/2026-11-02.md`). The boss: "just do it now", after docent
+  agreed (tag `dailies`, drafts only, TikTok and YouTube only, no AI
+  flag, no user claims). One recorded run made two drafts in the house
+  TikTok and YouTube (16:24Z); the capture is live at
+  vibecider.bananafest-destiny.com/media/dailies-capture.mp4 with its
+  JSON and index row; docent has "it is live" (thread vibecider4-clips
+  is full at 6). The drafts are **untagged** (plan tag limit); the boss
+  adds the tag and sends them: `forboss/2026-11-02-send-dailies-drafts.md`.
+  Fixed on the way: bare hostnames in /api/read, the Worker reading its
+  own pages (ASSETS, `pageFetch` in `src/make.js`), the tag asked for
+  again on each draft. Recording method that works: headful Chrome for
+  Testing under Xvfb at device scale 2 and ffmpeg x11grab
+  (`pwt/xrec.mjs` in the scratchpad; cut recipe in the log). Earlier
+  test draft pairs were deleted via Buffer `deletePost`; the KV record
+  holds one made row. Test session key deleted.
 - The scratchpad (tmpfs) was wiped ~01:57 UTC 2 Nov and rebuilt:
   Playwright in `pwt/`, Chrome for Testing in `cft/` (**chmod +x the
   unzipped binaries** or crashpad fails at launch), ffmpeg-static in
@@ -140,7 +157,7 @@ No keys or secrets here. Everything below is also in git unless noted.
   Buffer. When the boss says "Done: …", tick it there.
 
 ## Next
-1. Check mail/in. Check Stripe for a first $9 Comic Cover sale (none on
+1. When the boss says "Done: dailies drafts", tick the walkthrough and tell docent in a new thread (vibecider4-clips is full). Check mail/in. Check Stripe for a first $9 Comic Cover sale (none on
    28 Oct; the one paid checkout on the account is another bot's, 29 Sep).
    now.md lists all four products; keep each status true.
 2. Buffer Commit, 11–13 Nov: write-up (name the realistic user; show the

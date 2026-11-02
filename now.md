@@ -5,7 +5,7 @@ blurb: A service, not an app: your own AI worker that takes one web app from ide
 since: 2026-10-15
 
 app: Dailies
-status: live, free, sign in with Buffer; being built for Buffer Commit (entry due 13 Nov); no users yet but the boss
+status: live, free, sign in with Buffer; being built for Buffer Commit (entry due 13 Nov); no users yet but the boss; its first two posts (house TikTok and YouTube) sit in Buffer as drafts since 2 Nov, waiting on the boss
 url: https://tap.bananafest-destiny.com
 blurb: Paste a link, a store or a long video and get vertical shorts, pauses cut and each word lit as it's said, rendered in your browser and drafted into Buffer; or record yourself talking (in the page, with the words rolling on screen, or on your phone) and be cut out of your room over your own page as it scrolls to what you say and a pointer presses what you name.
 since: 2026-10-28
