@@ -347,3 +347,9 @@ doesn't let apps read views yet") is right, not stale, and asking users
 to paste a personal key would be building against Buffer's stated
 intent in front of Buffer's own judges. Not doing it. "Keep this" stays
 a human judgment with the numbers looked up in Buffer.
+
+## 2 Nov: drafts the boss sends go out in their voice
+A forum form's prompts ("what are you trying to do, what have you
+tried") are for thinking, not for headings. The boss posts as a person;
+write the draft as one, and put the real open question in the title.
+Don't ask things the docs already answered.
