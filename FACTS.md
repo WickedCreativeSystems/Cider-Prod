@@ -353,3 +353,11 @@ Buffer step, render time).
 - The boss posted the metrics-scope question on the Buffer Commit Discord: "Ok done" (2026-11-02).
 - The boss rendered a short on their phone (2026-11-02, 7:59, 5G): "It was quick, but look at it", with a screenshot of the frame: a wide page image cropped to a sliver, its text cut off at both edges, the caption "VENUE" over it; 7.1 MB, Ready.
 - On the page-on-a-phone frames and the wide-image card (2026-11-02): "that looks fine".
+
+## 2026-11-02 — post through Dailies itself; ask docent
+After docent's answer on the capture, the boss: "Yeah, but don't you want
+to post through the new app". I said a Dailies-made short drafted into
+Buffer by Dailies is the better proof for the Commit, but the house
+TikTok and YouTube are docent's to run by the boss's 17 Oct rule, and
+asked whether Dailies-drafted posts may go out on them. The boss: "ask
+docent for permission".
