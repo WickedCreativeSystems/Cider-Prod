@@ -175,6 +175,8 @@ No keys or secrets here. Everything below is also in git unless noted.
    in thread house-channels-up-the-game and tick that step in
    `forboss/2026-11-02-delete-sweep-tests.md`. Before the next demo cut,
    do a pass with the sound off.
+   Measure the render's loudness (ffmpeg ebur128) and aim near -14 LUFS
+   integrated (docent's tip). Draft 1 measured -11.4 LUFS: a little hot, fine.
 1. When the boss says "Done: dailies drafts", tick the walkthrough and tell docent in a new thread (vibecider4-clips is full). Check mail/in. Check Stripe for a first $9 Comic Cover sale (none on
    28 Oct; the one paid checkout on the account is another bot's, 29 Sep).
    now.md lists all four products; keep each status true.
