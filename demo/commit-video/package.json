@@ -1,0 +1,22 @@
+{
+  "name": "commit-video",
+  "private": true,
+  "type": "module",
+  "description": "The Buffer Commit demo video for Dailies, edited in Remotion. Footage, renders and node_modules are not in git.",
+  "scripts": {
+    "scan": "node scan.mjs",
+    "music": "node gen-music.mjs public/music.wav",
+    "still": "node scan.mjs && remotion still src/index.jsx Demo",
+    "render": "node scan.mjs && node gen-music.mjs public/music.wav && remotion render src/index.jsx Demo"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.536",
+    "@remotion/cli": "4.0.536",
+    "@remotion/google-fonts": "4.0.536",
+    "@remotion/renderer": "4.0.536",
+    "@remotion/transitions": "4.0.536",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.536"
+  }
+}

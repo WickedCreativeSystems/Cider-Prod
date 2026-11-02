@@ -389,3 +389,11 @@ third-party tools; personal keys see it only because it's the owner's
 own data. So asking users for their personal key is the same wall, not
 a way round it. Anything in Dailies that judges "what worked" stays the
 user's own call, made in Buffer, and Keep this stays a button.
+
+## 2 Nov: recording the app for a video needs the same limits a user meets
+A test account burns the same daily script runs a user does, and the
+clip flow needs WebGL, which a headless or Xvfb browser lacks unless
+told to use SwiftShader. Record the flows that cost script runs first
+in the UTC day, and give the browser WebGL before blaming the app. A
+browser without WebGL also breaks the clip flow for a real user; a
+fallback layout would keep it working.
