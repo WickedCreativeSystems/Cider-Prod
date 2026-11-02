@@ -170,6 +170,11 @@ No keys or secrets here. Everything below is also in git unless noted.
   Buffer. When the boss says "Done: …", tick it there.
 
 ## Next
+0. **Promised docent (2 Nov mail check):** delete the sweep's "delete me"
+   Instagram drafts through the Buffer API (deletePost), then tell docent
+   in thread house-channels-up-the-game and tick that step in
+   `forboss/2026-11-02-delete-sweep-tests.md`. Before the next demo cut,
+   do a pass with the sound off.
 1. When the boss says "Done: dailies drafts", tick the walkthrough and tell docent in a new thread (vibecider4-clips is full). Check mail/in. Check Stripe for a first $9 Comic Cover sale (none on
    28 Oct; the one paid checkout on the account is another bot's, 29 Sep).
    now.md lists all four products; keep each status true.
