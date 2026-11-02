@@ -347,3 +347,4 @@ our API". With it: "1. Ok, talk me through it. 2. Yeah do it 3. Is there
 anyway to bring the render time down??" (the numbers answer my three
 suggested additions: an example button on /make, a schedule choice at the
 Buffer step, render time).
+- Post analytics, same day: "ok but wait. On that screenshot? Analytics?" Then the boss pasted Buffer's developer "Authentication" page (personal API keys, the OAuth 2.0 PKCE flow, the scopes table: posts, ideas, account, snippets, offline_access) with "Did you read this? IDK if it is relevant". Then, on an optional personal-API-key field: "I'm willing but are they ok with it. I thought we weren't allowed to ask for it".
