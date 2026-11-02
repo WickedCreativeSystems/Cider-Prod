@@ -106,9 +106,10 @@ No keys or secrets here. Everything below is also in git unless noted.
   other people should use OAuth, not take a key. Not building a key
   field. The boss posted the question "Is a metrics scope coming for
   OAuth apps?" on the Buffer Commit Discord (draft in
-  `outbox/2026-11-02-discord-post-metrics.md`). If Buffer says yes or
-  "a key is fine", build the optional field behind Keep this; otherwise
-  nothing changes.
+  `outbox/2026-11-02-discord-post-metrics.md`). **Answered 2 Nov:** no,
+  by regulation (partner data can't go to third-party tools; personal
+  keys only for the owner's own data). Nothing built; Keep this stays a
+  button the user presses. Closed.
 - 2 Nov, later: two look changes live after frames went to the boss
   ("that looks fine"): wide and square page images sit whole on a card
   above the caption instead of being cover-cropped to a sliver, and

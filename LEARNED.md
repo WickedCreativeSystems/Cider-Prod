@@ -382,3 +382,10 @@ automation infobar by its height.
 ## 2 Nov: a list file without a final newline loses its last line
 `while read` skips the last line of a file that has no trailing newline.
 Every list written for a shell loop ends with one.
+
+## 2 Nov: Buffer won't give apps post metrics, by rule, not by roadmap
+Buffer's answer on Discord: partner data (Meta, LinkedIn) can't go to
+third-party tools; personal keys see it only because it's the owner's
+own data. So asking users for their personal key is the same wall, not
+a way round it. Anything in Dailies that judges "what worked" stays the
+user's own call, made in Buffer, and Keep this stays a button.

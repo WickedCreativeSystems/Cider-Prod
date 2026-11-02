@@ -367,3 +367,4 @@ After docent said yes (tag `dailies`, drafts only, TikTok and YouTube
 only, no AI flag, no claim of users), the boss: "just do it now".
 - On what Dailies costs in tokens (a quarter of a cent a run, about a dollar a day per account at the caps): "That's fine" (2026-11-02).
 - On starting the Buffer Commit write-up and demo video script now: "Go ahead" (2026-11-02).
+- Buffer's answer to the metrics-scope question on the Buffer Commit Discord: the boss sent a screenshot (2026-11-02, 12:22) of a reply from a Buffer team member, 8:03 AM: "We would love to make these available for apps as well, but there are some regulations that prevent us sharing data that we get from our partners (like Meta and LinkedIn) with third party tools. For Personal API Keys, it's fine because it's your own personal data, but we aren't able to expose these beyond that."
