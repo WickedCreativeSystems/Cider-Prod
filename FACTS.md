@@ -351,3 +351,4 @@ Buffer step, render time).
 - Same thread: "I can ask about it on the discord" (2026-11-02, on whether Buffer allows apps to take a personal API key for metrics).
 - On the Discord draft: "write it like a person, not like you are listing the things they told you to think about before posting. Also the title should be about is the scope coming, we know the answer to that question" (2026-11-02).
 - The boss posted the metrics-scope question on the Buffer Commit Discord: "Ok done" (2026-11-02).
+- The boss rendered a short on their phone (2026-11-02, 7:59, 5G): "It was quick, but look at it", with a screenshot of the frame: a wide page image cropped to a sliver, its text cut off at both edges, the caption "VENUE" over it; 7.1 MB, Ready.

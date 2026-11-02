@@ -476,17 +476,29 @@ function background(ctx, bmp, t, seed) {
     const g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, "#2a261b"); g.addColorStop(1, "#15140f");
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); return;
   }
-  // Fill the frame (cover), then a slow zoom and drift; direction alternates by scene.
-  const z = 1.06 + 0.10 * t, dir = seed % 2 ? 1 : -1;
-  const s = Math.max(W / bmp.width, H / bmp.height) * z;
-  const w = bmp.width * s, h = bmp.height * s;
-  const x = (W - w) / 2 + dir * (t - 0.5) * Math.min(80, (w - W) / 2), y = (H - h) / 2;
-  // A blurred copy behind, so a wide image never leaves bars.
+  // A blurred copy behind, so no image ever leaves bars.
   ctx.filter = "blur(40px) brightness(0.6)";
   const sb = Math.max(W / bmp.width, H / bmp.height) * 1.2;
   ctx.drawImage(bmp, (W - bmp.width * sb) / 2, (H - bmp.height * sb) / 2, bmp.width * sb, bmp.height * sb);
   ctx.filter = "none";
-  ctx.drawImage(bmp, x, y, w, h);
+  if (bmp.width / bmp.height > 0.8) {
+    // A wide or square image (a desktop screenshot, a social card, a product photo) is shown whole, as a card above
+    // the caption, with a slow zoom. Filling the frame with it would crop it to a sliver and cut its text at both edges.
+    const s = Math.min((W - 80) / bmp.width, H * 0.46 / bmp.height) * (1 + 0.06 * t);
+    const w = bmp.width * s, h = bmp.height * s, x = (W - w) / 2, y = Math.min(H * 0.34 - h / 2, H * 0.56 - h);
+    ctx.save();
+    ctx.shadowColor = "rgba(0,0,0,0.55)"; ctx.shadowBlur = 48; ctx.shadowOffsetY = 18;
+    ctx.beginPath(); ctx.roundRect(x, y, w, h, 28); ctx.fillStyle = "#000"; ctx.fill();
+    ctx.shadowColor = "transparent"; ctx.clip(); ctx.drawImage(bmp, x, y, w, h);
+    ctx.restore();
+  } else {
+    // A tall image fills the frame (cover), then a slow zoom and drift; direction alternates by scene.
+    const z = 1.06 + 0.10 * t, dir = seed % 2 ? 1 : -1;
+    const s = Math.max(W / bmp.width, H / bmp.height) * z;
+    const w = bmp.width * s, h = bmp.height * s;
+    const x = (W - w) / 2 + dir * (t - 0.5) * Math.min(80, (w - W) / 2), y = (H - h) / 2;
+    ctx.drawImage(bmp, x, y, w, h);
+  }
   const g = ctx.createLinearGradient(0, H * 0.45, 0, H); g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(1, "rgba(0,0,0,0.75)");
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
 }
