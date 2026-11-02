@@ -155,12 +155,15 @@ $("ideasBtn").onclick = async () => {
 function videoCard(v, n) {
   const scenes = el("div");
   const sceneRow = s => {
-    const thumb = s.image == null ? el("div", { className: "noimg" }) : el("img", { src: img(pg(v).images[s.image]), alt: "" });
+    if (s.image == null) s.image = "phone"; // a scene without a picture shows the page itself
+    const thumbOf = () => s.image === "phone" ? el("div", { className: "noimg phone", textContent: "📱", title: "The page, on a phone" })
+      : s.image == null ? el("div", { className: "noimg" }) : el("img", { src: img(pg(v).images[s.image]), alt: "" });
     const text = el("textarea", { value: s.text, rows: 2, ariaLabel: "On-screen line", oninput() { s.text = this.value; } });
-    const pick = el("select", { ariaLabel: "Picture", onchange() { s.image = this.value === "" ? null : +this.value;
-      const t = s.image == null ? el("div", { className: "noimg" }) : el("img", { src: img(pg(v).images[s.image]), alt: "" }); row.firstChild.replaceWith(t); } },
-      el("option", { value: "", textContent: "No picture" }), ...pg(v).images.map((_, i) => el("option", { value: i, textContent: `Picture ${i + 1}`, selected: s.image === i })));
-    const row = el("div", { className: "scene" }, thumb, text, pick);
+    const pick = el("select", { ariaLabel: "Picture", onchange() { s.image = this.value === "" ? null : this.value === "phone" ? "phone" : +this.value; row.firstChild.replaceWith(thumbOf()); } },
+      el("option", { value: "phone", textContent: "The page, on a phone", selected: s.image === "phone" }),
+      ...pg(v).images.map((_, i) => el("option", { value: i, textContent: `Picture ${i + 1}`, selected: s.image === i })),
+      el("option", { value: "", textContent: "No picture" }));
+    const row = el("div", { className: "scene" }, thumbOf(), text, pick);
     return row;
   };
   scenes.append(...v.scenes.map(sceneRow));
@@ -470,8 +473,69 @@ function wrap(ctx, text, max, balance = false) {
   return greedy(hi);
 }
 
+// ---- The page on a phone: one tall phone-width screenshot of the page (Cloudflare's browser, /api/shot, kept a day),
+// scrolled to the part each scene's line talks about. A scene can show this instead of one of the page's images.
+const PHONE = { x: 140, y: 120, w: 800, h: 960, r: 48 }; // the window, above the caption
+const shots = new Map();
+function shotFor(url) {
+  if (!shots.has(url)) shots.set(url, call("/api/shot", { url }).then(async s => {
+    const bmp = await createImageBitmap(await (await fetch(s.jpeg)).blob()), width = s.width || 390;
+    return { phone: true, bmp, width, height: Math.round(bmp.height * width / bmp.width), elements: s.elements || [] };
+  }).catch(e => { shots.delete(url); throw e; }));
+  return shots.get(url);
+}
+// Where on the page a line is about (CSS px from the top): the element sharing the most words with it; failing that,
+// a step down the page per scene.
+function placeOf(shot, text, i, n) {
+  const stems = t => (t.toLowerCase().match(/[a-z0-9]{4,}/g) || []).map(w => w.replace(/s$/, ""));
+  const words = new Set(stems(text));
+  let best = null, score = 0;
+  for (const e of shot.elements) {
+    const ws = stems(String(e.text || "")), hit = ws.filter(w => words.has(w)).length;
+    // Two shared words at least: one ("sales") lands on any short label that happens to carry it.
+    if (hit >= 2 && hit / Math.sqrt(ws.length) > score) { score = hit / Math.sqrt(ws.length); best = e; }
+  }
+  const room = Math.max(0, shot.height - 844);
+  return best ? Math.max(0, best.top - 160) : room * (n > 1 ? i / (n - 1) : 0);
+}
+// Each scene's art: one of the page's images, the page on a phone, or nothing. `loud` throws when the page can't be
+// photographed (the render); the preview still falls back quietly.
+async function sceneArt(v, loud) {
+  const P = pg(v), n = v.scenes.length;
+  return Promise.all(v.scenes.map(async (s, i) => {
+    if (s.image === "phone") {
+      try { const shot = await shotFor(P.url); return { ...shot, at: placeOf(shot, s.text, i, n) }; }
+      catch (e) { if (loud) throw new Error(`The page couldn't be photographed. ${e.message}`); return null; }
+    }
+    return s.image == null ? null : bitmap(P.images[s.image]);
+  }));
+}
+function phoneScene(ctx, art, t) {
+  const { bmp, width, at } = art, r = PHONE, k = r.w / width, px = r.w / bmp.width;
+  // The page's own colours behind, blurred and dark.
+  ctx.filter = "blur(40px) brightness(0.5)";
+  ctx.drawImage(bmp, 0, 0, bmp.width, Math.min(bmp.height, Math.round(bmp.width * H / W)), -W * 0.1, -H * 0.1, W * 1.2, H * 1.2);
+  ctx.filter = "none";
+  // Scrolled to the place, drifting 180 CSS px down over the scene; never past the end of the page.
+  const off = Math.min((at + 180 * t) * k, Math.max(0, bmp.height * px - r.h));
+  ctx.save();
+  ctx.shadowColor = "rgba(0,0,0,0.6)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 24; ctx.fillStyle = "#111";
+  ctx.beginPath(); ctx.roundRect(r.x, r.y, r.w, r.h, r.r); ctx.fill(); ctx.shadowColor = "transparent";
+  ctx.beginPath(); ctx.roundRect(r.x, r.y, r.w, r.h, r.r); ctx.clip();
+  ctx.fillStyle = "#fff"; ctx.fillRect(r.x, r.y, r.w, r.h);
+  ctx.drawImage(bmp, 0, off / px, bmp.width, r.h / px, r.x, r.y, r.w, r.h);
+  ctx.restore();
+  ctx.lineWidth = 3; ctx.strokeStyle = "rgba(255,255,255,0.22)"; ctx.beginPath(); ctx.roundRect(r.x + 1.5, r.y + 1.5, r.w - 3, r.h - 3, r.r - 1.5); ctx.stroke();
+}
+// The dark shade the captions sit on.
+function shade(ctx) {
+  const g = ctx.createLinearGradient(0, H * 0.45, 0, H); g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(1, "rgba(0,0,0,0.75)");
+  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+}
+
 function background(ctx, bmp, t, seed) {
   ctx.fillStyle = "#15140f"; ctx.fillRect(0, 0, W, H);
+  if (bmp?.phone) { phoneScene(ctx, bmp, t); return shade(ctx); }
   if (!bmp) {
     const g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, "#2a261b"); g.addColorStop(1, "#15140f");
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); return;
@@ -499,8 +563,7 @@ function background(ctx, bmp, t, seed) {
     const x = (W - w) / 2 + dir * (t - 0.5) * Math.min(80, (w - W) / 2), y = (H - h) / 2;
     ctx.drawImage(bmp, x, y, w, h);
   }
-  const g = ctx.createLinearGradient(0, H * 0.45, 0, H); g.addColorStop(0, "rgba(0,0,0,0)"); g.addColorStop(1, "rgba(0,0,0,0.75)");
-  ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  shade(ctx);
 }
 
 // The word being said in a caption chunk: its index and how long it has been said. A clip's or a take's chunks carry
@@ -607,7 +670,7 @@ function frame(ctx, v, tl, bmps, t) {
 
 async function drawStill(canvas, v) {
   const ctx = canvas.getContext("2d");
-  const bmps = await Promise.all(v.scenes.map(s => bitmap(s.image == null ? null : pg(v).images[s.image])));
+  const bmps = await sceneArt(v, false);
   frame(ctx, v, timeline(v), bmps, Math.min(1.2, v.scenes[0].seconds * 0.6));
 }
 
@@ -624,7 +687,8 @@ async function pickCodec() {
 async function render(canvas, v, progress) {
   const { config, mux } = await pickCodec();
   const ctx = canvas.getContext("2d");
-  const bmps = await Promise.all(v.scenes.map(s => bitmap(s.image == null ? null : pg(v).images[s.image])));
+  if (v.scenes.some(s => s.image === "phone") && !shots.has(pg(v).url)) progress(0, "Photographing the page on a phone…");
+  const bmps = await sceneArt(v, true);
   let voices = [];
   if (v.voice) {
     progress(0, "Recording the voiceover…");

@@ -46,7 +46,7 @@ label.btn:has(input:focus-visible){outline:2px solid var(--gold);outline-offset:
 .grp{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:22px 0 0;padding-top:14px;border-top:1px solid var(--line)}
 .grp:first-child{margin-top:14px}
 .scene{display:grid;grid-template-columns:56px 1fr 8.5em;gap:8px;align-items:start;margin:10px 0 0}
-.scene img,.scene .noimg{width:56px;height:56px;object-fit:cover;border-radius:6px;background:var(--soft)}
+.scene img,.scene .noimg{width:56px;height:56px;object-fit:cover;border-radius:6px;background:var(--soft)}.noimg.phone{display:grid;place-items:center;font-size:24px}
 .video>*{min-width:0}.scene>*{min-width:0}.scene textarea{width:100%}.scene select{width:100%}
 @media (max-width:420px){.scene{grid-template-columns:48px 1fr}.scene img,.scene .noimg{width:48px;height:48px}.scene select{grid-column:2;width:auto}}
 video,canvas.preview{width:100%;max-width:240px;aspect-ratio:9/16;background:#000;border-radius:12px;display:block}
