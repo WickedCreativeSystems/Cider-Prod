@@ -402,8 +402,21 @@ export function captionFor(service, caption, hashtags) {
 
 const CREATE_TAG = `mutation($i:CreateTagInput!){ createTag(input:$i){ __typename ... on TagActionSuccess { tag { id } } } }`;
 
-export function postInput(ch, { text, video, title, category, tagIds = [] }) {
-  const i = { channelId: ch.id, text, mode: "addToQueue", schedulingType: "automatic", saveToDraft: true, tagIds,
+// Where a post goes: a draft unless asked otherwise. The queue is the channel's own
+// posting schedule in Buffer; a time is an exact moment (UTC in the API, local in the page).
+export function timing(when) {
+  if (when?.mode === "queue") return { mode: "addToQueue", saveToDraft: false };
+  if (when?.mode === "time") return { mode: "customScheduled", dueAt: new Date(when.dueAt).toISOString(), saveToDraft: false };
+  return { mode: "addToQueue", saveToDraft: true };
+}
+export const timeError = when => {
+  if (when?.mode !== "time") return "";
+  const t = Date.parse(when.dueAt || "");
+  return Number.isNaN(t) ? "Pick a day and time." : t < Date.now() + 60e3 ? "Pick a time that's still to come." : "";
+};
+
+export function postInput(ch, { text, video, title, category, tagIds = [], when }) {
+  const i = { channelId: ch.id, text, schedulingType: "automatic", ...timing(when), tagIds,
     assets: video ? [{ video: { url: video } }] : [] };
   const t = (title || text.split("\n")[0]).slice(0, 100);
   if (ch.service === "instagram") i.metadata = { instagram: { type: video ? "reel" : "post", shouldShareToFeed: true } };
@@ -412,7 +425,7 @@ export function postInput(ch, { text, video, title, category, tagIds = [] }) {
   return i;
 }
 
-export const CREATE_POST = `mutation($i:CreatePostInput!){ createPost(input:$i){ __typename ... on PostActionSuccess { post { id } }
+export const CREATE_POST = `mutation($i:CreatePostInput!){ createPost(input:$i){ __typename ... on PostActionSuccess { post { id dueAt } }
   ... on InvalidInputError { message } ... on LimitReachedError { message } ... on UnauthorizedError { message } ... on UnexpectedError { message } ... on RestProxyError { message } ... on NotFoundError { message } } }`;
 
 // ---- Routes ----------------------------------------------------------------
@@ -592,9 +605,10 @@ export async function api(req, env, path, { acct, user }, d) {
     return json({ results });
   }
   if (path === "/api/draft" && req.method === "POST") {
-    const { video, channels, caption, title, hashtags, angle, hook, lines, link, poster } = await req.json().catch(() => ({}));
+    const { video, channels, caption, title, hashtags, angle, hook, lines, link, poster, when } = await req.json().catch(() => ({}));
     const kept = (user.videos || []).find(v => v.id === video);
     if (!kept) return json({ error: "Upload the video first." }, 400);
+    if (timeError(when)) return json({ error: timeError(when) }, 400);
     const chosen = (user.channels || []).filter(c => (channels || []).includes(c.id));
     if (!chosen.length) return json({ error: "Pick at least one channel." }, 400);
     const token = await d.accessToken(env, acct);
@@ -607,9 +621,10 @@ export async function api(req, env, path, { acct, user }, d) {
     const results = [];
     for (const ch of chosen) {
       const text = captionFor(ch.service, String(caption || "").slice(0, 2000), hashtags);
-      const r = await d.gql(token, CREATE_POST, { i: postInput(ch, { text, video: `${url.origin}/v/${video}.mp4`, title, tagIds: kept.tagId ? [kept.tagId] : [] }) });
-      const id = r.data?.createPost?.post?.id;
-      results.push({ channel: ch.service, ok: !!id, error: id ? "" : (d.errText(r) || r.data?.createPost?.message || r.data?.createPost?.__typename || `HTTP ${r.status}`) });
+      const r = await d.gql(token, CREATE_POST, { i: postInput(ch, { text, video: `${url.origin}/v/${video}.mp4`, title, tagIds: kept.tagId ? [kept.tagId] : [], when }) });
+      const post = r.data?.createPost?.post, id = post?.id;
+      results.push({ channel: ch.service, ok: !!id, state: when?.mode === "time" ? "scheduled" : when?.mode === "queue" ? "queued" : "draft", dueAt: post?.dueAt || "",
+        error: id ? "" : (d.errText(r) || r.data?.createPost?.message || r.data?.createPost?.__typename || `HTTP ${r.status}`) });
     }
     // Remember what was made (outlasting the video file), so a winner can be kept and made again.
     if (kept.tagId && results.some(x => x.ok)) {

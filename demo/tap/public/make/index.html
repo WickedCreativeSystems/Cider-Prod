@@ -17,6 +17,7 @@
 .starts .actions{margin-top:auto;padding-top:14px}
 @media (max-width:640px){.starts{grid-template-columns:1fr}}
 .pair{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:var(--muted)}
+.linky{background:none;border:0;padding:6px 4px;color:var(--muted);font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.linky:hover{color:var(--fg)}
 .status{margin:8px 0 0}.status:empty,#clipInfo:empty,#youInfo:empty{display:none}
 .drop{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0 0;padding:14px;border:1.5px dashed var(--line);border-radius:10px;cursor:pointer}
 .drop:hover,.drop.over,.drop:focus-within{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 7%,transparent)}
@@ -80,7 +81,7 @@ label.prod img{width:48px;height:48px;object-fit:cover;border-radius:6px}
   <label class="f">Links, one per line (up to 5)
     <textarea id="url" rows="3" placeholder="https://your-site.com&#10;https://your-site.com/a-feature" required></textarea></label>
   <p class="note">Put the main page first: the videos send people there. Feature pages give them more to talk about.</p>
-  <div class="actions"><button class="primary" id="readBtn">Read the pages</button></div>
+  <div class="actions"><button class="primary" id="readBtn">Read the pages</button><button type="button" class="linky" id="tryExample">Try it with an example</button></div>
   <p class="status small" id="readStatus"></p>
 </form>
 <div class="card" id="clipBox">
@@ -157,7 +158,7 @@ label.prod img{width:48px;height:48px;object-fit:cover;border-radius:6px}
   <p class="note" id="allMade"></p>
   <div class="actions"><button class="primary" id="renderAll">Render all</button></div>
   <div id="allDraft" hidden>
-    <label class="f">Draft every rendered video to</label>
+    <label class="f">Send every rendered video to</label>
     <div id="allTicks"></div>
     <div class="actions"><button class="primary" id="draftAll" disabled>Draft all to Buffer</button></div>
   </div>

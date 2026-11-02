@@ -25,6 +25,9 @@ async function call(path, body, method = "POST") {
 
 let page = null, channels = null;
 
+// A first look without having to think of a link: a real page of ours, read the same way.
+$("tryExample").onclick = () => { $("url").value = "https://vibecider.bananafest-destiny.com/comiccover/"; $("readForm").requestSubmit(); };
+
 $("readForm").onsubmit = async e => {
   e.preventDefault(); $("storeBox").hidden = true; $("planBox").hidden = true; $("planList").replaceChildren(); $("planActs").hidden = true; $("planStatus").textContent = "";
   $("readBtn").disabled = true; $("readStatus").textContent = "Reading…"; $("readStatus").className = "status small"; $("pageBox").hidden = true;
@@ -331,30 +334,55 @@ async function upload(state) {
   return state.uploaded = d.id;
 }
 
-async function draft(state, chosen) {
+async function draft(state, chosen, when) {
   const id = await upload(state);
   const v = state.v, lines = (v.scenes || []).map(x => x.text);
   const { results } = await call("/api/draft", { video: id, channels: chosen, caption: v.caption, title: v.title, hashtags: v.hashtags, angle: v.angle,
-    hook: v.hook || lines[0] || "", lines, link: v.scenes ? pg(v)?.url || "" : "", poster: state.poster });
+    hook: v.hook || lines[0] || "", lines, link: v.scenes ? pg(v)?.url || "" : "", poster: state.poster, when });
   return results;
 }
+
+// Where the posts go: drafts (the default; nothing moves without the person), the channel's
+// own posting schedule in Buffer, or one exact time. `onchange` gets the verb for the button.
+const VERB = { draft: "Draft", queue: "Queue", time: "Schedule" };
+function whenPick(onchange) {
+  const sel = el("select", {}, el("option", { value: "draft", textContent: "as drafts, for you to send" }),
+    el("option", { value: "queue", textContent: "into the queue (your posting schedule)" }), el("option", { value: "time", textContent: "at a time" }));
+  const at = el("input", { type: "datetime-local", hidden: true });
+  at.setAttribute("aria-label", "Day and time");
+  sel.onchange = () => {
+    at.hidden = sel.value !== "time";
+    if (!at.hidden && !at.value) { const d = new Date(Date.now() + 3600e3); d.setMinutes(0, 0, 0); at.value = new Date(d - d.getTimezoneOffset() * 60e3).toISOString().slice(0, 16); }
+    onchange?.(VERB[sel.value]);
+  };
+  const row = el("div", { className: "actions" }, el("label", { className: "pair", textContent: "Put them" }), sel, at);
+  const value = () => sel.value === "time" ? { mode: "time", dueAt: at.value ? new Date(at.value).toISOString() : "" } : { mode: sel.value };
+  const problem = () => value().mode === "time" && !value().dueAt ? "Pick a day and time." : "";
+  return { row, value, problem };
+}
+const whenSaid = r => r.state === "scheduled" ? `scheduled for ${new Date(r.dueAt).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`
+  : r.state === "queued" ? "in your Buffer queue" : "in your Buffer drafts";
+const openBuffer = () => el("a", { href: "https://publish.buffer.com", target: "_blank", rel: "noopener", textContent: "Open Buffer" });
 
 async function showDraft(box, state) {
   channels ??= (await call("/api/channels", null, "GET")).channels;
   if (!channels.length) { box.append(el("p", { className: "note", textContent: "No Buffer channels that take video are connected." })); box.hidden = false; return; }
   const ticks = channels.map(c => el("input", { type: "checkbox", value: c.id, checked: ["instagram", "tiktok", "youtube"].includes(c.service) }));
   const btn = el("button", { className: "primary", textContent: "Draft to Buffer" });
+  const when = whenPick(verb => { btn.textContent = `${verb} to Buffer`; });
   const out = el("div", { className: "status small" });
-  box.append(el("label", { className: "f", textContent: "Draft it to" }),
-    el("div", {}, ...channels.map((c, i) => el("label", { className: "ch" }, ticks[i], net(c.service)))), el("div", { className: "actions" }, btn), out);
+  box.append(el("label", { className: "f", textContent: "Send it to" }),
+    el("div", {}, ...channels.map((c, i) => el("label", { className: "ch" }, ticks[i], net(c.service)))), when.row, el("div", { className: "actions" }, btn), out);
   box.hidden = false;
   btn.onclick = async () => {
     const chosen = ticks.filter(t => t.checked).map(t => t.value);
     if (!chosen.length) { out.textContent = "Pick at least one channel."; return; }
-    btn.disabled = true; out.className = "status small"; out.textContent = "Uploading and drafting…";
+    if (when.problem()) { out.textContent = when.problem(); return; }
+    btn.disabled = true; out.className = "status small"; out.textContent = "Uploading and sending to Buffer…";
     try {
-      const results = await draft(state, chosen);
-      out.replaceChildren(...results.map(r => el("div", { className: r.ok ? "good" : "bad", textContent: r.ok ? `${r.channel}: in your Buffer drafts` : `${r.channel}: ${r.error}` })));
+      const results = await draft(state, chosen, when.value());
+      out.replaceChildren(...results.map(r => el("div", { className: r.ok ? "good" : "bad", textContent: r.ok ? `${r.channel}: ${whenSaid(r)}` : `${r.channel}: ${r.error}` })));
+      if (results.some(r => r.ok)) out.append(openBuffer());
       if (results.some(r => !r.ok)) btn.disabled = false;
     } catch (err) { out.textContent = err.message; out.className = "status small bad"; btn.disabled = false; }
   };
@@ -374,8 +402,11 @@ async function allBox() {
     channels ??= (await call("/api/channels", null, "GET")).channels;
     $("allTicks").replaceChildren(...channels.map(c => el("label", { className: "ch" },
       el("input", { type: "checkbox", value: c.id, checked: ["instagram", "tiktok", "youtube"].includes(c.service) }), net(c.service))));
+    allWhen = whenPick(verb => { $("draftAll").textContent = `${verb} all to Buffer`; });
+    $("allTicks").after(allWhen.row);
   }
 }
+let allWhen;
 
 $("renderAll").onclick = async () => {
   $("renderAll").disabled = true;
@@ -387,16 +418,20 @@ $("draftAll").onclick = async () => {
   const chosen = [...$("allTicks").querySelectorAll("input:checked")].map(t => t.value);
   const out = $("allOut");
   if (!chosen.length) { out.textContent = "Pick at least one channel."; return; }
+  if (allWhen?.problem()) { out.textContent = allWhen.problem(); return; }
   $("draftAll").disabled = true; out.className = "status small"; out.replaceChildren();
+  let any = false;
   for (const [i, c] of cards.entries()) {
     if (!c.mp4) continue;
-    const line = el("div", { textContent: `Video ${i + 1}: uploading and drafting…` }); out.append(line);
+    const line = el("div", { textContent: `Video ${i + 1}: uploading and sending to Buffer…` }); out.append(line);
     try {
-      const results = await draft(c, chosen);
-      line.textContent = `Video ${i + 1}: ` + results.map(r => r.ok ? `${r.channel} drafted` : `${r.channel} failed (${r.error})`).join(", ");
+      const results = await draft(c, chosen, allWhen?.value());
+      line.textContent = `Video ${i + 1}: ` + results.map(r => r.ok ? `${r.channel} ${whenSaid(r)}` : `${r.channel} failed (${r.error})`).join(", ");
       if (results.some(r => !r.ok)) line.className = "bad";
+      any ||= results.some(r => r.ok);
     } catch (err) { line.textContent = `Video ${i + 1}: ${err.message}`; line.className = "bad"; }
   }
+  if (any) out.append(openBuffer());
   $("draftAll").disabled = false;
 };
 
