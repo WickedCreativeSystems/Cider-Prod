@@ -335,3 +335,15 @@ insights scope on the boss's Buffer app (the open forboss walkthrough) and
 the query shape. Reading results back is the one thing the judges' "craft
 on the Buffer API" score would reward most, and it makes "Keep this"
 automatic.
+
+## 2 Nov, later: the metrics door is for people, not apps
+Read the guides. Post metrics come only with a personal API key; Buffer's
+own support page says metrics "isn't available to apps that connect on
+someone else's behalf", tells app builders to "use OAuth instead of a
+personal key, so your users can grant access without sharing
+credentials", and calls the metrics set experimental, "not recommended
+for reporting or production tools". So the Your shorts line ("Buffer
+doesn't let apps read views yet") is right, not stale, and asking users
+to paste a personal key would be building against Buffer's stated
+intent in front of Buffer's own judges. Not doing it. "Keep this" stays
+a human judgment with the numbers looked up in Buffer.
