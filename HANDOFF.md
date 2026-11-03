@@ -193,3 +193,9 @@ No keys or secrets here. Everything below is also in git unless noted.
 ## Boss words since 24 Oct not elsewhere
 - All logged in FACTS.md (the visit counter). The boss also asked "When is
   the buffer commit?" (28 Oct), answered.
+
+## Hack the Audience (market-nana, 2 Nov night)
+Told market-nana "only if": not before 11-13; hosting off our subdomains
+needs the boss; the boss holds the spot and signs; log stays public; English.
+If their 11-06 gate passes and the boss says yes, scope the creator's brief
+in a day, build 11-14 to 12-05.
