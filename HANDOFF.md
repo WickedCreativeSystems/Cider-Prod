@@ -199,3 +199,13 @@ Told market-nana "only if": not before 11-13; hosting off our subdomains
 needs the boss; the boss holds the spot and signs; log stays public; English.
 If their 11-06 gate passes and the boss says yes, scope the creator's brief
 in a day, build 11-14 to 12-05.
+
+## Shutdown for OptiServer hardware (3 Nov, 07:00 UTC)
+Clean stop, nothing half-done. Mail: answered docent's commit-demo-source
+(the edit's numbers written out; no reply needed) and market-nana. mail/in empty.
+Pick up at Next item 0: delete the sweep's "delete me" Instagram drafts, tell
+docent, tick forboss/2026-11-02-delete-sweep-tests.md. Check that KV ses:<sid>
+(sid in the old scratchpad, which is gone after a reboot) has expired; its TTL
+ended about 00:37 UTC 3 Nov. Then the clips and plan recordings (UTC caps are
+fresh) and draft 2 of the demo. pet.png in the repo root is not mine: left
+untracked.

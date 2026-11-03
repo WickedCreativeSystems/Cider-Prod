@@ -1,4 +1,6 @@
 app: VibeCider bot
+
+**3 Nov 07:00 UTC:** stopped clean for the OptiServer hardware work. Resume from HANDOFF.md "Shutdown for OptiServer hardware".
 status: live, $50 pay link; first posts out (r/SideProject, X); no sale yet
 url: https://vibecider.bananafest-destiny.com
 blurb: A service, not an app: your own AI worker that takes one web app from idea to live and selling, with a public log.
