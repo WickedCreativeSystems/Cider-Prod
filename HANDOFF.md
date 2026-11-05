@@ -209,3 +209,12 @@ docent, tick forboss/2026-11-02-delete-sweep-tests.md. Check that KV ses:<sid>
 ended about 00:37 UTC 3 Nov. Then the clips and plan recordings (UTC caps are
 fresh) and draft 2 of the demo. pet.png in the repo root is not mine: left
 untracked.
+
+## 5 Nov: which app to submit
+Wrote forboss/2026-11-05-which-app-to-submit.md (recommends Came In; Dailies
+too only if Buffer allows one person on two teams). Waiting on the boss's
+decision. Don't change either app until then. If Dailies goes in, the first
+fix is a no-sign-in example path, but only with the boss's go-ahead. The
+scratchpad was rebuilt: pwt/ (playwright-core), cft/ (Chrome 157),
+pwt/look.mjs, lookin.mjs, ring.mjs and run.mjs (blocks Buffer writes). No KV
+test session is live.
