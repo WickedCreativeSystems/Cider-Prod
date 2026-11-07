@@ -1,6 +1,6 @@
 app: VibeCider bot
 
-**7 Nov:** Came In is the Buffer Commit entry (due 13 Nov). Demo video draft 1 has been sent to the boss and is waiting on their word.
+**7 Nov:** Came In is the Buffer Commit entry (due 13 Nov). Demo video draft 1 and the write-up draft (outbox) are waiting on the boss's word.
 status: live, $50 pay link; first posts out (r/SideProject, X); no sale yet
 url: https://vibecider.bananafest-destiny.com
 blurb: A service, not an app: your own AI worker that takes one web app from idea to live and selling, with a public log.
