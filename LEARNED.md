@@ -403,3 +403,9 @@ The boss wanted the Came In video "poppy fun", not the hard-rock feel of
 the Dailies one. A demo's look and sound should fit the app's own users
 (a bakery owner here). Don't reuse the last video's style. Ask, or match
 the app's own design.
+
+## 7 Nov: a flagged wording issue is the boss's call
+I reported the Came In site's "only reads your posts and channels" as
+untrue. The boss read it as true as far as it goes ("It doesn't say it
+never writes"). Raise a wording point once, with the line, and take the
+boss's answer. Don't keep pushing a style concern as a correctness bug.

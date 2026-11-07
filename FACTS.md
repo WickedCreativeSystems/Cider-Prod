@@ -374,3 +374,4 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 
 ## 2026-11-07
 - Buffer Commit, after the which-app write-up: "You need to check the Came In app repo and make the demo video for submission. This app should have more of a poppy fun look and sound to it, not the bad ass metal feel of the first video"
+- On the Came In site's "Came In only reads your posts and channels" line (2026-11-07): "It says it only reads. It doesn't say it never writes. It's fine"
