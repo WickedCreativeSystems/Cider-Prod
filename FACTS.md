@@ -376,3 +376,4 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 - Buffer Commit, after the which-app write-up: "You need to check the Came In app repo and make the demo video for submission. This app should have more of a poppy fun look and sound to it, not the bad ass metal feel of the first video"
 - On the Came In site's "Came In only reads your posts and channels" line (2026-11-07): "It says it only reads. It doesn't say it never writes. It's fine"
 - On the Came In demo video draft (1:22, poppy cut) (2026-11-07): "Love the video"
+- Where the Came In demo video is hosted for the Commit form (2026-11-07, answered by picking an option): "You upload it to YouTube". The boss uploads it and pastes the link.
