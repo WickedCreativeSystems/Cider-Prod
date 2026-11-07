@@ -1,0 +1,21 @@
+{
+  "name": "camein-video",
+  "private": true,
+  "type": "module",
+  "description": "The Buffer Commit demo video for Came In, edited in Remotion. Footage, renders and node_modules are not in git.",
+  "scripts": {
+    "music": "node gen-music.mjs public/music.wav",
+    "still": "remotion still src/index.jsx Demo",
+    "render": "node gen-music.mjs public/music.wav && remotion render src/index.jsx Demo out/camein-demo.mp4 --concurrency=6 --timeout=90000"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.536",
+    "@remotion/cli": "4.0.536",
+    "@remotion/google-fonts": "4.0.536",
+    "@remotion/renderer": "4.0.536",
+    "@remotion/transitions": "4.0.536",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.536"
+  }
+}

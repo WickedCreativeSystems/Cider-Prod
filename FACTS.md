@@ -371,3 +371,6 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 - On the Buffer Commit demo video (2026-11-02): "I want the demo video to be cool as shit though. I want a lot of quick cuts or something. Make it seem fun and fucking badass. Not just the usual shit. Transitions, zoom outs,m. Whatever you think"
 - On the first cut of the Commit demo video, after it was sent (2026-11-02): "can you show that to docent and tell it that I want it to up its game on the social media"
 - On who the Buffer Commit entrant is (2026-11-05): "As far as buffer is concerned I could tell it all of this but it will consider me the team not the ai"
+
+## 2026-11-07
+- Buffer Commit, after the which-app write-up: "You need to check the Came In app repo and make the demo video for submission. This app should have more of a poppy fun look and sound to it, not the bad ass metal feel of the first video"

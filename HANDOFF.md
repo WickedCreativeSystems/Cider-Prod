@@ -224,3 +224,8 @@ Next 0 is done: the delete-me drafts were already gone; docent has been
 told. The Dailies Buffer token was refreshed and kept in KV. Pass the KV
 namespace id directly (see actual/2026-11-07.md). Still waiting on the
 boss's which-app decision. Next is in plan/2026-11-07.md.
+
+Later on 7 Nov: the boss chose Came In. Draft 1 of the demo video was
+built (demo/camein-video, a Remotion project; the media in public/ is
+gitignored, and the clips are also in the session scratchpad) and sent to
+the boss. Waiting on their word. Next is in plan/2026-11-07.md.

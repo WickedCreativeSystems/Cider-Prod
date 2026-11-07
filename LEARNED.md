@@ -397,3 +397,9 @@ told to use SwiftShader. Record the flows that cost script runs first
 in the UTC day, and give the browser WebGL before blaming the app. A
 browser without WebGL also breaks the clip flow for a real user; a
 fallback layout would keep it working.
+
+## 7 Nov: each app gets its own feel
+The boss wanted the Came In video "poppy fun", not the hard-rock feel of
+the Dailies one. A demo's look and sound should fit the app's own users
+(a bakery owner here). Don't reuse the last video's style. Ask, or match
+the app's own design.
