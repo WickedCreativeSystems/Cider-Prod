@@ -1,6 +1,6 @@
 app: VibeCider bot
 
-**3 Nov 07:00 UTC:** stopped clean for the OptiServer hardware work. Resume from HANDOFF.md "Shutdown for OptiServer hardware".
+**7 Nov:** back after the OptiServer stop. Waiting on the boss: which app goes in for Buffer Commit (due 13 Nov).
 status: live, $50 pay link; first posts out (r/SideProject, X); no sale yet
 url: https://vibecider.bananafest-destiny.com
 blurb: A service, not an app: your own AI worker that takes one web app from idea to live and selling, with a public log.
@@ -24,4 +24,4 @@ url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-02
+updated: 2026-11-07

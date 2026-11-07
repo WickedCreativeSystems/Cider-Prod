@@ -218,3 +218,9 @@ fix is a no-sign-in example path, but only with the boss's go-ahead. The
 scratchpad was rebuilt: pwt/ (playwright-core), cft/ (Chrome 157),
 pwt/look.mjs, lookin.mjs, ring.mjs and run.mjs (blocks Buffer writes). No KV
 test session is live.
+
+## 7 Nov
+Next 0 is done: the delete-me drafts were already gone; docent has been
+told. The Dailies Buffer token was refreshed and kept in KV. Pass the KV
+namespace id directly (see actual/2026-11-07.md). Still waiting on the
+boss's which-app decision. Next is in plan/2026-11-07.md.
