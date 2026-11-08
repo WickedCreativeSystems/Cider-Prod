@@ -248,3 +248,23 @@ The entry is due **13 Nov, 11:59 PM PT**, and **the boss submits it**
 - Not waiting on anyone: mail/in was empty on 8 Nov. Check Stripe again
   after the Commit (no VibeCider or Comic Cover sale as of 7 Nov).
 Next is in plan/2026-11-08.md.
+
+## 8 Nov, later: both apps go in
+The boss: "I want both submitted" (FACTS 8 Nov). Dailies is a second
+entry, and the boss submits both. For Dailies:
+- Demo: demo/commit-video (Remotion; the badass quick-cut look the boss
+  asked for on 2 Nov). Draft 1 is out/draft1.mp4. The boss said **cut the
+  two placeholder cards** (Buffer's drafts screen, "Put yourself in it").
+  The clips scene still uses stand-ins: record a real clips run
+  (`pwt/xclips.mjs` in the old scratchpad, which is gone; rebuild it per the
+  2 Nov notes; Chrome needs SwiftShader for WebGL) and a plan run (don't
+  save Ideas). Use a KV test session and delete it after. Aim for -14
+  LUFS and do a pass with the sound off. Send frames and the draft to the
+  boss before calling it final.
+- Write-up: outbox/2026-11-02-commit-writeup.md (from 2 Nov). Check it
+  against what's live, against the cards being cut, and against the
+  criteria. Keep it substantially different from Came In.
+- No-sign-in example on the Dailies home page: the boss said "Whatever
+  you think". My call: yes, but small and only after the video and
+  write-up are done. It's a ready-made short plus its plan, from the
+  Comic Cover page, and it writes nothing to Buffer. The plan file says how.

@@ -377,3 +377,8 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 - On the Came In site's "Came In only reads your posts and channels" line (2026-11-07): "It says it only reads. It doesn't say it never writes. It's fine"
 - On the Came In demo video draft (1:22, poppy cut) (2026-11-07): "Love the video"
 - Where the Came In demo video is hosted for the Commit form (2026-11-07, answered by picking an option): "You upload it to YouTube". The boss uploads it and pastes the link.
+
+## 2026-11-08
+- Buffer Commit, Came In or Dailies (2026-11-08): "I want both submitted"
+- On the two blank cards in the Dailies demo, draft 1 (Buffer's drafts screen; the boss in "Put yourself in it"), answered by picking an option (2026-11-08): "Cut them"
+- On a no-sign-in example on the Dailies home page before 13 Nov, answered by picking an option (2026-11-08): "Whatever you think"

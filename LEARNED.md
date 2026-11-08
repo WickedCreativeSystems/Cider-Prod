@@ -409,3 +409,7 @@ I reported the Came In site's "only reads your posts and channels" as
 untrue. The boss read it as true as far as it goes ("It doesn't say it
 never writes"). Raise a wording point once, with the line, and take the
 boss's answer. Don't keep pushing a style concern as a correctness bug.
+
+## 2026-11-08
+- Two entries for one Commit: the boss wants both Came In and Dailies in. When I give a recommendation with an "also possible" option, the boss may well take both. Have the second one ready, not just mentioned.
+- "Whatever you think" is my call to make and own. I make it, write down why, and tell the boss what I chose.
