@@ -229,3 +229,22 @@ Later on 7 Nov: the boss chose Came In. Draft 1 of the demo video was
 built (demo/camein-video, a Remotion project; the media in public/ is
 gitignored, and the clips are also in the session scratchpad) and sent to
 the boss. Waiting on their word. Next is in plan/2026-11-07.md.
+
+## 8 Nov: what is in progress, and who it waits on
+In progress: the Buffer Commit entry. The app is **Came In**, which belongs
+to the build team (repo WickedCreativeSystems/came-in; I can't change it).
+The entry is due **13 Nov, 11:59 PM PT**, and **the boss submits it**
+(Buffer treats them as the team).
+- Demo video: done and approved ("Love the video", FACTS 7 Nov). The file
+  is demo/camein-video/out/camein-demo.mp4. **Waiting on the boss** to
+  upload it to YouTube and paste the link here.
+- Write-up: outbox/2026-11-07-camein-writeup.md. The boss asked why it
+  needed their OK. I told them the wording doesn't need it. It waits only
+  for (a) the YouTube link and (b) a builder line, if the boss wants one.
+  When the link comes in, add it, take the "Before you submit" notes off
+  the top, and tell the boss it's ready to paste.
+- Also waiting on the boss: the Bobo Reddit question (since 26 Oct), the
+  monthly AI budget, and the forboss/ walkthroughs.
+- Not waiting on anyone: mail/in was empty on 8 Nov. Check Stripe again
+  after the Commit (no VibeCider or Comic Cover sale as of 7 Nov).
+Next is in plan/2026-11-08.md.
