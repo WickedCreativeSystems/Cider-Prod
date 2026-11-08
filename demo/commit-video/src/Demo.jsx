@@ -119,16 +119,15 @@ const BufferSide = () => {
   const f = useCurrentFrame();
   return <AbsoluteFill>
     <Backdrop start={1200} />
-    <Sequence durationInFrames={120}><Slate title="Buffer: the two drafts" note="The boss's screen recording: Buffer's drafts with the Dailies video in TikTok and YouTube, signed in. A phone recording is fine." dur="4–6 s used" /></Sequence>
-    <Sequence from={120} durationInFrames={120}>
-      <Mini src="shorts/dailies.mp4" h={860} from={1} style={{ left: 1180, top: 110, transform: `perspective(2000px) rotateY(-16deg) scale(${1 + 0.06 * Math.exp(-(f - 120) / 4)})` }} glow={1.2} />
-      <div style={{ position: "absolute", left: 120, top: 200, fontFamily: HEAVY, fontSize: 70, color: CREAM, textTransform: "uppercase" }}>through the <span style={{ color: GOLD }}>buffer api</span></div>
-      <Typed t={"Sign in with Buffer   (OAuth)"} at={8} x={124} y={330} size={34} color={CREAM} />
-      <Typed t={"channels(organizationId)"} at={23} x={124} y={400} size={34} />
-      <Typed t={"createPost(\n  channelId, video,\n  mode: addToQueue,\n  saveToDraft: true )"} at={38} x={124} y={470} size={34} cps={3} />
-      <Typed t={"tiktok ✓   youtube ✓"} at={83} x={124} y={720} size={40} color={CREAM} cps={2} />
-    </Sequence>
-    <Flash at={[0, 120]} max={0.4} len={7} />
+    <Mini src="shorts/dailies.mp4" h={860} from={1} style={{ left: 1180, top: 110, transform: `perspective(2000px) rotateY(${-16 + f * 0.05}deg) scale(${1 + 0.06 * Math.exp(-f / 4)})` }} glow={1.2} />
+    <div style={{ position: "absolute", left: 120, top: 170, fontFamily: HEAVY, fontSize: 70, color: CREAM, textTransform: "uppercase" }}>through the <span style={{ color: GOLD }}>buffer api</span></div>
+    <Typed t={"Sign in with Buffer   (OAuth)"} at={12} x={124} y={290} size={34} color={CREAM} />
+    <Typed t={"channels(organizationId)"} at={36} x={124} y={355} size={34} />
+    <Typed t={"createPost(\n  channelId, video,\n  mode: addToQueue,\n  saveToDraft: true )"} at={60} x={124} y={420} size={34} cps={3} />
+    <Typed t={"tiktok ✓   youtube ✓"} at={112} x={124} y={640} size={40} color={CREAM} cps={2} />
+    <Typed t={"createIdea( plan )   → Ideas"} at={150} x={124} y={730} size={34} />
+    <Typed t={"createPostTemplate( winner ) → Keep this"} at={186} x={124} y={795} size={34} />
+    <Flash at={[0]} max={0.4} len={7} />
   </AbsoluteFill>;
 };
 
@@ -205,20 +204,17 @@ const Plan = () => {
     <Backdrop start={2400} />
     <Build words={[{ t: "plan", at: 0 }, { br: true }, { t: "a month.", at: 8, gold: true }]} x={130} y={360} size={150} align="left" lineHeight={0.95} />
     <Typed t={"3 a week · 4 weeks\n→ Buffer Ideas"} at={30} x={136} y={560} size={36} />
-    <div style={{ position: "absolute", left: 900, top: 170, display: "grid", gridTemplateColumns: "repeat(7, 116px)", gap: 14, transform: `perspective(1600px) rotateY(-14deg) rotateX(6deg)` }}>
+    <div style={{ position: "absolute", left: 900, top: 170, display: "grid", gridTemplateColumns: "repeat(7, 116px)", gap: 14, transform: `perspective(1600px) rotateY(${kf(f, [[0, -14], [240, -14], [262, -4, out], [360, -2, lin]])}deg) rotateX(6deg) scale(${kf(f, [[0, 1], [240, 1], [262, 1.12, punch], [360, 1.16, lin]])})`, transformOrigin: "60% 50%" }}>
       {days.map((d, i) => <div key={"h" + i} style={{ fontFamily: MONO, color: CREAM, opacity: 0.6, fontSize: 26, textAlign: "center" }}>{d}</div>)}
       {posts.flatMap((wk, w) => days.map((_, d) => { const idx = wk.indexOf(d), on = idx >= 0, a = 30 + (w * 3 + idx) * 8, k = f - a;
         return <div key={w + "-" + d} style={{ height: 116, borderRadius: 18, background: on && k >= 0 ? GOLD : "rgba(251,246,234,.06)", border: "2px solid rgba(251,246,234,.12)",
           transform: on && k >= 0 ? `scale(${1 + 0.35 * Math.exp(-k / 3)})` : "none", boxShadow: on && k >= 0 ? "0 0 30px rgba(242,194,48,.5)" : "none", display: "grid", placeItems: "center",
           fontFamily: HEAVY, fontSize: 40, color: INK }}>{on && k >= 0 ? (idx === 1 && w % 2 ? "Aa" : "▶") : ""}</div>; }))}
     </div>
-    <Slam items={[{ t: "write any day's video in one tap.", at: 150 }]} y={960} size={70} />
-    <Flash at={[0]} max={0.4} len={7} />
+    <Slam items={[{ t: "write any day's video in one tap.", at: 150 }, { t: "saved as buffer ideas.", at: 240, gold: true }]} y={960} size={70} />
+    <Flash at={[0, 240]} max={0.4} len={7} />
   </AbsoluteFill>;
 };
-
-// ---- 7: put yourself in it (the boss's recording) -----------------------------
-const You = () => <AbsoluteFill><Backdrop start={2640} /><Slate title="Put yourself in it" note="Optional: 20–30 s of the boss talking about a page, made into a short by Dailies. Left out if there is no recording." dur="4 s used" /></AbsoluteFill>;
 
 // ---- 8: links, stores, long videos ----------------------------------------------
 const Many = () => { const f = useCurrentFrame(); const z = f > 100 ? Math.pow(1 + (f - 100) / 5, 2) : 1;
@@ -275,7 +271,6 @@ export const Demo = () => <AbsoluteFill style={{ background: INK }}>
   <Scene k="store"><Store /></Scene>
   <Scene k="clips"><Clips /></Scene>
   <Scene k="plan"><Plan /></Scene>
-  <Scene k="you"><You /></Scene>
   <Scene k="many"><Many /></Scene>
   <Scene k="wall"><Wall /></Scene>
   <Scene k="end"><End /></Scene>

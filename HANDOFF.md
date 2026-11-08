@@ -268,3 +268,10 @@ entry, and the boss submits both. For Dailies:
   you think". My call: yes, but small and only after the video and
   write-up are done. It's a ready-made short plus its plan, from the
   Comic Cover page, and it writes nothing to Buffer. The plan file says how.
+
+## 8 Nov, late: Dailies demo draft 2 sent
+Draft 2 is at demo/commit-video/out/dailies-demo-draft2.mp4 (1080p,
+-14 LUFS; a 720p copy and sheet2.png sit beside it). It went to the boss
+about 23:35 UTC, and **waiting on the boss** for their word. The cards are
+cut and the clips are real. The write-up has notes for the link and the
+builder line. The KV test session is deleted. Next is in plan/2026-11-08.md.
