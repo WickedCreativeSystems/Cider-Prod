@@ -23,6 +23,16 @@
 .feats .card{margin:0}
 .feats h3{margin-bottom:6px}
 .feats p{margin:0;font-size:15px;color:var(--muted)}
+.ex{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start;margin:12px 0 0}
+.ex .phone .screen{border-width:7px;border-radius:28px}
+.ex ol{margin:6px 0 12px;padding-left:22px}.ex ol li{margin:2px 0}
+.ex .cap{background:var(--soft);border-radius:8px;padding:10px 12px;font-size:15px;margin:6px 0 4px}
+.ex h3{margin:18px 0 4px}.ex h3:first-child{margin-top:0}
+.plan{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+.plan th,.plan td{text-align:left;padding:6px 8px;border-top:1px solid var(--line);vertical-align:top}
+.plan th{font-weight:600;color:var(--muted);border-top:0}
+.plan td:first-child{white-space:nowrap}
+@media (max-width:720px){.ex{grid-template-columns:1fr;gap:20px}.ex .phone{width:200px;margin:0 auto}.plan .nets{display:none}}
 </style>
 </head>
 <body>
@@ -33,7 +43,7 @@
   <div>
     <h1>Short videos for every day, drafted into Buffer.</h1>
     <p class="lede">Paste a link, a store or a long video. Dailies writes and renders vertical shorts in your browser, and puts them in your Buffer as drafts for you to check and send.</p>
-    <div class="actions"><a class="btn primary" href="/auth/start">Sign in with Buffer</a></div>
+    <div class="actions"><a class="btn primary" href="/auth/start">Sign in with Buffer</a><a class="btn" href="#example">See one made</a></div>
     <p class="note">Nothing posts by itself: every video and post lands in Buffer as a draft.</p>
   </div>
   <figure class="phone">
@@ -42,6 +52,42 @@
     <figcaption class="small muted">A real Dailies short, made from one link: <a href="https://vibecider.bananafest-destiny.com/comiccover">the Comic Cover page</a>.</figcaption>
   </figure>
 </section>
+
+<h2 id="example">What one link gave</h2>
+<p>No sign-in needed to see it. On 9 November we pasted <a href="https://vibecider.bananafest-destiny.com/comiccover/">the Comic Cover page</a> into Dailies, unedited, and this is what came back. Nothing below went to Buffer.</p>
+<div class="ex">
+  <figure class="phone">
+    <div class="screen"><video src="/home/example/short.mp4" poster="/home/example/short.jpg" controls muted playsinline preload="none"
+      aria-label="The short Dailies rendered from the Comic Cover page: a dog on a comic cover, each word lit as it's read"></video></div>
+    <figcaption class="small muted">Rendered in the browser, 23 seconds, 1080&times;1920. Shown here at 720p.</figcaption>
+  </figure>
+  <div>
+    <h3>The script it wrote</h3>
+    <p class="small muted">It wrote three, each on a different angle: free with no sign-up, print-size, and the $9 AI drawing. This is the first.</p>
+    <ol>
+      <li>Put anyone on a comic cover</li>
+      <li>Add a photo, name the series</li>
+      <li>Write the big line, then download</li>
+      <li>Free, no sign-up, photo stays on your device</li>
+      <li>Make yours at vibecider.bananafest-destiny.com</li>
+    </ol>
+    <div class="cap">Put anyone on a comic cover. Free, print-size, and no sign-up. Make one at vibecider.bananafest-destiny.com/comiccover/</div>
+    <p class="small muted">#ComicCover #FreeTool #NoSignup #GiftIdea: the caption and tags that go with the draft.</p>
+    <h3>The month it planned</h3>
+    <p class="small muted">Twelve dated posts over four weeks, for the networks connected in Buffer. Signed in, you tick the ones you want and they're saved as Buffer Ideas. The first six:</p>
+    <table class="plan">
+      <tr><th>Date</th><th>Angle</th><th>Hook</th><th class="nets">For</th></tr>
+      <tr><td>10 Nov</td><td>Put anyone on cover</td><td>Put anyone on their own comic cover.</td><td class="nets">Instagram, TikTok, YouTube</td></tr>
+      <tr><td>12 Nov</td><td>Free to start</td><td>Make a comic cover for free.</td><td class="nets">Instagram, TikTok, YouTube</td></tr>
+      <tr><td>14 Nov</td><td>Print-size download</td><td>Ready to print like a real comic.</td><td class="nets">Instagram, TikTok, YouTube</td></tr>
+      <tr><td>17 Nov</td><td>No sign-up needed</td><td>No account needed to get started.</td><td class="nets">Instagram, TikTok, YouTube</td></tr>
+      <tr><td>19 Nov</td><td>Photo stays local</td><td>Your photo never leaves your device.</td><td class="nets">Instagram, TikTok, YouTube</td></tr>
+      <tr><td>21 Nov</td><td>AI hero redraw</td><td>Want a full comic-hero redraw?</td><td class="nets">Instagram, TikTok, YouTube</td></tr>
+    </table>
+    <p class="small muted" style="margin-top:12px">Any planned post can be written into its own video. Signed in, each video goes to Buffer as a draft with its caption, for you to check and send.</p>
+    <div class="actions"><a class="btn primary" href="/auth/start">Make yours: sign in with Buffer</a></div>
+  </div>
+</div>
 
 <h2>What it makes</h2>
 <div class="feats">
