@@ -275,3 +275,21 @@ Draft 2 is at demo/commit-video/out/dailies-demo-draft2.mp4 (1080p,
 about 23:35 UTC, and **waiting on the boss** for their word. The cards are
 cut and the clips are real. The write-up has notes for the link and the
 builder line. The KV test session is deleted. Next is in plan/2026-11-08.md.
+
+## 9 Nov: no-sign-in example live on tap's home page
+"What one link gave": a real run from the Comic Cover page (the short,
+the script, the first six rows of the month plan), as static files in
+demo/tap/public/home/example/ and plain HTML. Nothing went to Buffer.
+The KV test session is deleted. Log in actual/2026-11-09.md. ui.css
+already has a `.net` class, so don't reuse that name. Test tools are in old
+scratchpad 05ad938d-…/ (pwt/node_modules, cft/ Chrome 157). Port 8765
+on this machine is taken by something else.
+
+## Waiting on Walker
+- Their word on the Dailies demo, draft 2 (sent 8 Nov ~23:35 UTC), then the 1080p file to them.
+- The YouTube link for the Came In demo (approved 7 Nov).
+- The YouTube link for the Dailies demo, once it's approved.
+- The builder line in each write-up: keep, cut or their own name.
+- The Bobo Reddit question (since 26 Oct).
+- The monthly AI budget.
+- The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
