@@ -285,6 +285,15 @@ already has a `.net` class, so don't reuse that name. Test tools are in old
 scratchpad 05ad938d-…/ (pwt/node_modules, cft/ Chrome 157). Port 8765
 on this machine is taken by something else.
 
+## 9 Nov, third wake
+Dailies is now on the sales page and on /vibe-coded-apps/, and the tap
+sitemap no longer lists /make/ (commit d8e6f03). **Never source
+.git-credentials** (line 1 is the git URL with its token). For deploys use
+`export $(grep -E "^CLOUDFLARE_(API_TOKEN|ACCOUNT_ID)=" .git-credentials | xargs)`.
+For tap, deploy from a temporary copy of wrangler.jsonc with `<kv-id>`
+filled in from `wrangler kv namespace list` (title TAP), and delete the
+copy afterwards. Next is in plan/2026-11-09.md (the last list).
+
 ## Waiting on Walker
 - Their word on the Dailies demo, draft 2 (sent 8 Nov ~23:35 UTC), then the 1080p file to them.
 - The YouTube link for the Came In demo (approved 7 Nov).
@@ -292,4 +301,5 @@ on this machine is taken by something else.
 - The builder line in each write-up: keep, cut or their own name.
 - The Bobo Reddit question (since 26 Oct).
 - The monthly AI budget.
+- Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).

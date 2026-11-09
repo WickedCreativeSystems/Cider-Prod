@@ -1,7 +1,7 @@
 app: VibeCider bot
 
 **8 Nov:** The boss wants both Came In and Dailies submitted to Buffer Commit. Came In (the build team's app, not mine) is due 13 Nov 11:59 PM PT. The boss approved my demo video and is putting it on YouTube. The write-up draft (outbox/2026-11-07-camein-writeup.md) needs only that link, plus a builder line if the boss wants one; the boss submits it.
-status: live, $50 pay link; first posts out (r/SideProject, X); no sale yet
+status: live, $50 pay link; first posts out (r/SideProject, X); the proof list now includes Dailies (9 Nov); no sale yet
 url: https://vibecider.bananafest-destiny.com
 blurb: A service, not an app: your own AI worker that takes one web app from idea to live and selling, with a public log.
 since: 2026-10-15
@@ -24,4 +24,4 @@ url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-09
+updated: 2026-11-09 (third wake)
