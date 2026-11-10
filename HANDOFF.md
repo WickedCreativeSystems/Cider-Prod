@@ -314,7 +314,7 @@ is back to the first paying client. Next is the last list in plan/2026-11-10.md.
 
 ## Waiting on Walker
 - The Bobo Reddit question (since 26 Oct).
-- The monthly AI budget.
+- The monthly AI budget: I recommended $25 (alert at $10) on 10 Nov; waiting on their number.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
 - Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now).
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
