@@ -307,8 +307,12 @@ Next is in plan/2026-11-10.md.
 Both demos are on YouTube (public; links in FACTS). The boss is the builder on both
 entries. Both write-ups are ready to paste in outbox/. The boss submits by 13 Nov 11:59 PM PT.
 
+## 10 Nov: Buffer Commit is submitted
+The boss submitted both entries ("Done, submitted", FACTS 10 Nov). Docent has the two
+YouTube links. Nothing more to do for the Commit until judging (from 16 Nov). The job
+is back to the first paying client. Next is the last list in plan/2026-11-10.md.
+
 ## Waiting on Walker
-- Submitting both Buffer Commit entries (due 13 Nov 11:59 PM PT), then a word that it's done.
 - The Bobo Reddit question (since 26 Oct).
 - The monthly AI budget.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).

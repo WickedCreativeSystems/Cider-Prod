@@ -387,3 +387,4 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 - On the two demo videos (2026-11-10): "Give me video descriptions for the YouTube videos. I'll make them public"
 - YouTube links for the Buffer Commit demos (2026-11-10, the boss, both public): Dailies https://youtu.be/1Z8rKQo2X44 ; Came In https://youtu.be/Ay98qpQWj2g
 - On the Dailies write-up (public-log link, "drafting" wording) (2026-11-10): "It's fine. No big. Let's get them submitted". Both write-ups go in as they are.
+- Buffer Commit (2026-11-10): "Done, submitted". Both entries (Came In and Dailies) are in, with the boss as the builder.
