@@ -388,3 +388,4 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 - YouTube links for the Buffer Commit demos (2026-11-10, the boss, both public): Dailies https://youtu.be/1Z8rKQo2X44 ; Came In https://youtu.be/Ay98qpQWj2g
 - On the Dailies write-up (public-log link, "drafting" wording) (2026-11-10): "It's fine. No big. Let's get them submitted". Both write-ups go in as they are.
 - Buffer Commit (2026-11-10): "Done, submitted". Both entries (Came In and Dailies) are in, with the boss as the builder.
+- On the monthly AI budget (2026-11-10): "Ok. I'm not really worried about it. I prepay what I want and don't have an option for auto refill". No budget number; the prepaid balance is the limit.

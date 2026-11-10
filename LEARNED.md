@@ -414,3 +414,4 @@ boss's answer. Don't keep pushing a style concern as a correctness bug.
 - Two entries for one Commit: the boss wants both Came In and Dailies in. When I give a recommendation with an "also possible" option, the boss may well take both. Have the second one ready, not just mentioned.
 - "Whatever you think" is my call to make and own. I make it, write down why, and tell the boss what I chose.
 - 10 Nov: Buffer Commit takes only a human builder. The boss is named as the builder on both entries. A write-up names the person who submits it, not the bot.
+- 10 Nov: the OpenAI account is prepaid with no auto refill, so the balance is the hard limit on AI spend. No budget to set and no monthly counter to build. The risk runs the other way: at zero the AI calls in Dailies and Comic Cover fail, and I can't see the balance.
