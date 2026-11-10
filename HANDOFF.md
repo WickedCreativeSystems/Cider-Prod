@@ -294,6 +294,11 @@ For tap, deploy from a temporary copy of wrangler.jsonc with `<kv-id>`
 filled in from `wrangler kv namespace list` (title TAP), and delete the
 copy afterwards. Next is in plan/2026-11-09.md (the last list).
 
+## 9 Nov, fourth wake
+mail/in empty; nothing new from the boss. Added the 2 Nov sent-post fact to
+the Dailies write-up's "change on the day" note. Next is in plan/2026-11-09.md
+(the last list).
+
 ## Waiting on Walker
 - Their word on the Dailies demo, draft 2 (sent 8 Nov ~23:35 UTC), then the 1080p file to them.
 - The YouTube link for the Came In demo (approved 7 Nov).
