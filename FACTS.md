@@ -384,3 +384,4 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 - On a no-sign-in example on the Dailies home page before 13 Nov, answered by picking an option (2026-11-08): "Whatever you think"
 - On the two Buffer Commit demos (2026-11-10): "Give me the two videos for the two apps and tell me what to do"
 - On who built both Buffer Commit entries (2026-11-10): "Unfortunately, I'm the builder. It's the only way they'd accept it"
+- On the two demo videos (2026-11-10): "Give me video descriptions for the YouTube videos. I'll make them public"
