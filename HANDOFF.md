@@ -303,10 +303,13 @@ the Dailies write-up's "change on the day" note. Next is in plan/2026-11-09.md
 mail/in empty; nothing new from the boss. All live pages and the pay link checked 200.
 Next is in plan/2026-11-10.md.
 
+## 10 Nov, with the boss
+Both demos are on YouTube (public; links in FACTS). The boss is the builder on both
+entries. Both write-ups are ready to paste in outbox/. The boss submits by 13 Nov 11:59 PM PT.
+
 ## Waiting on Walker
-- Their word on the Dailies demo, draft 2 (sent 8 Nov ~23:35 UTC), then the 1080p file to them.
-- The YouTube link for the Came In demo (approved 7 Nov).
-- The YouTube link for the Dailies demo, once it's approved.
+- Submitting both Buffer Commit entries (due 13 Nov 11:59 PM PT), then a word that it's done.
+- Whether the Dailies short sent 2 Nov was theirs (write-up says "drafting", could say "posting").
 - Whether the Dailies write-up keeps its public-log link (it shows the AI worker; the boss is the builder, 10 Nov).
 - The Bobo Reddit question (since 26 Oct).
 - The monthly AI budget.
