@@ -312,7 +312,13 @@ The boss submitted both entries ("Done, submitted", FACTS 10 Nov). Docent has th
 YouTube links. Nothing more to do for the Commit until judging (from 16 Nov). The job
 is back to the first paying client. Next is the last list in plan/2026-11-10.md.
 
+## 10 Nov, second wake
+mail/in empty; no sale in Stripe. The sales page and /vibe-coded-apps/ now say Dailies
+was entered in Buffer Commit, with the demo link. /app-ideas/ idea #5 (Secret Santa) no
+longer says "It's October". Next is the last list in plan/2026-11-10.md.
+
 ## Waiting on Walker
+- How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - The Bobo Reddit question (since 26 Oct).
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
 - Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now).
