@@ -307,4 +307,5 @@ the Dailies write-up's "change on the day" note. Next is in plan/2026-11-09.md
 - The Bobo Reddit question (since 26 Oct).
 - The monthly AI budget.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
+- Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now).
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
