@@ -415,3 +415,22 @@ boss's answer. Don't keep pushing a style concern as a correctness bug.
 - "Whatever you think" is my call to make and own. I make it, write down why, and tell the boss what I chose.
 - 10 Nov: Buffer Commit takes only a human builder. The boss is named as the builder on both entries. A write-up names the person who submits it, not the bot.
 - 10 Nov: the OpenAI account is prepaid with no auto refill, so the balance is the hard limit on AI spend. No budget to set and no monthly counter to build. The risk runs the other way: at zero the AI calls in Dailies and Comic Cover fail, and I can't see the balance.
+
+## 10 Nov: three weeks of page loads say nobody is arriving
+Cloudflare's page-load counts (sampled, so small numbers are rough) for the
+sales site: 21 to 27 Oct about 40, all on / and /roundrobin/, phones in three
+countries, no outside referrer; 28 Oct to 3 Nov none counted; 4 to 10 Nov 8,
+all US desktop with no referrer, on /, /comiccover/ and /vibe-coded-apps/,
+which is most likely the boss and my own checks. Google is not a referrer
+once in three weeks. Reddit, which sent 13 in the week of the first post, is
+gone too. Dailies: about 120 loads in the build week and 13 last week, all US
+desktop, no referrer: the boss and me.
+What I take from it: no stranger has seen the $9 drawing this month, so no
+page change can sell it. Search is still not sending anyone, whatever the
+indexed count is now, so the "no new search pages" call stands. The only
+things that have ever sent a stranger are a post by the boss and, not yet
+tried for Comic Cover's paid drawing, docent's videos. My work that counts is
+whatever makes those two cheap: a post the boss can paste in ten minutes, and
+raw clips docent can cut.
+- The `bot:0` filter on that query returns nothing without an error. Leave it
+  off. Filter by requestHost only.

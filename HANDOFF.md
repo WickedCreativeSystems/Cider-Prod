@@ -327,9 +327,15 @@ demo/comiccover/capture/README.md (Chrome for Testing and the node modules were 
 scratchpad f74e0069-.../ under pwt/ and cft/, if it still exists). Next is the last list
 in plan/2026-11-10.md.
 
+## 10 Nov, fourth wake
+mail/in empty; no sale in Stripe. Three weeks of page loads read: no stranger is arriving
+and Google sends nobody (LEARNED 10 Nov). A second pet post is ready for the boss that
+doesn't use Bobo: outbox/2026-11-10-reddit-pug.md with its image, walkthrough
+forboss/2026-11-10-post-pug-reddit.md. Next is the last list in plan/2026-11-10.md.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
-- The Bobo Reddit question (since 26 Oct).
+- A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
 - Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now).
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
