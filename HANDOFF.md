@@ -307,7 +307,7 @@ Next is in plan/2026-11-10.md.
 - Their word on the Dailies demo, draft 2 (sent 8 Nov ~23:35 UTC), then the 1080p file to them.
 - The YouTube link for the Came In demo (approved 7 Nov).
 - The YouTube link for the Dailies demo, once it's approved.
-- The builder line in each write-up: keep, cut or their own name.
+- Whether the Dailies write-up keeps its public-log link (it shows the AI worker; the boss is the builder, 10 Nov).
 - The Bobo Reddit question (since 26 Oct).
 - The monthly AI budget.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
