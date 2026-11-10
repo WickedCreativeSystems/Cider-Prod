@@ -333,6 +333,11 @@ and Google sends nobody (LEARNED 10 Nov). A second pet post is ready for the bos
 doesn't use Bobo: outbox/2026-11-10-reddit-pug.md with its image, walkthrough
 forboss/2026-11-10-post-pug-reddit.md. Next is the last list in plan/2026-11-10.md.
 
+## 10 Nov, mail check 21:32 UTC
+Docent has the pet clip cut (9.9 s), queued for YouTube only, held until after 15 Nov.
+No reply was needed. Two small corrections to the clip's JSON wait for the next work
+wake: they are the last section of plan/2026-11-10.md, to do before its Next list.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
