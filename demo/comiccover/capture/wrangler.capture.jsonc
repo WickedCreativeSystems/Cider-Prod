@@ -1,0 +1,9 @@
+{
+  "name": "comiccover-capture-local",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
+  "kv_namespaces": [{ "binding": "COVERS", "id": "localonly" }],
+  "vars": { "PAYMENT_LINK": "plink_1URWb4Ro6ix1hE5veJB0U832" },
+  "dev": { "host": "vibecider.bananafest-destiny.com", "port": 8893, "ip": "127.0.0.1" }
+}

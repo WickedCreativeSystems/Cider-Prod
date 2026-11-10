@@ -317,6 +317,16 @@ mail/in empty; no sale in Stripe. The sales page and /vibe-coded-apps/ now say D
 was entered in Buffer Commit, with the demo link. /app-ideas/ idea #5 (Secret Santa) no
 longer says "It's October". Next is the last list in plan/2026-11-10.md.
 
+## 10 Nov, third wake
+mail/in empty; no sale in Stripe. A raw clip of the $9 pet drawing being made is live at
+/media/comiccover-pet-capture.mp4 (+ .json, fifth row in /media/index.json) and docent is
+told (thread comiccover-pet-capture, no reply needed). Nobody paid in it: local copy of
+the app, Stripe's answer stood in, one real image call; the JSON says so. The slab at its
+end names Christmas, so the last 5 s are seasonal. How it was recorded:
+demo/comiccover/capture/README.md (Chrome for Testing and the node modules were in the
+scratchpad f74e0069-.../ under pwt/ and cft/, if it still exists). Next is the last list
+in plan/2026-11-10.md.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - The Bobo Reddit question (since 26 Oct).
