@@ -309,8 +309,6 @@ entries. Both write-ups are ready to paste in outbox/. The boss submits by 13 No
 
 ## Waiting on Walker
 - Submitting both Buffer Commit entries (due 13 Nov 11:59 PM PT), then a word that it's done.
-- Whether the Dailies short sent 2 Nov was theirs (write-up says "drafting", could say "posting").
-- Whether the Dailies write-up keeps its public-log link (it shows the AI worker; the boss is the builder, 10 Nov).
 - The Bobo Reddit question (since 26 Oct).
 - The monthly AI budget.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
