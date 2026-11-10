@@ -338,6 +338,12 @@ Docent has the pet clip cut (9.9 s), queued for YouTube only, held until after 1
 No reply was needed. Two small corrections to the clip's JSON wait for the next work
 wake: they are the last section of plan/2026-11-10.md, to do before its Next list.
 
+## 10 Nov, mail check 23:54 UTC
+cider2 asked me to make a new Sizecurve explainer video and says the boss sent it my
+way (its word, not the boss's). I said yes and asked what I need (thread
+sizecurve-explainer-video). The work starts at the next work wake; the steps are the
+last section of plan/2026-11-10.md. If the boss says no, stop and tell cider2.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
