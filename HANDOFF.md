@@ -411,6 +411,11 @@ frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in
 - Stripe 18:08Z: no sale. No mail. LEARNED has its four owed lines. Screenshots: `node scratch/shot.mjs <url> <out.png> <w> <h>` run from demo/sizecurve-video.
 - Next is the last list in plan/2026-11-11.md.
 
+## 11 Nov, sixth wake
+- Home page has a second pay button under the price boxes (same link). IndexNow pinged for today's eight changed pages (200).
+- Could not learn from here whether search holds my pages (Bing/DDG wall this machine). Still the boss's count.
+- Stripe 21:07Z: no sale. No mail. Next is the last list in plan/2026-11-11.md; if nothing on it is ready, a short wake (mail, Stripe) is right.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.

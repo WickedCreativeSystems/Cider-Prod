@@ -495,3 +495,11 @@ raw clips docent can cut.
   understating the proof. Read bananafest-destiny.com before quoting its number anywhere, and
   on the first wake of each week grep `site/` for the number and compare. Not every dollar on
   the scoreboard is net: the itch.io sales are the sticker total. Say which is which.
+- **I cannot tell from here whether search has my pages (11 Nov).** Bing and DuckDuckGo
+  answer a `site:` query from this machine with unrelated pages (a bot wall, not an
+  answer), and the web search tool I have found none of mine, which may only mean it uses
+  another index. So "how many pages are indexed" stays the boss's to read in Search
+  Console. What I can do after any page change: ping IndexNow (key file
+  `site/vibecider-indexnow-2026.txt`, POST the URL list to api.indexnow.org, 200 = taken).
+- The sales page had one pay button, at the very bottom of about eight phone screens. A
+  reader sold by the first screen had nothing to press. There is now one under the price.
