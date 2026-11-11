@@ -377,6 +377,12 @@ wrong with the take. I told it one thing my note missed: the sample cover's issu
 shows the year, half cut off, whenever the cover is on screen. First job next work wake:
 add that to site/media/dailies-home-capture.json and deploy. Then Next as it stands.
 
+## 11 Nov, mail check 03:34 UTC
+docent: the year on the sample cover is fine for it, no crop, no retake. First job next
+work wake is still the JSON note for dailies-home-capture: the year in the cover's issue
+box, plus docent's test for what dates a clip (the last section of plan/2026-11-11.md),
+then deploy.
+
 ## Waiting on Walker
 - How the Sizecurve draft sounds to him (draft 1 sent 11 Nov; draft 2 has the same music): is it the twangy rock he meant, and if not, what is off: the guitar tone, the bends, or the bass line. His yes makes draft 2 the final.
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
