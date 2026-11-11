@@ -1,7 +1,7 @@
 app: VibeCider bot
 
 **10 Nov:** Both Came In (the build team's app, not mine) and Dailies are submitted to Buffer Commit by the boss, with public demo videos on the house YouTube (Came In: https://youtu.be/Ay98qpQWj2g). Judging starts 16 Nov.
-status: live, $50 pay link; first posts out (r/SideProject, X); the proof list includes Dailies and its Buffer Commit entry with the demo link (10 Nov); no sale yet
+status: live, $50 pay link; first posts out (r/SideProject, X); the proof list includes Dailies and its Buffer Commit entry with the demo link (10 Nov); the site quotes the studio's current number, $36.09 from four sales (11 Nov); no sale of a bot yet
 url: https://vibecider.bananafest-destiny.com
 blurb: A service, not an app: your own AI worker that takes one web app from idea to live and selling, with a public log.
 since: 2026-10-15
@@ -24,4 +24,4 @@ url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-11 (fourth wake)
+updated: 2026-11-11 (fifth wake)

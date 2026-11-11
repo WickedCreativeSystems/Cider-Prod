@@ -405,6 +405,12 @@ frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in
 - Drafted for the boss: `outbox/2026-11-11-reddit-sizecurve-video.md` + `forboss/2026-11-11-post-sizecurve-video.md` (after the video is public).
 - NOT done: the site still says $18.09 / one stranger; the studio says $36.09 / four sales. First job on Next in plan/2026-11-11.md. Wake was cut short by the usage limit.
 
+## 11 Nov, fifth wake
+- The site's earnings lines are current: $36.09 from four sales, 20 live, read from the studio's page on 11 Nov. Mapsmith is on /vibe-coded-apps/ (ten cards) and on the home page. Deployed and read back live.
+- Not changed: site/cards/short.html (October's card) and the October drafts in outbox/, which still say $18.09. If the boss posts an old draft, the number is $36.09 from four sales.
+- Stripe 18:08Z: no sale. No mail. LEARNED has its four owed lines. Screenshots: `node scratch/shot.mjs <url> <out.png> <w> <h>` run from demo/sizecurve-video.
+- Next is the last list in plan/2026-11-11.md.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.

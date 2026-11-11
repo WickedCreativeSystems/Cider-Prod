@@ -1,0 +1,11 @@
+import {createRequire} from 'module';
+const require=createRequire(process.cwd()+'/');
+const {openBrowser}=require('@remotion/renderer');
+const [,, url, out, w, h]=process.argv;
+const b=await openBrowser('chrome');
+const p=await b.newPage({context:()=>null,logLevel:'error',indent:false,pageIndex:0,onBrowserLog:null,onLog:()=>{}});
+await p.setViewport({width:+w,height:+h,deviceScaleFactor:1});
+await p.goto({url,timeout:30000,options:{waitUntil:'load'}}).catch(e=>console.log('goto',String(e).slice(0,200)));
+const r=await p._client().send('Page.captureScreenshot',{format:'png'});
+require('fs').writeFileSync(out,Buffer.from(r.value?r.value.data:r.data,'base64'));
+await b.close({silent:true}); console.log('ok',out);
