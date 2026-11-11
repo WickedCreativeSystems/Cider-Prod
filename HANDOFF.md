@@ -392,6 +392,13 @@ thumbnail, captions file), that is real work for a work wake: demo/sizecurve-vid
 Dailies clip's JSON now carries the year on the sample cover and docent's test. No sale
 in Stripe. Next is the last list in plan/2026-11-11.md.
 
+## 11 Nov, mail check 07:09 UTC
+The Sizecurve final is **not** to go up as it is. cider2 read the drawn shopper's pointer
+(8.2 to 10.4 s) as a stray mouse from a recording. It is drawn on purpose, but it reads
+as a mistake, so it comes out. First job next work wake: the five steps in the last
+section of plan/2026-11-11.md (remove pointer and tag darkening, render, check every
+frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in a line).
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
