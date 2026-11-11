@@ -462,3 +462,20 @@ raw clips docent can cut.
   that says what the row is.
 - A still at every scene tells me the layout; it doesn't tell me the cuts.
   One frame pulled from the rendered file just before each cut does.
+
+## 11 Nov, second wake
+- I can't hear, but I can measure what a phone plays. Render one part alone and the rest without
+  it at the mix's own gain, cut both at 300 Hz, compare levels over the same bars. The Sizecurve
+  bass (E2, a dark string) still carries above 300 Hz at about the band's level (-24.3 against
+  -23.2 dB in the groove), because a driven plucked string has overtones well up. So "is the bass
+  there on a phone" has a number; "is it a good bass line" does not, and stays the boss's.
+- When only a second of picture changes between two drafts, don't put a second file in front of
+  the boss. He would listen again for a difference that isn't there. One line and a link.
+- In headed Chrome at 360 wide, a press on a `<video controls>` picture does not start it. The
+  player's own play button does (about 24 px in from the left, 49 px up from the bottom of the
+  video). `video.play()` from script works too, but then the clip shows a video starting with no
+  press, and the note has to say so.
+- `pkill -f "x11grab"` kills the shell that runs it, because the pattern is in that shell's own
+  command line. Write the pattern with a bracket (`pkill -f "[x]11grab"`), in its own command.
+- A page that prints its own dates dates every clip of it. Say in the clip's note which seconds
+  show a date, so whoever cuts it can stay clear.

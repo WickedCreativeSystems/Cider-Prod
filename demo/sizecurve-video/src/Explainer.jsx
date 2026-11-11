@@ -87,9 +87,10 @@ const RailScene = ({ f }) => {
         </React.Fragment>;
       })}
       {ORDERS.map(([of, s], k) => {
-        const t = (f - of) / 16; if (t < 0 || t > 1) return null;
-        const x0 = RX[SIZES.indexOf(s)], x = x0 + (1700 - x0) * t * t, y = RY + 200 - 320 * t + 200 * t * t;
-        return <div key={k} style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) scale(${1 - t * 0.4})`, opacity: 1 - t * t, background: C.ink, color: "#fff", fontFamily: SANS, fontWeight: 800, fontSize: 34, borderRadius: 999, padding: "8px 22px", whiteSpace: "nowrap" }}>Order · {s}</div>;
+        // each tag lifts off its own tee and fades there, so no two ever cross
+        const t = (f - of) / 15; if (t < 0 || t > 1) return null;
+        const x0 = RX[SIZES.indexOf(s)], x = x0 + 56 + 110 * t, y = RY + 138 - 230 * t + 90 * t * t;   // off the shoulder, so the size letter stays readable
+        return <div key={k} style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) scale(${Math.min(1, 0.6 + t * 4) * (1 - t * 0.2)}) rotate(${-4 + t * 8}deg)`, opacity: 1 - t * t * t, background: C.ink, color: "#fff", fontFamily: SANS, fontWeight: 800, fontSize: 34, borderRadius: 999, padding: "8px 22px", whiteSpace: "nowrap" }}>Order · {s}</div>;
       })}
       <Words text="One style." f={f} at={BEAT} x={300} y={700} size={150} />
       <Words text="Selling." f={f} at={BAR} x={1090} y={700} size={150} color={C.green} />

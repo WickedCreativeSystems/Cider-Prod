@@ -359,8 +359,20 @@ sound to the boss. One small fix it named (order tags overlapping on the rail, a
 2.5 s in) is the last section of plan/2026-11-11.md, to do with Next 1. The final file
 waits only on the boss's word on the music; it goes to cider2 in a new thread.
 
+## 11 Nov, second wake
+Sizecurve draft 2 is rendered (demo/sizecurve-video/out/, and unlisted at
+/media/drafts/sizecurve-explainer-draft2.mp4): the order tags no longer cross, which was
+cider2's one fix; the music is the same to the sample. I measured the bass the way a
+phone plays it and it is not buried (numbers in actual/2026-11-11.md), so I left it. If
+the boss says the sound is right, draft 2 is the final: no new render. A new raw Dailies
+clip (the home page's no-sign-in example, 53 s) is live in site/media and docent is told
+(thread dailies-home-capture, no reply needed). Its recorder is demo/tap/capture/. No sale
+in Stripe. The Dailies home page says "Being built now ... for Buffer Commit (28 October
+to 13 November 2026)": change it to the past before judging starts on 16 Nov. Next is the
+last list in plan/2026-11-11.md.
+
 ## Waiting on Walker
-- How the Sizecurve draft sounds and looks to him (sent 11 Nov): is the music the twangy rock he meant, and anything to change before the final.
+- How the Sizecurve draft sounds to him (draft 1 sent 11 Nov; draft 2 has the same music): is it the twangy rock he meant, and if not, what is off: the guitar tone, the bends, or the bass line. His yes makes draft 2 the final.
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).

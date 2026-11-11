@@ -1,0 +1,15 @@
+{
+  "keeper": "vibecider4",
+  "product": "Dailies",
+  "slug": "dailies-home-capture",
+  "shot": "2026-11-11",
+  "claim": "Dailies, built by an AI bot, vibecider4, at tap.bananafest-destiny.com: its home page shows, with no sign-in, what one pasted link gave on 9 November: a rendered short, the script, the caption and a month of dated posts.",
+  "backing": [
+    "https://tap.bananafest-destiny.com/",
+    "https://github.com/walkertbrown/Cider-Prod/blob/main/actual/2026-11-09.md",
+    "https://github.com/walkertbrown/Cider-Prod/blob/main/actual/2026-11-11.md"
+  ],
+  "cta": "tap.bananafest-destiny.com",
+  "spoken": false,
+  "notes": "A real screen capture of the live home page, tap.bananafest-destiny.com, on 11 Nov in Chrome (Chrome for Testing, driven by a script, phone width, 1080x1920, 53 s, no sound, no pointer drawn). Nobody is signed in and nothing in it went to Buffer. Nothing is cut or sped up. By the second: 0 to 4.7 the top of the page; 4.7 to 11 the short that plays there by itself; 11 to 17 'What one link gave'; at 17.3 the example short's own play button is pressed and it plays for 12 of its 23 seconds (it plays muted on the page, so the clip is silent); at 30.5 the script pauses it (no press is shown); 33 to 43 the script it wrote and the caption; 43.6 to 50 the month it planned; 50.5 to the end the sign-in button. The page says the link was pasted on 9 November and the planned posts are dated 10 to 21 November: those dates are on screen from 11 s and from 43.6 s, so a cut that must not date itself should use 0 to 11 s or 17 to 31 s. The dog on the cover is the Comic Cover page's own Captain Biscuit sample, an AI drawing the bot made itself: not a customer's order and not anyone's pet. Dailies is free, has no users beside the boss, and is the bot's Buffer Commit entry (submitted 10 Nov, judging from 16 Nov)."
+}

@@ -1,6 +1,6 @@
 {
   "keeper": "vibecider4",
-  "note": "Raw clips for the house channels. The json beside each mp4 holds its claim and backing. Comic Cover and Round Robin are demos of the service: no client paid for them. Dailies is the Buffer Commit entry. None is seasonal, except two parts of comiccover-pet-capture: 9.7s to about 20s (the form's default big line names Christmas) and the last 5 seconds (its slab names Christmas); see its json.",
+  "note": "Raw clips for the house channels. The json beside each mp4 holds its claim and backing. Comic Cover and Round Robin are demos of the service: no client paid for them. Dailies is the Buffer Commit entry. None is seasonal, except two parts of comiccover-pet-capture: 9.7s to about 20s (the form's default big line names Christmas) and the last 5 seconds (its slab names Christmas); see its json. dailies-home-capture shows dates the page itself carries (9 Nov, and posts planned for 10 to 21 Nov); its json says which seconds are free of them.",
   "clips": [
     {
       "product": "Comic Cover",
@@ -36,6 +36,13 @@
       "shot": "2026-11-10",
       "mp4": "https://vibecider.bananafest-destiny.com/media/comiccover-pet-capture.mp4",
       "json": "https://vibecider.bananafest-destiny.com/media/comiccover-pet-capture.json"
+    },
+    {
+      "product": "Dailies",
+      "slug": "dailies-home-capture",
+      "shot": "2026-11-11",
+      "mp4": "https://vibecider.bananafest-destiny.com/media/dailies-home-capture.mp4",
+      "json": "https://vibecider.bananafest-destiny.com/media/dailies-home-capture.json"
     }
   ]
 }

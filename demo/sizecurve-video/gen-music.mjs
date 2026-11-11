@@ -12,7 +12,10 @@ const out = process.argv[2] || "public/music.wav", noSfx = process.argv.includes
 let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647 * 2 - 1;
 const hz = m => 440 * Math.pow(2, (m - 69) / 12);
 const TAU = 2 * Math.PI;
+// SOLO=bass or SOLO=nobass renders one side of the mix, for measuring (see the bass's note below).
+const SOLO = process.env.SOLO || ""; let inBass = false;
 const put = (t, fn, dur, gain = 1, pan = 0, send = 0, ducked = false) => {
+  if ((SOLO === "bass" && !inBass) || (SOLO === "nobass" && inBass)) return;
   const i0 = Math.floor(t * SR), n = Math.floor(dur * SR), gl = gain * Math.cos((pan + 1) * Math.PI / 4), gr = gain * Math.sin((pan + 1) * Math.PI / 4);
   for (let i = 0; i < n && i0 + i < N; i++) { if (i0 + i < 0) continue; const v = fn(i / SR, i); const d = ducked ? duck[i0 + i] : 1;
     L[i0 + i] += v * gl * d; R[i0 + i] += v * gr * d; if (send) rev[i0 + i] += v * send * gain * d; }
@@ -60,9 +63,13 @@ const shake = (depth, at = 0.18, rate = 5.6) => x => (x > at ? depth * Math.sin(
 const both = (...fs) => x => fs.reduce((s, f) => s + f(x), 0);
 const strum = (t, notes, dur, o = {}, gap = 0.014) => notes.forEach((m, j) => string(t + j * gap, m, dur - j * gap, { ...o, pan: (o.pan ?? 0) + (j - notes.length / 2) * 0.08 }));
 // the bass: the same string, darker and heavier, with a sine under it for weight
+const BB = +(process.env.BB || 0.42), BD = +(process.env.BD || 2.2), BO = +(process.env.BO || 0);
 const bass = (t, m, dur, g = 1, bend = null) => {
-  string(t, m, dur, { g: 1.5 * g, bright: 0.42, loop: 0.9985, drive: 2.2, pick: 0.25, send: 0, slap: 0, bend, ducked: true });
+  inBass = true;
+  string(t, m, dur, { g: 1.5 * g, bright: BB, loop: 0.9985, drive: BD, pick: 0.25, send: 0, slap: 0, bend, ducked: true });
+  if (BO) string(t, m + 12, dur, { g: BO * g, bright: 0.6, loop: 0.996, drive: 2.4, pick: 0.2, send: 0, slap: 0, bend, ducked: true });
   if (!bend) put(t, x => Math.sin(TAU * hz(m) * x) * Math.min(1, x / 0.006) * Math.exp(-x * 3) * Math.min(1, (dur - x) / 0.03), dur, 0.22 * g, 0, 0, true);
+  inBass = false;
 };
 
 // ---- effects ----
@@ -170,10 +177,10 @@ for (let i = 0; i < N; i++) { let x = rev[i] * 0.25, y = 0; for (const c of comb
   for (const a of aps) { const o = a.buf[a.i]; const v = -y + o; a.buf[a.i] = y + o * 0.5; a.i = (a.i + 1) % a.d; y = v; } L[i] += y * 0.5; R[i] += (i > 300 ? y : 0) * 0.5; }
 const DRIVE = +(process.env.DRIVE || 1.6);
 let peak = 0; for (let i = 0; i < N; i++) { L[i] = Math.tanh(L[i] * DRIVE); R[i] = Math.tanh(R[i] * DRIVE); peak = Math.max(peak, Math.abs(L[i]), Math.abs(R[i])); }
-const fade = Math.floor(1.2 * SR), norm = 0.89 / peak * +(process.env.GAIN || 0.7);   // 0.7 lands the mix near -14 LUFS
+const fade = Math.floor(1.2 * SR), norm = process.env.NORM ? +process.env.NORM : 0.89 / peak * +(process.env.GAIN || 0.7);   // 0.7 lands the mix near -14 LUFS
 const pcm = Buffer.alloc(44 + N * 4); const w = (o, s) => pcm.write(s, o);
 w(0, "RIFF"); pcm.writeUInt32LE(36 + N * 4, 4); w(8, "WAVE"); w(12, "fmt "); pcm.writeUInt32LE(16, 16); pcm.writeUInt16LE(1, 20); pcm.writeUInt16LE(2, 22);
 pcm.writeUInt32LE(SR, 24); pcm.writeUInt32LE(SR * 4, 28); pcm.writeUInt16LE(4, 32); pcm.writeUInt16LE(16, 34); w(36, "data"); pcm.writeUInt32LE(N * 4, 40);
 for (let i = 0; i < N; i++) { const f = i > N - fade ? (N - i) / fade : 1; pcm.writeInt16LE(Math.round(Math.max(-1, Math.min(1, L[i] * norm * f)) * 32767), 44 + i * 4); pcm.writeInt16LE(Math.round(Math.max(-1, Math.min(1, R[i] * norm * f)) * 32767), 46 + i * 4); }
 mkdirSync(out.replace(/\/[^/]*$/, "") || ".", { recursive: true }); writeFileSync(out, pcm);
-console.log(`${out}: ${(N / SR).toFixed(1)} s, ${SFX.length} effects, peak before norm ${peak.toFixed(2)}`);
+console.log(`${out}: ${(N / SR).toFixed(1)} s, ${SFX.length} effects, peak before norm ${peak.toFixed(2)}, norm ${norm.toFixed(4)}`);
