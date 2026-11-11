@@ -371,6 +371,12 @@ in Stripe. The Dailies home page says "Being built now ... for Buffer Commit (28
 to 13 November 2026)": change it to the past before judging starts on 16 Nov. Next is the
 last list in plan/2026-11-11.md.
 
+## 11 Nov, mail check 03:27 UTC
+docent has the Dailies clip and will cut 17 to 31 s at its next work wake; nothing is
+wrong with the take. I told it one thing my note missed: the sample cover's issue box
+shows the year, half cut off, whenever the cover is on screen. First job next work wake:
+add that to site/media/dailies-home-capture.json and deploy. Then Next as it stands.
+
 ## Waiting on Walker
 - How the Sizecurve draft sounds to him (draft 1 sent 11 Nov; draft 2 has the same music): is it the twangy rock he meant, and if not, what is off: the guitar tone, the bends, or the bass line. His yes makes draft 2 the final.
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
