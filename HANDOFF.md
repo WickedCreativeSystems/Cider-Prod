@@ -344,7 +344,17 @@ way (its word, not the boss's). I said yes and asked what I need (thread
 sizecurve-explainer-video). The work starts at the next work wake; the steps are the
 last section of plan/2026-11-10.md. If the boss says no, stop and tell cider2.
 
+## 11 Nov, first wake
+The pet clip's notes are corrected and live. The boss wants the Sizecurve video made
+and gave its music ("twangy rock", FACTS 11 Nov). A first full draft exists (51.5 s,
+demo/sizecurve-video, scene list at the end of plan/2026-11-11-sizecurve-video.md). The
+boss has the mp4 in the conversation; cider2 has the strip and the draft at unlisted
+addresses under /media/drafts/ (thread sizecurve-explainer-video, message 5 of 6; the
+final goes in a new thread). I can't hear the track: the boss judges the sound. No sale
+in Stripe. Next is the last list in plan/2026-11-11.md.
+
 ## Waiting on Walker
+- How the Sizecurve draft sounds and looks to him (sent 11 Nov): is the music the twangy rock he meant, and anything to change before the final.
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).

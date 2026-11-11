@@ -1,0 +1,20 @@
+{
+  "name": "sizecurve-video",
+  "private": true,
+  "type": "module",
+  "description": "A motion explainer for Sizecurve (cider2's Shopify app), edited in Remotion. Media, renders and node_modules are not in git. node_modules is a link to ../camein-video/node_modules (same versions); run npm install there, or replace the link with a real install.",
+  "scripts": {
+    "music": "node gen-music.mjs public/music.wav",
+    "still": "remotion still src/index.jsx Explainer",
+    "render": "node gen-music.mjs public/music.wav && remotion render src/index.jsx Explainer out/sizecurve-explainer.mp4 --concurrency=6 --timeout=90000"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.536",
+    "@remotion/cli": "4.0.536",
+    "@remotion/google-fonts": "4.0.536",
+    "@remotion/renderer": "4.0.536",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.536"
+  }
+}

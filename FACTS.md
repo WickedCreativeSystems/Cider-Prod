@@ -389,3 +389,6 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 - On the Dailies write-up (public-log link, "drafting" wording) (2026-11-10): "It's fine. No big. Let's get them submitted". Both write-ups go in as they are.
 - Buffer Commit (2026-11-10): "Done, submitted". Both entries (Came In and Dailies) are in, with the boss as the builder.
 - On the monthly AI budget (2026-11-10): "Ok. I'm not really worried about it. I prepay what I want and don't have an option for auto refill". No budget number; the prepaid balance is the limit.
+
+## 2026-11-11
+- On the Sizecurve explainer video (2026-11-11, with a screenshot of the Reddit thread: a commenter wrote "I'd recommend redoing your video on Sizecurve. AI motion design explainer to add some energy would be my thoughts." and the boss, as the poster, answered "Thank you, I can make that happen"): "This was the message on reddit with the recommendation. As far as music goes, twangy rock. Not country, but with a twang. Bendy notes with a good baseline"

@@ -434,3 +434,31 @@ whatever makes those two cheap: a post the boss can paste in ten minutes, and
 raw clips docent can cut.
 - The `bot:0` filter on that query returns nothing without an error. Leave it
   off. Filter by requestHost only.
+
+## 2026-11-11: a listing video for Shopify's App Store (cider2's Sizecurve)
+- Shopify's own words on the video slot (shopify.dev, apps/launch/shopify-app-store/best-practices,
+  "Feature media", read 11 Nov): "A short video (2-3 minutes) is the best way to showcase your
+  app's impact. Keep it promotional rather than instructional and limit screencasts to 25% of the
+  video." Its listing requirements keep prices out of listing images (4.2.2), bar statistics,
+  unproven claims and "the first / best / only" (4.3.4), bar reviews and testimonials (4.3.6) and
+  bar Shopify's trademarks in graphics (4.4.3). I hold the video to all of them: no price, no trial,
+  no address, no counts of my own, the word Shopify nowhere on screen, app screens under a quarter.
+  This changed what I had told cider2 on 10 Nov (I had said price and trial could close the video).
+- The video it replaces (1 min 50 s, 4 views in six weeks) is a slide deck: still cards, small
+  screen recordings, nothing moves on a beat. A stranger on Reddit called it out in one line. What
+  it lacks is a picture of the problem. A broken size run is a thing you can see: a rail with the
+  middle sizes gone. So the new one opens on the rail and only shows the app after the problem has
+  been seen. The app icon already draws it: six bars, the two tallest hollow.
+- A colleague's feel ("calm and clear") and the boss's ("twangy rock", and his yes to "add some
+  energy") pulled apart. The boss's words win; the colours, the lines and the don'ts are cider2's
+  facts about its own app, and those I keep.
+- A plucked string is cheap to make from maths and bends for free: a delay line one period long
+  with noise in it (Karplus-Strong), and the delay's length follows the bend. Its pitch runs sharp
+  by half a sample of delay if the loop filter's own delay is counted twice; at the top of the neck
+  that is a tenth of a semitone, which is the kind of thing a listener hears as "cheap".
+- App screens in a video window: capture the page narrower (900 wide at 3x)
+  so a table fits the window whole, instead of capturing wide and panning. A
+  pan across a wide table always hides the first column, which is the one
+  that says what the row is.
+- A still at every scene tells me the layout; it doesn't tell me the cuts.
+  One frame pulled from the rendered file just before each cut does.

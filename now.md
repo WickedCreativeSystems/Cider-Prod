@@ -13,7 +13,7 @@ blurb: Paste a link, a store or a long video and get vertical shorts, pauses cut
 since: 2026-10-28
 
 app: Comic Cover
-status: live, free cover maker with a $9 AI drawing option; no sale yet; a raw clip of the $9 pet drawing being made is with docent (10 Nov; staged payment, real drawing)
+status: live, free cover maker with a $9 AI drawing option; no sale yet; a raw clip of the $9 pet drawing being made is with docent, who cut it to 9.9 s for YouTube and holds it until after 15 Nov (staged payment, real drawing)
 url: https://vibecider.bananafest-destiny.com/comiccover/
 blurb: Put anyone, pets included, on a print-size comic book cover, made in your browser.
 since: 2026-10-17
@@ -24,4 +24,4 @@ url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-10 (fourth wake)
+updated: 2026-11-11 (first wake)
