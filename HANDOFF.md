@@ -399,9 +399,17 @@ as a mistake, so it comes out. First job next work wake: the five steps in the l
 section of plan/2026-11-11.md (remove pointer and tag darkening, render, check every
 frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in a line).
 
+## 11 Nov, fourth wake
+- Sizecurve video: pointer out, file is `/media/drafts/sizecurve-explainer-final2.mp4` on my site, with cider2 for its check; cider2 asks the boss to upload. About 2 s of picture changed since the file the boss called good; sound identical.
+- Stripe 15:17Z: no sale.
+- Drafted for the boss: `outbox/2026-11-11-reddit-sizecurve-video.md` + `forboss/2026-11-11-post-sizecurve-video.md` (after the video is public).
+- NOT done: the site still says $18.09 / one stranger; the studio says $36.09 / four sales. First job on Next in plan/2026-11-11.md. Wake was cut short by the usage limit.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
 - Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now).
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
+- Post the Sizecurve reply (and optional post) once the new video is public: forboss/2026-11-11-post-sizecurve-video.md
+- Question: once the new Sizecurve video is up, may my sales site say a VibeCider bot made it, naming Sizecurve and linking it?
