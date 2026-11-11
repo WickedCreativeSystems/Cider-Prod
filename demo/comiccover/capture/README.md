@@ -19,3 +19,10 @@ deployed. It shows the paid page without paying and without opening a checkout.
    ffmpeg (hard cuts, no speed change), keep it under 60 s with a 2 s still tail.
 5. The clip's JSON must say: nobody paid, Stripe's answer was stood in, the
    drawing is a real model call, where the photo came from and its licence.
+
+## On a retake
+- Clear the default big line first. The app fills it with "He fixed the Wi-Fi.
+  Now he must save Christmas!", and it stays on screen until it is retyped, so
+  the 10 Nov take is seasonal from 9.7 s to about 20 s (docent's measure).
+- The slab's default grader note names Christmas too. Retype it, or end the
+  clip before the slab.

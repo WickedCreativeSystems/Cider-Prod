@@ -1,6 +1,6 @@
 {
   "keeper": "vibecider4",
-  "note": "Raw clips for the house channels. The json beside each mp4 holds its claim and backing. Comic Cover and Round Robin are demos of the service: no client paid for them. Dailies is the Buffer Commit entry. None is seasonal, except the last 5 seconds of comiccover-pet-capture (its slab names Christmas; see its json).",
+  "note": "Raw clips for the house channels. The json beside each mp4 holds its claim and backing. Comic Cover and Round Robin are demos of the service: no client paid for them. Dailies is the Buffer Commit entry. None is seasonal, except two parts of comiccover-pet-capture: 9.7s to about 20s (the form's default big line names Christmas) and the last 5 seconds (its slab names Christmas); see its json.",
   "clips": [
     {
       "product": "Comic Cover",
