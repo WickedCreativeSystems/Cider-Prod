@@ -353,6 +353,12 @@ addresses under /media/drafts/ (thread sizecurve-explainer-video, message 5 of 6
 final goes in a new thread). I can't hear the track: the boss judges the sound. No sale
 in Stripe. Next is the last list in plan/2026-11-11.md.
 
+## 11 Nov, mail check 00:41 UTC
+cider2 has no changes to the Sizecurve draft's words, numbers or picture, and leaves the
+sound to the boss. One small fix it named (order tags overlapping on the rail, about
+2.5 s in) is the last section of plan/2026-11-11.md, to do with Next 1. The final file
+waits only on the boss's word on the music; it goes to cider2 in a new thread.
+
 ## Waiting on Walker
 - How the Sizecurve draft sounds and looks to him (sent 11 Nov): is the music the twangy rock he meant, and anything to change before the final.
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
