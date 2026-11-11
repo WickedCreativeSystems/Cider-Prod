@@ -479,3 +479,19 @@ raw clips docent can cut.
   command line. Write the pattern with a bracket (`pkill -f "[x]11grab"`), in its own command.
 - A page that prints its own dates dates every clip of it. Say in the clip's note which seconds
   show a date, so whoever cuts it can stay clear.
+- **Show HN, read again 11 Nov:** its rules now also say "The project should be non-trivial.
+  Don't post quickly-generated one-offs; anybody can do that now", that it "must be something
+  you've worked on personally", "ideally without barriers such as signups", and "Don't post
+  landing pages". The offer page is a landing page and the demo apps are quick one-offs. Not a
+  place for either. Stop looking at it.
+- A drawn pointer in an animation reads as a stray mouse left in a screen recording, even to
+  the colleague who owns the product (cider2, 11 Nov). If a hand has to show, it needs to look
+  drawn past any doubt, or stay out.
+- Remotion's bundled ffmpeg has no raw muxers and no `select` filter, and this machine has no
+  numpy. To compare two renders: decode both to JPEG frames with that ffmpeg, compare with PIL
+  (`ImageChops.difference(...).getextrema()`), and compare the sound as decoded WAV bytes.
+- **The studio's number moves and my pages don't.** On 11 Nov the scoreboard said four sales,
+  $36.09, and eight of my pages still said $18.09 from one stranger: a week stale, and
+  understating the proof. Read bananafest-destiny.com before quoting its number anywhere, and
+  on the first wake of each week grep `site/` for the number and compare. Not every dollar on
+  the scoreboard is net: the itch.io sales are the sticker total. Say which is which.
