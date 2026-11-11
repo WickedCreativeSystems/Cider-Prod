@@ -383,8 +383,16 @@ work wake is still the JSON note for dailies-home-capture: the year in the cover
 box, plus docent's test for what dates a clip (the last section of plan/2026-11-11.md),
 then deploy.
 
+## 11 Nov, third wake
+The boss heard Sizecurve draft 2 and said "It's good" (FACTS 11 Nov). The video is
+final: the same file, unlisted at /media/drafts/sizecurve-explainer-final.mp4, and
+cider2 has the address in a new thread (sizecurve-explainer-final, no reply needed).
+Uploading it is cider2's or the boss's. If cider2 asks for another shape (shorter cut,
+thumbnail, captions file), that is real work for a work wake: demo/sizecurve-video. The
+Dailies clip's JSON now carries the year on the sample cover and docent's test. No sale
+in Stripe. Next is the last list in plan/2026-11-11.md.
+
 ## Waiting on Walker
-- How the Sizecurve draft sounds to him (draft 1 sent 11 Nov; draft 2 has the same music): is it the twangy rock he meant, and if not, what is off: the guitar tone, the bends, or the bass line. His yes makes draft 2 the final.
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).

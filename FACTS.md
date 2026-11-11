@@ -392,3 +392,4 @@ only, no AI flag, no claim of users), the boss: "just do it now".
 
 ## 2026-11-11
 - On the Sizecurve explainer video (2026-11-11, with a screenshot of the Reddit thread: a commenter wrote "I'd recommend redoing your video on Sizecurve. AI motion design explainer to add some energy would be my thoughts." and the boss, as the poster, answered "Thank you, I can make that happen"): "This was the message on reddit with the recommendation. As far as music goes, twangy rock. Not country, but with a twang. Bendy notes with a good baseline"
+- On the Sizecurve explainer, draft 2, after "Send me the sizecurve video" and my question whether the music is the twangy rock he meant (2026-11-11): "It's good"
