@@ -30,7 +30,7 @@ export const SIZES = ["S", "M", "L", "XL"];
 export const PIPS = { S: 5, M: 6, L: 6, XL: 4 };
 // Orders in the rail scene: [frame in scene, size]. M and L take six each and are gone.
 export const ORDERS = ["M", "L", "M", "S", "L", "M", "L", "XL", "M", "L", "M", "L", "M", "L"].map((s, i) => [58 + i * 8, s]);
-// The pointer in the gone scene: tries M, tries L, leaves.
+// Beats in the gone scene: the two low notes land on M, then L; the line changes at leave. (A drawn pointer pressed them until 11 Nov; it read as a stray mouse.)
 export const TRY = { M: 92, L: 116, leave: 128 };
 // The example, from the public preview at sizecurve.bananafest-destiny.com (a generated store).
 export const EXAMPLE = { style: "Heavyweight Tee", out: "L and M out of stock", order: { S: 6, M: 79, L: 104, XL: null }, total: 189 };

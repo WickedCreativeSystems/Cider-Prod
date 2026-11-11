@@ -69,7 +69,7 @@ const Pips = ({ x, n, of, lastHit, f }) => (
 const SoldOut = ({ x, f, at, bump = 0 }) => {
   const e = sp(f, at, { damping: 9, stiffness: 220 });
   if (f < at) return null;
-  return <div style={{ position: "absolute", left: x, top: RY + 350, transform: `translate(-50%,0) scale(${e * (1 + bump * 0.25)}) rotate(-4deg)`, fontFamily: SANS, fontWeight: 800, fontSize: 34, letterSpacing: 1, textTransform: "uppercase", color: bump > 0.05 ? "#fff" : C.red, background: bump > 0.05 ? C.red : C.blush, border: `4px solid ${C.red}`, borderRadius: 12, padding: "6px 18px", whiteSpace: "nowrap" }}>Sold out</div>;
+  return <div style={{ position: "absolute", left: x, top: RY + 350, transform: `translate(-50%,0) scale(${e * (1 + bump * 0.25)}) rotate(-4deg)`, fontFamily: SANS, fontWeight: 800, fontSize: 34, letterSpacing: 1, textTransform: "uppercase", color: C.red, background: C.blush, border: `4px solid ${C.red}`, borderRadius: 12, padding: "6px 18px", whiteSpace: "nowrap" }}>Sold out</div>;
 };
 
 // ---- scenes ------------------------------------------------------------------
@@ -99,8 +99,6 @@ const RailScene = ({ f }) => {
 };
 
 const GoneScene = ({ f }) => {
-  const px = f < TRY.M ? ease(f, 66, TRY.M - 4, 1500, RX[1] + 30) : f < TRY.leave ? ease(f, TRY.M + 8, TRY.L - 4, RX[1] + 30, RX[2] + 30) : ease(f, TRY.leave, TRY.leave + 14, RX[2] + 30, 2100);
-  const py = f < TRY.M ? ease(f, 66, TRY.M - 4, 1150, RY + 250) : RY + 250 + (f >= TRY.leave ? ease(f, TRY.leave, TRY.leave + 14, 0, 120) : 0);
   const hit = at => (f >= at ? Math.exp(-(f - at) / 5) : 0);
   return (
     <>
@@ -121,11 +119,6 @@ const GoneScene = ({ f }) => {
         </>
       ) : (
         <Words text="The rest just hang there." f={f} at={120} x={300} y={730} size={128} />
-      )}
-      {f >= 66 && (
-        <svg viewBox="0 0 24 24" width="92" height="92" style={{ position: "absolute", left: px, top: py, transform: `scale(${1 - 0.18 * Math.max(hit(TRY.M), hit(TRY.L))})`, filter: "drop-shadow(0 8px 10px rgba(0,0,0,.25))" }}>
-          <path d="M5 2 L5 19 L9.5 15 L12.5 22 L15.5 20.7 L12.6 14 L19 14 Z" fill={C.ink} stroke="#fff" strokeWidth="1.6" strokeLinejoin="round" />
-        </svg>
       )}
     </>
   );
