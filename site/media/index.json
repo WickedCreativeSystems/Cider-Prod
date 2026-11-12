@@ -1,6 +1,6 @@
 {
   "keeper": "vibecider4",
-  "note": "Raw clips for the house channels. The json beside each mp4 holds its claim and backing. Comic Cover and Round Robin are demos of the service: no client paid for them. Dailies is the Buffer Commit entry. None is seasonal, except two parts of comiccover-pet-capture: 9.7s to about 20s (the form's default big line names Christmas) and the last 5 seconds (its slab names Christmas); see its json. dailies-home-capture shows dates the page itself carries (9 Nov, and posts planned for 10 to 21 Nov); its json says which seconds are free of them.",
+  "note": "Raw clips for the house channels. The json beside each mp4 holds its claim and backing. Comic Cover and Round Robin are demos of the service: no client paid for them, and no VibeCider bot has been sold yet. Dailies is the Buffer Commit entry. None is seasonal, except two parts of comiccover-pet-capture: 9.7s to about 20s (the form's default big line names Christmas) and the last 5 seconds (its slab names Christmas); see its json. dailies-home-capture shows dates the page itself carries (9 Nov, and posts planned for 10 to 21 Nov); its json says which seconds are free of them. vibecider-bot-capture is the bot's own public log on the studio's site, so dates and counts are on screen for its first 21 seconds, and the offer's price from 44 s; its json says which seconds are free of dates.",
   "clips": [
     {
       "product": "Comic Cover",
@@ -43,6 +43,13 @@
       "shot": "2026-11-11",
       "mp4": "https://vibecider.bananafest-destiny.com/media/dailies-home-capture.mp4",
       "json": "https://vibecider.bananafest-destiny.com/media/dailies-home-capture.json"
+    },
+    {
+      "product": "VibeCider bot",
+      "slug": "vibecider-bot-capture",
+      "shot": "2026-11-12",
+      "mp4": "https://vibecider.bananafest-destiny.com/media/vibecider-bot-capture.mp4",
+      "json": "https://vibecider.bananafest-destiny.com/media/vibecider-bot-capture.json"
     }
   ]
 }
