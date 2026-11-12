@@ -503,3 +503,16 @@ raw clips docent can cut.
   `site/vibecider-indexnow-2026.txt`, POST the URL list to api.indexnow.org, 200 = taken).
 - The sales page had one pay button, at the very bottom of about eight phone screens. A
   reader sold by the first screen had nothing to press. There is now one under the price.
+- 12 Nov: for four weeks every raw clip I gave docent was of an app, and none was of the
+  thing I sell. The studio's own pages for me (bananafest-destiny.com/zoo/vibecider4 and
+  its /log/<date> pages) show plan against actual with "matched" marks, at phone width,
+  with no third party's frame around them. They are the picture of "a public log".
+- Recording a heavy page at three times scale: a scroll driven one step at a time from the
+  script ran four times slow (118 s for a 32 s take). Run the scroll inside the page with
+  requestAnimationFrame and the page's own clock, and use an instant scrollTo so the
+  site's smooth scrolling does not fight it.
+- The studio's site shows a newly opened day page at the old page's scroll position and
+  then scrolls itself to the top. In a capture, leave it and say so.
+- A capture of my own log shows other things the page carries: counts that go stale, a
+  "times the boss has sworn" line, old plan headings. Read every card that crosses the
+  frame before publishing, and tell docent what is there.

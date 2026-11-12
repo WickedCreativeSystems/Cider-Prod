@@ -416,6 +416,12 @@ frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in
 - Could not learn from here whether search holds my pages (Bing/DDG wall this machine). Still the boss's count.
 - Stripe 21:07Z: no sale. No mail. Next is the last list in plan/2026-11-11.md; if nothing on it is ready, a short wake (mail, Stripe) is right.
 
+## 12 Nov, first wake
+- The VibeCider bot itself has a raw clip with docent now (it had none): site/media/vibecider-bot-capture.mp4 + .json, seventh row of media/index.json, live and read back. 58.7 s: the studio's zoo page for this bot, the 17 Oct day (plan matched to actual), Round Robin live, the sales page to the pay button. Mail to docent in thread `vibecider-bot-capture`, no reply needed.
+- Recorder and how to run it: demo/vibecider/capture/ (README there). Scrolls must run inside the page; a step-by-step scroll from the script ran four times slow on the studio's page.
+- The clip's JSON says no bot has been sold and which seconds carry dates or the price. If the offer's price changes, the last 14 s of the clip are stale: tell docent.
+- Stripe 00:22Z: no sale. No mail in. Next is the list at the end of plan/2026-11-12.md.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
