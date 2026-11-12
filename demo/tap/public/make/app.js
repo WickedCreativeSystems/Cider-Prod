@@ -210,7 +210,7 @@ function sidePanel(canvas) {
   const render = async (state, say, make, name, checks = () => "") => {
     btn.disabled = true; status.className = "status small";
     try {
-      state.mp4 = null; state.uploaded = null; state.poster = poster(canvas);
+      state.mp4 = null; state.uploaded = null; state.done = null; state.poster = poster(canvas);
       box.querySelector("video")?.remove(); canvas.hidden = false; result.replaceChildren(); draftBox.replaceChildren(); draftBox.hidden = true;
       const mp4 = await make((p, msg) => status.textContent = say(p, msg));
       const video = el("video", { src: URL.createObjectURL(mp4), controls: true, playsInline: true });
@@ -337,13 +337,20 @@ async function upload(state) {
   return state.uploaded = d.id;
 }
 
+// One video to the chosen channels. A channel that already has this video is left out, so a
+// second press (after one channel failed, or "all" after one by one) can't post it twice; what
+// it got the first time comes back marked `before`. A new render starts clean.
 async function draft(state, chosen, when) {
+  const done = state.done ||= new Map();
+  const had = chosen.filter(c => done.has(c)).map(c => ({ ...done.get(c), before: true }));
+  const todo = chosen.filter(c => !done.has(c));
+  if (!todo.length) return had;
   const id = await upload(state);
   const v = state.v, lines = (v.scenes || []).map(x => x.text);
-  const { results, tag } = await call("/api/draft", { video: id, channels: chosen, caption: v.caption, title: v.title, hashtags: v.hashtags, angle: v.angle,
+  const { results, tag } = await call("/api/draft", { video: id, channels: todo, caption: v.caption, title: v.title, hashtags: v.hashtags, angle: v.angle,
     hook: v.hook || lines[0] || "", lines, link: v.scenes ? pg(v)?.url || "" : "", poster: state.poster, when });
-  for (const r of results) r.tag = tag || "";
-  return results;
+  for (const r of results) { r.tag = tag || ""; if (r.ok && r.channelId) done.set(r.channelId, r); }
+  return [...had, ...results];
 }
 
 // Where the posts go: drafts (the default; nothing moves without the person), the channel's
@@ -356,15 +363,16 @@ function whenPick(onchange) {
   at.setAttribute("aria-label", "Day and time");
   sel.onchange = () => {
     at.hidden = sel.value !== "time";
-    if (!at.hidden && !at.value) { const d = new Date(Date.now() + 3600e3); d.setMinutes(0, 0, 0); at.value = new Date(d - d.getTimezoneOffset() * 60e3).toISOString().slice(0, 16); }
+    if (!at.hidden && !at.value) { const d = new Date(Date.now() + 3600e3); d.setMinutes(60, 0, 0); at.value = new Date(d - d.getTimezoneOffset() * 60e3).toISOString().slice(0, 16); }
     onchange?.(VERB[sel.value]);
   };
   const row = el("div", { className: "actions" }, el("label", { className: "pair", textContent: "Put them" }), sel, at);
   const value = () => sel.value === "time" ? { mode: "time", dueAt: at.value ? new Date(at.value).toISOString() : "" } : { mode: sel.value };
-  const problem = () => value().mode === "time" && !value().dueAt ? "Pick a day and time." : "";
+  // The same two answers the worker gives, said here before the video is uploaded.
+  const problem = () => { const w = value(); return w.mode !== "time" ? "" : !w.dueAt ? "Pick a day and time." : Date.parse(w.dueAt) < Date.now() + 60e3 ? "Pick a time that's still to come." : ""; };
   return { row, value, problem };
 }
-const whenSaid = r => (r.state === "scheduled" ? `scheduled for ${new Date(r.dueAt).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`
+const whenSaid = r => (r.before ? "already " : "") + (r.state === "scheduled" ? `scheduled for ${new Date(r.dueAt).toLocaleString([], { dateStyle: "medium", timeStyle: "short" })}`
   : r.state === "queued" ? "in your Buffer queue" : "in your Buffer drafts") + (r.tag ? `, tagged "${r.tag}"` : "");
 const openBuffer = () => el("a", { href: "https://publish.buffer.com", target: "_blank", rel: "noopener", textContent: "Open Buffer" });
 

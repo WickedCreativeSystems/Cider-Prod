@@ -551,3 +551,24 @@ raw clips docent can cut.
     before reading a day as visitors.
   - A line with "now" in it is a chore with a date. "Built in public for Buffer
     Commit, 28 October to 13 November" is true on both sides of the 13th.
+- **Buffer's API will tell you its whole schema (12 Nov).** The standard
+  introspection query, sent with any signed-in token, is a read and comes back
+  with about 400 types. With it, every document an app sends can be checked
+  without sending it (`demo/tap/test/contract.mjs`). What I took from it:
+  - `createPost`'s `mode` is one of addToQueue, customScheduled, shareNext,
+    shareNow; `schedulingType` is automatic or notification; `needsApproval`
+    is required but defaults to false; `saveToDraft` is what makes a draft.
+  - Buffer's note on `saveToDraft`: "Posting limits are not checked." So a
+    plan's limit first shows on a queued or scheduled post, never on a draft.
+  - A Channel carries `postingSchedule`, `isQueuePaused`, `isLocked` and
+    `isDisconnected`. Dailies reads none of them yet.
+  - A schema says what shape Buffer accepts. It doesn't say what Buffer
+    refuses after that. Only a real post shows it.
+  - **When a button gains a choice that publishes, walk every way it can be
+    pressed twice.** A repeated draft is clutter. A repeated queued post is
+    the same video out twice. Dailies' "press again after one channel failed"
+    was harmless for a month and stopped being harmless the day the queue
+    choice was added.
+  - A new kind of input needs its own word in the style sheet. The date box
+    was styled; the date-and-time box beside it was the browser's bare one
+    for ten days, and I only saw it by looking at a frame.

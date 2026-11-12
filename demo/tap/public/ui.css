@@ -44,9 +44,9 @@ button:disabled{opacity:.5;cursor:default;filter:none}
 .actions form{display:contents}
 
 /* Fields */
-input[type=url],input[type=text],input[type=number],input[type=date],textarea,select{font:inherit;font-size:15px;color:inherit;
+input[type=url],input[type=text],input[type=number],input[type=date],input[type=datetime-local],textarea,select{font:inherit;font-size:15px;color:inherit;
   background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;max-width:100%}
-select,input[type=number],input[type=date]{width:auto}
+select,input[type=number],input[type=date],input[type=datetime-local]{width:auto}
 textarea{resize:vertical;min-height:2.6em;field-sizing:content}
 input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 28%,transparent)}
 input[type=checkbox]{accent-color:var(--gold);width:16px;height:16px;margin:0}

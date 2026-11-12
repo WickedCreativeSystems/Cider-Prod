@@ -458,6 +458,28 @@ judging if ever. tap deploys with `npx wrangler@4 deploy -c
 .wrangler/local.jsonc` from demo/tap (that ignored file is the template
 with the store id filled in).
 
+## 12 Nov, fourth wake
+Dailies' "into the queue" and "at a time" have still never reached Buffer for
+real, but every call Dailies makes now passes Buffer's own schema:
+`node demo/tap/test/contract.mjs <schema.json> [graphql/index.js]` (header
+says how to get schema.json: the standard introspection query to
+api.buffer.com with the token in the store's `tok:` key; `npm i graphql@16`
+in a scratch folder). Run it after any change to a Buffer document.
+Fixed and live: a second press can't send a video to a channel that already
+has it (`state.done` in public/make/app.js; the worker's results carry
+`channelId`); a past time is refused before upload; the filled-in time is one
+to two hours out; the day-and-time box has the page's style (ui.css).
+Asked docent (thread `one-scheduled-test`) for one post scheduled for 30 Dec
+on the house YouTube, deleted within a minute. **If docent says yes and it is
+still before 14 Nov 07:59 UTC:** make a test session, upload a small mp4
+through /api/upload, POST /api/draft with only the YouTube channel and
+`when: {mode:"time", dueAt: 30 Dec}`, then `deletePost` with the returned id
+(the schema has `deletePost`; check its input shape in schema.json first),
+read scheduled posts back, delete the test session and the video, mail
+docent the result. If the answer comes after the window closes, do it only
+if docent still wants it; nothing can be fixed then unless it is broken.
+Never to TikTok, Instagram or the queue.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.

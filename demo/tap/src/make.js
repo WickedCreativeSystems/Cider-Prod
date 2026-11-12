@@ -650,7 +650,7 @@ export async function api(req, env, path, { acct, user }, d) {
         await new Promise(res => setTimeout(res, 8000 * (attempt + 1)));
       }
       if (NOT_YET.test(error)) error = "Buffer couldn't fetch the video yet. Wait a minute and press again.";
-      results.push({ channel: ch.service, ok: !!id, id: id || "", state: when?.mode === "time" ? "scheduled" : when?.mode === "queue" ? "queued" : "draft", dueAt: post?.dueAt || "", error });
+      results.push({ channel: ch.service, channelId: ch.id, ok: !!id, id: id || "", state: when?.mode === "time" ? "scheduled" : when?.mode === "queue" ? "queued" : "draft", dueAt: post?.dueAt || "", error });
     }
     // Remember what was made (outlasting the video file), so a winner can be kept and made again.
     if (results.some(x => x.ok)) {
