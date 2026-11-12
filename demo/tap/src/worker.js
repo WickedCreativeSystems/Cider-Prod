@@ -168,6 +168,18 @@ async function start(env) {
   return Response.redirect(u.toString(), 302);
 }
 
+// An account with several organizations gets the first one that has a channel, so nobody lands on an empty one.
+// One question to Buffer, only asked when there is more than one; any trouble and it is the first, as before.
+async function pickOrg(token, orgs) {
+  if (orgs.length < 2) return orgs[0];
+  try {
+    const some = orgs.slice(0, 8);
+    const res = await gql(token, `query(${some.map((_, i) => `$o${i}:OrganizationId!`).join(",")}){ ${some.map((_, i) => `o${i}: channels(input:{organizationId:$o${i}}){ id }`).join(" ")} }`,
+      Object.fromEntries(some.map((o, i) => [`o${i}`, o.id])));
+    return some.find((_, i) => res.data?.[`o${i}`]?.length) || orgs[0];
+  } catch { return orgs[0]; }
+}
+
 async function callback(url, env) {
   const { searchParams: q } = url;
   if (q.get("error")) return page("Not connected", `<h1>Not connected</h1><p>Buffer said: ${esc(q.get("error"))}. Nothing was kept.</p><p><a href="/auth/start">Try again</a></p>`, { status: 403 });
@@ -180,7 +192,7 @@ async function callback(url, env) {
   if (tok.error) return page("Buffer didn't hand over access", `<h1>Buffer didn't hand over access</h1><p>${esc(tok.error)}: ${esc(tok.error_description)}</p>`, { status: 502 });
 
   const acc = await gql(tok.access_token, "{ account { id organizations { id name } } }");
-  const acct = acc.data?.account?.id, org = acc.data?.account?.organizations?.[0];
+  const acct = acc.data?.account?.id, org = await pickOrg(tok.access_token, acc.data?.account?.organizations || []);
   if (!acct || !org) return page("No Buffer organization", `<h1>No Buffer organization</h1><p>${esc(errText(acc) || "This account has no organization to read posts from.")}</p>`, { status: 502 });
   await keepTokens(env, acct, tok);
 

@@ -529,3 +529,25 @@ raw clips docent can cut.
   earnings number), not only the pages I think of as the site.
 - A question left under "Waiting on Walker" for three weeks is not asked. The sheet
   through market-nana (`for_boss: yes`) is where he answers; put it there the same day.
+- 12 Nov, from testing Dailies the way a judge would meet it:
+  - "It works" had only ever meant "it works for the boss's account". The store
+    holds one account. Nobody else has ever signed in. Read every branch for the
+    account I don't have: no channels, several organizations, a first visit.
+  - An empty list is not "not read yet". The channel list was read from Buffer
+    once and kept, and an empty answer was kept the same as a full one, so a
+    person who connected their first channel a minute later was told for six
+    hours that none was connected. When a kept answer is "nothing", ask again.
+  - Buffer's sign-in gives a new refresh token on every refresh and cancels the
+    whole grant if an old one is used twice (its docs, read 12 Nov). Two
+    requests that both find the hour-old token expired can do that. Dailies
+    asks one thing at a time, so it has not happened; if someone is ever told
+    "Buffer access has lapsed" for no reason, look here first. The real cure
+    is one place that refreshes (a Durable Object); a shared promise inside a
+    Worker is not safe across requests.
+  - Buffer's docs don't say whether an app's sign-in works for accounts other
+    than the owner's before any review. Only a second account can show it.
+  - My own recordings count as page loads in Cloudflare's numbers (the
+    recorder blocks my counter, not Cloudflare's). Take my capture days out
+    before reading a day as visitors.
+  - A line with "now" in it is a chore with a date. "Built in public for Buffer
+    Commit, 28 October to 13 November" is true on both sides of the 13th.

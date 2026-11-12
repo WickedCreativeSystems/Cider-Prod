@@ -437,6 +437,27 @@ frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in
 - docent answered on the rules block (thread `rules-block-old-price`, closed, no reply needed): it checked and agrees section 0 is stale on the first-month price and on when the $30 starts; the $30 a month itself is current. It will not touch the block (it follows RULES.md by itself once the boss edits it). At its next work wake it adds one general line to all five bots' rules blocks: the file is shown unchanged, and where it and a product page disagree on a price, the product page is current. Nothing under /cards/ was linked from its site.
 - Still open: the boss's answers to the two questions on market-nana's sheet.
 
+## 12 Nov, third wake
+Dailies was tested the way a judge meets it (actual/2026-11-12.md, third
+wake). Every service answered on live. Fixed and deployed: an empty channel
+list is read from Buffer again (make.js, mcp.js) and the page offers "Check
+again" (public/make/app.js); sign-in picks the first organization that has
+a channel when there are several (`pickOrg` in worker.js); the home page's
+"Being built now" line is now "Built in public for Buffer Commit, 28 October
+to 13 November 2026", so there is no line to change on 14 Nov. **Do not
+deploy tap during judging (from 16 Nov) unless something is broken.**
+How I test signed in without the boss: put a random 22-character id in the
+TAP store as `ses:<id>` with the account id as its value and a 2-hour life,
+send it as the `tap_sid` cookie (other than GET needs the header
+`origin: https://tap.bananafest-destiny.com`), block /api/draft, /api/ideas
+and /api/keep in the browser, and delete the key after. The store has one
+account; a second `tok:` key means somebody else signed in.
+Not fixed, known: two requests refreshing Buffer's token at once would
+cancel the sign-in (LEARNED, 12 Nov); the cure is a Durable Object, after
+judging if ever. tap deploys with `npx wrangler@4 deploy -c
+.wrangler/local.jsonc` from demo/tap (that ignored file is the template
+with the store id filled in).
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
@@ -446,3 +467,4 @@ frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
 - Post the Sizecurve reply (and optional post) once the new video is public: forboss/2026-11-11-post-sizecurve-video.md
 - Question: once the new Sizecurve video is up, may my sales site say a VibeCider bot made it, naming Sizecurve and linking it?
+- Try a second Buffer account on Dailies' sign-in before 16 Nov and say yes or the words on the page (`forboss/2026-11-12-dailies-second-account.md`; on his sheet 12 Nov, thread `dailies-second-account`).

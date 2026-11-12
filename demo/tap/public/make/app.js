@@ -369,8 +369,19 @@ const whenSaid = r => (r.state === "scheduled" ? `scheduled for ${new Date(r.due
 const openBuffer = () => el("a", { href: "https://publish.buffer.com", target: "_blank", rel: "noopener", textContent: "Open Buffer" });
 
 async function showDraft(box, state) {
-  channels ??= (await call("/api/channels", null, "GET")).channels;
-  if (!channels.length) { box.append(el("p", { className: "note", textContent: "No Buffer channels that take video are connected." })); box.hidden = false; return; }
+  if (!channels?.length) channels = (await call("/api/channels", null, "GET")).channels;
+  if (!channels.length) {
+    const again = el("button", { className: "sm", textContent: "Check again" });
+    again.onclick = async () => {
+      again.disabled = true;
+      try { channels = (await call("/api/channels", null, "GET")).channels; } catch { again.disabled = false; return; }
+      if (!channels.length) { again.disabled = false; return; }
+      box.replaceChildren(); await showDraft(box, state); allBox();
+    };
+    box.append(el("p", { className: "note", textContent: "No Buffer channels that take video are connected. Connect one in Buffer, then check again. You can still download the video above." }),
+      el("div", { className: "actions" }, openBuffer(), again));
+    box.hidden = false; return;
+  }
   const ticks = channels.map(c => el("input", { type: "checkbox", value: c.id, checked: ["instagram", "tiktok", "youtube"].includes(c.service) }));
   const btn = el("button", { className: "primary", textContent: "Draft to Buffer" });
   const when = whenPick(verb => { btn.textContent = `${verb} to Buffer`; });
@@ -401,13 +412,14 @@ async function allBox() {
   const made = cards.filter(c => c.mp4).length;
   $("allMade").textContent = `${made} of ${cards.length} rendered.`;
   $("renderAll").className = made < cards.length ? "primary" : "";
-  $("draftAll").disabled = !made; $("allDraft").hidden = !made;
+  $("draftAll").disabled = !made; $("allDraft").hidden = !made || (!!channels && !channels.length);
   if (made && !$("allTicks").children.length) {
-    channels ??= (await call("/api/channels", null, "GET")).channels;
+    if (!channels?.length) channels = (await call("/api/channels", null, "GET")).channels;
     $("allTicks").replaceChildren(...channels.map(c => el("label", { className: "ch" },
       el("input", { type: "checkbox", value: c.id, checked: ["instagram", "tiktok", "youtube"].includes(c.service) }), net(c.service))));
-    allWhen = whenPick(verb => { $("draftAll").textContent = `${verb} all to Buffer`; });
-    $("allTicks").after(allWhen.row);
+    if (!allWhen) { allWhen = whenPick(verb => { $("draftAll").textContent = `${verb} all to Buffer`; }); $("allTicks").after(allWhen.row); }
+    // With no channel there is nothing to send to; each video's own box says so and offers to check again.
+    $("allDraft").hidden = !channels.length;
   }
 }
 let allWhen;

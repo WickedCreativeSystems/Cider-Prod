@@ -41,7 +41,7 @@ const fail = text => ({ content: [{ type: "text", text }], isError: true });
 async function call(name, args, env, ctx) {
   const { acct, user, d, origin } = ctx;
   if (name === "list_channels") {
-    if (!user.channels) ({ user: ctx.user } = await d.refreshPosts(env, acct, user));
+    if (!user.channels?.length && (!user.channels || Date.now() - (user.postsAt || 0) > 15_000)) ({ user: ctx.user } = await d.refreshPosts(env, acct, user));
     const ch = ctx.user.channels || [];
     return ok(ch.length ? ch.map(c => `${c.service}: ${c.id}`).join("\n") : "No channels connected in Buffer.");
   }

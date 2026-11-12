@@ -579,13 +579,15 @@ export async function api(req, env, path, { acct, user }, d) {
     return json({ page: job.page, videos: job.videos, note: job.note });
   }
   if (path === "/api/channels" && req.method === "GET") {
-    if (!user.channels) ({ user } = await d.refreshPosts(env, acct, user));
-    return json({ channels: (user.channels || []).filter(c => VIDEO_NETS.has(c.service) || url.searchParams.has("all")) });
+    // An empty list is read again (at most every 15 seconds): a first channel connected in Buffer a minute ago should show here.
+    const list = u => (u.channels || []).filter(c => VIDEO_NETS.has(c.service) || url.searchParams.has("all"));
+    if (!user.channels || (!list(user).length && Date.now() - (user.postsAt || 0) > 15_000)) ({ user } = await d.refreshPosts(env, acct, user));
+    return json({ channels: list(user) });
   }
   if (path === "/api/plan" && req.method === "POST") {
     const { page, start, weeks, perWeek } = await req.json().catch(() => ({}));
     if (!page?.text && !page?.description && !page?.store) return json({ error: "Read a page first." }, 400);
-    if (!user.channels) ({ user } = await d.refreshPosts(env, acct, user));
+    if (!user.channels?.length && (!user.channels || Date.now() - (user.postsAt || 0) > 15_000)) ({ user } = await d.refreshPosts(env, acct, user));
     const nets = [...new Set((user.channels || []).map(c => c.service))].filter(n => VIDEO_NETS.has(n) || TEXT_NETS.has(n));
     if (!nets.length) return json({ error: "Connect a channel in Buffer first." }, 400);
     const n = Math.max(2, Math.min(7, +perWeek || 3)), w = Math.max(1, Math.min(4, +weeks || 4));
