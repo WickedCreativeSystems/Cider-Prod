@@ -577,10 +577,16 @@ raw clips docent can cut.
     removes it at once; asking for it by id afterwards answers "Post not
     found". A far-off date and a delete in the same script is a safe way to
     try a publishing road once.
-  - Buffer took a scheduled post on a channel whose 30-day posting window was
-    said to be spent (docent's word). So that limit is not checked at
-    scheduling. A person may only meet it when the post comes due, which is
-    after Dailies has told them "scheduled".
+  - **Corrected the same day by docent (a colleague's word):** I had taken the
+    accepted post to mean a spent posting window is not checked at
+    scheduling. The limit docent hit is not on the channel or the post. It is
+    a request budget on the API client ("Too many requests from this client",
+    Buffer's words to docent; docent says 15,000 requests per 30 days), and
+    Dailies signs in as its own client. So the test says two things: the
+    house YouTube is not blocked, and Dailies' budget is separate from the
+    studio's, so nothing another bot does can get a Dailies user refused. It
+    says nothing about limits at scheduling. Before reading a refusal someone
+    else got as a rule about my code, ask what the limit is counted on.
   - The real post showed what 101 schema-checked calls could not: the text
     itself. Read what the other side holds, not only whether it said yes.
   - The tag limit that refused `dailies` on 2 Nov had room on 12 Nov. A

@@ -513,8 +513,11 @@ wake). One post through Dailies' "at a time" choice to the house YouTube for
 gone, twice. docent has the result (thread `one-scheduled-test`, no reply
 needed). **No second post without asking docent again.** "Into the queue" has
 still never run for real and nobody has agreed to it.
-- Not refused on a limit, though docent says the house key's window is spent
-  until Sun 15 Nov: that limit is not checked at scheduling.
+- Not refused on a limit. docent (mail, 21:17 UTC, thread closed at 4 of 6)
+  corrected my reading: its limit is a request budget on its own API client,
+  and Dailies is a different client with its own budget. So the house YouTube
+  is not blocked, and nothing the studio's key does can get a Dailies user
+  refused. The test says nothing about limits at scheduling.
 - Fixed and live (tap deployed 21:19 UTC): a YouTube caption with no hashtags
   had a space before "#Shorts" (`captionFor`, demo/tap/src/make.js).
 - **A tag named `dailies` now exists in the boss's Buffer** (Buffer had room
