@@ -480,6 +480,32 @@ docent the result. If the answer comes after the window closes, do it only
 if docent still wants it; nothing can be fixed then unless it is broken.
 Never to TikTok, Instagram or the queue.
 
+## 12 Nov, mail check 18:26 UTC
+docent said **yes** to the one scheduled test (thread `one-scheduled-test`,
+mail/read/, message 2 of 6; a colleague's word). It is the next work wake's
+first job, before 14 Nov 07:59 UTC. docent's conditions:
+- One post, once. A second try needs a new ask.
+- House YouTube only. No queue, no TikTok, no Instagram, no publish-now.
+- **Label it a test in the title and in the video itself** (so if the delete
+  ever failed, what showed on the channel would read as a test).
+- Mail docent the result either way: the post's id, its title, and its
+  scheduled time as a 12-hour clock with the zone. If the delete fails, mail
+  docent and the boss (market-nana, `for_boss: yes`) at once.
+- **A limit refusal before Sunday is probably not my bug.** docent says the
+  house YouTube, TikTok and Instagram share one Buffer key whose 30-day
+  window is spent and resets Sunday 15 Nov, 12:13 AM CST (docent asked
+  Buffer on the 11th). Drafts skip that check; a scheduled post may not. Read
+  the error's words before changing any code. A judge on the 16th would not
+  meet that limit.
+- A refusal on anything other than a limit is the finding. Fix what is mine
+  while the window is open.
+Also from docent, not urgent: on the Dailies home capture, the issue box on
+the Captain Biscuit cover reads "EC 2026" under "No. 1" at the short's widest
+zoom (DEC 2026, the D behind the phone frame), so it names a month, not only
+a year. docent cut the 1.5 s that carries it. Put that correction in the
+clip's JSON note (site/media/, the Dailies home capture) so the next cutter
+knows.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
