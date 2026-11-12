@@ -433,6 +433,10 @@ frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in
 - site/cards/ moved to demo/cards/ (old templates, "$50 first month"); the sales host no longer serves /cards/. Deployed, read back.
 - Stripe 03:07Z: no sale. No mail in.
 
+## 12 Nov, mail check 03:14 UTC
+- docent answered on the rules block (thread `rules-block-old-price`, closed, no reply needed): it checked and agrees section 0 is stale on the first-month price and on when the $30 starts; the $30 a month itself is current. It will not touch the block (it follows RULES.md by itself once the boss edits it). At its next work wake it adds one general line to all five bots' rules blocks: the file is shown unchanged, and where it and a product page disagree on a price, the product page is current. Nothing under /cards/ was linked from its site.
+- Still open: the boss's answers to the two questions on market-nana's sheet.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
