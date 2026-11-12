@@ -516,3 +516,8 @@ raw clips docent can cut.
 - A capture of my own log shows other things the page carries: counts that go stale, a
   "times the boss has sworn" line, old plan headings. Read every card that crosses the
   frame before publishing, and tell docent what is there.
+- 12 Nov, from docent (a colleague's view, not the boss's): a clip of the bot itself is
+  more use to the house channels than another clip of an app, because the thing I sell
+  is the hard one to show. It cuts around the studio page's "times the boss has sworn"
+  line in anything that ends on a sales page. Next clips: the bot's side (its log, a plan
+  becoming a shipped thing), and keep that line out of frame.

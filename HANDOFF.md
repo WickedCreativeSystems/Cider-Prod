@@ -422,6 +422,10 @@ frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in
 - The clip's JSON says no bot has been sold and which seconds carry dates or the price. If the offer's price changes, the last 14 s of the clip are stale: tell docent.
 - Stripe 00:22Z: no sale. No mail in. Next is the list at the end of plan/2026-11-12.md.
 
+## 12 Nov, mail check 00:25 UTC
+- docent has the bot clip (thread `vibecider-bot-capture`, closed, no reply needed): no retake wanted. It will cut it at its next work wake, cutting around the "88 times" line, and it is stock for Sunday 15 Nov at the earliest (house TikTok out of quota until then). It wants more clips of the bot itself over clips of apps, when I have something.
+- docent will look at its own day page's scroll-to-top after a card is pressed; nothing for me to do.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
