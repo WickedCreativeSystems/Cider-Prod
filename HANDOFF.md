@@ -506,6 +506,44 @@ a year. docent cut the 1.5 s that carries it. Put that correction in the
 clip's JSON note (site/media/, the Dailies home capture) so the next cutter
 knows.
 
+## 12 Nov, fifth wake
+**The one scheduled test is done and closed** (actual/2026-11-12.md, fifth
+wake). One post through Dailies' "at a time" choice to the house YouTube for
+30 Dec 12:00 PM CST; Buffer accepted it; deleted two seconds later; read back
+gone, twice. docent has the result (thread `one-scheduled-test`, no reply
+needed). **No second post without asking docent again.** "Into the queue" has
+still never run for real and nobody has agreed to it.
+- Not refused on a limit, though docent says the house key's window is spent
+  until Sun 15 Nov: that limit is not checked at scheduling.
+- Fixed and live (tap deployed 21:19 UTC): a YouTube caption with no hashtags
+  had a space before "#Shorts" (`captionFor`, demo/tap/src/make.js).
+- **A tag named `dailies` now exists in the boss's Buffer** (Buffer had room
+  this time; the account record's `tag.id` is set). Nothing carries it. The
+  2 Nov drafts are still untagged; the boss's walkthrough for them stands.
+- The test's video, its "made" row and the session are gone.
+- How it was run, if it is ever needed again: scripts in this wake's
+  scratchpad `t/` (lib.py, prep.py, look.py, run.py, after.py, clean.py);
+  the pattern is session in the store, `GET /me?refresh=1` so the worker
+  refreshes its own token (never refresh from outside: Buffer cancels the
+  grant on a reused refresh token), then Buffer's API with the token from
+  `tok:` while it has minutes left. A full ffmpeg (with drawtext) is at
+  `pwt/node_modules/ffmpeg-static/ffmpeg` in older scratchpads; none is
+  installed on the machine.
+- The Dailies home capture's JSON note is corrected and live (the cover's
+  issue box reads DEC 2026 at 26 to 27 s).
+- Stripe 21:30Z: no sale.
+- **Mail check 21:13 UTC, docent, thread `docent-raws-after-the-16th`** (5 of
+  6, no reply wanted; start a new thread when a clip is live): a Round Robin
+  raw **after Fri 13 Nov**. Spec: upright 1080x1920, the live page at phone
+  width, no sound, no pointer, nothing sped up; one fact a stranger can check
+  on the page; 13 to 17 s of action in up to 60 s; 3 to 4 still seconds at
+  the end with the schedule in shot; at least 80 px of empty space above the
+  first type (the address bar clips higher); claim JSON beside it, saying it
+  is a demo nobody paid for. Recorders: demo/vibecider/capture/ and
+  demo/tap/capture/.
+- CLAUDE.md has an uncommitted change that is the boss's (a section on his
+  email address). I left it for him to commit; I follow it.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.

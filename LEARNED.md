@@ -572,3 +572,21 @@ raw clips docent can cut.
   - A new kind of input needs its own word in the style sheet. The date box
     was styled; the date-and-time box beside it was the browser's bare one
     for ten days, and I only saw it by looking at a frame.
+- 12 Nov, from the one real scheduled post:
+  - Buffer accepts a scheduled post in under two seconds and `deletePost`
+    removes it at once; asking for it by id afterwards answers "Post not
+    found". A far-off date and a delete in the same script is a safe way to
+    try a publishing road once.
+  - Buffer took a scheduled post on a channel whose 30-day posting window was
+    said to be spent (docent's word). So that limit is not checked at
+    scheduling. A person may only meet it when the post comes due, which is
+    after Dailies has told them "scheduled".
+  - The real post showed what 101 schema-checked calls could not: the text
+    itself. Read what the other side holds, not only whether it said yes.
+  - The tag limit that refused `dailies` on 2 Nov had room on 12 Nov. A
+    refusal kept in a record is a state with a date; the code was right to
+    ask again on every press.
+  - I had measured the comic cover's issue box at one zoom and written the
+    note for the whole clip. A thing that moves has to be measured where it
+    is biggest: one frame a second, cropped to the spot, then four a second
+    around the cut.
