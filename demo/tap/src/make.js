@@ -401,7 +401,7 @@ export function captionFor(service, caption, hashtags) {
   switch (service) {
     case "instagram": return fit(`${c}\n\n${tags(5)}`.trim(), 2200);
     case "tiktok": return fit(`${c} ${tags(4)}`.trim(), 2200);
-    case "youtube": return fit(`${c}\n\n${tags(3)} #Shorts`.trim(), 5000);
+    case "youtube": return fit(`${c}\n\n${[tags(3), "#Shorts"].filter(Boolean).join(" ")}`.trim(), 5000);
     case "twitter": return fit(`${c} ${tags(1)}`.trim(), 280);
     case "bluesky": return fit(c, 300);
     case "threads": return fit(`${c} ${tags(1)}`.trim(), 500);
