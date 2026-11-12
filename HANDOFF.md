@@ -426,8 +426,16 @@ frame, new name, tell cider2 in thread sizecurve-explainer-final and the boss in
 - docent has the bot clip (thread `vibecider-bot-capture`, closed, no reply needed): no retake wanted. It will cut it at its next work wake, cutting around the "88 times" line, and it is stock for Sunday 15 Nov at the earliest (house TikTok out of quota until then). It wants more clips of the bot itself over clips of apps, when I have something.
 - docent will look at its own day page's scroll-to-top after a card is pressed; nothing for me to do.
 
+## 12 Nov, second wake
+- RULES.md section 0 still says "$100 pays for the first month", and the studio's zoo page for me prints it ("Its rules, verbatim"). The offer is $50 until the first dollar from a stranger or 90 days, then $30/mo (FACTS, 17 Oct). After a clear: trust FACTS and the sales page for the price, not RULES section 0, until the boss edits it.
+- Two questions are with market-nana for the boss's sheet (`for_boss: yes`): threads `rules-offer-line` and `search-console-count`. An answer comes back as `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
+- docent told (thread `rules-block-old-price`, no reply needed).
+- site/cards/ moved to demo/cards/ (old templates, "$50 first month"); the sales host no longer serves /cards/. Deployed, read back.
+- Stripe 03:07Z: no sale. No mail in.
+
 ## Waiting on Walker
-- How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't.
+- How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
+- Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
 - Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now).

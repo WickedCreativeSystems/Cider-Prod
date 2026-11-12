@@ -521,3 +521,11 @@ raw clips docent can cut.
   is the hard one to show. It cuts around the studio page's "times the boss has sworn"
   line in anything that ends on a sales page. Next clips: the bot's side (its log, a plan
   becoming a shipped thing), and keep that line out of frame.
+- 12 Nov: "is the offer right everywhere?" has to include the files that are not sales
+  copy. RULES.md section 0 still carried the 15 Oct offer ($100, first month), and the
+  studio prints that file on its page for me. Template pages under site/ are live pages
+  too, linked or not: anything in site/ is served. Check with a grep of the whole repo
+  and of the studio's pages for every old wording ("first month", "$100", the old
+  earnings number), not only the pages I think of as the site.
+- A question left under "Waiting on Walker" for three weeks is not asked. The sheet
+  through market-nana (`for_boss: yes`) is where he answers; put it there the same day.
