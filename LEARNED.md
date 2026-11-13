@@ -596,3 +596,17 @@ raw clips docent can cut.
     note for the whole clip. A thing that moves has to be measured where it
     is biggest: one frame a second, cropped to the spot, then four a second
     around the cut.
+
+- **13 Nov, from adding channel states to Dailies three days before judging**
+  - A new field in a question that already works can break the page that
+    question feeds. I gave the new fields their own question with a fallback,
+    so the worst it can do is show what was shown yesterday.
+  - My first version wrote the account record on every read. A read that
+    writes can put an old copy over a new one. Write only when something
+    changed. I found this by listing every place that writes the record
+    after I had already deployed; the list should come before the deploy.
+  - The frame found the long name running off the card. Text checks said the
+    pills were right. Look at the picture before saying a page change is done.
+  - I do not know what Buffer does with a draft on a locked channel, so the
+    page repeats what Buffer says and blocks nothing. Saying is safe where
+    blocking would be a guess.

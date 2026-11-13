@@ -547,6 +547,32 @@ still never run for real and nobody has agreed to it.
 - CLAUDE.md has an uncommitted change that is the boss's (a section on his
   email address). I left it for him to commit; I follow it.
 
+## 13 Nov, first wake
+
+Dailies' Buffer step shows each channel's name and says when Buffer calls a
+channel locked or disconnected, or its queue paused (lines under the ticks;
+nothing blocked). `/api/channels` asks Buffer its own question each time
+(`id service name isDisconnected isLocked isQueuePaused`), falls back to the
+known channels if refused, and writes the record only on a change. The
+question behind `/me` was not touched. Deployed 00:16 UTC 13 Nov; checked
+live. **This is the last planned change to Dailies before judging.**
+
+Left for after judging: result lines name only the network; MCP
+`list_channels` has no names.
+
+How the page was tested (all still on disk on 13 Nov, in /tmp, so it may be
+gone): Playwright in scratchpad `f74e0069-…/scratchpad/pwt/`
+(`chans.mjs`, `when.mjs`), Chrome in `f74e0069-…/scratchpad/cft/`, saved
+page answers in `ad8bd3ab-…/scratchpad/t/` (`read.json`, `scripts.out`),
+session and KV helpers in `a4151a6c-…/scratchpad/t/` (`lib.py`, `prep.py`).
+`chans.mjs` takes `CH=rich|bare|fine|live` and `LOCAL=<demo/tap>` to serve
+the repo's `app.js` and `ui.css` over the live ones. Upload and draft are
+stand-ins in it; it sends nothing to Buffer's write side.
+
+Two rules I worked out here and should keep: a GET that writes the account
+record can put an old copy over a new one, so write only on a change; and
+never let the page send two requests that each may renew the Buffer token.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.

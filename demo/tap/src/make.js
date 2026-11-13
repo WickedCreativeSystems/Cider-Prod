@@ -411,6 +411,9 @@ export function captionFor(service, caption, hashtags) {
 }
 
 
+// The channels with their names and what Buffer says of each: disconnected (its sign-in to the network has gone bad),
+// locked (Buffer won't post to it: the plan has fewer channels than are connected), queue paused (nothing scheduled goes out).
+const CHANNELS_Q = `query($o:OrganizationId!){ channels(input:{organizationId:$o}){ id service name isDisconnected isLocked isQueuePaused } }`;
 const CREATE_TAG = `mutation($i:CreateTagInput!){ createTag(input:$i){ __typename ... on TagActionSuccess { tag { id } } ... on LimitReachedError { message } ... on DuplicateError { message } ... on InvalidInputError { message } }}`;
 
 // Where a post goes: a draft unless asked otherwise. The queue is the channel's own
@@ -579,9 +582,16 @@ export async function api(req, env, path, { acct, user }, d) {
     return json({ page: job.page, videos: job.videos, note: job.note });
   }
   if (path === "/api/channels" && req.method === "GET") {
-    // An empty list is read again (at most every 15 seconds): a first channel connected in Buffer a minute ago should show here.
+    // Asked of Buffer each time the Buffer step opens, with each channel's name and what Buffer says is wrong
+    // with it, so a channel connected, locked or paused a minute ago shows as it is. Its own small question:
+    // if Buffer won't answer it, the channels already known are given, as before. The record is written only
+    // when the answer differs from what it holds (a read that changes nothing must not write over a newer record).
     const list = u => (u.channels || []).filter(c => VIDEO_NETS.has(c.service) || url.searchParams.has("all"));
-    if (!user.channels || (!list(user).length && Date.now() - (user.postsAt || 0) > 15_000)) ({ user } = await d.refreshPosts(env, acct, user));
+    const token = await d.accessToken(env, acct);
+    const res = token ? await d.gql(token, CHANNELS_Q, { o: user.orgId }).catch(() => ({})) : {};
+    if (Array.isArray(res.data?.channels)) {
+      if (JSON.stringify(res.data.channels) !== JSON.stringify(user.channels)) { user.channels = res.data.channels; await d.putJSON(env, `user:${acct}`, user); }
+    } else if (!user.channels || (!list(user).length && Date.now() - (user.postsAt || 0) > 15_000)) ({ user } = await d.refreshPosts(env, acct, user));
     return json({ channels: list(user) });
   }
   if (path === "/api/plan" && req.method === "POST") {

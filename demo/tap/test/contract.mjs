@@ -49,6 +49,7 @@ function kv() {
 const calls = [];
 let label = "";
 let orgs = [{ id: "org1", name: "One" }];
+let refuseStates = false; // Buffer refusing the question about channel states
 const answer = q => {
   const d = {};
   if (/createPost\b/.test(q)) d.createPost = { __typename: "PostActionSuccess", post: { id: "post-new", dueAt: "2026-12-12T15:00:00.000Z" } };
@@ -68,6 +69,7 @@ globalThis.fetch = async (u, init = {}) => {
   if (url.startsWith("https://api.buffer.com")) {
     const { query, variables } = JSON.parse(init.body);
     calls.push({ label, query, variables });
+    if (refuseStates && /isQueuePaused/.test(query)) return new Response(JSON.stringify({ data: null, errors: [{ message: "Cannot return null for non-nullable field Channel.isQueuePaused." }] }), { headers: { "content-type": "application/json" } });
     return new Response(JSON.stringify({ data: answer(query) }), { headers: { "content-type": "application/json" } });
   }
   if (url.startsWith("https://auth.buffer.com/token"))
@@ -116,7 +118,23 @@ if (user().orgId !== "org1") throw new Error("pickOrg did not take the organizat
 
 // The shorts page, read fresh from Buffer.
 note("Your shorts, refreshed", await go("Your shorts, refreshed", "/me?refresh=1"));
-note("channels for the Buffer step", await go("channels for the Buffer step", "/api/channels"), 0);
+// The Buffer step asks for the channels with their names and states, its own small question.
+{
+  const r = await go("channels for the Buffer step", "/api/channels");
+  note("channels for the Buffer step", r);
+  if (!(JSON.parse(r.text).channels?.length >= 3)) throw new Error(`/api/channels answered ${r.text.slice(0, 200)}`);
+  const kept = JSON.stringify(user().channels);
+  if (kept !== JSON.stringify(channels)) throw new Error("/api/channels did not keep what Buffer said");
+  // Asked again with nothing changed: Buffer is asked, the record is not written.
+  let wrote = 0; const put0 = TAP.put; TAP.put = async (k, ...r) => { if (k.startsWith("user:")) wrote++; return put0(k, ...r); };
+  const again = await go("channels, asked again", "/api/channels"); TAP.put = put0;
+  if (again.asked !== 1 || wrote) throw new Error(`/api/channels asked again: ${again.asked} calls, ${wrote} writes of the record`);
+  // Buffer refuses the states: the channels already known are given, and nothing else is asked.
+  refuseStates = true;
+  const refused = await go("channels, states refused by Buffer", "/api/channels"); refuseStates = false;
+  if (refused.status !== 200 || JSON.stringify(JSON.parse(refused.text).channels) !== r.text.slice(12, -1) || refused.asked !== 1) throw new Error(`/api/channels with states refused: ${refused.status}, ${refused.asked} calls, ${refused.text.slice(0, 120)}`);
+  ran.push({ what: "channels when Buffer refuses the states: the known ones are given", status: refused.status, asked: refused.asked });
+}
 
 // A video to Buffer: every channel, each of the three timings.
 const all = channels.map(c => c.id);

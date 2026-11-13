@@ -1,6 +1,6 @@
 // Link to Shorts, the browser half: read → scripts → render (canvas, WebCodecs, MP4) → upload → draft.
 import { Muxer, ArrayBufferTarget } from "https://cdn.jsdelivr.net/npm/mp4-muxer@5.1.5/build/mp4-muxer.mjs";
-import { net } from "./nets.js";
+import { net, NET } from "./nets.js";
 
 const W = 1080, H = 1920, FPS = 30, END = 2.5;
 const $ = id => document.getElementById(id);
@@ -376,13 +376,41 @@ const whenSaid = r => (r.before ? "already " : "") + (r.state === "scheduled" ? 
   : r.state === "queued" ? "in your Buffer queue" : "in your Buffer drafts") + (r.tag ? `, tagged "${r.tag}"` : "");
 const openBuffer = () => el("a", { href: "https://publish.buffer.com", target: "_blank", rel: "noopener", textContent: "Open Buffer" });
 
+// The channel ticks, shared by one video's box and the all-videos box. Each pill is the network and the
+// channel's own name (two channels on one network are told apart by it). A channel Buffer says it can't
+// post to starts unticked, and a line under the ticks says why; a paused queue is said once posts are to
+// be queued or timed. Nothing is blocked here: the person can still tick it, and Buffer answers.
+const VIDEO_FIRST = ["instagram", "tiktok", "youtube"];
+// One question at a time: two boxes opening together share one answer.
+let chAsk;
+const askChannels = () => chAsk ||= call("/api/channels", null, "GET").then(d => d.channels).finally(() => { chAsk = null; });
+function chanTicks(mode) {
+  const stuck = c => c.isLocked || c.isDisconnected;
+  const who = c => (NET[c.service] || c.service) + (c.name ? ` (${c.name})` : "");
+  const ticks = channels.map(c => el("input", { type: "checkbox", value: c.id, checked: VIDEO_FIRST.includes(c.service) && !stuck(c) }));
+  const notes = el("div", { className: "chnotes small" });
+  const say = () => {
+    const lines = [];
+    channels.forEach((c, i) => {
+      if (c.isLocked) lines.push(`${who(c)} is locked in Buffer, and Buffer doesn't post to a locked channel.`);
+      else if (c.isDisconnected) lines.push(`${who(c)} needs reconnecting in Buffer before anything can go out on it.`);
+      else if (c.isQueuePaused && ticks[i].checked && mode() !== "draft") lines.push(`${who(c)} has its queue paused in Buffer: nothing goes out until you resume it there.`);
+    });
+    notes.replaceChildren(...lines.map(t => el("div", { textContent: t })));
+    notes.hidden = !lines.length;
+  };
+  const row = el("div", {}, ...channels.map((c, i) => el("label", { className: "ch" }, ticks[i], net(c.service), ...(c.name ? [el("span", { className: "who", textContent: c.name, title: c.name })] : []))));
+  row.onchange = say; say();
+  return { ticks, row, notes, say };
+}
+
 async function showDraft(box, state) {
-  if (!channels?.length) channels = (await call("/api/channels", null, "GET")).channels;
+  if (!channels?.length) channels = await askChannels();
   if (!channels.length) {
     const again = el("button", { className: "sm", textContent: "Check again" });
     again.onclick = async () => {
       again.disabled = true;
-      try { channels = (await call("/api/channels", null, "GET")).channels; } catch { again.disabled = false; return; }
+      try { channels = await askChannels(); } catch { again.disabled = false; return; }
       if (!channels.length) { again.disabled = false; return; }
       box.replaceChildren(); await showDraft(box, state); allBox();
     };
@@ -390,12 +418,11 @@ async function showDraft(box, state) {
       el("div", { className: "actions" }, openBuffer(), again));
     box.hidden = false; return;
   }
-  const ticks = channels.map(c => el("input", { type: "checkbox", value: c.id, checked: ["instagram", "tiktok", "youtube"].includes(c.service) }));
   const btn = el("button", { className: "primary", textContent: "Draft to Buffer" });
-  const when = whenPick(verb => { btn.textContent = `${verb} to Buffer`; });
+  const when = whenPick(verb => { btn.textContent = `${verb} to Buffer`; ch.say(); });
+  const ch = chanTicks(() => when.value().mode), ticks = ch.ticks;
   const out = el("div", { className: "status small" });
-  box.append(el("label", { className: "f", textContent: "Send it to" }),
-    el("div", {}, ...channels.map((c, i) => el("label", { className: "ch" }, ticks[i], net(c.service)))), when.row, el("div", { className: "actions" }, btn), out);
+  box.append(el("label", { className: "f", textContent: "Send it to" }), ch.row, ch.notes, when.row, el("div", { className: "actions" }, btn), out);
   box.hidden = false;
   btn.onclick = async () => {
     const chosen = ticks.filter(t => t.checked).map(t => t.value);
@@ -422,15 +449,16 @@ async function allBox() {
   $("renderAll").className = made < cards.length ? "primary" : "";
   $("draftAll").disabled = !made; $("allDraft").hidden = !made || (!!channels && !channels.length);
   if (made && !$("allTicks").children.length) {
-    if (!channels?.length) channels = (await call("/api/channels", null, "GET")).channels;
-    $("allTicks").replaceChildren(...channels.map(c => el("label", { className: "ch" },
-      el("input", { type: "checkbox", value: c.id, checked: ["instagram", "tiktok", "youtube"].includes(c.service) }), net(c.service))));
-    if (!allWhen) { allWhen = whenPick(verb => { $("draftAll").textContent = `${verb} all to Buffer`; }); $("allTicks").after(allWhen.row); }
+    if (!channels?.length) channels = await askChannels();
+    if (!allWhen) { allWhen = whenPick(verb => { $("draftAll").textContent = `${verb} all to Buffer`; allCh?.say(); }); $("allTicks").after(allWhen.row); }
+    allCh = chanTicks(() => allWhen.value().mode);
+    $("allTicks").replaceChildren(...allCh.row.children, allCh.notes);
+    $("allTicks").onchange = allCh.say;
     // With no channel there is nothing to send to; each video's own box says so and offers to check again.
     $("allDraft").hidden = !channels.length;
   }
 }
-let allWhen;
+let allWhen, allCh;
 
 $("renderAll").onclick = async () => {
   $("renderAll").disabled = true;

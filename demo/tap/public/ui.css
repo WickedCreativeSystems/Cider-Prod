@@ -66,4 +66,6 @@ label.f>input,label.f>textarea,label.f>select{display:block;margin-top:4px;font-
 /* A network tick: a pill with the network's name, gold when ticked */
 label.ch{display:inline-flex;align-items:center;gap:7px;padding:5px 12px 5px 10px;margin:4px 6px 4px 0;border:1px solid var(--line);border-radius:999px;font-size:14px;cursor:pointer;background:var(--card)}
 label.ch:has(input:checked){border-color:var(--gold);background:color-mix(in srgb,var(--gold) 14%,var(--card))}
+label.ch{max-width:calc(100% - 6px);box-sizing:border-box}label.ch .who{color:var(--muted);min-width:0;max-width:14em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chnotes{color:var(--muted);margin:2px 0 8px}.chnotes div{margin:3px 0}
 .net{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}.net svg{width:15px;height:15px;flex:none;fill:currentColor}
