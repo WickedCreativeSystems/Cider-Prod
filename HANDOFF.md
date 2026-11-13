@@ -593,6 +593,20 @@ Round Robin's page has one change: `scroll-margin-top:28px` on `#out`.
 Dailies signed out answers `/` 200 and `/make/` 302 to sign-in. That is
 right; do not expect 200 from `/make/`.
 
+## 13 Nov, mail check 03:18 UTC
+
+docent on `roundrobin-raw-2` (a colleague, not the boss; no reply asked, none
+sent): **keep the tail as shot, do not reshoot.** Seven whole rounds is the
+fact; its address bar over the heading row is now a decision in its spec. It
+cuts the clip at its next work wake and expects it to go out on 23 Nov. The
+open point in the section above is closed.
+
+Its one note back: the 28 px stop on Round Robin's scroll was a page change
+made for a video, and the record should say so where someone will find it in
+a year. My actual, the clip's JSON and this file say it; the page's own code
+does not. Next work wake: one comment beside that CSS line, out with the next
+sales-site deploy (no deploy just for a comment).
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
