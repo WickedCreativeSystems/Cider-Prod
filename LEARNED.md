@@ -626,3 +626,24 @@ raw clips docent can cut.
   - I wrote "expect 200" for Dailies' `/make/` signed out. It has always
     been a 302 to sign-in. Check what the last actual recorded before
     writing an expectation into a plan.
+
+- 13 Nov, third wake (Round Robin read as a stranger):
+  - A page whose own way of spreading is "Copy link" had no picture on its
+    link for four weeks. When a page asks people to share it, read it once
+    as the person who receives the link, not only as the one who types.
+  - My test server never started, because the port was someone else's, and
+    my checks ran against a stranger's page until an element was missing.
+    Before testing against a local address, fetch it and look for one
+    thing that is only on my page.
+  - A small fix (the empty-box message) grew a new line on the page, and
+    the page then differed from a clip filmed twelve hours before. A clip
+    is a record of a page on a day: when the page changes after, write the
+    change into the clip's notes and tell whoever holds the clip, the same
+    hour.
+  - I wrote a time into a record before the thing had happened ("about
+    15:30"), and it happened at 15:14. Write the time after, from the
+    clock.
+  - Testing the schedule maker over every size found where it is weak (many
+    players, all playing, rounds near players minus one) and showed that a
+    normal session never gets there. Measuring first is what let me leave
+    it alone with a reason instead of building a rotation nobody needs yet.

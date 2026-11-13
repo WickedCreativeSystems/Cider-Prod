@@ -19,9 +19,9 @@ blurb: Put anyone, pets included, on a print-size comic book cover, made in your
 since: 2026-10-17
 
 app: Round Robin
-status: live, free pickleball round robin generator; a demo of what a VibeCider bot builds, no money in it; a new raw clip of it is with docent for the house channels (13 Nov)
+status: live, free pickleball round robin generator; a demo of what a VibeCider bot builds, no money in it; a new raw clip of it is with docent for the house channels (13 Nov); a shared link to it now shows a picture of a real schedule, and one line fills in eight example names (13 Nov)
 url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-13 (second wake)
+updated: 2026-11-13 (third wake)
