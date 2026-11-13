@@ -1,6 +1,66 @@
-# Handoff, 2026-11-02 (vibecider4)
+# Handoff (vibecider4)
 
 No keys or secrets here. Everything below is also in git unless noted.
+
+## Start here: state at the notes check, 13 Nov 21:10 UTC
+
+This section is the newest. The rest of the file is the record in date
+order (oldest first); the "Waiting on Walker" list is at the very end. The
+job list for the next wake is the last "Next" in `plan/2026-11-13.md`.
+
+**Nothing is half built.** Every change I made is committed and, but for one
+string, live. Nothing ran between the third wake (ended 15:24 UTC) and this
+check. `mail/in/` and `mail/out/` are empty.
+
+**In progress, mine:**
+- **One deploy of the sales site is owed.** Checked again at 21:08 UTC: live
+  `/media/roundrobin-capture-2.json` still says the page changed "about
+  15:30 UTC"; the repo says "about 15:14 UTC", which is right. Six deploys
+  failed at Cloudflare between 15:19 and 15:23 UTC (code 10013, "unknown
+  error"). Not tried since. The command, from the repo root (the
+  `wrangler.jsonc` there serves `site/`):
+  `export $(grep -E "^CLOUDFLARE_(API_TOKEN|ACCOUNT_ID)=" .git-credentials | xargs)`
+  then `npx wrangler@4 deploy`. Never `source` that file. Deploy once,
+  compare the live JSON with the repo's, do not loop on a failure.
+- Nothing else. The first job that needs nobody after that deploy is a link
+  picture for Comic Cover's maker page (Next item 5a).
+
+**Dailies is finished for judging.** The Buffer Commit build window closes
+14 Nov 07:59 UTC (13 Nov 11:59 PM PT); judging starts 16 Nov. The boss
+submitted it on 10 Nov. No change and no tap deploy unless something is
+broken. Read at 21:08 UTC, signed out: `/` 200, `/make/` 302 to sign-in
+(that is right).
+
+**All four live addresses answered at 21:08 UTC** (sales page, Comic Cover,
+Round Robin and its link picture: 200). Stripe was last read at 15:19 UTC:
+no sale of a bot or a drawing.
+
+**Waiting on whom:**
+- **Walker (the boss):** nine lines under "Waiting on Walker" at the end of
+  this file. Three of them are also on his sheet through market-nana (threads
+  `dailies-second-account`, `rules-offer-line`, `search-console-count`, all
+  12 Nov). The one with a date on it: a second Buffer account tried on
+  Dailies' sign-in before 16 Nov. The monthly AI budget question is closed
+  (FACTS, 10 Nov: prepaid, no number).
+- **market-nana:** to relay his answers to those three. A relayed answer is
+  `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
+- **docent** (a colleague; I owe it nothing right now): it has four raw
+  clips of mine. Dailies' home page example (11 Nov); the bot's own public
+  record (12 Nov); Comic Cover's $9 drawing, cut to 9.9 s and held until
+  after 15 Nov; Round Robin (`roundrobin-capture-2`), which it cuts as shot
+  and expects out on 23 Nov. It knows the Round Robin page gained one line
+  after the shot (mail of 13 Nov 15:16 UTC, no reply asked). If it wants a
+  reshoot it says so in a new thread.
+- **cider2:** has the Sizecurve video (`/media/drafts/sizecurve-explainer-final2.mp4`)
+  for its check and asks the boss to upload it. Until it is public, the
+  Sizecurve reply and the naming question stay with the boss.
+- **Cloudflare:** only the deploy above.
+
+**Not mine, left alone:** the uncommitted change to `CLAUDE.md` (the boss's
+section on his email address; I follow it) and `pet.png` in the repo root.
+
+**The price is $50 until the first dollar.** RULES.md section 0 still says
+$100; that is old, and the lines to fix it are with the boss.
 
 ## Done since 24 Oct
 - 26 Oct: told the boss what I needed (status list). Asked one question,
@@ -169,7 +229,7 @@ No keys or secrets here. Everything below is also in git unless noted.
   three "Turn anyone into a comic cover" test drafts the audit put in
   Buffer. When the boss says "Done: …", tick it there.
 
-## Next
+## Next (old: the list of 2 Nov, kept as record; the live list is the last Next in the newest plan/ file)
 0. **Promised docent (2 Nov mail check):** delete the sweep's "delete me"
    Instagram drafts through the Buffer API (deletePost), then tell docent
    in thread house-channels-up-the-game and tick that step in
@@ -230,7 +290,7 @@ built (demo/camein-video, a Remotion project; the media in public/ is
 gitignored, and the clips are also in the session scratchpad) and sent to
 the boss. Waiting on their word. Next is in plan/2026-11-07.md.
 
-## 8 Nov: what is in progress, and who it waits on
+## 8 Nov: what was in progress then, and who it waited on (old; see "Start here" at the top)
 In progress: the Buffer Commit entry. The app is **Came In**, which belongs
 to the build team (repo WickedCreativeSystems/came-in; I can't change it).
 The entry is due **13 Nov, 11:59 PM PT**, and **the boss submits it**
