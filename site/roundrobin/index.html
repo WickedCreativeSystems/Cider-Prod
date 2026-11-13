@@ -7,8 +7,17 @@
 <meta name="description" content="Free pickleball round robin generator. Type the names and number of courts, get a fair doubles schedule where everyone rotates partners and opponents, with sit-outs shared evenly. Print it or share the link. No sign-up.">
 <link rel="canonical" href="https://vibecider.bananafest-destiny.com/roundrobin/">
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Round Robin">
+<meta property="og:url" content="https://vibecider.bananafest-destiny.com/roundrobin/">
 <meta property="og:title" content="Pickleball round robin generator with names">
-<meta property="og:description" content="Names and courts in, a fair printable schedule out. Free, no sign-up.">
+<meta property="og:description" content="A fair doubles schedule from a list of names: who partners who, on which court, every round. Print it or share the link. Free, no sign-up.">
+<meta property="og:image" content="https://vibecider.bananafest-destiny.com/roundrobin/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A seven-round pickleball doubles schedule for eight players on two courts, beside the words: Pickleball round robin generator. Free, no sign-up.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Round Robin","url":"https://vibecider.bananafest-destiny.com/roundrobin/","description":"Free pickleball round robin generator. Type the names and number of courts, get a fair doubles schedule where everyone rotates partners and opponents, with sit-outs shared evenly. Print it or share the link.","applicationCategory":"SportsApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"image":"https://vibecider.bananafest-destiny.com/roundrobin/og.png","creator":{"@type":"Organization","name":"Bananafest Destiny","url":"https://bananafest-destiny.com"}}</script>
 <style>
 :root{--bg:#f6f8f3;--fg:#17201a;--muted:#56625a;--line:#d9e0d6;--card:#fff;--accent:#2f7d4f;--accent-fg:#fff;--hi:#eef6e8}
 @media (prefers-color-scheme:dark){:root{--bg:#111613;--fg:#e6ede7;--muted:#9aa89e;--line:#27302a;--card:#18201b;--accent:#5fc287;--accent-fg:#0d130f;--hi:#1d2a21}}
@@ -28,7 +37,8 @@ textarea{min-height:200px;resize:vertical}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
 button{background:var(--accent);color:var(--accent-fg);border:0;border-radius:8px;padding:12px 18px;font:inherit;font-weight:600;cursor:pointer;margin:14px 8px 0 0}
 button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
-#out{display:none;scroll-margin-top:28px}
+button.link{background:none;color:inherit;border:0;border-radius:0;padding:0;margin:0;font-size:14px;font-weight:400;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+#out{display:none;scroll-margin-top:28px} /* the 28px: added 13 Nov 2026 so the scroll to "Your schedule" stops short of the top and the heading clears a phone's address bar. First noticed while filming a clip of this page. */
 table{width:100%;border-collapse:collapse;font-size:15px}
 th,td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
 th{background:var(--hi);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
@@ -60,7 +70,8 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:16px;font-si
 
 <form class="panel" id="f">
   <label for="names">Players <span class="hint">One name per line. 4 to 48 players.</span></label>
-  <textarea id="names" placeholder="Ana&#10;Ben&#10;Carla&#10;Dev&#10;Eli&#10;Fay&#10;Gus&#10;Hana&#10;Ivy"></textarea>
+  <textarea id="names" placeholder="Ana&#10;Ben&#10;Carla&#10;Dev&#10;Eli&#10;Fay&#10;Gus&#10;Hana"></textarea>
+  <p class="hint" style="margin:4px 0 0"><button type="button" class="link" id="eg">Try it with eight example names</button></p>
   <div class="row">
     <div><label for="courts">Courts</label><input id="courts" type="number" min="1" max="12" value="2"></div>
     <div><label for="rounds">Rounds</label><input id="rounds" type="number" min="1" max="30" value="7"></div>
@@ -143,7 +154,7 @@ function names() { return $("names").value.split(/\n|,/).map(s => s.trim()).filt
 function render() {
   const ns = names(), courts = +$("courts").value || 1, rounds = +$("rounds").value || 1;
   $("err").textContent = "";
-  if (ns.length < 4) { $("err").textContent = "Add at least 4 players."; return; }
+  if (ns.length < 4) { $("err").textContent = ns.length ? "Add at least 4 players." : "Type at least 4 players, one per line. The grey names are only an example."; return; }
   if (ns.length > 48) { $("err").textContent = "48 players at most."; return; }
   if (new Set(ns.map(s => s.toLowerCase())).size !== ns.length) { $("err").textContent = "Two players have the same name. Add an initial to tell them apart."; return; }
   const c = Math.min(courts, Math.floor(ns.length / 4));
@@ -169,6 +180,7 @@ function render() {
 }
 
 $("f").addEventListener("submit", e => { e.preventDefault(); render(); $("out").scrollIntoView({ behavior: "smooth" }); });
+$("eg").addEventListener("click", () => { $("names").value = $("names").placeholder; render(); $("out").scrollIntoView({ behavior: "smooth" }); });
 $("again").addEventListener("click", () => { seed = Math.floor(Math.random() * 1e9); render(); });
 $("share").addEventListener("click", () => navigator.clipboard.writeText(location.href).then(
   () => $("share").textContent = "Link copied", () => $("share").textContent = "Copy the address bar"));
