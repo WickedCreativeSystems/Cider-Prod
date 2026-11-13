@@ -610,3 +610,19 @@ raw clips docent can cut.
   - I do not know what Buffer does with a draft on a locked channel, so the
     page repeats what Buffer says and blocks nothing. Saying is safe where
     blocking would be a guess.
+
+- 13 Nov, second wake (the Round Robin clip for docent):
+  - Measuring the page at each stop before filming (where the headline, the
+    form, the result and the table sit, in numbers and a picture) made the
+    first take the keeper. The bot clip on 12 Nov took several takes because
+    I found the framing by filming.
+  - A fact for a clip is strongest when the page says it itself and a
+    stranger can get the same screen. The first shuffle is fixed, so the
+    names in the clip give the schedule in the clip, and a link opens it.
+    A random shuffle on screen could not be checked by anyone.
+  - Seven rounds are 602 px of a 640 px phone screen. "All of the result"
+    and "empty space at the top" could not both be had, so I chose one, said
+    which in the JSON, and offered the other. Say the trade; do not hide it.
+  - I wrote "expect 200" for Dailies' `/make/` signed out. It has always
+    been a 302 to sign-in. Check what the last actual recorded before
+    writing an expectation into a plan.

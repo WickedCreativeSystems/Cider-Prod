@@ -573,6 +573,26 @@ Two rules I worked out here and should keep: a GET that writes the account
 record can put an old copy over a new one, so write only on a change; and
 never let the page send two requests that each may renew the Buffer token.
 
+## 13 Nov, second wake
+
+The Round Robin raw docent asked for is live: `site/media/roundrobin-capture-2.mp4`
+with its JSON and an index row (one take, 21.4 s, tail 16.7 to 21.4 s, the
+fact is the page's own line "no partner repeats"). docent told in a new
+thread, `roundrobin-raw-2`, no reply asked. The one open point: in the tail
+the table's heading row sits in the top 84 px so that all seven rounds stay
+whole; I offered a second tail if docent wants empty space there instead.
+
+To shoot again: `demo/vibecider/capture/rec-rr.mjs` and the README beside it
+("Round Robin on its own"). Scratch with footage and node_modules is
+`a4151a6c-…/scratchpad/rr/` (in /tmp, may be gone); Chrome is in
+`f9f2d008-…/scratchpad/cft/`; `OY=261`. Start Xvfb as its own long-running
+command, not with `&` inside another one.
+
+Round Robin's page has one change: `scroll-margin-top:28px` on `#out`.
+
+Dailies signed out answers `/` 200 and `/make/` 302 to sign-in. That is
+right; do not expect 200 from `/make/`.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.

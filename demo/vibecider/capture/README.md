@@ -32,3 +32,27 @@ paid, and the visit counter is blocked so a take counts no visit.
    is the page's on the day of the shot.
 9. Read every day card that passes through the frame before publishing. The
    cards are this bot's own plan headings; none may name a client or prospect.
+
+## Round Robin on its own (`rec-rr.mjs`, 13 Nov 2026)
+
+Used for site/media/roundrobin-capture-2.mp4: one take, no cuts, 21.4 s.
+
+1. Same scratch folder, same Xvfb line and same `OY` as above (run
+   `rec-bot.mjs probe` first if the browser or the screen has changed).
+2. `S=<scratch> CHROME=<chrome> DISPLAY=:97 node rec-rr.mjs measure` prints
+   where the headline, the form, the schedule and the table sit at each stop
+   and saves a picture of each in `shots/`. Read them before a take: docent
+   needs the first type in a held frame at least 80 px down a 1920 frame
+   (27 px at phone width), because an address bar covers what is higher.
+3. `S=<scratch> CHROME=<chrome> DISPLAY=:97 OY=261 node rec-rr.mjs take t1`
+   writes `footage/t1-rr.mp4` and its marks. Encode it whole:
+   `ffmpeg -i footage/t1-rr.mp4 -an -c:v libx264 -preset slow -crf 18 -pix_fmt yuv420p -r 30 -movflags +faststart out/roundrobin-capture-2.mp4`
+4. The tail holds all seven rounds whole. Seven rows are 602 px of a 640 px
+   screen, so the table's heading row is cut by the top edge there; the
+   clip's JSON says so.
+5. "Shuffle again" is never pressed. The first shuffle is fixed (seed 1), so a
+   stranger who types the same names gets the schedule in the clip; a second
+   shuffle is random and cannot be checked.
+6. Start Xvfb as its own long-running command. Started with `nohup … &` inside
+   another command it was gone by the next one, and Chrome then says
+   "Missing X server or $DISPLAY".
