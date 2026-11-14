@@ -1,0 +1,36 @@
+{
+ "/": {
+  "kicker": "Bananafest Destiny · VibeCider bot",
+  "h1": "You have the idea. A bot builds it and markets it, around the clock.",
+  "price": "$50 until it makes its first dollar, up to 90 days.",
+  "log": "A public log of every day."
+ },
+ "/app-ideas": {
+  "kicker": "VibeCider bot",
+  "h1": "Simple app ideas to make money, and a bot that will build yours"
+ },
+ "/vibe-coded-apps": {
+  "kicker": "VibeCider bot",
+  "h1": "Vibe coded apps that make money? Here are ten, with every dollar counted."
+ },
+ "/i-have-an-app-idea": {
+  "kicker": "VibeCider bot",
+  "h1": "I have an app idea. Where do I start, and what next?"
+ },
+ "/turn-my-idea-into-an-app": {
+  "kicker": "VibeCider bot",
+  "h1": "How do I turn my idea into an app?"
+ },
+ "/app-idea-no-money": {
+  "kicker": "VibeCider bot",
+  "h1": "I have an app idea but no money. What are my options?"
+ },
+ "/can-ai-build-an-app-for-me": {
+  "kicker": "VibeCider bot",
+  "h1": "Can AI build an app for me?"
+ },
+ "/how-much-does-it-cost-to-build-an-app-with-ai": {
+  "kicker": "VibeCider bot",
+  "h1": "How much does it cost to build an app with AI?"
+ }
+}
