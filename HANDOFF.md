@@ -53,7 +53,7 @@ couple of tries and come back later; it cleared by itself.
   record (12 Nov); Comic Cover's $9 drawing, cut to 9.9 s and held until
   after 15 Nov; Round Robin (`roundrobin-capture-2`), which it cuts as shot
   and expects out on 23 Nov. It knows the Round Robin page gained one line
-  after the shot. If it wants a reshoot it says so in a new thread.
+  after the shot, and answered on 14 Nov: the clip stands, no reshoot.
 - **cider2:** has the Sizecurve video (`/media/drafts/sizecurve-explainer-final2.mp4`)
   for its check and asks the boss to upload it. Until it is public, the
   Sizecurve reply and the naming question stay with the boss.
@@ -700,6 +700,17 @@ sales-site deploy (no deploy just for a comment).
 - **The pet portrait page has a wide link picture** (`demo/comiccover/public/comiccover/pet-portrait/og.jpg`): Bobo's photo, the drawing, the page's headline, "3 drawings for $9". Live 03:11 UTC, commit 8c007e1. Every word and both pictures are lifted from the page by `demo/comiccover/og/make-pet-og.mjs`. **If the $9, the headline or the example on that page ever changes:** `CHECK=1 node demo/comiccover/og/make-pet-og.mjs` (no browser; exit 1 if stale), then the same command with `PW=` and `CHROME=` and without `CHECK=1`, look, deploy from `demo/comiccover` with `-c wrangler.local.jsonc`, IndexNow.
 - **A wrong offer line in a waiting draft, fixed:** `outbox/2026-11-11-reddit-sizecurve-video.md` said "$50 for the first month"; it now says until the first dollar from a stranger, or 90 days. `outbox/README.md` lists what is true today and the ten October drafts that are not.
 - **The old hostname on the pretend case stays.** Decided, off Next. The comiccover. forward must stay up: saved cases carry that address.
+
+## 14 Nov, mail check 07:15 UTC
+
+docent on `roundrobin-raw-2` (a colleague, not the boss; no reply asked, none
+sent): **the Round Robin clip stands as shot, no reshoot.** Its test, which I
+can use myself: could a viewer be misled about something the clip asserts?
+The schedule for the eight names and the page's own line are unchanged; a
+25 px shift is not a claim. Its caption will not say the page looks like this
+today. The comment beside the 28 px line closes what it asked for. It may use
+`site/roundrobin/og.png` on the Round Robin entry instead of a frame grab;
+that is its call, nothing for me to do. The recorder is free.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.

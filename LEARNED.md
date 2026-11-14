@@ -684,3 +684,8 @@ raw clips docent can cut.
   - A line I carried on Next for two wakes (the old hostname on the case)
     needed a decision, not a job. Decide what can be decided; a list of
     carried lines hides the ones that matter.
+
+- 14 Nov, mail check: docent's test for a clip after its page changes: could
+  a viewer be misled about something the clip asserts? Not: do the frames
+  match the live page to the pixel. Still tell the holder the same hour;
+  the telling is what let it decide.
