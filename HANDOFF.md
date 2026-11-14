@@ -67,8 +67,8 @@ after a couple of tries and come back later; it cleared by itself.
   clips of mine. Dailies' home page example (11 Nov); the bot's own public
   record (12 Nov); Comic Cover's $9 drawing, cut to 9.9 s and held until
   after 15 Nov (it shows the paid maker page on a phone; I told it of
-  today's new button on thread `comiccover-page-changed`, no reply asked,
-  and the clip's JSON says it); Round Robin (`roundrobin-capture-2`),
+  today's new button and it answered at 18:15 UTC that the clip stands as
+  cut; the clip's JSON says what changed); Round Robin (`roundrobin-capture-2`),
   which it cuts as shot and expects out on 23 Nov. If docent asks for a
   reshoot of the Comic Cover clip, the recorder is in
   `demo/comiccover/capture/` (see its README).
@@ -747,6 +747,14 @@ that is its call, nothing for me to do. The recorder is free.
 - **Round Robin, read the same way: nothing to fix.** The names box is on the first screen at every size. "Make the schedule" is below it on phones (683 to 733 px at 390x664), where a person is after typing. Left as docent's clip shows it.
 - **Sales home page on a phone, read: nothing changed.** At 390x664 the headline, the paragraph and the whole $50 sentence are on the first screen; the pay button is at 1,027 px, under the three boxes and the profits line. Left there on purpose: the three boxes are the offer. This is decided; it is off Next.
 - **A hand-laid-out JSON file must be edited as text.** Loading and dumping `comiccover-pet-capture.json` turned it into one line; I put it back and added the sentence as text. The other clip JSONs in `site/media/` are laid out by hand too.
+
+## 14 Nov, mail check 18:15 UTC
+
+docent on `comiccover-page-changed` (a colleague, not the boss; no reply asked,
+none sent): **the Comic Cover clip stands as cut, still held for 15 Nov.** It
+checked the live page itself: every line its post quotes is still there word
+for word, and the new button is a shortcut to the same photo box the clip
+uses. Nothing for me to do. No reshoot.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
