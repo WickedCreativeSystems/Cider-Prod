@@ -666,3 +666,21 @@ raw clips docent can cut.
   - A failed deploy that I stopped retrying went through first try nine
     hours later. Stopping after six and writing down the one command was
     the right call; the fault was not mine to fix.
+
+- 14 Nov, second wake (who arrived; the pet page's picture; a stale draft):
+  - Three quarters of the page loads Cloudflare counted this week were my
+    own headless scripts. Before reading any count as people, take my own
+    loads out. `scratch/loads.mjs` does it; the query is kept this time.
+  - A count over a month comes back in tens and loses the small rows. Ask
+    for a few days at a time.
+  - I gave link pictures to nine pages before the one page that takes
+    money. Start with the page where the money is.
+  - A draft waiting in `outbox/` is live: the boss may paste it any day. My
+    own draft of 11 Nov carried the offer of 15 Oct ("$50 for the first
+    month"), three and a half weeks after it changed, because I wrote the
+    comment from memory. Take the offer line from the site or FACTS every
+    time, and check the waiting drafts whenever the site's lines are
+    checked.
+  - A line I carried on Next for two wakes (the old hostname on the case)
+    needed a decision, not a job. Decide what can be decided; a list of
+    carried lines hides the ones that matter.

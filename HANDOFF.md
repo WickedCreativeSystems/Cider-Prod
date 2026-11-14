@@ -2,31 +2,34 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the first wake, 14 Nov 00:18 UTC
+## Start here: state at the end of the second wake, 14 Nov 03:13 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-14.md`.
 
 **Nothing is half built and nothing is owed.** Every change I made is
-committed, pushed and live. The sales-site deploy that Cloudflare refused
-six times on 13 Nov went through first try at 00:07:56 UTC on 14 Nov.
-`mail/in/` and `mail/out/` are empty.
+committed, pushed and live. `mail/in/` and `mail/out/` are empty.
 
-**New on 14 Nov:** a shared link to Comic Cover's maker page shows a
-picture of a real free cover and its pretend graded case; a shared link to
-any of the eight sales pages shows a wide picture with that page's own
-headline (the home page's carries the price sentence). How to remake and
-check them is in "14 Nov, first wake" near the end of this file.
+**New on 14 Nov:** link pictures. A shared link shows a wide picture for
+Comic Cover's maker page, for the pet portrait page (the one that takes
+$9: Bobo's photo beside the drawing, "3 drawings for $9"), and for each of
+the eight sales pages. How to remake and check them is in the two "14 Nov"
+sections near the end of this file.
+
+**Who is arriving (read 03:08 UTC, 14 Nov):** almost nobody. About three
+page loads in four days could be strangers. The command is
+`node scratch/loads.mjs <host> <from> <to>`. No sale: Stripe read at
+03:08 UTC, the newest checkout is the expired one of 7 Nov.
+
+**`outbox/README.md`** (not pushed) says which drafts waiting for the boss
+are true today and which October ones must not be pasted as they are.
 
 **Dailies is finished for judging.** The Buffer Commit build window closes
 14 Nov 07:59 UTC (13 Nov 11:59 PM PT); judging starts 16 Nov. The boss
 submitted it on 10 Nov. No change and no tap deploy unless something is
-broken. Read at 00:08 UTC, signed out: `/` 200, `/make/` 302 to sign-in
+broken. Read at 03:08 UTC, signed out: `/` 200, `/make/` 302 to sign-in
 (that is right).
-
-**Stripe, read at 00:08 UTC on 14 Nov:** no sale of a bot or a drawing. The
-newest checkout is the expired, unpaid one of 7 Nov.
 
 **To deploy the sales site**, from the repo root (the `wrangler.jsonc`
 there serves `site/`):
@@ -59,8 +62,10 @@ couple of tries and come back later; it cleared by itself.
 **Not mine, left alone:** the uncommitted change to `CLAUDE.md` (the boss's
 section on his email address; I follow it) and `pet.png` in the repo root.
 
-**The price is $50 until the first dollar.** RULES.md section 0 still says
-$100; that is old, and the lines to fix it are with the boss.
+**The price is $50 until the first dollar** from a stranger, or 90 days.
+RULES.md section 0 still says $100; that is old, and the lines to fix it
+are with the boss. Never write the offer from memory: take it from the
+site or FACTS.
 
 ## Done since 24 Oct
 - 26 Oct: told the boss what I needed (status list). Asked one question,
@@ -688,6 +693,13 @@ sales-site deploy (no deploy just for a comment).
 - Seven link-preview readers (Facebook, X, Slack, Discord, LinkedIn, WhatsApp, Telegram) get 200 for the pages and the pictures. What each one draws I have not seen; I have no account on them.
 - **Seen and left:** the pretend graded case prints "SEALED AT COMICCOVER.BANANAFEST-DESTINY.COM", the old hostname (it still forwards). docent's held clip shows the case. Change it to the live address only after telling docent, or after its clip is out (it holds it until after 15 Nov); then remake `og.jpg`, which shows the case too.
 - Dailies' home page still has no link-preview tags; that waits until judging ends.
+
+## 14 Nov, second wake
+- Mail in: nothing. Stripe 03:08Z: no sale. Dailies signed out: `/` 200, `/make/` 302. Nothing changed on Dailies. Studio's number 03:09Z: still $36.09 from four sales, 20 live.
+- **Page loads, 11 to 14 Nov:** 80 on the sales host, 59 of them my own headless scripts, about three that could be strangers (Reddit to `/`, an iPhone on Round Robin, a British desktop on `/`). Dailies: the boss and me only. A month back, one visit to `/comiccover/` from Facebook on 20 Oct (Sweden). Command: `export $(grep -E "^CLOUDFLARE_(API_TOKEN|ACCOUNT_ID)=" .git-credentials | xargs)` then `node scratch/loads.mjs vibecider.bananafest-destiny.com 2026-11-11 2026-11-14`. Ask for a few days at a time; a month comes back in tens.
+- **The pet portrait page has a wide link picture** (`demo/comiccover/public/comiccover/pet-portrait/og.jpg`): Bobo's photo, the drawing, the page's headline, "3 drawings for $9". Live 03:11 UTC, commit 8c007e1. Every word and both pictures are lifted from the page by `demo/comiccover/og/make-pet-og.mjs`. **If the $9, the headline or the example on that page ever changes:** `CHECK=1 node demo/comiccover/og/make-pet-og.mjs` (no browser; exit 1 if stale), then the same command with `PW=` and `CHROME=` and without `CHECK=1`, look, deploy from `demo/comiccover` with `-c wrangler.local.jsonc`, IndexNow.
+- **A wrong offer line in a waiting draft, fixed:** `outbox/2026-11-11-reddit-sizecurve-video.md` said "$50 for the first month"; it now says until the first dollar from a stranger, or 90 days. `outbox/README.md` lists what is true today and the ten October drafts that are not.
+- **The old hostname on the pretend case stays.** Decided, off Next. The comiccover. forward must stay up: saved cases carry that address.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
