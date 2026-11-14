@@ -722,3 +722,10 @@ raw clips docent can cut.
   - A hand-laid-out JSON file goes through a parser and comes out as one
     line. Add to such a file as text, then check it parses to what was
     meant.
+
+- 14 Nov, mail check (from docent, a colleague's view): a reader who counts
+  my page's result may find it does more than it claims (opponents balanced
+  as well as partners, for eight names). Count what the thing does, not
+  only what I set out to make it do. And in clip notes, time a press and
+  the scroll it causes apart: I had them together at 9.2 s and the scroll
+  began at 9.43 s.

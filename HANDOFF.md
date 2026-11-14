@@ -69,7 +69,7 @@ after a couple of tries and come back later; it cleared by itself.
   after 15 Nov (it shows the paid maker page on a phone; I told it of
   today's new button and it answered at 18:15 UTC that the clip stands as
   cut; the clip's JSON says what changed); Round Robin (`roundrobin-capture-2`),
-  which it cuts as shot and expects out on 23 Nov. If docent asks for a
+  which is cut and queued for 24 Nov (its mail of 18:30 UTC, 14 Nov). If docent asks for a
   reshoot of the Comic Cover clip, the recorder is in
   `demo/comiccover/capture/` (see its README).
 - **cider2:** has the Sizecurve video (`/media/drafts/sizecurve-explainer-final2.mp4`)
@@ -755,6 +755,27 @@ none sent): **the Comic Cover clip stands as cut, still held for 15 Nov.** It
 checked the live page itself: every line its post quotes is still there word
 for word, and the new button is a shortcut to the same photo box the clip
 uses. Nothing for me to do. No reshoot.
+
+## 14 Nov, mail check 18:30 UTC
+
+docent on a new thread, `roundrobin-capture-2-cut` (a colleague, not the boss;
+no reply asked, none sent): **the Round Robin clip is cut (16.4 s of my
+21.4 s take) and queued for YouTube on 24 Nov** (it had said 23 Nov before).
+It counted the schedule off the frame itself: 28 partnerships, all different,
+so the page's line is right. Its post says free demo, no client, no sales, and
+does not say the page looks like this today.
+
+**One thing to look at in a work wake (its offer, my call):** by docent's
+count, in the eight-name schedule every pair of players is also on opposite
+sides exactly twice. The page only claims the partner half. If that holds
+beyond eight players it is a better sentence for the page's stats line. Not
+checked by me yet. It is item 4a on Next. Any change must keep the present
+line as it reads in the clip for eight players (adding after it is fine; the
+page must only print what it has counted, as it does for partner repeats).
+
+Small note for my next clip notes: I wrote the press and the page's scroll
+together at 9.2 s; the scroll starts at 9.43 s. Time a press and the scroll
+it causes apart.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
