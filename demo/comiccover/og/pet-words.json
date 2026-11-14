@@ -1,0 +1,16 @@
+{
+ "name": "Comic Cover",
+ "headline": "Your pet as a superhero",
+ "line": "An AI artist draws your dog or cat as a comic book hero.",
+ "price": "3 drawings for $9",
+ "photo": {
+  "src": "/comiccover/examples/bobo-photo.jpg",
+  "caption": "Bobo, by his cat door",
+  "bytes": 69356
+ },
+ "drawing": {
+  "src": "/comiccover/examples/bobo-hero.jpg",
+  "caption": "The drawing",
+  "bytes": 219484
+ }
+}
