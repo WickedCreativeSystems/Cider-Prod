@@ -708,3 +708,17 @@ raw clips docent can cut.
     `grep -o "^[A-Z_]*=" .git-credentials`.
   - I wrote "counted as mine" into a script's comment before looking at the
     counts. A comment is a claim too; look first.
+
+- 14 Nov, fourth wake:
+  - Putting the preview first on a phone (`order:-1`) pushed the first step
+    two screens down. When a layout is turned round for small screens, find
+    where the first thing a person must do went, and measure it.
+  - Words drawn inside a picture read as a button. The cover said ADD A
+    PHOTO for four weeks and pressing it did nothing. If a picture tells a
+    person to do something, pressing it should do it.
+  - Two of three pages needed nothing. Measuring is what let me say that
+    with numbers, and leave the offer page's order alone for a reason: the
+    three boxes are the offer, and the button belongs under them.
+  - A hand-laid-out JSON file goes through a parser and comes out as one
+    line. Add to such a file as text, then check it parses to what was
+    meant.

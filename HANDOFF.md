@@ -2,7 +2,7 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the third wake, 14 Nov 15:15 UTC
+## Start here: state at the end of the fourth wake, 14 Nov 18:14 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
@@ -11,25 +11,29 @@ job list for the next wake is the last "Next" in `plan/2026-11-14.md`.
 **Nothing is half built and nothing is owed.** Every change I made is
 committed, pushed and live. `mail/in/` and `mail/out/` are empty.
 
-**New in the third wake of 14 Nov:** the pet portrait page (the one page
-of mine that takes money, $9) shows its "Draw my pet for $9" button on the
-first screen, on phones and on laptops. Before, a person had to scroll to
-find it. Only the order on the first screen changed; no word, price or
-link did. `demo/comiccover/og/first-screen.mjs` measures it at eleven
-sizes. Details in "14 Nov, third wake" near the end of this file.
+**New in the fourth wake of 14 Nov:** on a phone, Comic Cover's maker page
+(`/comiccover/`) has an "Add a photo" button on the first screen, above
+the cover, and pressing the empty cover opens the photo box too. Before,
+the photo box was two screens down. No word, price or link changed, and
+the link picture did not need remaking. Round Robin and the sales home
+page were read the same way and needed nothing. Details in "14 Nov, fourth
+wake" near the end of this file.
 
-**Earlier on 14 Nov:** link pictures. A shared link shows a wide picture
-for Comic Cover's maker page, for the pet portrait page (Bobo's photo
-beside the drawing, "3 drawings for $9"), and for each of the eight sales
-pages. How to remake and check them is in the two "14 Nov" sections near
-the end of this file.
+**Earlier on 14 Nov:** the pet portrait page (the one page of mine that
+takes money, $9) shows its "Draw my pet for $9" button on the first
+screen; and link pictures: a shared link shows a wide picture for Comic
+Cover's maker page, for the pet portrait page (Bobo's photo beside the
+drawing, "3 drawings for $9"), and for each of the eight sales pages. How
+to remake and check them is in the "14 Nov" sections near the end of this
+file. `demo/comiccover/og/first-screen.mjs` measures the first screen of
+the pet page, and of the maker page with `WHAT=maker`.
 
-**Who is arriving (read 15:15 UTC, 14 Nov):** nobody today but my own
+**Who is arriving (read 18:13 UTC, 14 Nov):** nobody today but my own
 checks. About three page loads in the four days before could be strangers.
 The command is `node scratch/loads.mjs <host> <from> <to>`. **Today's
 "Unknown" browser loads of the pet page (US desktop, no referrer, 15:09 to
 15:12 UTC) are mine**, from a check that gave itself a made-up browser
-name; do not read them as people. No sale: Stripe read at 15:07 UTC, the
+name; do not read them as people. No sale: Stripe read at 18:07 UTC, the
 newest checkout is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
@@ -37,7 +41,7 @@ are true today and which October ones must not be pasted as they are.
 
 **Dailies is finished for judging.** The Buffer Commit build window closed
 14 Nov 07:59 UTC; judging starts 16 Nov. The boss submitted it on 10 Nov.
-No change and no tap deploy unless something is broken. Read at 15:07 UTC,
+No change and no tap deploy unless something is broken. Read at 18:07 UTC,
 signed out: `/` 200, `/make/` 302 to sign-in (that is right).
 
 **To deploy the sales site**, from the repo root (the `wrangler.jsonc`
@@ -56,18 +60,18 @@ after a couple of tries and come back later; it cleared by itself.
   (threads `dailies-second-account`, `rules-offer-line`,
   `search-console-count`, all 12 Nov). The one with a date on it: a second
   Buffer account tried on Dailies' sign-in before 16 Nov. The GitHub token
-  line now says it was printed into session output twice (9 and 14 Nov).
-  The monthly AI budget question is closed (FACTS, 10 Nov: prepaid, no
-  number).
+  line says it was printed into session output twice (9 and 14 Nov).
 - **market-nana:** to relay his answers to those three. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
 - **docent** (a colleague; I owe it nothing right now): it has four raw
   clips of mine. Dailies' home page example (11 Nov); the bot's own public
   record (12 Nov); Comic Cover's $9 drawing, cut to 9.9 s and held until
-  after 15 Nov (it shows the paid maker page, not the pet portrait page,
-  so today's change does not touch it); Round Robin
-  (`roundrobin-capture-2`), which it cuts as shot and expects out on
-  23 Nov.
+  after 15 Nov (it shows the paid maker page on a phone; I told it of
+  today's new button on thread `comiccover-page-changed`, no reply asked,
+  and the clip's JSON says it); Round Robin (`roundrobin-capture-2`),
+  which it cuts as shot and expects out on 23 Nov. If docent asks for a
+  reshoot of the Comic Cover clip, the recorder is in
+  `demo/comiccover/capture/` (see its README).
 - **cider2:** has the Sizecurve video (`/media/drafts/sizecurve-explainer-final2.mp4`)
   for its check and asks the boss to upload it. Until it is public, the
   Sizecurve reply and the naming question stay with the boss.
@@ -733,6 +737,16 @@ that is its call, nothing for me to do. The recorder is free.
 - **Load on a phone, timed live with the connection slowed:** words and button painted in 0.3 s (fast 4G), 0.5 s (slow 4G), 1.1 s (3G); both pictures in after 0.7 s, 3.1 s, 12 s. Pictures left as they are (69 KB and 219 KB): the drawing is the sample of what $9 buys.
 - **A check of mine must not give itself a made-up browser name.** Cloudflare then lists its loads as "Unknown" and `scratch/loads.mjs` counts them as "could be people". Today's Unknown loads of the pet page (15:09 to 15:12 UTC) are mine. The kept script uses the browser's own headless name.
 - **The GitHub token was printed into session output again** (a `cut` over `.git-credentials`; its first line has no "="). In no file, commit or message. Names only: `grep -o "^[A-Z_]*=" .git-credentials`.
+
+## 14 Nov, fourth wake
+- Mail in: nothing. Stripe 18:07Z: no sale. Dailies signed out: `/` 200, `/make/` 302. Nothing changed on Dailies.
+- **Comic Cover's maker page has a way to add a photo on a phone's first screen.** Live 18:11 UTC, commit 911ca01. Before, the phone layout put the cover first and the form (with the photo box) about 1,100 px down; the cover said ADD A PHOTO and did nothing when pressed. Now: an "Add a photo" button (`#addp`, shown up to 720 px wide) above the "Cover / Slab it" choice, at 293 to 343 px; pressing the empty cover or the empty slab opens the photo box at every size; after a photo the button reads "Change the photo". No word that was on the page, price or link changed. On a laptop nothing looks different except the pointer over the empty cover.
+- **To check it after any change to the top of that page:** `WHAT=maker PW=<folder that holds node_modules/playwright-core> CHROME=<chrome binary> node demo/comiccover/og/first-screen.mjs [url] [folder]` (no url = the live page; without `WHAT=maker` it reads the pet page as before). On 14 Nov all eleven sizes passed. Playwright and Chrome were still in `/tmp/claude-1000/-home-walker-vibecider4/f74e0069-…/scratchpad/` (`pwt`, `cft/chrome-linux64/chrome`).
+- The maker page's link picture (`og.jpg`) was remade from the changed page into a scratch file and came out the same byte for byte, so it stays. `CHECK=1 node demo/comiccover/og/make-pet-og.mjs` passes.
+- **docent's held clip (`comiccover-pet-capture`) shows this page on a phone.** The clip adds the photo through the form's own box, which is unchanged; the live page now has the button and sits about 62 px lower under it. Written at the end of the notes in `site/media/comiccover-pet-capture.json` (deployed) and mailed to docent, thread `comiccover-page-changed`, no reply needed.
+- **Round Robin, read the same way: nothing to fix.** The names box is on the first screen at every size. "Make the schedule" is below it on phones (683 to 733 px at 390x664), where a person is after typing. Left as docent's clip shows it.
+- **Sales home page on a phone, read: nothing changed.** At 390x664 the headline, the paragraph and the whole $50 sentence are on the first screen; the pay button is at 1,027 px, under the three boxes and the profits line. Left there on purpose: the three boxes are the offer. This is decided; it is off Next.
+- **A hand-laid-out JSON file must be edited as text.** Loading and dumping `comiccover-pet-capture.json` turned it into one line; I put it back and added the sentence as text. The other clip JSONs in `site/media/` are laid out by hand too.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
