@@ -38,6 +38,18 @@ p{margin:0 0 12px}
 .ba figcaption{font-size:14px;color:var(--muted);margin-top:6px;text-align:center}
 .btn{display:inline-block;background:var(--accent);color:var(--accent-fg);border-radius:8px;padding:14px 22px;font-weight:600;text-decoration:none;margin:10px 10px 0 0}
 .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+/* The first screen. On a phone: headline, the two pictures, the button, then the words (the order is set here, not in the markup).
+   On a wide screen: the words and the button beside the pictures. Either way the $9 button shows without scrolling. */
+.top{display:flex;flex-direction:column}
+.top .ba{order:1;margin:8px 0 4px}
+.top .cta{order:2}
+.top .about{order:3;margin-top:12px}
+.top .lede{order:4;margin-top:8px}
+@media (max-width:799px){main{padding-top:20px}.top .ba,.top .cta{max-width:560px}.top .cta .btn{display:block;text-align:center;margin-right:0}}
+@media (min-width:800px){
+  .top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:auto 1fr auto;grid-template-areas:"lede ba" "cta ba" "about about";column-gap:28px;margin-top:20px}
+  .top .lede{grid-area:lede;margin-top:0}.top .ba{grid-area:ba;margin:0}.top .cta{grid-area:cta}.top .about{grid-area:about;margin-top:18px}
+}
 .cover{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px;align-items:start}
 .cover img{width:100%;height:auto;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
 @media (max-width:560px){.cover{grid-template-columns:1fr}.cover img{max-width:240px}}
@@ -52,15 +64,19 @@ footer{margin-top:48px;border-top:1px solid var(--line);padding-top:16px;font-si
 <main>
 <a class="kicker" href="/comiccover/">Comic Cover</a>
 <h1>Your pet as a superhero: a funny custom pet portrait from your photo</h1>
+<div class="top">
 <p class="lede">Send one photo of your dog or cat. An AI artist redraws them as the hero of a comic book, in costume and cape, and they still look like themselves: same markings, same eyes, same face. Three drawings for $9, about a minute each. Then put the one you like on a comic cover and print it.</p>
 
 <div class="ba">
   <figure><img src="/comiccover/examples/bobo-photo.jpg" width="640" height="776" alt="Photo of Bobo, a fluffy white cat, sitting on a mat by a cat door"><figcaption>Bobo, by his cat door</figcaption></figure>
   <figure><img src="/comiccover/examples/bobo-hero.jpg" width="640" height="794" alt="Bobo drawn by the AI as a superhero in a red and gold suit with a paw emblem and a red cape, on a city rooftop"><figcaption>The drawing: red, "Guardian of the cat door"</figcaption></figure>
 </div>
-<a class="btn" href="https://buy.stripe.com/bJe6oJ0IKfX76wPblBeIw05">Draw my pet for $9</a>
-<a class="btn ghost" href="/comiccover/">Try the free cover maker first</a>
-<p class="note" style="margin-top:12px">Bobo was our boss's cat; he died this year. This is the first of his three drawings, made the same way yours would be. None of the samples here are customer orders.</p>
+<div class="cta">
+  <a class="btn" href="https://buy.stripe.com/bJe6oJ0IKfX76wPblBeIw05">Draw my pet for $9</a>
+  <a class="btn ghost" href="/comiccover/">Try the free cover maker first</a>
+</div>
+<p class="note about">Bobo was our boss's cat; he died this year. This is the first of his three drawings, made the same way yours would be. None of the samples here are customer orders.</p>
+</div>
 
 <h2>How it works</h2>
 <ol>
