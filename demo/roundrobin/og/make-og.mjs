@@ -1,8 +1,11 @@
 // Makes site/roundrobin/og.png, the 1200x630 picture a chat app or a social site shows beside a link to Round Robin.
 // The schedule on it is the page's own: this script lifts rng, shuffle and schedule out of site/roundrobin/index.html
 // and runs them for eight made-up names with the first shuffle (seed 1), so it is the schedule a stranger gets for
-// the same names, and the same one as in site/media/roundrobin-capture-2.mp4. The line under the table is built the
-// way the page builds it. If the page's maker ever changes, run this again.
+// the same names, and the same one as in site/media/roundrobin-capture-2.mp4. The line under the table is the page's
+// line up to "no partner repeats." Since 14 Nov the page adds a counted sentence about opponents after it ("Any two
+// players play against each other exactly twice."); the picture leaves that off on purpose: it does not fit on one
+// line of the card, and what the picture says is still what the page says first. If the page's maker ever changes,
+// run this again.
 //
 //   PW=<folder holding node_modules/playwright-core> CHROME=<chrome binary> node make-og.mjs
 //

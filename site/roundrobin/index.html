@@ -95,7 +95,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:16px;font-si
 
 <div class="noprint">
 <h2>How it's fair</h2>
-<p>Each round, the players who have sat out least sit out next, so nobody sits twice before everyone has sat once. Then it tries thousands of ways to split the players into pairs and courts and keeps the one that repeats the fewest partners and opponents so far. With 8 players and 7 rounds, everyone partners every other player exactly once when it can find it.</p>
+<p>Each round, the players who have sat out least sit out next, so nobody sits twice before everyone has sat once. Then it tries thousands of ways to split the players into pairs and courts and keeps the one that repeats the fewest partners and opponents so far. With 8 players and 7 rounds, everyone partners every other player exactly once when it can find it. When any two players also play against each other the same number of times, the line above the schedule says so. With 8 players on 2 courts for 7 rounds, the first schedule does, and so does about every second shuffle after it.</p>
 <p>The link holds the names, courts and shuffle, so anyone who opens it sees the same schedule. Nothing is stored on a server.</p>
 
 <p class="demo">This app was built by an AI bot as a demo of what a <a href="https://vibecider.bananafest-destiny.com/">VibeCider bot</a> makes: one small web app, one job, live on the web (a client's goes on a domain they own). The paid version in <a href="https://vibecider.bananafest-destiny.com/app-ideas/">the idea</a> (a $4 printable night, $6/month leagues with standings) is not wired up here. Have an idea of your own? A bot builds it and markets it for $50 until it makes its first dollar, up to 90 days.</p>
@@ -146,7 +146,7 @@ function schedule(n, courts, rounds, s) {
     sit.forEach(i => { sat[i]++; last[i] = k; });
     out.push({ games, sit });
   }
-  return { out, part, sat };
+  return { out, part, sat, opp };
 }
 
 function names() { return $("names").value.split(/\n|,/).map(s => s.trim()).filter(Boolean); }
@@ -158,7 +158,7 @@ function render() {
   if (ns.length > 48) { $("err").textContent = "48 players at most."; return; }
   if (new Set(ns.map(s => s.toLowerCase())).size !== ns.length) { $("err").textContent = "Two players have the same name. Add an initial to tell them apart."; return; }
   const c = Math.min(courts, Math.floor(ns.length / 4));
-  const { out, part, sat } = schedule(ns.length, c, Math.min(rounds, 30), seed);
+  const { out, part, sat, opp } = schedule(ns.length, c, Math.min(rounds, 30), seed);
   const esc = s => s.replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
   const team = t => t.map(i => esc(ns[i])).join(" &amp; ");
   let h = "<thead><tr><th>Round</th>" + [...Array(c)].map((_, i) => `<th>Court ${i + 1}</th>`).join("") + (out[0].sit.length ? "<th>Sitting out</th>" : "") + "</tr></thead><tbody>";
@@ -170,8 +170,12 @@ function render() {
   $("tbl").innerHTML = h + "</tbody>";
   const distinct = part.map(row => row.filter(v => v > 0).length), repeats = part.flat().filter(v => v > 1).length / 2;
   const sMin = Math.min(...sat), sMax = Math.max(...sat);
+  // Opponents, counted from this schedule: the sentence is printed only when every two players met across the net the same number of times.
+  const met = []; for (let i = 0; i < ns.length; i++) for (let j = i + 1; j < ns.length; j++) met.push(opp[i][j]);
+  const oMin = Math.min(...met), oMax = Math.max(...met);
   $("stats").textContent = `${ns.length} players, ${c} court${c > 1 ? "s" : ""}, ${out.length} rounds. ` +
     `Each player partners ${Math.min(...distinct) === Math.max(...distinct) ? Math.min(...distinct) : Math.min(...distinct) + "–" + Math.max(...distinct)} different people; ${repeats ? repeats + " partner pair" + (repeats > 1 ? "s" : "") + " repeat." : "no partner repeats."}` +
+    (oMin === oMax && oMin > 0 ? ` Any two players play against each other exactly ${oMin === 1 ? "once" : oMin === 2 ? "twice" : oMin + " times"}.` : "") +
     (sMax ? ` Everyone sits out ${sMin === sMax ? sMin : sMin + "–" + sMax} time${sMax > 1 ? "s" : ""}.` : "") +
     (c < courts ? ` Only ${c} court${c > 1 ? "s" : ""} can be filled with ${ns.length} players.` : "");
   $("ph").textContent = `Round robin · ${ns.length} players · ${c} court${c > 1 ? "s" : ""}`;
