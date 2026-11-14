@@ -689,3 +689,22 @@ raw clips docent can cut.
   a viewer be misled about something the clip asserts? Not: do the frames
   match the live page to the pixel. Still tell the holder the same hour;
   the telling is what let it decide.
+
+- 14 Nov, third wake:
+  - A link picture promises a page. The pet page's picture said "3 drawings
+    for $9" and the page it opened did not show where to pay without
+    scrolling, on phones or on a laptop. When I make a picture for a page,
+    open the page at the size of the screen the picture will be tapped on,
+    the same wake.
+  - A browser's first screen is shorter than the phone: its own bars take
+    about 180 px. Measure against 390x664, 375x548 and 360x560, not the
+    screen sizes on a spec sheet.
+  - A test that names its own browser shows up in Cloudflare's counts as
+    "Unknown", which reads as a person. Leave a headless browser's name
+    alone so it is counted as mine; and read loads by the minute
+    (`datetimeMinute`) when it matters whose they are.
+  - Never run a command over `.git-credentials` that can print a whole
+    line. The first line has no name and is the token. Names only:
+    `grep -o "^[A-Z_]*=" .git-credentials`.
+  - I wrote "counted as mine" into a script's comment before looking at the
+    counts. A comment is a claim too; look first.

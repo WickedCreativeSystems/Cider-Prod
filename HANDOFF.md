@@ -2,7 +2,7 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the second wake, 14 Nov 03:13 UTC
+## Start here: state at the end of the third wake, 14 Nov 15:15 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
@@ -11,49 +11,63 @@ job list for the next wake is the last "Next" in `plan/2026-11-14.md`.
 **Nothing is half built and nothing is owed.** Every change I made is
 committed, pushed and live. `mail/in/` and `mail/out/` are empty.
 
-**New on 14 Nov:** link pictures. A shared link shows a wide picture for
-Comic Cover's maker page, for the pet portrait page (the one that takes
-$9: Bobo's photo beside the drawing, "3 drawings for $9"), and for each of
-the eight sales pages. How to remake and check them is in the two "14 Nov"
-sections near the end of this file.
+**New in the third wake of 14 Nov:** the pet portrait page (the one page
+of mine that takes money, $9) shows its "Draw my pet for $9" button on the
+first screen, on phones and on laptops. Before, a person had to scroll to
+find it. Only the order on the first screen changed; no word, price or
+link did. `demo/comiccover/og/first-screen.mjs` measures it at eleven
+sizes. Details in "14 Nov, third wake" near the end of this file.
 
-**Who is arriving (read 03:08 UTC, 14 Nov):** almost nobody. About three
-page loads in four days could be strangers. The command is
-`node scratch/loads.mjs <host> <from> <to>`. No sale: Stripe read at
-03:08 UTC, the newest checkout is the expired one of 7 Nov.
+**Earlier on 14 Nov:** link pictures. A shared link shows a wide picture
+for Comic Cover's maker page, for the pet portrait page (Bobo's photo
+beside the drawing, "3 drawings for $9"), and for each of the eight sales
+pages. How to remake and check them is in the two "14 Nov" sections near
+the end of this file.
+
+**Who is arriving (read 15:15 UTC, 14 Nov):** nobody today but my own
+checks. About three page loads in the four days before could be strangers.
+The command is `node scratch/loads.mjs <host> <from> <to>`. **Today's
+"Unknown" browser loads of the pet page (US desktop, no referrer, 15:09 to
+15:12 UTC) are mine**, from a check that gave itself a made-up browser
+name; do not read them as people. No sale: Stripe read at 15:07 UTC, the
+newest checkout is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
 are true today and which October ones must not be pasted as they are.
 
-**Dailies is finished for judging.** The Buffer Commit build window closes
-14 Nov 07:59 UTC (13 Nov 11:59 PM PT); judging starts 16 Nov. The boss
-submitted it on 10 Nov. No change and no tap deploy unless something is
-broken. Read at 03:08 UTC, signed out: `/` 200, `/make/` 302 to sign-in
-(that is right).
+**Dailies is finished for judging.** The Buffer Commit build window closed
+14 Nov 07:59 UTC; judging starts 16 Nov. The boss submitted it on 10 Nov.
+No change and no tap deploy unless something is broken. Read at 15:07 UTC,
+signed out: `/` 200, `/make/` 302 to sign-in (that is right).
 
 **To deploy the sales site**, from the repo root (the `wrangler.jsonc`
 there serves `site/`):
 `export $(grep -E "^CLOUDFLARE_(API_TOKEN|ACCOUNT_ID)=" .git-credentials | xargs)`
-then `npx wrangler@4 deploy`. Never `source` that file. Comic Cover is its
-own worker: the same two lines from `demo/comiccover`, with
-`-c wrangler.local.jsonc`. If Cloudflare answers code 10013, stop after a
-couple of tries and come back later; it cleared by itself.
+then `npx wrangler@4 deploy`. Never `source` that file, and never `cat`,
+`cut` or `head` it: its first line is the git address with the token in
+it. To see which names it holds: `grep -o "^[A-Z_]*=" .git-credentials`.
+Comic Cover is its own worker: the same two lines from `demo/comiccover`,
+with `-c wrangler.local.jsonc`. If Cloudflare answers code 10013, stop
+after a couple of tries and come back later; it cleared by itself.
 
 **Waiting on whom:**
 - **Walker (the boss):** nine lines under "Waiting on Walker" at the end of
-  this file, unchanged on 14 Nov. Three of them are also on his sheet
-  through market-nana (threads `dailies-second-account`, `rules-offer-line`,
+  this file. Three of them are also on his sheet through market-nana
+  (threads `dailies-second-account`, `rules-offer-line`,
   `search-console-count`, all 12 Nov). The one with a date on it: a second
-  Buffer account tried on Dailies' sign-in before 16 Nov. The monthly AI
-  budget question is closed (FACTS, 10 Nov: prepaid, no number).
+  Buffer account tried on Dailies' sign-in before 16 Nov. The GitHub token
+  line now says it was printed into session output twice (9 and 14 Nov).
+  The monthly AI budget question is closed (FACTS, 10 Nov: prepaid, no
+  number).
 - **market-nana:** to relay his answers to those three. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
 - **docent** (a colleague; I owe it nothing right now): it has four raw
   clips of mine. Dailies' home page example (11 Nov); the bot's own public
   record (12 Nov); Comic Cover's $9 drawing, cut to 9.9 s and held until
-  after 15 Nov; Round Robin (`roundrobin-capture-2`), which it cuts as shot
-  and expects out on 23 Nov. It knows the Round Robin page gained one line
-  after the shot, and answered on 14 Nov: the clip stands, no reshoot.
+  after 15 Nov (it shows the paid maker page, not the pet portrait page,
+  so today's change does not touch it); Round Robin
+  (`roundrobin-capture-2`), which it cuts as shot and expects out on
+  23 Nov.
 - **cider2:** has the Sizecurve video (`/media/drafts/sizecurve-explainer-final2.mp4`)
   for its check and asks the boss to upload it. Until it is public, the
   Sizecurve reply and the naming question stay with the boss.
@@ -712,11 +726,19 @@ today. The comment beside the 28 px line closes what it asked for. It may use
 `site/roundrobin/og.png` on the Round Robin entry instead of a frame grab;
 that is its call, nothing for me to do. The recorder is free.
 
+## 14 Nov, third wake
+- Mail in: nothing. Stripe 15:07Z: no sale. Dailies signed out: `/` 200, `/make/` 302. Nothing changed on Dailies.
+- **The pet portrait page's $9 button is on the first screen.** Live 15:11 UTC, commit edc1c3d. Before, it sat 87 to 231 px below the first screen on phones and 185 px below on a 1280x720 laptop. Now, on a phone: headline, the two pictures, the button, the line about Bobo, then the paragraph (the order is set in the page's CSS with `order`, the markup still reads paragraph first); from 800 px wide: paragraph and button on the left, pictures on the right. No word, price or link changed; `CHECK=1 node demo/comiccover/og/make-pet-og.mjs` still passes. Misses only at 320x480 (31 px) and a phone held sideways.
+- **To check it after any change to the top of that page:** `PW=<folder that holds node_modules/playwright-core> CHROME=<chrome binary> node demo/comiccover/og/first-screen.mjs [url] [folder]` (no url = the live page). For the repo's copy first serve it: `python3 -m http.server 8793 --bind 127.0.0.1 --directory demo/comiccover/public` (port 8791 is taken by something that is not mine). Playwright and Chrome were still in `/tmp/claude-1000/-home-walker-vibecider4/f74e0069-…/scratchpad/` (`pwt`, `cft/chrome-linux64/chrome`).
+- **Load on a phone, timed live with the connection slowed:** words and button painted in 0.3 s (fast 4G), 0.5 s (slow 4G), 1.1 s (3G); both pictures in after 0.7 s, 3.1 s, 12 s. Pictures left as they are (69 KB and 219 KB): the drawing is the sample of what $9 buys.
+- **A check of mine must not give itself a made-up browser name.** Cloudflare then lists its loads as "Unknown" and `scratch/loads.mjs` counts them as "could be people". Today's Unknown loads of the pet page (15:09 to 15:12 UTC) are mine. The kept script uses the browser's own headless name.
+- **The GitHub token was printed into session output again** (a `cut` over `.git-credentials`; its first line has no "="). In no file, commit or message. Names only: `grep -o "^[A-Z_]*=" .git-credentials`.
+
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
-- Whether to rotate the GitHub token (it was printed into session output on 9 Nov; not written anywhere).
+- Whether to rotate the GitHub token (it was printed into session output on 9 Nov and again on 14 Nov; not written anywhere).
 - Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now).
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
 - Post the Sizecurve reply (and optional post) once the new video is public: forboss/2026-11-11-post-sizecurve-video.md

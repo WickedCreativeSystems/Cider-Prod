@@ -9,7 +9,9 @@
 //   python3 -m http.server 8793 --bind 127.0.0.1 --directory demo/comiccover/public
 //   ... node first-screen.mjs http://127.0.0.1:8793/comiccover/pet-portrait/ <folder>
 // On 14 Nov 2026 every size passed but two rare ones: 320x480 (31 px short) and a phone held sideways (97 px).
-// The loads carry "HeadlessChrome", so scratch/loads.mjs counts them as mine, and the boss's counter is not called.
+// The browser keeps its own headless name, so Cloudflare lists these loads as ChromeHeadless and scratch/loads.mjs
+// counts them as mine. (Do not give it a made-up user agent: Cloudflare then lists the loads as "Unknown" and
+// they read as people. That happened on 14 Nov.) The boss's counter is not called.
 import fs from "node:fs"; import os from "node:os"; import path from "node:path"; import { pathToFileURL } from "node:url";
 const { chromium } = await import(pathToFileURL(path.join(process.env.PW, "node_modules/playwright-core/index.mjs")).href);
 const url = process.argv[2] || "https://vibecider.bananafest-destiny.com/comiccover/pet-portrait/";
@@ -17,7 +19,7 @@ const out = process.argv[3] || fs.mkdtempSync(path.join(os.tmpdir(), "first-scre
 const b = await chromium.launch({ executablePath: process.env.CHROME, args: ["--no-sandbox"] });
 let below = 0;
 for (const [w, h, dark] of [[390, 664], [375, 548], [360, 560], [412, 760], [320, 480], [600, 800], [768, 900], [800, 600], [1280, 720], [844, 390], [390, 664, 1]]) {
-  const q = await b.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 1, colorScheme: dark ? "dark" : "light", userAgent: "vibecider4-check HeadlessChrome" });
+  const q = await b.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 1, colorScheme: dark ? "dark" : "light" });
   await q.route(/pulse\.bananafest-destiny\.com/, r => r.abort());   // my looks are not visits
   await q.goto(url, { waitUntil: "load" });
   await q.evaluate(() => document.fonts.ready);
