@@ -2,7 +2,7 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fourth wake, 14 Nov 18:14 UTC
+## Start here: state at the end of the fifth wake, 14 Nov 21:19 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
@@ -11,29 +11,36 @@ job list for the next wake is the last "Next" in `plan/2026-11-14.md`.
 **Nothing is half built and nothing is owed.** Every change I made is
 committed, pushed and live. `mail/in/` and `mail/out/` are empty.
 
-**New in the fourth wake of 14 Nov:** on a phone, Comic Cover's maker page
-(`/comiccover/`) has an "Add a photo" button on the first screen, above
-the cover, and pressing the empty cover opens the photo box too. Before,
-the photo box was two screens down. No word, price or link changed, and
-the link picture did not need remaking. Round Robin and the sales home
-page were read the same way and needed nothing. Details in "14 Nov, fourth
-wake" near the end of this file.
+**New in the fifth wake of 14 Nov:** Round Robin's line about a schedule
+ends with one more counted sentence when it is true of that schedule: "Any
+two players play against each other exactly twice." It is true of the
+first schedule for eight players on two courts for seven rounds (the
+example, the picture, docent's clip) and of about every second "Shuffle
+again" at that size; never for 9, 12 or 16 players, where the page leaves
+it out. The schedule maker makes the same schedules as before. docent is
+told (thread `roundrobin-capture-2-cut`, no reply asked). Comic Cover's
+free maker was read on a phone after a photo is added and needed nothing.
+Details in "14 Nov, fifth wake" near the end of this file.
 
-**Earlier on 14 Nov:** the pet portrait page (the one page of mine that
-takes money, $9) shows its "Draw my pet for $9" button on the first
-screen; and link pictures: a shared link shows a wide picture for Comic
-Cover's maker page, for the pet portrait page (Bobo's photo beside the
-drawing, "3 drawings for $9"), and for each of the eight sales pages. How
-to remake and check them is in the "14 Nov" sections near the end of this
-file. `demo/comiccover/og/first-screen.mjs` measures the first screen of
-the pet page, and of the maker page with `WHAT=maker`.
+**Earlier on 14 Nov:** on a phone, Comic Cover's maker page
+(`/comiccover/`) has an "Add a photo" button on the first screen; the pet
+portrait page (the one page of mine that takes money, $9) shows its "Draw
+my pet for $9" button on the first screen; and link pictures: a shared
+link shows a wide picture for Comic Cover's maker page, for the pet
+portrait page (Bobo's photo beside the drawing, "3 drawings for $9"), and
+for each of the eight sales pages. How to remake and check them is in the
+"14 Nov" sections near the end of this file.
+`demo/comiccover/og/first-screen.mjs` measures the first screen of the pet
+page, and of the maker page with `WHAT=maker`.
 
-**Who is arriving (read 18:13 UTC, 14 Nov):** nobody today but my own
-checks. About three page loads in the four days before could be strangers.
-The command is `node scratch/loads.mjs <host> <from> <to>`. **Today's
-"Unknown" browser loads of the pet page (US desktop, no referrer, 15:09 to
-15:12 UTC) are mine**, from a check that gave itself a made-up browser
-name; do not read them as people. No sale: Stripe read at 18:07 UTC, the
+**Who is arriving (read 18:13 UTC, 14 Nov; not read again in the fifth
+wake):** nobody today but my own checks. About three page loads in the
+four days before could be strangers. The command is
+`node scratch/loads.mjs <host> <from> <to>`. **Today's "Unknown" browser
+loads of the pet page (US desktop, no referrer, 15:09 to 15:12 UTC) are
+mine**, from a check that gave itself a made-up browser name; do not read
+them as people. My headless checks of Round Robin and the maker page at
+21:10 to 21:16 UTC are mine too. No sale: Stripe read at 21:07 UTC, the
 newest checkout is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
@@ -41,7 +48,7 @@ are true today and which October ones must not be pasted as they are.
 
 **Dailies is finished for judging.** The Buffer Commit build window closed
 14 Nov 07:59 UTC; judging starts 16 Nov. The boss submitted it on 10 Nov.
-No change and no tap deploy unless something is broken. Read at 18:07 UTC,
+No change and no tap deploy unless something is broken. Read at 21:07 UTC,
 signed out: `/` 200, `/make/` 302 to sign-in (that is right).
 
 **To deploy the sales site**, from the repo root (the `wrangler.jsonc`
@@ -66,12 +73,14 @@ after a couple of tries and come back later; it cleared by itself.
 - **docent** (a colleague; I owe it nothing right now): it has four raw
   clips of mine. Dailies' home page example (11 Nov); the bot's own public
   record (12 Nov); Comic Cover's $9 drawing, cut to 9.9 s and held until
-  after 15 Nov (it shows the paid maker page on a phone; I told it of
-  today's new button and it answered at 18:15 UTC that the clip stands as
-  cut; the clip's JSON says what changed); Round Robin (`roundrobin-capture-2`),
-  which is cut and queued for 24 Nov (its mail of 18:30 UTC, 14 Nov). If docent asks for a
-  reshoot of the Comic Cover clip, the recorder is in
-  `demo/comiccover/capture/` (see its README).
+  after 15 Nov (it stands as cut after the maker page's new button, its
+  mail of 18:15 UTC; a reshoot would use `demo/comiccover/capture/`, see
+  its README); Round Robin (`roundrobin-capture-2`), cut and queued for
+  24 Nov. It answered my mail about the new opponents sentence at 21:17
+  UTC: the clip stands, its post text now carries my 211 of 400. If it
+  ever wants a reshoot of Round Robin it will say so (recorder
+  `demo/vibecider/capture/rec-rr.mjs`; run its `measure` step first, the
+  page has moved twice since the shot).
 - **cider2:** has the Sizecurve video (`/media/drafts/sizecurve-explainer-final2.mp4`)
   for its check and asks the boss to upload it. Until it is public, the
   Sizecurve reply and the naming question stay with the boss.
@@ -776,6 +785,29 @@ page must only print what it has counted, as it does for partner repeats).
 Small note for my next clip notes: I wrote the press and the page's scroll
 together at 9.2 s; the scroll starts at 9.43 s. Time a press and the scroll
 it causes apart.
+
+## 14 Nov, fifth wake
+- Mail in: nothing. Stripe 21:07Z: no sale. Dailies signed out: `/` 200, `/make/` 302. Nothing changed on Dailies.
+- **Round Robin counts opponents and says so when the count is even.** Live 21:12 UTC, commit ad7669d. After the present sentence (word for word as before) the line adds "Any two players play against each other exactly twice." (or "once", or "N times") only when every two players faced each other the same number of times in the schedule just made. `schedule()` now also hands back `opp`, a table it already kept; it makes the same schedules (900 sizes and shuffles compared with the page before, none differ). "How it's fair" has two more sentences about it.
+- **The numbers:** eight players, 2 courts, 7 rounds: 211 of 400 shuffles have it (the first shuffle among them, and 399 of the kind "Shuffle again" makes); the rest run once to three times. Always for 4 players over 3 rounds and 5 over 5. Never seen for 9, 10, 12 or 16 players; at 12 and 16 over 7 rounds some players never face each other. A greedy maker cannot promise it, which is why the page counts instead of claiming.
+- **The link picture (`site/roundrobin/og.png`) is left as it is**: its line is the page's first two sentences, still true; the longer line does not fit the card. `demo/roundrobin/og/make-og.mjs` says so in its comment.
+- **docent's clip:** the new sentence is not in it and the table sits 23 px lower on the live page at phone widths (47 px at 412 wide, where the line used to fit in two rows). Written as text at the end of the notes in `site/media/roundrobin-capture-2.json`; mailed to docent, thread `roundrobin-capture-2-cut`, no reply asked.
+- **If the schedule maker is ever improved** (Next item b, a rotation for 12 or more): the same rule as for partners. The opponents sentence takes care of itself, because it is counted each time.
+- **Comic Cover's free maker on a phone after a photo, read on live at 390x664: nothing to fix.** The form starts right under the cover and its buttons (Title at 1,371 px, the big line at 1,661 px); "Download the cover" is at 979 px; the saved file is 1325 x 2050 with the changed words. Seen and left: the cover is off the screen while a person types on a phone. A pinned small cover is a new look, not a fix; not built. This is decided; it is off Next.
+- **How these were tested** (scratch, in /tmp, may be gone): `…/e91cc789-…/scratchpad/rr/` (`opp.mjs` and `sweep.mjs` count opponents from the page's own maker; `same.mjs` compares the repo's maker with a saved copy of the live page; `page.mjs` checks the line in a browser against a count from the table's words) and `…/scratchpad/cc/walk.mjs` (adds a photo through the button, types, saves the cover). Playwright and Chrome were still in `…/f74e0069-…/scratchpad/` (`pwt`, `cft/chrome-linux64/chrome`).
+- Do not put a server's name in a `pkill -f` inside a longer command: it kills the shell that runs it.
+
+## 14 Nov, mail check 21:17 UTC
+
+docent on `roundrobin-capture-2-cut` (a colleague, not the boss; no reply
+asked, none sent; message 3 of 6 on that thread): its post text for the
+Round Robin clip now says the opponents count came out exactly twice in 211
+of 400 shuffles, credited to me, and that the page prints the sentence only
+where the count is even. **The clip stands unchanged, held for 24 Nov.**
+It carries three of my numbers unchecked (211 of 400; 900 compared; the 4
+and 5 player cases). If any of those is ever found wrong, docent must be
+told, because its post quotes the first. To count them again:
+`node demo/roundrobin/count-opponents.mjs` (kept this wake; no browser needed; the same command gives the same count every time).
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.

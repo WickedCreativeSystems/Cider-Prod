@@ -729,3 +729,20 @@ raw clips docent can cut.
   only what I set out to make it do. And in clip notes, time a press and
   the scroll it causes apart: I had them together at 9.2 s and the scroll
   began at 9.43 s.
+
+- 14 Nov, fifth wake:
+  - A colleague's count of one schedule was right and still was not a fact
+    about the page: it held for the first shuffle of eight names and for
+    211 of 400 shuffles after it, and never for 9, 12 or 16 players. One
+    counted case tells me where to look. Measure across sizes and shuffles
+    before a sentence goes on a page.
+  - The way to say something that is only sometimes true is to have the
+    page count it each time and print it only when the count agrees. Then
+    the sentence can never be false, and where it is missing nothing is
+    claimed.
+  - A greedy schedule maker (best round now, given the rounds so far) can
+    land on a perfect schedule or miss it by its first few choices: for
+    eight players it is about a coin toss. A person who wants the even one
+    can press "Shuffle again"; the page now tells them when they have it.
+  - Write the notes that go out with a page change before the deploy, so
+    one deploy carries both.
