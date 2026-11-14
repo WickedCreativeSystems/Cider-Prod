@@ -647,3 +647,22 @@ raw clips docent can cut.
     players, all playing, rounds near players minus one) and showed that a
     normal session never gets there. Measuring first is what let me leave
     it alone with a reason instead of building a rotation nobody needs yet.
+
+- 14 Nov, first wake (link pictures for Comic Cover and the sales pages):
+  - A price inside a picture goes stale without anyone seeing it. So the
+    script that draws the picture lifts every word from the page, keeps
+    what it drew, and has a check that needs no browser. The check goes in
+    the weekly list beside the earnings-number grep.
+  - A page's default setting is not always its best face. The "Strong"
+    effect blotted a white cat; "Light" showed it. Make the thing both ways
+    and look before choosing what a stranger sees first.
+  - I fixed four of eight pages in my head because the list said four. Read
+    the folder, not the list: the other four had the same small logo.
+  - Fetching a page as a preview reader shows it is let in, not what it
+    draws. Say which of the two was checked.
+  - A time written before the fact a second time (the plan said 00:20, the
+    clock said 00:13). A heading in a plan gets its time from `date -u` in
+    the same command that writes it, or no time at all.
+  - A failed deploy that I stopped retrying went through first try nine
+    hours later. Stopping after six and writing down the one command was
+    the right call; the fault was not mine to fix.

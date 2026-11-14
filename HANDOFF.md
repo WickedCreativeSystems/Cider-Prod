@@ -2,46 +2,47 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the notes check, 13 Nov 21:10 UTC
+## Start here: state at the end of the first wake, 14 Nov 00:18 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
-job list for the next wake is the last "Next" in `plan/2026-11-13.md`.
+job list for the next wake is the last "Next" in `plan/2026-11-14.md`.
 
-**Nothing is half built.** Every change I made is committed and, but for one
-string, live. Nothing ran between the third wake (ended 15:24 UTC) and this
-check. `mail/in/` and `mail/out/` are empty.
+**Nothing is half built and nothing is owed.** Every change I made is
+committed, pushed and live. The sales-site deploy that Cloudflare refused
+six times on 13 Nov went through first try at 00:07:56 UTC on 14 Nov.
+`mail/in/` and `mail/out/` are empty.
 
-**In progress, mine:**
-- **One deploy of the sales site is owed.** Checked again at 21:08 UTC: live
-  `/media/roundrobin-capture-2.json` still says the page changed "about
-  15:30 UTC"; the repo says "about 15:14 UTC", which is right. Six deploys
-  failed at Cloudflare between 15:19 and 15:23 UTC (code 10013, "unknown
-  error"). Not tried since. The command, from the repo root (the
-  `wrangler.jsonc` there serves `site/`):
-  `export $(grep -E "^CLOUDFLARE_(API_TOKEN|ACCOUNT_ID)=" .git-credentials | xargs)`
-  then `npx wrangler@4 deploy`. Never `source` that file. Deploy once,
-  compare the live JSON with the repo's, do not loop on a failure.
-- Nothing else. The first job that needs nobody after that deploy is a link
-  picture for Comic Cover's maker page (Next item 5a).
+**New on 14 Nov:** a shared link to Comic Cover's maker page shows a
+picture of a real free cover and its pretend graded case; a shared link to
+any of the eight sales pages shows a wide picture with that page's own
+headline (the home page's carries the price sentence). How to remake and
+check them is in "14 Nov, first wake" near the end of this file.
 
 **Dailies is finished for judging.** The Buffer Commit build window closes
 14 Nov 07:59 UTC (13 Nov 11:59 PM PT); judging starts 16 Nov. The boss
 submitted it on 10 Nov. No change and no tap deploy unless something is
-broken. Read at 21:08 UTC, signed out: `/` 200, `/make/` 302 to sign-in
+broken. Read at 00:08 UTC, signed out: `/` 200, `/make/` 302 to sign-in
 (that is right).
 
-**All four live addresses answered at 21:08 UTC** (sales page, Comic Cover,
-Round Robin and its link picture: 200). Stripe was last read at 15:19 UTC:
-no sale of a bot or a drawing.
+**Stripe, read at 00:08 UTC on 14 Nov:** no sale of a bot or a drawing. The
+newest checkout is the expired, unpaid one of 7 Nov.
+
+**To deploy the sales site**, from the repo root (the `wrangler.jsonc`
+there serves `site/`):
+`export $(grep -E "^CLOUDFLARE_(API_TOKEN|ACCOUNT_ID)=" .git-credentials | xargs)`
+then `npx wrangler@4 deploy`. Never `source` that file. Comic Cover is its
+own worker: the same two lines from `demo/comiccover`, with
+`-c wrangler.local.jsonc`. If Cloudflare answers code 10013, stop after a
+couple of tries and come back later; it cleared by itself.
 
 **Waiting on whom:**
 - **Walker (the boss):** nine lines under "Waiting on Walker" at the end of
-  this file. Three of them are also on his sheet through market-nana (threads
-  `dailies-second-account`, `rules-offer-line`, `search-console-count`, all
-  12 Nov). The one with a date on it: a second Buffer account tried on
-  Dailies' sign-in before 16 Nov. The monthly AI budget question is closed
-  (FACTS, 10 Nov: prepaid, no number).
+  this file, unchanged on 14 Nov. Three of them are also on his sheet
+  through market-nana (threads `dailies-second-account`, `rules-offer-line`,
+  `search-console-count`, all 12 Nov). The one with a date on it: a second
+  Buffer account tried on Dailies' sign-in before 16 Nov. The monthly AI
+  budget question is closed (FACTS, 10 Nov: prepaid, no number).
 - **market-nana:** to relay his answers to those three. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
 - **docent** (a colleague; I owe it nothing right now): it has four raw
@@ -49,12 +50,11 @@ no sale of a bot or a drawing.
   record (12 Nov); Comic Cover's $9 drawing, cut to 9.9 s and held until
   after 15 Nov; Round Robin (`roundrobin-capture-2`), which it cuts as shot
   and expects out on 23 Nov. It knows the Round Robin page gained one line
-  after the shot (mail of 13 Nov 15:16 UTC, no reply asked). If it wants a
-  reshoot it says so in a new thread.
+  after the shot. If it wants a reshoot it says so in a new thread.
 - **cider2:** has the Sizecurve video (`/media/drafts/sizecurve-explainer-final2.mp4`)
   for its check and asks the boss to upload it. Until it is public, the
   Sizecurve reply and the naming question stay with the boss.
-- **Cloudflare:** only the deploy above.
+- **Cloudflare:** nothing.
 
 **Not mine, left alone:** the uncommitted change to `CLAUDE.md` (the boss's
 section on his email address; I follow it) and `pet.png` in the repo root.
@@ -678,6 +678,16 @@ sales-site deploy (no deploy just for a comment).
 - Ports 8765 and 8791 on this machine belong to other people's servers. For a local look at `site/`, pick a high odd port, and check the page that comes back is mine before testing against it.
 - Seen and left: Comic Cover's maker page has a title and line for link previews and no picture; Dailies' home page has no link-preview tags at all (no change to Dailies before judging ends). Comic Cover's picture is first on Next for the next free wake.
 - **One deploy of the sales site is owed.** Repo's `site/media/roundrobin-capture-2.json` says "about 15:14 UTC"; live says "15:30". Six deploys from 15:19 to 15:23 UTC failed with Cloudflare's "unknown error", code 10013, at the versions step; the same command worked at 15:14, reads with the token work, `--dry-run` builds. Live is the 15:14 deploy and is fine. Next wake: deploy once, compare the live JSON with the repo's; do not loop if it fails again (Next item 2 says what to do).
+
+## 14 Nov, first wake
+- Mail in: nothing. The owed sales-site deploy went through at 00:07:56 UTC. Stripe 00:08Z: no sale. Dailies signed out: `/` 200, `/make/` 302. Nothing changed on Dailies.
+- **Comic Cover's maker page has a link picture** (`demo/comiccover/public/comiccover/og.jpg`, 1200x630): a real free cover the page made from a public-domain cat photo the site already had (`public/comiccover/examples/cat-photo.jpg`), and the same cover in the page's pretend graded case. Live 00:11 UTC, commit f390b95. To remake it after the page's look changes: `PW=<folder that holds node_modules/playwright-core> CHROME=<chrome binary> node demo/comiccover/og/make-og.mjs`, look at it, then deploy from `demo/comiccover` with `-c wrangler.local.jsonc`. It uses the page's "Light" effect on purpose (`FX=2` gives "Strong", which blots white fur).
+- **Each of the eight sales pages has a link picture** (`site/og.png` and `site/<page>/og.png`): the page's own headline and the logo; the home page's also has the price sentence and the public-log line, lifted from that page's description. Live 00:13:55 UTC, commit a09c858. The old `logo-word-1000.png` stays on the site for old shares.
+- **After any change to a sales page's headline, its small line above the headline, or the home page's price sentence:** run `CHECK=1 node demo/vibecider/og/make-og.mjs` (no browser needed; exit 1 and the page's name if a picture is stale). To redraw: the same command without `CHECK=1`, with `PW=` and `CHROME=` set as above; then look, deploy, IndexNow. `OUT=<folder>` writes drafts somewhere else. This check matters most the day the price changes.
+- Playwright and Chrome this wake: `/tmp/claude-1000/-home-walker-vibecider4/f74e0069-…/scratchpad/pwt` and `…/scratchpad/cft/chrome-linux64/chrome` (in /tmp, may be gone; then `npm i playwright-core` in a scratch folder and `npx @puppeteer/browsers install chrome@stable`).
+- Seven link-preview readers (Facebook, X, Slack, Discord, LinkedIn, WhatsApp, Telegram) get 200 for the pages and the pictures. What each one draws I have not seen; I have no account on them.
+- **Seen and left:** the pretend graded case prints "SEALED AT COMICCOVER.BANANAFEST-DESTINY.COM", the old hostname (it still forwards). docent's held clip shows the case. Change it to the live address only after telling docent, or after its clip is out (it holds it until after 15 Nov); then remake `og.jpg`, which shows the case too.
+- Dailies' home page still has no link-preview tags; that waits until judging ends.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.

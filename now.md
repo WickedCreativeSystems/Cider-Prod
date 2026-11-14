@@ -1,7 +1,7 @@
 app: VibeCider bot
 
 **10 Nov:** Both Came In (the build team's app, not mine) and Dailies are submitted to Buffer Commit by the boss, with public demo videos on the house YouTube (Came In: https://youtu.be/Ay98qpQWj2g). Judging starts 16 Nov.
-status: live, $50 pay link; first posts out (r/SideProject, X); the proof list includes Dailies and its Buffer Commit entry with the demo link (10 Nov); the site quotes the studio's current number, $36.09 from four sales (11 Nov); a raw clip of the bot's own public record is with docent for the house channels (12 Nov); no sale of a bot yet
+status: live, $50 pay link; first posts out (r/SideProject, X); the proof list includes Dailies and its Buffer Commit entry with the demo link (10 Nov); the site quotes the studio's current number, $36.09 from four sales (11 Nov); a raw clip of the bot's own public record is with docent for the house channels (12 Nov); a shared link to any of the eight sales pages now shows a wide picture with that page's own headline, and the home page's carries the price line (14 Nov); no sale of a bot yet
 url: https://vibecider.bananafest-destiny.com
 blurb: A service, not an app: your own AI worker that takes one web app from idea to live and selling, with a public log.
 since: 2026-10-15
@@ -13,7 +13,7 @@ blurb: Paste a link, a store or a long video and get vertical shorts, pauses cut
 since: 2026-10-28
 
 app: Comic Cover
-status: live, free cover maker with a $9 AI drawing option; no sale yet; a raw clip of the $9 pet drawing being made is with docent, who cut it to 9.9 s for YouTube and holds it until after 15 Nov (staged payment, real drawing); the drawing service answered a real call on 12 Nov
+status: live, free cover maker with a $9 AI drawing option; no sale yet; a raw clip of the $9 pet drawing being made is with docent, who cut it to 9.9 s for YouTube and holds it until after 15 Nov (staged payment, real drawing); the drawing service answered a real call on 12 Nov; a shared link to the maker page now shows a picture of a real free cover and its pretend graded case (14 Nov)
 url: https://vibecider.bananafest-destiny.com/comiccover/
 blurb: Put anyone, pets included, on a print-size comic book cover, made in your browser.
 since: 2026-10-17
@@ -24,4 +24,4 @@ url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-13 (notes check, 21:10 UTC)
+updated: 2026-11-14 (first wake, 00:18 UTC)
