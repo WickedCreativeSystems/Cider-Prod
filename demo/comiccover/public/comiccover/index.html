@@ -57,7 +57,8 @@ select{width:100%;font:inherit;color:var(--fg);background:var(--bg);border:1px s
 #sl{width:100%;height:auto;display:block}
 #cv{width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 6px 24px rgba(0,0,0,.25);background:#ddd}
 .stick{position:sticky;top:16px}
-@media (max-width:720px){.stick{position:static;order:-1}}
+.addp{display:none}
+@media (max-width:720px){.stick{position:static;order:-1}.addp{display:block;width:100%;margin:0 0 12px}}
 .note{font-size:14px;color:var(--muted)}
 .demo{border-left:4px solid var(--accent);padding:10px 14px;background:var(--hi);border-radius:0 8px 8px 0;font-size:15px}
 ul{padding-left:20px}li{margin:6px 0}
@@ -74,7 +75,7 @@ ul{padding-left:20px}li{margin:6px 0}
 #status{font-weight:600;min-height:1.5em;margin-top:10px}
 button:disabled{opacity:.55;cursor:wait}
 footer{margin-top:56px;border-top:1px solid var(--line);padding-top:16px;font-size:14px;color:var(--muted)}
-@media print{body{background:#fff}main>*:not(.grid),.grid>.panel,.grid .acts,.grid .view,#slabopts,footer{display:none!important}#sl{width:6.27in;height:10.25in}.grid{display:block;margin:0}#cv{box-shadow:none;border-radius:0;width:6.625in;height:10.25in}main{padding:0}}
+@media print{body{background:#fff}main>*:not(.grid),.grid>.panel,.grid .acts,.grid .view,.grid .addp,#slabopts,footer{display:none!important}#sl{width:6.27in;height:10.25in}.grid{display:block;margin:0}#cv{box-shadow:none;border-radius:0;width:6.625in;height:10.25in}main{padding:0}}
 </style>
 <script src="https://pulse.bananafest-destiny.com/p.js" data-site="vibecider.bananafest-destiny.com" defer></script>
 </head>
@@ -128,6 +129,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:16px;font-si
   </div>
 </form>
 <div class="stick">
+  <button type="button" class="addp" id="addp">Add a photo</button>
   <div class="sw view" role="radiogroup" aria-label="View">
     <label><input type="radio" name="view" value="cover" checked>Cover</label>
     <label><input type="radio" name="view" value="slab">Slab it</label>
@@ -260,6 +262,7 @@ function star(cx, cy, r1, r2, n, rot) {
 function draw() {
   const T = THEMES[pick("c")], fx = +pick("fx");
   ctx.clearRect(0, 0, W, H);
+  cv.style.cursor = sl.style.cursor = img ? "" : "pointer";
   // art area
   const a = comicArt(fx);
   if (a) ctx.drawImage(a, 0, BAND);
@@ -406,8 +409,12 @@ $("grade").addEventListener("change", draw); $("note").addEventListener("input",
 let photo = null;
 $("photo").addEventListener("change", e => {
   const file = e.target.files[0]; if (!file) return;
-  const im = new Image(); im.onload = () => { img = photo = im; art = null; setOn(0); draw(); }; im.src = URL.createObjectURL(file);
+  const im = new Image(); im.onload = () => { img = photo = im; art = null; setOn(0); draw(); $("addp").textContent = "Change the photo"; $("addp").classList.add("ghost"); }; im.src = URL.createObjectURL(file);
 });
+// On a phone the cover comes first and the form is two screens down, so the first screen needs its own way to the
+// photo box: a button above the cover (phones only), and the empty cover itself, which says "ADD A PHOTO".
+$("addp").addEventListener("click", () => $("photo").click());
+[cv, sl].forEach(c => c.addEventListener("click", () => { if (!img) $("photo").click(); }));
 $("f").addEventListener("input", draw);
 $("f").addEventListener("submit", e => e.preventDefault());
 $("dl").addEventListener("click", () => {
