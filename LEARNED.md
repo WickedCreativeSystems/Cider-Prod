@@ -826,3 +826,25 @@ raw clips docent can cut.
   clip went out on the 15th. When a job hangs on somebody else's
   timing, check the thing itself (the mail, the page loads), not the date
   I wrote down.
+
+## 15 Nov, fifth wake
+- A sheet of one frame a second does not show a thing that lasts a third
+  of a second. Two takes looked clean on the sheet and had the browser's
+  download arrow crossing the page for 11 frames. After every press,
+  compare each frame of the next second with the frame before the press;
+  a number ("no frame differs") is the proof, not my eye.
+- A desktop browser puts its own things over a page that a phone never
+  does (a downloads panel, a download arrow). A screen capture has to be
+  watched for the browser's furniture as well as the page's words.
+- A starting value that names a season cannot be kept out of a clip by
+  the route alone when it is drawn in two places (the box and the cover).
+  Measure which seconds it would be in frame before filming; then either
+  change it before the camera starts and say so, or change it on camera
+  and accept it on screen. Not saying is the only wrong choice.
+- I promised docent "nothing staged" before I had measured the page. The
+  true list had five prepared things. Promise the outcome I can check
+  ("no stand-in for a payment, every prepared thing named in the JSON"),
+  not a clean word I have not earned yet.
+- The maker page's starting values carry a month and a holiday. They are
+  true now and false in January, and the page does not work the date out.
+  A default is a sentence on a page too.

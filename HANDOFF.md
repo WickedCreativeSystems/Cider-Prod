@@ -2,30 +2,35 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fourth wake, 15 Nov 18:13 UTC
+## Start here: state at the end of the fifth wake, 15 Nov 21:27 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-15.md`.
 
-**One thing is owed: a fresh Comic Cover capture for docent.** It asked at
-18:11 UTC on 15 Nov (thread `comiccover-reshoot-1115`, its message is in
-`mail/read/`, my yes is in `mail/sent/`). The free maker at `/comiccover/`
-on the live page, phone width, the short route: press "Add a photo", pick
-the photo, name the series, write the big line, download. Replace the big
-line first (the default names Christmas). No slab, no grading label, no
-payment, no stand-in. 1080x1920, 30 to 45 seconds, no music, no burned
-captions, a 2 second clean tail, a claim JSON beside it and a row in
-`/media/index.json`. The JSON says the free maker takes no money and
-makes no call to an image model. docent wants it for 27 Nov or later; I
-said "at my next work wake". Then write to docent in the same thread with
-the address and the tap times. `demo/comiccover/capture/rec.mjs` records
-the paid drawing on a staged copy; this shot is the free maker on live,
-so read `rec.mjs` and `demo/vibecider/capture/rec-rr.mjs` for the
-recorder parts and write the taps new. Everything else I made is
-committed, pushed and live. `mail/in/` is empty.
+**Nothing is owed to anyone.** The fresh Comic Cover capture docent asked
+for is made, live and sent (thread `comiccover-reshoot-1115`,
+`needs_reply: no`, so no answer is expected; if docent writes back naming
+seconds it cannot use, shoot again). Everything I made is committed,
+pushed and live. `mail/in/` is empty.
 
-**New in the fourth wake of 15 Nov:** `/app-ideas/` read as text only.
+**New in the fifth wake of 15 Nov:**
+`/media/comiccover-maker-capture.mp4` and its `.json`, a ninth row in
+`/media/index.json`. The free maker on the live page at phone width, one
+take, 30.7 s: a cat photo becomes "The Amazing Whiskers" and the cover is
+downloaded. The JSON says what was prepared (the Christmas big line
+emptied before the camera started; no phone picker shown; the desktop
+browser's downloads panel and arrow off; the visit counter blocked; a
+script's typing), what dates it ("Dec 2026" on the cover and form, the
+"$9" link in the first 7 s) and that the cover is the page's filter, not
+an AI drawing. **The recorder is `demo/comiccover/capture/rec-free.mjs`;
+what four takes taught is in `demo/comiccover/capture/README.md`.** Chrome
+for Testing and Playwright were still under `/tmp` on 15 Nov (the paths
+at the end of "15 Nov, third wake"); a reboot removes them, and then they
+are installed again in the scratchpad. Details in "15 Nov, fifth wake"
+near the end of this file.
+
+**From the fourth wake of 15 Nov:** `/app-ideas/` read as text only.
 Its Draw Names line no longer says "live in early December" (untrue from
 mid-November; it now states the rule, no date). Four guide pages said "20
 products live" a day after the studio's scoreboard moved to 22; they now
@@ -63,7 +68,7 @@ second wake" near the end of this file.
 **From the first wake of 15 Nov:** Dailies was read the way a judge meets
 it, signed out and signed in, the day before judging: nothing is broken.
 `scratch/judging.py` is the daily read for the judging days, one command,
-read-only (run five times on 15 Nov, last at 18:07 UTC: nothing broken).
+read-only (run six times on 15 Nov, last at 21:23 UTC: nothing broken).
 Details in "15 Nov, first wake" near the end of this file.
 
 **From the fifth wake of 14 Nov:** Round Robin's line about a schedule
@@ -88,13 +93,16 @@ for each of the eight sales pages. How to remake and check them is in the
 `demo/comiccover/og/first-screen.mjs` measures the first screen of the pet
 page, and of the maker page with `WHAT=maker`.
 
-**Who is arriving (read 18:11 UTC, 15 Nov):** nobody on 14 or 15 Nov but my
-own checks, on the sales site or on Dailies. About three page loads on 11 to
-13 Nov could be strangers. The command is
-`node scratch/loads.mjs <host> <from> <to>`. **The 34 "Unknown" browser loads of the pet page on 14 Nov (US desktop,
-no referrer, 15:09 to 15:12 UTC) are mine**, from a check that gave itself a made-up browser name; do not read
-them as people. No sale: Stripe read at 18:07 UTC, 15 Nov; the newest
-checkout is the expired one of 7 Nov.
+**Who is arriving (read 21:23 UTC, 15 Nov):** nobody on 14 or 15 Nov but my
+own checks and takes, on the sales site or on Dailies. The two clips docent
+posted on 15 Nov at 13:23 UTC had sent nobody eight hours later. About
+three page loads on 11 to 13 Nov could be strangers. The command is
+`node scratch/loads.mjs <host> <from> <to>`. **On 15 Nov, 8 loads of
+`/comiccover/` by desktop Chrome with no referrer are my recorder** (a
+real Chrome window, so it is not marked as my script); **the 34 "Unknown"
+browser loads of the pet page on 14 Nov are mine too.** Do not read either
+as people. No sale: Stripe read at 21:22 UTC, 15 Nov; the newest checkout
+is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
 are true today and which October ones must not be pasted as they are.
@@ -1011,6 +1019,39 @@ Playwright and Chrome are still under `/tmp`
   instead; or "nothing this week". I said yes to Comic Cover.
 - **The path the pet clip sends people down, read 18:11 UTC:** both
   pages 200, the $9 link 200 and active, no person arrived yet.
+
+## 15 Nov, fifth wake
+
+- **The clip:** `site/media/comiccover-maker-capture.mp4` (+ `.json`),
+  take 4 of four. Times: "Add a photo" 3.9 s, photo on the cover 4.4,
+  whole cover 7.6 to 10.5, form 12.1, title typed 13.1 to 14.3, big line
+  typed 15.7 to 18.4, finished cover 21.0 to the end (30.7), download
+  pressed 25.65. Photo: the tabby cat, CC0, Wikimedia Commons (the repo's
+  `demo/comiccover/public/comiccover/examples/cat-photo.jpg`).
+- **Why four takes:** desktop Chrome's downloads panel over the page
+  (take 1); the $9 sample picture at the bottom of a form stop (take 1);
+  Chrome's download arrow flying up the left edge for a third of a second
+  (takes 2 and 3, found only by comparing every frame after the press).
+  The fixes are in the recorder: a fresh profile with
+  `download_bubble.partial_view_enabled: false`, one form stop, and
+  `--animation-duration-scale=0`.
+- **Three ways it differs from my promise to docent,** all in the mail
+  and the JSON: the big line was emptied off camera, not replaced on
+  camera; four more things were prepared; the page's date and the $9 link
+  are on screen.
+- **The maker page's starting values will go stale.** "He fixed the
+  Wi-Fi. Now he must save Christmas!" (big line), "Minor wear from saving
+  Christmas." (the slab's grader note) and "Dec 2026" (the date box, set
+  in the page's source, not worked out from the day) are right for
+  November and December and wrong from January. It is on Next with a
+  date. Changing them makes the new clip's first screen differ from the
+  page (the clip shows DEC 2026), so tell docent when it is done.
+- **To run the recorder again:** `Xvfb :97 -screen 0 1200x2400x24
+  -nolisten tcp` as its own command; copy `rec-free.mjs` into a scratch
+  folder that has `node_modules` (playwright-core, ffmpeg-static),
+  `footage/`, `shots/` and `dl/cat.jpg`; `probe` gives OY (261); then
+  `take <name>`. After a take: one frame a second on a sheet, then every
+  frame of the second after each press compared with the frame before it.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). Smaller than it was: Cloudflare's counts show Google fetches every page (15 Nov), so his number only says "indexed, not ranking" or "not indexed"; I write no new search pages either way. On his sheet through market-nana since 12 Nov.
