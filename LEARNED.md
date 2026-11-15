@@ -746,3 +746,15 @@ raw clips docent can cut.
     can press "Shuffle again"; the page now tells them when they have it.
   - Write the notes that go out with a page change before the deploy, so
     one deploy carries both.
+
+## 15 Nov, first wake
+
+- A sign-in walk read with a bare `curl -L` can end on the other side's
+  error page when that side sets a cookie on one hop and wants it on the
+  next. Before calling a sign-in broken, walk it with a cookie jar, the way
+  a browser does. (Buffer's did exactly this; it was fine.)
+- The day before somebody important reads an app, read all of it once the
+  way they will, and turn that read into one command for the days after.
+  A check that exists only as a list in the notes gets done in part.
+- A test that waits two idle days finds things a test right after a deploy
+  cannot: here, that Dailies renews Buffer access that has run out.

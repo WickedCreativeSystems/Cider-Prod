@@ -2,16 +2,22 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fifth wake, 14 Nov 21:19 UTC
+## Start here: state at the end of the first wake, 15 Nov 00:14 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
-job list for the next wake is the last "Next" in `plan/2026-11-14.md`.
+job list for the next wake is the last "Next" in `plan/2026-11-15.md`.
 
 **Nothing is half built and nothing is owed.** Every change I made is
 committed, pushed and live. `mail/in/` and `mail/out/` are empty.
 
-**New in the fifth wake of 14 Nov:** Round Robin's line about a schedule
+**New in the first wake of 15 Nov:** nothing changed on any page. Dailies
+was read the way a judge meets it, signed out and signed in, the day
+before judging: nothing is broken. `scratch/judging.py` is the daily read
+for the judging days, one command, read-only. Details in "15 Nov, first
+wake" near the end of this file.
+
+**From the fifth wake of 14 Nov:** Round Robin's line about a schedule
 ends with one more counted sentence when it is true of that schedule: "Any
 two players play against each other exactly twice." It is true of the
 first schedule for eight players on two courts for seven rounds (the
@@ -33,23 +39,25 @@ for each of the eight sales pages. How to remake and check them is in the
 `demo/comiccover/og/first-screen.mjs` measures the first screen of the pet
 page, and of the maker page with `WHAT=maker`.
 
-**Who is arriving (read 18:13 UTC, 14 Nov; not read again in the fifth
-wake):** nobody today but my own checks. About three page loads in the
-four days before could be strangers. The command is
-`node scratch/loads.mjs <host> <from> <to>`. **Today's "Unknown" browser
-loads of the pet page (US desktop, no referrer, 15:09 to 15:12 UTC) are
-mine**, from a check that gave itself a made-up browser name; do not read
-them as people. My headless checks of Round Robin and the maker page at
-21:10 to 21:16 UTC are mine too. No sale: Stripe read at 21:07 UTC, the
-newest checkout is the expired one of 7 Nov.
+**Who is arriving (read 00:11 UTC, 15 Nov):** nobody on 14 Nov but my own
+checks, on the sales site or on Dailies. About three page loads on 11 to
+13 Nov could be strangers. The command is
+`node scratch/loads.mjs <host> <from> <to>`. **The 34 "Unknown" browser loads of the pet page on 14 Nov (US desktop,
+no referrer, 15:09 to 15:12 UTC) are mine**, from a check that gave itself a made-up browser name; do not read
+them as people. No sale: Stripe read at 00:09 UTC, 15 Nov; the newest
+checkout is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
 are true today and which October ones must not be pasted as they are.
 
 **Dailies is finished for judging.** The Buffer Commit build window closed
 14 Nov 07:59 UTC; judging starts 16 Nov. The boss submitted it on 10 Nov.
-No change and no tap deploy unless something is broken. Read at 21:07 UTC,
-signed out: `/` 200, `/make/` 302 to sign-in (that is right).
+No change and no tap deploy unless something is broken. Read in full on
+15 Nov, 00:09 to 00:11 UTC: nothing broken. **Each day of judging, run**
+`export $(grep -E "^CLOUDFLARE_(API_TOKEN|ACCOUNT_ID)=" .git-credentials | xargs)`
+then `python3 scratch/judging.py`. It prints "nothing is broken" or BROKEN
+and what; and the store's counts (`tok:` 1, `user:` 1, `ses:` 2 on 15 Nov).
+One more `tok:` means a Buffer account other than the boss's signed in.
 
 **To deploy the sales site**, from the repo root (the `wrangler.jsonc`
 there serves `site/`):
@@ -66,7 +74,8 @@ after a couple of tries and come back later; it cleared by itself.
   this file. Three of them are also on his sheet through market-nana
   (threads `dailies-second-account`, `rules-offer-line`,
   `search-console-count`, all 12 Nov). The one with a date on it: a second
-  Buffer account tried on Dailies' sign-in before 16 Nov. The GitHub token
+  Buffer account tried on Dailies' sign-in before 16 Nov; not answered by
+  00:14 UTC on 15 Nov, and said again in the conversation then. The GitHub token
   line says it was printed into session output twice (9 and 14 Nov).
 - **market-nana:** to relay his answers to those three. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
@@ -808,6 +817,32 @@ It carries three of my numbers unchecked (211 of 400; 900 compared; the 4
 and 5 player cases). If any of those is ever found wrong, docent must be
 told, because its post quotes the first. To count them again:
 `node demo/roundrobin/count-opponents.mjs` (kept this wake; no browser needed; the same command gives the same count every time).
+
+## 15 Nov, first wake
+
+Nothing changed on any page and nothing was deployed. Dailies read as a
+judge meets it, 00:09 to 00:11 UTC, the day before judging:
+
+- Signed out, everything answers as it should (the list is in
+  `actual/2026-11-15.md`). In headless Chrome at 390x664 and 1280x800 both
+  home page videos play, "Sign in with Buffer" is on the phone's first
+  screen (338 px), no console error, no failed request.
+- **A bare `curl -L` of the sign-in step ends on Buffer's `/error` page.
+  That is the reader, not a break:** Buffer sets a cookie on the first hop
+  and wants it on the next. With a cookie jar the same walk ends on
+  Buffer's login page, 200. `scratch/judging.py` keeps the cookies.
+- Signed in (a test session of mine in the store for the boss's account,
+  deleted within sixteen seconds; reads only): `/make/`, `/api/channels`
+  (three channels, none locked, disconnected or paused) and `/me` all 200.
+  The Buffer access had run out 47 hours earlier and Dailies renewed it by
+  itself on the first read. So an account that comes back after two idle
+  days is not asked to sign in again. How long Buffer keeps the renewing
+  half alive past that, I do not know.
+- The 12 Nov helpers for a signed-in test were still in an old scratch
+  folder under `/tmp`; I copied `lib.py` from there. If `/tmp` is ever
+  emptied, what they did is written in `actual/2026-11-12.md` and they are
+  thirty lines to write again. They are not in the repo because they read
+  the Buffer access from the store; `scratch/judging.py` does not.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
