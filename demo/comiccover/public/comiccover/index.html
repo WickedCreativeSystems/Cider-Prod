@@ -86,7 +86,7 @@ footer{margin-top:56px;border-top:1px solid var(--line);padding-top:16px;font-si
 
 <section class="panel" id="paid" aria-live="polite">
   <h2>Your AI drawings</h2>
-  <p id="pmsg">Checking your order…</p>
+  <p id="pmsg">This box opens after you pay for the AI drawings, when Stripe sends you back to this page. Without paying, the free cover maker below works by itself.</p>
   <div id="pform" hidden>
     <p>1. Add the photo in the form below (one person, a couple, or a pet; face clear and well lit). 2. Pick the costume colour. 3. Press Draw. Each drawing takes 10 to 60 seconds and drops into your cover; tap one to use it.</p>
     <label for="power">Their power or story <span class="hint">Optional. "Fixes the Wi-Fi with one look", "flies over the beach".</span></label>
@@ -456,6 +456,7 @@ function shrink(im) {
   return c.toDataURL("image/jpeg", .9).split(",")[1];
 }
 if (sid) {
+  $("pmsg").textContent = "Checking your order…";
   $("paid").style.display = "block"; $("buy").style.display = "none";
   document.querySelector("label[for=photo] .hint").textContent = "A face or a whole person, well lit. Sent to the AI artist when you press Draw.";
   fetch(`/comiccover/api/order?session_id=${encodeURIComponent(sid)}`).then(r => r.json()).then(async o => {

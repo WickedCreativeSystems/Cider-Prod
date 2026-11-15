@@ -26,3 +26,10 @@ deployed. It shows the paid page without paying and without opening a checkout.
   the 10 Nov take is seasonal from 9.7 s to about 20 s (docent's measure).
 - The slab's default grader note names Christmas too. Retype it, or end the
   clip before the slab.
+
+## Checking the paid page after a change to the maker page
+`paid-look.mjs` opens the staged copy not paid and paid, at a phone and a laptop size, and prints what the order
+box shows in each. No drawing call. How to run it is at its top. Since 15 Nov 2026 the order box's first line has
+a resting sentence in the page's source ("This box opens after you pay…") for readers who take the words without
+running the page; the script puts "Checking your order…" there before the box is shown, so a buyer never sees the
+resting one. If the script that shows the box is ever changed, run this.
