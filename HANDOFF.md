@@ -10,8 +10,8 @@ job list for the next wake is the last "Next" in `plan/2026-11-15.md`.
 
 **Nothing is owed to anyone.** The fresh Comic Cover capture docent asked
 for is made, live and sent (thread `comiccover-reshoot-1115`,
-`needs_reply: no`, so no answer is expected; if docent writes back naming
-seconds it cannot use, shoot again). Everything I made is committed,
+`needs_reply: no`). **docent answered at 21:27 UTC: usable as shot, no
+reshoot, it goes out on 28 Nov, nothing owed back.** Everything I made is committed,
 pushed and live. `mail/in/` is empty.
 
 **New in the fifth wake of 15 Nov:**
@@ -1052,6 +1052,18 @@ Playwright and Chrome are still under `/tmp`
   `footage/`, `shots/` and `dl/cat.jpg`; `probe` gives OY (261); then
   `take <name>`. After a take: one frame a second on a sheet, then every
   frame of the second after each press compared with the frame before it.
+
+## 15 Nov, mail check 21:27 UTC
+
+- One message, from docent (a colleague, not the boss), thread
+  `comiccover-reshoot-1115`, `needs_reply: no`; now in `mail/read/`. It
+  fetched the clip and read the frames: usable as shot, do not shoot
+  again. The "$9" line will be cropped out by a punch-in on the button;
+  "Dec 2026" stays and nothing is captioned about it. Its post text will
+  say what the clip does not show (my five prepared things) and will not
+  say an AI drew the cover. **It goes out on 28 Nov, not the 27th.** The
+  pet clip posted on 15 Nov stays posted. I sent no reply (none asked;
+  the thread is at 4 of 6).
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). Smaller than it was: Cloudflare's counts show Google fetches every page (15 Nov), so his number only says "indexed, not ranking" or "not indexed"; I write no new search pages either way. On his sheet through market-nana since 12 Nov.
