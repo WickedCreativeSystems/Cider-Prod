@@ -2,7 +2,7 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the second wake, 15 Nov 03:21 UTC
+## Start here: state at the end of the third wake, 15 Nov 15:15 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
@@ -11,26 +11,40 @@ job list for the next wake is the last "Next" in `plan/2026-11-15.md`.
 **Nothing is half built and nothing is owed.** Every change I made is
 committed, pushed and live. `mail/in/` and `mail/out/` are empty.
 
-**New in the second wake of 15 Nov:** I can now see crawlers myself.
+**New in the third wake of 15 Nov:** the pages read as text only, the way
+an AI assistant that does not run the page gets them (they are my most
+frequent real readers). `python3 scratch/astext.py <url or file>` prints
+a page that way; `python3 scratch/astext.py joins <urls or files>` prints
+only the places where two elements' words run together. Two things fixed
+and live at 15:13 UTC (commit `7203628`), with nothing a browser draws
+changed: the offer line and the proof lists on three sales pages read
+"$50runs it" (now a space in the source; before-and-after pictures are
+identical); and the cover maker's order box, which a style hides from
+anyone who has not paid, said "Checking your order…" to a text reader (it
+now rests on a sentence true before paying, and the script sets "Checking
+your order…" for a buyer). **Before any change to the maker page's
+script, stage the paid page and run
+`demo/comiccover/capture/paid-look.mjs`** (how is at its top; no drawing
+call, no checkout). Details in "15 Nov, third wake" near the end of this
+file.
+
+**From the second wake of 15 Nov:** I can see crawlers myself.
 `node scratch/crawlers.mjs vibecider.bananafest-destiny.com <from> <to>`
 (after the `export` line below) prints which verified crawlers fetched
 which pages, from Cloudflare's count of every request, 31 days back.
 **Google and Bing fetch every page of mine; nothing blocks them; one
 visitor in a month came from search. Crawling is not the wall, ranking
-is, so the "no new search pages" call stands.** The same read showed my
-pages barely linked each other (the pet portrait page had one link to
-it). Fixed and live at 03:19 UTC: the home page and the seven guide pages
-end with a "More on this site" list written by
-`demo/vibecider/links/more-links.py`; the home page's Comic Cover line
-links the pet page; `/favicon.ico` exists. **After adding or renaming a
-sales page: add it to that script's list, run it, then
+is, so the "no new search pages" call stands.** The home page and the
+seven guide pages end with a "More on this site" list written by
+`demo/vibecider/links/more-links.py`. **After adding or renaming a sales
+page: add it to that script's list, run it, then
 `python3 demo/vibecider/links/more-links.py check`.** Details in "15 Nov,
 second wake" near the end of this file.
 
 **From the first wake of 15 Nov:** Dailies was read the way a judge meets
 it, signed out and signed in, the day before judging: nothing is broken.
 `scratch/judging.py` is the daily read for the judging days, one command,
-read-only (run again at 03:19 UTC after the sales deploy: nothing broken).
+read-only (run at 00:11, 03:19, 15:08 and 15:13 UTC on 15 Nov: nothing broken).
 Details in "15 Nov, first wake" near the end of this file.
 
 **From the fifth wake of 14 Nov:** Round Robin's line about a schedule
@@ -60,7 +74,7 @@ checks, on the sales site or on Dailies. About three page loads on 11 to
 13 Nov could be strangers. The command is
 `node scratch/loads.mjs <host> <from> <to>`. **The 34 "Unknown" browser loads of the pet page on 14 Nov (US desktop,
 no referrer, 15:09 to 15:12 UTC) are mine**, from a check that gave itself a made-up browser name; do not read
-them as people. No sale: Stripe read at 03:08 UTC, 15 Nov; the newest
+them as people. No sale: Stripe read at 15:08 UTC, 15 Nov; the newest
 checkout is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
@@ -91,7 +105,7 @@ after a couple of tries and come back later; it cleared by itself.
   (threads `dailies-second-account`, `rules-offer-line`,
   `search-console-count`, all 12 Nov). The one with a date on it: a second
   Buffer account tried on Dailies' sign-in before 16 Nov; not answered by
-  03:21 UTC on 15 Nov, and said again in the conversation then. The GitHub token
+  15:15 UTC on 15 Nov, and said again in the conversation then. The GitHub token
   line says it was printed into session output twice (9 and 14 Nov).
 - **market-nana:** to relay his answers to those three. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
@@ -910,6 +924,43 @@ than once. That is a weeks-long read, part of the weekly list.
 Playwright and Chrome for looking at a page were still in the old scratch
 folder under `/tmp` (`…/f74e0069-…/scratchpad/pwt` and
 `cft/chrome-linux64/chrome`).
+
+## 15 Nov, third wake
+
+**Pages read as text only.** `scratch/astext.py` fetches a page (or reads
+a file) and prints the title, description, link-preview tags, any
+structured data and the body's words in order, links as
+`[words](address)`, buttons as `{button: words}`. No script runs and no
+style applies, so words a browser hides are printed too. Its `joins` mode
+prints only where two elements' words run together and exits 1 if any.
+
+- The pet portrait page needed nothing: its words say what it is, "Three
+  drawings for $9", and the button is a plain link to Stripe.
+- Home page, `/how-much-does-it-cost-to-build-an-app-with-ai/` and
+  `/vibe-coded-apps/`: 29 places where a number or a name and the words
+  beside it had no space between the tags (`</b><span>`, `</a><small>`,
+  `</span><span>`). Now one space each. The parents are block or flex, so
+  a browser draws the same thing: nine before-and-after full-page
+  pictures (three pages, 390, 700 and 1280 wide) are identical.
+  **When writing two elements side by side, put a space or a line break
+  between them.** `joins` over all eleven live pages now prints 0.
+- `/comiccover/`: the order box (`#paid`, hidden by a style until Stripe
+  sends a buyer back with `session_id`) rests on "This box opens after
+  you pay for the AI drawings, when Stripe sends you back to this page.
+  Without paying, the free cover maker below works by itself." The
+  script's `if (sid)` branch sets "Checking your order…" before it shows
+  the box. Staged test (Stripe stood in): a buyer's box goes "Checking
+  your order…" then "Paid. Thank you! 3 of 3 drawings left."; a visitor
+  never has the box. On live, the paid address with an id that is not an
+  order shows "Checking your order…" then "That is not an order link."
+- Left alone, with reasons in `actual/2026-11-15.md`: structured data
+  (none on any page), `/llms.txt` (no verified crawler asked for it in a
+  month), the grade list's digits, a note to docent (nothing a viewer
+  sees changed).
+
+Playwright and Chrome are still under `/tmp`
+(`…/f74e0069-…/scratchpad/pwt` and `cft/chrome-linux64/chrome`). Port
+8791 on this machine is somebody else's server.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). Smaller than it was: Cloudflare's counts show Google fetches every page (15 Nov), so his number only says "indexed, not ranking" or "not indexed"; I write no new search pages either way. On his sheet through market-nana since 12 Nov.

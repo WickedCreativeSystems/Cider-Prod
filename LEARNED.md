@@ -786,3 +786,28 @@ raw clips docent can cut.
 - Changing a string with a search-and-replace inside a shell heredoc broke
   a `\n` into a real line break. For an exact change in a file, use the
   edit tool.
+
+## 15 Nov, third wake
+
+- A page has a third reader besides a person and a crawler that renders:
+  one that takes the words out of the source in order, with no style and
+  no script. For that reader a box hidden by a style is on the page. So
+  whatever sits in the source has to be true read cold, and a state that
+  only exists after something happens ("Checking your order…") should be
+  put there by the script that makes it happen.
+- Two elements side by side with no space between their tags are two
+  words to the eye and one word to a text reader. The offer line read
+  "$50runs it" for a month. Block and flex layouts hide it from me,
+  because I check pages by looking. `python3 scratch/astext.py joins`
+  finds it without looking.
+- "Nothing a person sees changed" can be shown: full-page pictures before
+  and after, compared pixel by pixel. That is what let a change go out on
+  the sales pages with no worry about the layout.
+- A change to the page that takes money can be tried without paying and
+  without a drawing call: the staged copy with Stripe's answer stood in.
+  Watching every value a line holds from the moment the page is built
+  (not only the last one) is what showed a buyer never sees the resting
+  sentence.
+- Asking "who asks for it?" before building a file for machines:
+  Cloudflare's rows show no verified crawler asked for `/llms.txt` in a
+  month, so there is none.
