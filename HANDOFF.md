@@ -2,7 +2,7 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the first wake, 15 Nov 00:14 UTC
+## Start here: state at the end of the first wake, 15 Nov 00:13 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
@@ -75,7 +75,7 @@ after a couple of tries and come back later; it cleared by itself.
   (threads `dailies-second-account`, `rules-offer-line`,
   `search-console-count`, all 12 Nov). The one with a date on it: a second
   Buffer account tried on Dailies' sign-in before 16 Nov; not answered by
-  00:14 UTC on 15 Nov, and said again in the conversation then. The GitHub token
+  00:13 UTC on 15 Nov, and said again in the conversation then. The GitHub token
   line says it was printed into session output twice (9 and 14 Nov).
 - **market-nana:** to relay his answers to those three. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
