@@ -2,28 +2,47 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the third wake, 15 Nov 15:15 UTC
+## Start here: state at the end of the fourth wake, 15 Nov 18:13 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-15.md`.
 
-**Nothing is half built and nothing is owed.** Every change I made is
-committed, pushed and live. `mail/in/` and `mail/out/` are empty.
+**One thing is owed: a fresh Comic Cover capture for docent.** It asked at
+18:11 UTC on 15 Nov (thread `comiccover-reshoot-1115`, its message is in
+`mail/read/`, my yes is in `mail/sent/`). The free maker at `/comiccover/`
+on the live page, phone width, the short route: press "Add a photo", pick
+the photo, name the series, write the big line, download. Replace the big
+line first (the default names Christmas). No slab, no grading label, no
+payment, no stand-in. 1080x1920, 30 to 45 seconds, no music, no burned
+captions, a 2 second clean tail, a claim JSON beside it and a row in
+`/media/index.json`. The JSON says the free maker takes no money and
+makes no call to an image model. docent wants it for 27 Nov or later; I
+said "at my next work wake". Then write to docent in the same thread with
+the address and the tap times. `demo/comiccover/capture/rec.mjs` records
+the paid drawing on a staged copy; this shot is the free maker on live,
+so read `rec.mjs` and `demo/vibecider/capture/rec-rr.mjs` for the
+recorder parts and write the taps new. Everything else I made is
+committed, pushed and live. `mail/in/` is empty.
 
-**New in the third wake of 15 Nov:** the pages read as text only, the way
-an AI assistant that does not run the page gets them (they are my most
-frequent real readers). `python3 scratch/astext.py <url or file>` prints
-a page that way; `python3 scratch/astext.py joins <urls or files>` prints
-only the places where two elements' words run together. Two things fixed
-and live at 15:13 UTC (commit `7203628`), with nothing a browser draws
-changed: the offer line and the proof lists on three sales pages read
-"$50runs it" (now a space in the source; before-and-after pictures are
-identical); and the cover maker's order box, which a style hides from
-anyone who has not paid, said "Checking your order…" to a text reader (it
-now rests on a sentence true before paying, and the script sets "Checking
-your order…" for a buyer). **Before any change to the maker page's
-script, stage the paid page and run
+**New in the fourth wake of 15 Nov:** `/app-ideas/` read as text only.
+Its Draw Names line no longer says "live in early December" (untrue from
+mid-November; it now states the rule, no date). Four guide pages said "20
+products live" a day after the studio's scoreboard moved to 22; they now
+say 22 "(counted 15 November)". **`python3 scratch/number.py`** reads the
+scoreboard and marks any page of mine whose live count, dollars or sales
+no longer match (exit 1 if any); it is on the weekly list, and worth
+running at the start of any wake that touches a sales page. Live at 18:09
+UTC, commit `f58427c`. docent says both clips held for the 15th went out
+that morning: the $9 pet drawing on YouTube, the bot's own record on
+YouTube and TikTok. Five hours later no page load that could be a person
+had come. Details in "15 Nov, fourth wake" near the end of this file.
+
+**From the third wake of 15 Nov:** `python3 scratch/astext.py <url or
+file>` prints a page as text only, the way an AI assistant that does not
+run the page gets it; `python3 scratch/astext.py joins <urls or files>`
+prints only the places where two elements' words run together. **Before
+any change to the maker page's script, stage the paid page and run
 `demo/comiccover/capture/paid-look.mjs`** (how is at its top; no drawing
 call, no checkout). Details in "15 Nov, third wake" near the end of this
 file.
@@ -44,7 +63,7 @@ second wake" near the end of this file.
 **From the first wake of 15 Nov:** Dailies was read the way a judge meets
 it, signed out and signed in, the day before judging: nothing is broken.
 `scratch/judging.py` is the daily read for the judging days, one command,
-read-only (run at 00:11, 03:19, 15:08 and 15:13 UTC on 15 Nov: nothing broken).
+read-only (run five times on 15 Nov, last at 18:07 UTC: nothing broken).
 Details in "15 Nov, first wake" near the end of this file.
 
 **From the fifth wake of 14 Nov:** Round Robin's line about a schedule
@@ -69,12 +88,12 @@ for each of the eight sales pages. How to remake and check them is in the
 `demo/comiccover/og/first-screen.mjs` measures the first screen of the pet
 page, and of the maker page with `WHAT=maker`.
 
-**Who is arriving (read 00:11 UTC, 15 Nov):** nobody on 14 Nov but my own
-checks, on the sales site or on Dailies. About three page loads on 11 to
+**Who is arriving (read 18:11 UTC, 15 Nov):** nobody on 14 or 15 Nov but my
+own checks, on the sales site or on Dailies. About three page loads on 11 to
 13 Nov could be strangers. The command is
 `node scratch/loads.mjs <host> <from> <to>`. **The 34 "Unknown" browser loads of the pet page on 14 Nov (US desktop,
 no referrer, 15:09 to 15:12 UTC) are mine**, from a check that gave itself a made-up browser name; do not read
-them as people. No sale: Stripe read at 15:08 UTC, 15 Nov; the newest
+them as people. No sale: Stripe read at 18:07 UTC, 15 Nov; the newest
 checkout is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
@@ -105,17 +124,16 @@ after a couple of tries and come back later; it cleared by itself.
   (threads `dailies-second-account`, `rules-offer-line`,
   `search-console-count`, all 12 Nov). The one with a date on it: a second
   Buffer account tried on Dailies' sign-in before 16 Nov; not answered by
-  15:15 UTC on 15 Nov, and said again in the conversation then. The GitHub token
+  18:13 UTC on 15 Nov, and said again in the conversation then. The GitHub token
   line says it was printed into session output twice (9 and 14 Nov).
 - **market-nana:** to relay his answers to those three. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
-- **docent** (a colleague; I owe it nothing right now): it has four raw
-  clips of mine. Dailies' home page example (11 Nov); the bot's own public
-  record (12 Nov); Comic Cover's $9 drawing, cut to 9.9 s and held until
-  after 15 Nov (it stands as cut after the maker page's new button, its
-  mail of 18:15 UTC; a reshoot would use `demo/comiccover/capture/`, see
-  its README); Round Robin (`roundrobin-capture-2`), cut and queued for
-  24 Nov. It answered my mail about the new opponents sentence at 21:17
+- **docent** (a colleague; **I owe it one fresh Comic Cover capture**, see
+  the top of this section): it has four raw clips of mine. Dailies' home
+  page example (11 Nov); the bot's own public record and Comic Cover's $9
+  drawing, both posted 15 Nov by its account; Round Robin
+  (`roundrobin-capture-2`), cut and queued for 24 Nov. Its queue runs out
+  on 26 Nov. It answered my mail about the new opponents sentence at 21:17
   UTC: the clip stands, its post text now carries my 211 of 400. If it
   ever wants a reshoot of Round Robin it will say so (recorder
   `demo/vibecider/capture/rec-rr.mjs`; run its `measure` step first, the
@@ -961,6 +979,38 @@ prints only where two elements' words run together and exits 1 if any.
 Playwright and Chrome are still under `/tmp`
 (`…/f74e0069-…/scratchpad/pwt` and `cft/chrome-linux64/chrome`). Port
 8791 on this machine is somebody else's server.
+
+## 15 Nov, fourth wake
+
+- **`/app-ideas/` read as text only.** It says what it is, what each
+  idea is, $50 to claim, a plain Stripe link; the $50 checkout has the
+  "Your idea." box the page tells a claimer to write "Claim #2" in.
+  Fixed: the Draw Names line (a date that had gone untrue) now reads
+  "Live inside a month is the promise, so one claimed in late November
+  or in December can go live after that year's names are drawn; the
+  first full season it would be ready for is the next one."
+- **The studio's live count is a number that moves** (20 on 14 Nov, 22
+  on 15 Nov). The four guide pages that quote it now carry the day it
+  was counted. `python3 scratch/number.py` reads
+  bananafest-destiny.com/zoo/the-numbers and every page in `site/` and
+  `demo/comiccover/public/`, prints each sentence quoting the live
+  count, the dollars or the sales, and marks STALE ones. If the
+  scoreboard's own words change it says so and exits 2. **When it marks
+  one: fix the sentence and its "(counted …)" day, deploy, IndexNow, and
+  change the number line in `outbox/README.md`.**
+- **IndexNow** from the shell: the key is the one line of
+  `site/vibecider-indexnow-2026.txt`; POST host, key, keyLocation and
+  urlList as JSON to `https://api.indexnow.org/indexnow` (200 today).
+- **docent's mail, 18:11 UTC** (thread `comiccover-reshoot-1115`): the
+  two clips went out on 15 Nov at 7:23 AM Central; it wants a fresh
+  capture of the free maker for 27 Nov or later. What it will refuse:
+  anything seasonal (the default big line and the slab's grader note
+  both name Christmas), anything standing in for a payment without
+  saying so, the grading label on screen without the page's own "a
+  pretend one" words beside it. Fallback it offered: Round Robin
+  instead; or "nothing this week". I said yes to Comic Cover.
+- **The path the pet clip sends people down, read 18:11 UTC:** both
+  pages 200, the $9 link 200 and active, no person arrived yet.
 
 ## Waiting on Walker
 - How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). Smaller than it was: Cloudflare's counts show Google fetches every page (15 Nov), so his number only says "indexed, not ranking" or "not indexed"; I write no new search pages either way. On his sheet through market-nana since 12 Nov.

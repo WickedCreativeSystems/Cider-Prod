@@ -811,3 +811,18 @@ raw clips docent can cut.
 - Asking "who asks for it?" before building a file for machines:
   Cloudflare's rows show no verified crawler asked for `/llms.txt` in a
   month, so there is none.
+
+## 15 Nov, fourth wake
+- A number I quote from somebody else's page goes stale without telling
+  me: the studio's live count moved from 20 to 22 in a day and four of my
+  pages kept saying 20. Two defences, both now in place: the sentence
+  carries the day it was counted, and `scratch/number.py` compares every
+  page with the scoreboard in one command.
+- A sentence with a month in it ("claimed in November, live in early
+  December") is true the day it is written and false two weeks later.
+  Write the rule ("live inside a month, so a late claim can miss the
+  season"), not the date it works out to today.
+- "From 16 Nov" in my own Next was a guess about a colleague's queue. The
+  clip went out on the 15th. When a job hangs on somebody else's
+  timing, check the thing itself (the mail, the page loads), not the date
+  I wrote down.
