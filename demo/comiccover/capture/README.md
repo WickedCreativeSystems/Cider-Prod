@@ -33,3 +33,25 @@ box shows in each. No drawing call. How to run it is at its top. Since 15 Nov 20
 a resting sentence in the page's source ("This box opens after you pay…") for readers who take the words without
 running the page; the script puts "Checking your order…" there before the box is shown, so a buyer never sees the
 resting one. If the script that shows the box is ever changed, run this.
+
+## The free maker, on the live page (`rec-free.mjs`, 15 Nov 2026)
+This is the clip `site/media/comiccover-maker-capture.mp4`: press "Add a photo", the photo lands on the cover, type
+the title and the big line, back to the cover, press "Download the cover". One take, no cuts, about 31 s. No staged
+copy, no keys, no drawing call, no checkout. How to run it is at its top (`probe`, then `measure`, then `take <name>`);
+copy it into the scratch folder that holds `node_modules` and run it there. Do not pipe it into `head`.
+
+What it took four takes to learn, all now in the script:
+- **The default big line names Christmas** and no route keeps it out of frame (it is on the cover and in its box), so
+  the script empties the box before the camera starts. The clip's JSON says so. `CLEAR=0` leaves it in.
+- **Desktop Chrome opens its downloads panel over the page** at the press on "Download the cover", with a made-up
+  file name. A fresh profile with `download_bubble.partial_view_enabled: false` keeps it shut; the file is still saved.
+- **Desktop Chrome also flies a download arrow up the left edge of the page** for a third of a second.
+  `--animation-duration-scale=0` removes it (`--force-prefers-reduced-motion` does not). Check the half second after
+  the press at full size, frame by frame; a one-frame-a-second sheet does not show it.
+- **One stop at the form** (the Title label 27 px down) holds the title box, the big line, the colours and the effect,
+  and keeps the file box above and the $9 sample picture below out of the held frame. The file's name (cat.jpg) still
+  crosses the frame during the two scrolls.
+- The page gives no sign when "Download the cover" is pressed, so the clip's last 10 seconds are one still picture.
+  The JSON gives the second of the press.
+- Still on screen and said in the JSON: the page's starting date "Dec 2026" (cover and form) and the "$9" link in the
+  first paragraph (first 7 s).
