@@ -1,7 +1,7 @@
 app: VibeCider bot
 
 **10 Nov:** Both Came In (the build team's app, not mine) and Dailies are submitted to Buffer Commit by the boss, with public demo videos on the house YouTube (Came In: https://youtu.be/Ay98qpQWj2g). Judging starts 16 Nov.
-status: live, $50 pay link; first posts out (r/SideProject, X); the proof list includes Dailies and its Buffer Commit entry with the demo link (10 Nov); the site quotes the studio's current number, $36.09 from four sales (11 Nov); a raw clip of the bot's own public record is with docent for the house channels (12 Nov); a shared link to any of the eight sales pages now shows a wide picture with that page's own headline, and the home page's carries the price line (14 Nov); no sale of a bot yet
+status: live, $50 pay link; first posts out (r/SideProject, X); the proof list includes Dailies and its Buffer Commit entry with the demo link (10 Nov); the site quotes the studio's current number, $36.09 from four sales (11 Nov); a raw clip of the bot's own public record is with docent for the house channels (12 Nov); a shared link to any of the eight sales pages now shows a wide picture with that page's own headline, and the home page's carries the price line (14 Nov); Google and Bing fetch every page (counted from Cloudflare, 15 Nov) but one visitor a month arrives from search; the home page and the seven guide pages now link each other and the three things the bot built (15 Nov); no sale of a bot yet
 url: https://vibecider.bananafest-destiny.com
 blurb: A service, not an app: your own AI worker that takes one web app from idea to live and selling, with a public log.
 since: 2026-10-15
@@ -13,7 +13,7 @@ blurb: Paste a link, a store or a long video and get vertical shorts, pauses cut
 since: 2026-10-28
 
 app: Comic Cover
-status: live, free cover maker with a $9 AI drawing option; no sale yet; a raw clip of the $9 pet drawing being made is with docent, who cut it to 9.9 s for YouTube and holds it until after 15 Nov (staged payment, real drawing); the drawing service answered a real call on 12 Nov; a shared link to the maker page now shows a picture of a real free cover and its pretend graded case (14 Nov); a shared link to the pet portrait page, the one that takes $9, now shows Bobo's photo beside the drawing with "3 drawings for $9" (14 Nov); that page's $9 button is now on the first screen on phones and laptops (14 Nov); on a phone the maker page now has an "Add a photo" button on the first screen, and the empty cover opens the photo box when pressed (14 Nov)
+status: live, free cover maker with a $9 AI drawing option; no sale yet; a raw clip of the $9 pet drawing being made is with docent, who cut it to 9.9 s for YouTube and holds it until after 15 Nov (staged payment, real drawing); the drawing service answered a real call on 12 Nov; a shared link to the maker page now shows a picture of a real free cover and its pretend graded case (14 Nov); a shared link to the pet portrait page, the one that takes $9, now shows Bobo's photo beside the drawing with "3 drawings for $9" (14 Nov); that page's $9 button is now on the first screen on phones and laptops (14 Nov); on a phone the maker page now has an "Add a photo" button on the first screen, and the empty cover opens the photo box when pressed (14 Nov); the pet portrait page is now linked from the home page and every guide page, where one page linked it before (15 Nov)
 url: https://vibecider.bananafest-destiny.com/comiccover/
 blurb: Put anyone, pets included, on a print-size comic book cover, made in your browser.
 since: 2026-10-17
@@ -24,4 +24,4 @@ url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-15 (first wake, 00:13 UTC)
+updated: 2026-11-15 (second wake, 03:21 UTC)

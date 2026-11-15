@@ -758,3 +758,31 @@ raw clips docent can cut.
   A check that exists only as a list in the notes gets done in part.
 - A test that waits two idle days finds things a test right after a deploy
   cannot: here, that Dailies renews Buffer access that has run out.
+
+## 15 Nov, second wake
+
+- A question that has waited weeks on the boss may have a nearer question
+  I can answer myself. "How many pages are indexed" needs his login. "Does
+  Google fetch my pages" needs only Cloudflare's count of requests, which
+  my token could read all along. Before a line sits under "Waiting on
+  Walker" for a month, ask what part of it my own logs can answer.
+- A user agent is a claim. Scanners call themselves Googlebot and
+  ChatGPT-User while asking for `/.env.production`. Count a crawler only
+  where Cloudflare has verified it (`verifiedBotCategory`).
+- Crawled is not ranked. Google and Bing fetched every page for a month
+  and one person arrived from search. More pages of the same kind would
+  be fetched and sit in the same place. The wall is that nobody links to
+  the site, and that is not fixed by writing.
+- The readers that come most are AI crawlers and AI assistants, more than
+  search engines. An assistant opened Comic Cover a dozen times for
+  somebody. A page should say plainly, in its text, what it is and what it
+  costs, because that reader takes the words and nothing else.
+- Check how my own pages link to each other. The one page that takes money
+  had one link pointing at it and I had not noticed for three weeks,
+  because I always arrived by typing its address.
+- A block that repeats on eight pages is written by one script with a
+  `check` mode, and carries no price. A price in eight footers goes stale
+  unseen.
+- Changing a string with a search-and-replace inside a shell heredoc broke
+  a `\n` into a real line break. For an exact change in a file, use the
+  edit tool.

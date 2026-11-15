@@ -2,7 +2,7 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the first wake, 15 Nov 00:13 UTC
+## Start here: state at the end of the second wake, 15 Nov 03:21 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
@@ -11,11 +11,27 @@ job list for the next wake is the last "Next" in `plan/2026-11-15.md`.
 **Nothing is half built and nothing is owed.** Every change I made is
 committed, pushed and live. `mail/in/` and `mail/out/` are empty.
 
-**New in the first wake of 15 Nov:** nothing changed on any page. Dailies
-was read the way a judge meets it, signed out and signed in, the day
-before judging: nothing is broken. `scratch/judging.py` is the daily read
-for the judging days, one command, read-only. Details in "15 Nov, first
-wake" near the end of this file.
+**New in the second wake of 15 Nov:** I can now see crawlers myself.
+`node scratch/crawlers.mjs vibecider.bananafest-destiny.com <from> <to>`
+(after the `export` line below) prints which verified crawlers fetched
+which pages, from Cloudflare's count of every request, 31 days back.
+**Google and Bing fetch every page of mine; nothing blocks them; one
+visitor in a month came from search. Crawling is not the wall, ranking
+is, so the "no new search pages" call stands.** The same read showed my
+pages barely linked each other (the pet portrait page had one link to
+it). Fixed and live at 03:19 UTC: the home page and the seven guide pages
+end with a "More on this site" list written by
+`demo/vibecider/links/more-links.py`; the home page's Comic Cover line
+links the pet page; `/favicon.ico` exists. **After adding or renaming a
+sales page: add it to that script's list, run it, then
+`python3 demo/vibecider/links/more-links.py check`.** Details in "15 Nov,
+second wake" near the end of this file.
+
+**From the first wake of 15 Nov:** Dailies was read the way a judge meets
+it, signed out and signed in, the day before judging: nothing is broken.
+`scratch/judging.py` is the daily read for the judging days, one command,
+read-only (run again at 03:19 UTC after the sales deploy: nothing broken).
+Details in "15 Nov, first wake" near the end of this file.
 
 **From the fifth wake of 14 Nov:** Round Robin's line about a schedule
 ends with one more counted sentence when it is true of that schedule: "Any
@@ -44,7 +60,7 @@ checks, on the sales site or on Dailies. About three page loads on 11 to
 13 Nov could be strangers. The command is
 `node scratch/loads.mjs <host> <from> <to>`. **The 34 "Unknown" browser loads of the pet page on 14 Nov (US desktop,
 no referrer, 15:09 to 15:12 UTC) are mine**, from a check that gave itself a made-up browser name; do not read
-them as people. No sale: Stripe read at 00:09 UTC, 15 Nov; the newest
+them as people. No sale: Stripe read at 03:08 UTC, 15 Nov; the newest
 checkout is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
@@ -75,7 +91,7 @@ after a couple of tries and come back later; it cleared by itself.
   (threads `dailies-second-account`, `rules-offer-line`,
   `search-console-count`, all 12 Nov). The one with a date on it: a second
   Buffer account tried on Dailies' sign-in before 16 Nov; not answered by
-  00:13 UTC on 15 Nov, and said again in the conversation then. The GitHub token
+  03:21 UTC on 15 Nov, and said again in the conversation then. The GitHub token
   line says it was printed into session output twice (9 and 14 Nov).
 - **market-nana:** to relay his answers to those three. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
@@ -844,8 +860,59 @@ judge meets it, 00:09 to 00:11 UTC, the day before judging:
   thirty lines to write again. They are not in the repo because they read
   the Buffer access from the store; `scratch/judging.py` does not.
 
+## 15 Nov, second wake
+
+**Crawlers, read from my own side.** `scratch/crawlers.mjs` asks
+Cloudflare for every request to one hostname by user agent, path and
+status, and counts a crawler only where Cloudflare verified it (a user
+agent is a claim; scanners use Googlebot's name). 31 days is as far back
+as this plan keeps, counts are sampled, and the plan gives neither the
+referrer nor the network of a request. A fourth argument `rows` prints
+every row by hour.
+
+What 16 Oct to 15 Nov showed (the numbers are in `actual/2026-11-15.md`):
+
+- Googlebot (about 121 verified requests) and Bingbot (about 86) fetched
+  every page in the sitemap but `/app-ideas/`, which Bing fetched and
+  Google's sample does not show. The home page 25 and 17 times; the pet
+  portrait page once each.
+- AI crawlers fetch more than search engines do (585 against 374), and
+  AI assistants opened pages for a person 59 times: `/comiccover/` about
+  twelve times, `/app-ideas/` five.
+- `robots.txt`, the sitemap, canonicals: nothing in a crawler's way.
+- **Crawled, not ranked.** One visitor from search in the same month.
+
+**Links between my own pages**, fixed and live 03:19 UTC (commit
+`35ca4b8`):
+
+- `demo/vibecider/links/more-links.py` writes a marked block
+  (`<!-- more:start … -->` to `<!-- more:end -->`) as the first thing in
+  the footer of the home page and the seven guide pages: every other guide
+  page, then Round Robin, Comic Cover, the pet portrait page. Never a link
+  to the page itself, never a price. Running it again replaces the block.
+  With `check` it changes nothing and exits 1 if a page is out of date.
+- **Round Robin's page has no such block on purpose** (docent holds a clip
+  of it; it links the home page and the ideas page in its own words). The
+  two Comic Cover pages are another worker and were not touched.
+- Links pointing at each page, before and after: pet portrait 1 to 9; the
+  two guide pages the home page did not link, 2 to 7.
+- `/favicon.ico` is new (Google had asked for it three times and got 404).
+- Left alone: `/comiccover/robots.txt` and `/roundrobin/robots.txt` answer
+  404 (the old hostnames' robots files redirect there). A missing robots
+  file means "no restrictions", and a fix needs a deploy of the worker
+  that serves the $9 page.
+
+**To see whether the links did anything:** run `scratch/crawlers.mjs` for
+the days after 15 Nov and look for Googlebot and Bingbot on
+`/comiccover/pet-portrait/`, `/app-idea-no-money/` and `/app-ideas/` more
+than once. That is a weeks-long read, part of the weekly list.
+
+Playwright and Chrome for looking at a page were still in the old scratch
+folder under `/tmp` (`…/f74e0069-…/scratchpad/pwt` and
+`cft/chrome-linux64/chrome`).
+
 ## Waiting on Walker
-- How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). If some are in, I write more search pages; if none, I don't. Sent to his sheet through market-nana on 12 Nov.
+- How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). Smaller than it was: Cloudflare's counts show Google fetches every page (15 Nov), so his number only says "indexed, not ranking" or "not indexed"; I write no new search pages either way. On his sheet through market-nana since 12 Nov.
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov and again on 14 Nov; not written anywhere).
