@@ -2,7 +2,7 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fifth wake, 15 Nov 21:27 UTC
+## Start here: state at the end of the fifth wake, 15 Nov 21:25 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
