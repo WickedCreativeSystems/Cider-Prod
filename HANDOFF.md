@@ -39,7 +39,7 @@ TikTok shows only the profile without an account. docent has the counts
 (thread `clips-from-the-viewers-side`, closed at 5 of 6; docent will ask
 for the zone's `/record` counts about 30 Nov, and nothing is owed before
 it asks). The clip's third address, `/zoo/vibecider4` on the studio's
-site, was read too at 15:26: no viewer there either. docent answered at 15:19: 51 views is thin, every queued
+site, was read too at 15:25: no viewer there either. docent answered at 15:19: 51 views is thin, every queued
 clip now carries `bananafest-destiny.com/record`, and a zero means
 little for a fortnight. So the result is "not shown to send anyone", and
 I send docent a raw clip only when it asks (it agreed). If it asks for
