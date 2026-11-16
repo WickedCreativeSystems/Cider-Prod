@@ -2,11 +2,40 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fourth wake, 16 Nov 18:20 UTC
+## Start here: state at the end of the fifth wake, 16 Nov 21:21 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-16.md`.
+
+**16 Nov, fifth wake: one message waits on the boss, and Reddit can be
+read from here again.** The reads at 21:08 UTC: no sale; Dailies not
+broken, `tok:` 2, `user:` 2, `ses:` 3 (no third account, account 2 not
+back); nobody on the sales site. Then two pieces of work, nothing live
+changed and nothing deployed:
+- **The repository's front page** (`README.md`) was the scaffold of 15
+  Oct and is what "Public log" in the Commit entry and every footer of
+  mine opens. It now maps what the worker built (live address beside
+  folder), where Dailies' Buffer code and tests are, how to read the
+  log, and the offer copied from the site with a link.
+  `python3 scratch/readme.py links` checks its paths, its offer words
+  against the sales page, and its links; it is on the weekly list. If
+  the offer changes, the README changes the same day. GitHub's own
+  counts (traffic API, 1 to 14 Nov): 0 views, no referrers, 886 clones
+  by machines. Nobody reads the log there, so spend no more on it.
+- **The people who already asked.** "Reddit blocks this machine" (19
+  Oct) is half untrue now: a public archive, Arctic Shift, answers with
+  posts, comments and each place's rules, and `python3 scratch/asked.py
+  [days] [subs]` reads it (reads only, one request a second; output
+  names real people, so screen or `outbox/` only). Reddit's own feed
+  allows about one request a minute; Pullpush says it does not serve
+  agents and is not used. In about 3,800 posts of the last four to seven
+  days: two people with an idea and no builder, about a dozen whose app
+  is live and nobody comes. **One fits and has a draft:**
+  `outbox/2026-11-16-asked-one.md`, with the boss's three-minute sheet
+  `forboss/2026-11-16-answer-one-asker.md`. It goes stale in a day or
+  two. I do not draft for "live and nobody comes": the studio's number
+  does not carry that promise. How to repeat the search is Next item 5e.
 
 **16 Nov, fourth wake: Dailies has a link picture, link-preview tags and
 a footer link to the sales page ready, and none of it is live.** They
@@ -226,7 +255,7 @@ with `-c wrangler.local.jsonc`. If Cloudflare answers code 10013, stop
 after a couple of tries and come back later; it cleared by itself.
 
 **Waiting on whom:**
-- **Walker (the boss):** eight lines under "Waiting on Walker" at the end of
+- **Walker (the boss):** nine lines under "Waiting on Walker" at the end of
   this file. One is also on his sheet through market-nana (thread
   `rules-offer-line`, 12 Nov); the other two that were there (the second
   Buffer account, the Search Console count) are withdrawn. The GitHub token
@@ -1195,11 +1224,12 @@ and `src/` in the scratchpad. Mail out: market-nana (thread
 on tap or on the sales site.
 
 ## Waiting on Walker
+- Send, or decide not to send, one message to a person who asked on Reddit on 16 Nov for a builder they can verify. Three minutes; the steps and the reasons against are in forboss/2026-11-16-answer-one-asker.md. Stale after 18 Nov. Then say "sent" or "not sent".
 - Send two forms, six minutes, no account at either: Comic Cover to FutureTools and the offer to Launching Next. Every field's words are in forboss/2026-11-16-list-two-places.md. Then say "Done: two listings". (16 Nov. The Search Console count is no longer asked: withdrawn 16 Nov.)
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov and again on 14 Nov; not written anywhere).
-- Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now).
+- Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now). The repository's About box on GitHub has no website link either; his setting, if he wants the sales page there (16 Nov).
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
 - Post the Sizecurve reply (and optional post) once the new video is public: forboss/2026-11-11-post-sizecurve-video.md
 - Question: once the new Sizecurve video is up, may my sales site say a VibeCider bot made it, naming Sizecurve and linking it?

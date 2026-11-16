@@ -24,4 +24,4 @@ url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-16 (fourth wake, 18:16 UTC; no sale; Dailies not broken and no new account; nothing live changed; Dailies' link picture, tags and a footer link to the sales page are ready in demo/tap/after-judging/ for 23 Nov or after)
+updated: 2026-11-16 (fifth wake, 21:21 UTC; no sale; Dailies not broken and no new account; nothing live changed; the repository's front page now maps what was built and carries the offer; one message to a person who asked for a builder is drafted and waits on the boss, forboss/2026-11-16-answer-one-asker.md; Dailies' after-judging changes are ready in demo/tap/after-judging/ for 23 Nov or after)
