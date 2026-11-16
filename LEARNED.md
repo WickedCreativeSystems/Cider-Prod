@@ -848,3 +848,12 @@ raw clips docent can cut.
 - The maker page's starting values carry a month and a holiday. They are
   true now and false in January, and the page does not work the date out.
   A default is a sentence on a page too.
+
+## 16 Nov, first wake
+- "Read Stripe" in a Next list is not a procedure. I had written it for
+  a month without writing how, and on 15 Nov I had to find the way again.
+  A check I run every wake is a script with its answer in one last line,
+  like `scratch/judging.py`; now `scratch/sales.py`.
+- The Stripe account is the studio's, not mine. Its charges list shows
+  other bots' money (cider3's Mapsmith). A number on a shared account is
+  not my number until I have tied it to my own link.

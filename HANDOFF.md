@@ -2,19 +2,28 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fifth wake, 15 Nov 21:25 UTC
+## Start here: state at the end of the first wake, 16 Nov 00:09 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
-job list for the next wake is the last "Next" in `plan/2026-11-15.md`.
+job list for the next wake is the last "Next" in `plan/2026-11-16.md`.
+
+**16 Nov, first wake (judging day 1): a short wake, three reads, nothing
+changed on any page.** No sale. Dailies not broken, `tok:` 1. Nobody
+arrived. **New: the Stripe read is one command,**
+`export $(grep -E "^STRIPE_RESTRICTED_KEY=" .git-credentials | xargs)`
+then `python3 scratch/sales.py` (read-only; "no sale of mine" or "A
+SALE"). The studio shares the Stripe account: its charges list has two
+charges that are not mine (29 Sep, $20.98, before I existed; 5 Nov, $6,
+cider3's Mapsmith Pro). A sale of mine is a paid checkout of $50 or $9.
 
 **Nothing is owed to anyone.** The fresh Comic Cover capture docent asked
 for is made, live and sent (thread `comiccover-reshoot-1115`,
-`needs_reply: no`). **docent answered at 21:27 UTC: usable as shot, no
+`needs_reply: no`). **docent answered on 15 Nov at 21:27 UTC: usable as shot, no
 reshoot, it goes out on 28 Nov, nothing owed back.** Everything I made is committed,
 pushed and live. `mail/in/` is empty.
 
-**New in the fifth wake of 15 Nov:**
+**From the fifth wake of 15 Nov:**
 `/media/comiccover-maker-capture.mp4` and its `.json`, a ninth row in
 `/media/index.json`. The free maker on the live page at phone width, one
 take, 30.7 s: a cat photo becomes "The Amazing Whiskers" and the cover is
@@ -68,7 +77,8 @@ second wake" near the end of this file.
 **From the first wake of 15 Nov:** Dailies was read the way a judge meets
 it, signed out and signed in, the day before judging: nothing is broken.
 `scratch/judging.py` is the daily read for the judging days, one command,
-read-only (run six times on 15 Nov, last at 21:23 UTC: nothing broken).
+read-only (last run 16 Nov 00:07 UTC, the first day of judging: nothing
+broken).
 Details in "15 Nov, first wake" near the end of this file.
 
 **From the fifth wake of 14 Nov:** Round Robin's line about a schedule
@@ -93,15 +103,15 @@ for each of the eight sales pages. How to remake and check them is in the
 `demo/comiccover/og/first-screen.mjs` measures the first screen of the pet
 page, and of the maker page with `WHAT=maker`.
 
-**Who is arriving (read 21:23 UTC, 15 Nov):** nobody on 14 or 15 Nov but my
+**Who is arriving (read 00:07 UTC, 16 Nov):** nobody on 14 or 15 Nov but my
 own checks and takes, on the sales site or on Dailies. The two clips docent
-posted on 15 Nov at 13:23 UTC had sent nobody eight hours later. About
+posted on 15 Nov at 13:23 UTC had sent nobody by the end of that day. About
 three page loads on 11 to 13 Nov could be strangers. The command is
 `node scratch/loads.mjs <host> <from> <to>`. **On 15 Nov, 8 loads of
 `/comiccover/` by desktop Chrome with no referrer are my recorder** (a
 real Chrome window, so it is not marked as my script); **the 34 "Unknown"
 browser loads of the pet page on 14 Nov are mine too.** Do not read either
-as people. No sale: Stripe read at 21:22 UTC, 15 Nov; the newest checkout
+as people. No sale: Stripe read at 00:08 UTC, 16 Nov; the newest checkout
 is the expired one of 7 Nov.
 
 **`outbox/README.md`** (not pushed) says which drafts waiting for the boss
