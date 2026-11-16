@@ -2,11 +2,32 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the third wake, 16 Nov 15:20 UTC
+## Start here: state at the end of the fourth wake, 16 Nov 18:20 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-16.md`.
+
+**16 Nov, fourth wake: Dailies has a link picture, link-preview tags and
+a footer link to the sales page ready, and none of it is live.** They
+are in `demo/tap/after-judging/` (outside `public/` and `src/`, so no
+tap deploy serves them); its `README.md` has the why, the dates and six
+steps. **Run them on or after 23 November and before 4 December, not
+sooner.** The dates are Buffer's, read 16 Nov from
+`buffer.com/api/commit/terms`: judging "from approximately November 16
+through November 20, 2026"; "Submissions must remain live throughout the
+judging period"; winners emailed "on or about December 4 to December 7",
+announced "on or around December 7", when the gallery opens; a winner
+must answer Buffer "within 10 days after the winners are announced".
+The footer link is there because **no page of Dailies links the sales
+page today**, and the gallery's opening is the day the most strangers
+are likely to meet Dailies. Tried on a copy only. The reads at 18:09
+UTC: no sale; Dailies not broken, `tok:` 2, `user:` 2, `ses:` 3 (account
+2 did not come back, no third); nobody on the sales site. Mail out to
+market-nana (thread `commit-dates`, no reply asked): the dates, since
+Came In is entered too. **On 4 Dec, say in the conversation that
+Buffer's winner email goes to the boss's Buffer account address between
+4 and 7 Dec and has a 10-day clock** (said once already, 16 Nov).
 
 **16 Nov, third wake: a second Buffer account signed in on Dailies, at
 12:36 UTC on judging day 1.** It is the first that is not the boss's.
@@ -189,8 +210,10 @@ No change and no tap deploy unless something is broken. Read in full on
 15 Nov, 00:09 to 00:11 UTC: nothing broken. **Each day of judging, run**
 `export $(grep -E "^CLOUDFLARE_(API_TOKEN|ACCOUNT_ID)=" .git-credentials | xargs)`
 then `python3 scratch/judging.py`. It prints "nothing is broken" or BROKEN
-and what; and the store's counts (`tok:` 1, `user:` 1, `ses:` 2 on 15 Nov).
-One more `tok:` means a Buffer account other than the boss's signed in.
+and what; and the store's counts (`tok:` 2, `user:` 2, `ses:` 3 since
+16 Nov; one more `tok:` is a third Buffer account). Buffer's terms say
+judging runs approximately through 20 Nov; **no tap deploy before 23 Nov**,
+and then the first one is `demo/tap/after-judging/README.md`.
 
 **To deploy the sales site**, from the repo root (the `wrangler.jsonc`
 there serves `site/`):
@@ -203,17 +226,15 @@ with `-c wrangler.local.jsonc`. If Cloudflare answers code 10013, stop
 after a couple of tries and come back later; it cleared by itself.
 
 **Waiting on whom:**
-- **Walker (the boss):** nine lines under "Waiting on Walker" at the end of
-  this file. Three of them are also on his sheet through market-nana
-  (threads `dailies-second-account`, `rules-offer-line`,
-  `search-console-count`, all 12 Nov). The one with a date on it: a second
-  Buffer account tried on Dailies' sign-in before 16 Nov; not answered by
-  18:13 UTC on 15 Nov, and said again in the conversation then. The GitHub token
+- **Walker (the boss):** eight lines under "Waiting on Walker" at the end of
+  this file. One is also on his sheet through market-nana (thread
+  `rules-offer-line`, 12 Nov); the other two that were there (the second
+  Buffer account, the Search Console count) are withdrawn. The GitHub token
   line says it was printed into session output twice (9 and 14 Nov).
-- **market-nana:** to relay his answers to those three. A relayed answer is
+- **market-nana:** to relay his answer to that one. A relayed answer is
   `from_boss: yes` with a `quote:`; only the quote goes in FACTS.
-- **docent** (a colleague; **I owe it one fresh Comic Cover capture**, see
-  the top of this section): it has four raw clips of mine. Dailies' home
+- **docent** (a colleague; nothing is owed to it): it has five raw clips
+  of mine, the fifth being the fresh Comic Cover capture (out 28 Nov). Dailies' home
   page example (11 Nov); the bot's own public record and Comic Cover's $9
   drawing, both posted 15 Nov by its account; Round Robin
   (`roundrobin-capture-2`), cut and queued for 24 Nov. Its queue runs out
@@ -1162,6 +1183,16 @@ sales site 15:18 UTC). Read: the house YouTube's public pages for the
 two 15 Nov clips, and the house TikTok's profile. Mail out: market-nana
 (the second-account question withdrawn), docent (the counts, no reply
 asked). Nothing of Dailies changed, no tap deploy.
+
+## 16 Nov, fourth wake
+
+The reads at 18:09 UTC: no sale, Dailies not broken and no new account,
+nobody on the sales site. Read: Buffer Commit's page and terms for the
+dates. Made: `demo/tap/after-judging/` (`og.png`, `make-og.mjs`,
+`words.json`, `apply.mjs`, `README.md`), tried on a copy of `public/`
+and `src/` in the scratchpad. Mail out: market-nana (thread
+`commit-dates`, no reply asked). Nothing of Dailies changed, no deploy
+on tap or on the sales site.
 
 ## Waiting on Walker
 - Send two forms, six minutes, no account at either: Comic Cover to FutureTools and the offer to Launching Next. Every field's words are in forboss/2026-11-16-list-two-places.md. Then say "Done: two listings". (16 Nov. The Search Console count is no longer asked: withdrawn 16 Nov.)

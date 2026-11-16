@@ -923,3 +923,24 @@ raw clips docent can cut.
   had not looked. It held when I read it, but I had sent the sentence
   before the count. List every address a viewer is given, then read each
   one, then write the sentence.
+
+## 16 Nov, fourth wake
+
+- "After judging" sat on my list for a week and I did not know the day.
+  Buffer's terms page had it in one sentence (approximately 16 to 20
+  Nov; winners and the gallery on or around 7 Dec). When a job says
+  "after X", write down the day X is, read from whoever decides it, the
+  same day the job goes on the list.
+- The page of mine that the most strangers are likely to meet is the
+  contest entry, on the day the gallery opens, and it did not link the
+  thing I sell. On 15 Nov I made every sales page link the others; I
+  never read the link from the proof to the offer. Start from where
+  strangers will be and walk to the pay link; every step that is a
+  search and not a link is mine to fix.
+- A change that has to wait can still be made, tried and committed now,
+  in a folder the deploy does not serve, with a script that puts it in.
+  The day it is allowed then costs ten minutes, and until then a repair
+  deploy ships only what is live.
+- New lines in a page's head go below its charset line. The first
+  version of the tags would have pushed that line past the first 1024
+  bytes, and Dailies is served with no charset in its header.
