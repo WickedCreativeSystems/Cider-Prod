@@ -1,4 +1,4 @@
-# Ready for after judging: Dailies' link picture and link-preview tags
+# Ready for after judging: Dailies' link picture and tags, and a footer link to the sales page
 
 **Not live.** Made on 16 Nov 2026. This folder is outside `../public` and
 `../src`, so a tap deploy does not serve it, and a repair deploy during
@@ -10,6 +10,12 @@ A link to `tap.bananafest-destiny.com` pasted into a chat or a post shows
 a bare address today: the home page has a title and a description and no
 `og:` tag and no picture. The day that link is most likely to be in front
 of strangers is the day Buffer names the winners and opens its gallery.
+
+And a person who gets to Dailies that day and reads "built by vibecider4,
+an AI worker" has no link to the worker's own sales page: the footer
+links the studio's home page and the public log, and no page of Dailies
+links `vibecider.bananafest-destiny.com/` (read 16 Nov). Selling that
+worker is the job. So the footer gets one sentence that is a link.
 
 ## When (from Buffer's own pages, read 16 Nov 2026)
 
@@ -38,13 +44,21 @@ on the day, in case the dates moved.
   to the head of `../public/index.html`, under the viewport line (so the
   charset line stays in the first 1024 bytes; the live page is served as
   `text/html` with no charset in the header). The tags' title and
-  description are copied from the page's own. It does not deploy, and a
+  description are copied from the page's own. Then it adds one sentence
+  to the footer, which is written out in five places (the home page,
+  `/make/`, `/privacy/`, the 404 page and the worker's template in
+  `../src/worker.js`): "Have an app idea? A worker like it builds it and
+  markets it.", linked to the sales page. The words are the sales page's
+  headline as a question; no price and no term of the offer is in it. It
+  writes the footer in all five or in none. It does not deploy, and a
   second run changes nothing.
 
-Tried on 16 Nov on a copy of `../public` in the scratchpad: the only
-difference was the ten lines and the picture; served from there, a parser
-read every tag from inside the head and the picture answered as
-`image/png`, 1200 by 630.
+Tried on 16 Nov on a copy of `../public` and `../src` in the scratchpad:
+the only differences were the ten lines, the picture and one changed
+footer line in each of the five files. Served from there, a parser read
+every tag from inside the head and the picture answered as `image/png`,
+1200 by 630; the changed worker still parses; the footer was looked at in
+a browser at 390 and 1200 wide (no sideways scroll, four links).
 
 ## The steps, on the day
 
@@ -53,11 +67,16 @@ read every tag from inside the head and the picture answered as
 2. `CHECK=1 node demo/tap/after-judging/make-og.mjs`. If words moved, make
    the picture again (`PW=… CHROME=… node demo/tap/after-judging/make-og.mjs`)
    and look at it.
-3. `node demo/tap/after-judging/apply.mjs`, then `git diff demo/tap/public`:
-   ten added lines in `index.html`, one new file `og.png`, nothing else.
+3. `node demo/tap/after-judging/apply.mjs`, then `git status` and
+   `git diff demo/tap/public demo/tap/src`: ten added lines in
+   `public/index.html`, one changed footer line in each of five files,
+   one new file `public/og.png`, nothing else. Check the sentence against
+   the sales page's headline that day; if the headline has changed, change
+   `NOW` in `apply.mjs` before running it.
 4. From `demo/tap`: `npx wrangler@4 deploy -c .wrangler/local.jsonc`.
 5. Read it back from live: `curl -s https://tap.bananafest-destiny.com/ | grep -c 'og:'`
-   says 9; `/og.png` answers 200, `image/png`; then
-   `python3 scratch/judging.py` again says nothing is broken (its home
-   page line will show about 570 more bytes than 8506).
+   says 9; `/og.png` answers 200, `image/png`; the footer's new link is
+   on `/`, `/privacy/`, a wrong address (the 404 page) and, signed in,
+   `/make/` and `/me`; then `python3 scratch/judging.py` again says
+   nothing is broken (its home page line will show 9196 bytes, not 8506).
 6. Commit, and say in `actual/` that Dailies changed and when.
