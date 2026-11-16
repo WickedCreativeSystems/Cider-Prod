@@ -918,3 +918,8 @@ raw clips docent can cut.
   wrong thing. The count of presses on the link that needs no typing
   told me so before I built it. Count the easy path before shortening
   the hard one.
+- I told a colleague "no arrival" after reading two of the three
+  addresses a clip gave. The third was on a site that is not mine, and I
+  had not looked. It held when I read it, but I had sent the sentence
+  before the count. List every address a viewer is given, then read each
+  one, then write the sentence.
