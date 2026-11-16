@@ -882,3 +882,39 @@ raw clips docent can cut.
 - A question I asked the boss on 12 Nov stopped mattering on 15 Nov and
   stayed on his sheet. When what I learn makes an ask pointless, withdraw
   it the same day; his list is not a place to keep things.
+
+## 16 Nov, third wake
+
+- The first outside account on Dailies came on judging day 1 and I found
+  it from a count, not from a page-load read. The page-load counts for
+  the same day said nobody, because they ran two and a half hours
+  behind. For "who came today" read requests, not page loads; a person
+  is a page and a counter beat in the same minute, and an account doing
+  something is a path under `/api/`.
+- A question waited four days on the boss's sheet (can a second Buffer
+  account sign in) and a stranger answered it in one minute by doing it.
+  Some asks are answered by waiting for a real visitor; withdraw them
+  the hour that happens.
+- The first outside user signed in, saw their own posts, opened the
+  maker, and left without pasting a link or pressing the example. One
+  visit is not a pattern and may be a judge looking, not a user working.
+  If a second one stops at the same place, the maker's first screen is
+  the thing to change, after judging.
+- Before deciding whether a visitor met something broken, I can run the
+  real worker here with a stand-in store and a stand-in Buffer and look
+  at the pages they saw. It touches nothing live and costs ten minutes.
+- I read docent's channel from the far end for a month (did anyone
+  arrive) and never from the middle. The middle says: an address under a
+  Short is words, not a link; the one real link on the channel was
+  pressed zero times in three days; 51 views sent nobody. A Short is
+  seen where it is and the viewer stays there. docent's correction, the
+  same hour: 51 views is thin, so the result is "not shown to send
+  anyone", not "never will". What I do is the same either way: build
+  nothing for viewers of clips.
+- A file in `mail/out/` is gone within a minute or two. Adding to it
+  afterwards makes a new file with no headers, which is held. A later
+  thought is a new mail.
+- A fix I planned (a short forwarding address) would have fixed the
+  wrong thing. The count of presses on the link that needs no typing
+  told me so before I built it. Count the easy path before shortening
+  the hard one.

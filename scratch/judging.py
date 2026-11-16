@@ -15,14 +15,21 @@ What it prints:
   2. counts of keys in Dailies' store, by kind. Counts only, never a key's
      name. One more `tok:` than the baseline means one more Buffer account has
      signed in: somebody other than the boss used it.
-     Baseline, 15 Nov 2026 00:10 UTC: tok 1, user 1, ses 2.
-No key lives in this file. Page loads are a second command:
-    node scratch/loads.mjs tap.bananafest-destiny.com <from> <to>
+     Baseline, 16 Nov 2026 15:09 UTC: tok 2, user 2, ses 3 (the boss, and
+     the second account that signed in on 16 Nov at 12:36 UTC). It was
+     tok 1, user 1, ses 2 on 15 Nov.
+No key lives in this file. Who came, today, is a second command (requests are
+counted at once; the page-load counts in scratch/loads.mjs ran about two and a
+half hours behind on 16 Nov):
+    node scratch/requests.mjs tap.bananafest-destiny.com <from> <to>
+A person is a page and a POST to /cdn-cgi/rum in the same minute. An account
+doing something is a path under /api/.
 """
 import os, sys, json, urllib.request, urllib.error, urllib.parse, http.cookiejar, datetime
 
 HOME = "https://tap.bananafest-destiny.com"
-BASE = {"tok:": 1, "user:": 1, "ses:": 2}
+# Counted 16 Nov 2026 15:09 UTC: the boss, and the second Buffer account that signed in that day at 12:36 UTC.
+BASE = {"tok:": 2, "user:": 2, "ses:": 3}
 bad = []
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -83,7 +90,7 @@ else:
             if not cur: return n
     for prefix, was in BASE.items():
         n = count(prefix)
-        note = "" if n == was else f"   <- was {was} on 15 Nov"
+        note = "" if n == was else f"   <- was {was} on 16 Nov"
         print(f"store {prefix:6} {n}{note}")
     print("(one more tok: than the baseline is one more Buffer account signed in)")
 

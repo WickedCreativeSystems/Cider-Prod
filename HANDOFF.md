@@ -2,14 +2,54 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the second wake, 16 Nov 03:19 UTC
+## Start here: state at the end of the third wake, 16 Nov 15:20 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-16.md`.
 
-**16 Nov, second wake: reading only, and one new job for the boss.
-Nothing changed on any page.** No sale (03:08 UTC). Nobody arrived.
+**16 Nov, third wake: a second Buffer account signed in on Dailies, at
+12:36 UTC on judging day 1.** It is the first that is not the boss's.
+Portugal, a Mac, desktop Chrome, about a minute: the home page, the
+sign-in, `/me`, `/make/`. No request under `/api/`: no link read, the
+example not pressed, nothing made or drafted. Dailies keeps for it 7
+sent posts (X, LinkedIn, Mastodon), 3 channels, one session. I do not
+know who it was and did not look; a judge is likely. **Nothing is broken
+and nothing of Dailies was changed or deployed.** I checked what a new
+account like that sees by running the real worker here with a stand-in
+store and a stand-in Buffer (scratchpad only): both pages fine. The
+store's counts are now `tok:` 2, `user:` 2, `ses:` 3, and
+`scratch/judging.py` carries that as its baseline, so **the next thing
+it marks is a third account, or account 2 coming back** (a new `ses:`).
+**For who came today, use `node scratch/requests.mjs <hostname> <from> <to>`**
+(new, read-only, same export as the other Cloudflare reads): requests
+are counted at once, while `scratch/loads.mjs` ran two and a half hours
+behind and said "0" when a person had been. A person is a page and a
+POST to `/cdn-cgi/rum` in the same minute; an account doing something is
+a path under `/api/`. The boss's second-account question is answered and
+withdrawn (mail to market-nana, thread `dailies-second-account`).
+No sale (15:16 UTC). Nobody arrived on the sales site.
+
+**The two clips of 15 Nov, read from the viewer's side (the result; do
+not wait for 18 Nov):** 47 views (the bot's own record) and 4 (the $9 pet
+drawing) on YouTube a day later, and nobody arrived. The addresses under
+a Short are words, not links. The channel's one pressable link
+(`bananafest-destiny.com/yt`) was asked for zero times in three days.
+TikTok shows only the profile without an account. docent has the counts
+(thread `clips-from-the-viewers-side`, closed at 3 of 6, nothing owed
+either way). docent answered at 15:19: 51 views is thin, every queued
+clip now carries `bananafest-destiny.com/record`, and a zero means
+little for a fortnight. So the result is "not shown to send anyone", and
+I send docent a raw clip only when it asks (it agreed). If it asks for
+the zone's request count of `/record`, that is
+`node scratch/requests.mjs bananafest-destiny.com <from> <to>` and a
+grep for the path. The notes of three Dailies
+clips on the sales site no longer say "no users beside the boss"; they
+say nobody but the boss has made anything with it, counted 16 Nov (live
+15:18 UTC, the sales site, not Dailies).
+
+**From the second wake of 16 Nov: reading only, and one new job for the
+boss. Nothing changed on any page.**
 Dailies was not read again (its daily read was at 00:07) and not touched.
 I read the directories of AI agents and the listing places for small
 tools, each from its own pages, which I had never done for the tools the
@@ -34,7 +74,7 @@ boss's decision (an account, a 15% fee, payment through them).
 03:18 UTC, thread `search-console-count`).
 
 **From the first wake of 16 Nov (judging day 1):** three reads, nothing
-changed on any page. Dailies not broken, `tok:` 1. **The Stripe read is one command,**
+changed on any page. Dailies not broken, `tok:` 1 then. **The Stripe read is one command,**
 `export $(grep -E "^STRIPE_RESTRICTED_KEY=" .git-credentials | xargs)`
 then `python3 scratch/sales.py` (read-only; "no sale of mine" or "A
 SALE"). The studio shares the Stripe account: its charges list has two
@@ -45,7 +85,7 @@ cider3's Mapsmith Pro). A sale of mine is a paid checkout of $50 or $9.
 for is made, live and sent (thread `comiccover-reshoot-1115`,
 `needs_reply: no`). **docent answered on 15 Nov at 21:27 UTC: usable as shot, no
 reshoot, it goes out on 28 Nov, nothing owed back.** Everything I made is committed,
-pushed and live. `mail/in/` is empty.
+pushed and live. `mail/in/` is empty (15:08 UTC, 16 Nov).
 
 **From the fifth wake of 15 Nov:**
 `/media/comiccover-maker-capture.mp4` and its `.json`, a ninth row in
@@ -1109,6 +1149,18 @@ Launching Next for the offer; two forms, no account). Mail to
 market-nana at 03:18 UTC withdrew the Search Console question. No page
 changed, nothing deployed, no form sent by me, no account made.
 
+## 16 Nov, third wake
+
+The reads at 15:09 UTC: no sale; Dailies not broken, but `tok:` 2,
+`user:` 2, `ses:` 3. A second Buffer account had signed in at 12:36 UTC
+(the path, and how it was checked, are in `actual/2026-11-16.md`, "Third
+wake"). Made: `scratch/requests.mjs`. Changed: `scratch/judging.py`
+(baseline and notes); three clip notes in `site/media/` (deployed to the
+sales site 15:18 UTC). Read: the house YouTube's public pages for the
+two 15 Nov clips, and the house TikTok's profile. Mail out: market-nana
+(the second-account question withdrawn), docent (the counts, no reply
+asked). Nothing of Dailies changed, no tap deploy.
+
 ## Waiting on Walker
 - Send two forms, six minutes, no account at either: Comic Cover to FutureTools and the offer to Launching Next. Every field's words are in forboss/2026-11-16-list-two-places.md. Then say "Done: two listings". (16 Nov. The Search Console count is no longer asked: withdrawn 16 Nov.)
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
@@ -1118,4 +1170,3 @@ changed, nothing deployed, no form sent by me, no account made.
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
 - Post the Sizecurve reply (and optional post) once the new video is public: forboss/2026-11-11-post-sizecurve-video.md
 - Question: once the new Sizecurve video is up, may my sales site say a VibeCider bot made it, naming Sizecurve and linking it?
-- Try a second Buffer account on Dailies' sign-in before 16 Nov and say yes or the words on the page (`forboss/2026-11-12-dailies-second-account.md`; on his sheet 12 Nov, thread `dailies-second-account`).
