@@ -2,15 +2,39 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the first wake, 16 Nov 00:09 UTC
+## Start here: state at the end of the second wake, 16 Nov 03:19 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-16.md`.
 
-**16 Nov, first wake (judging day 1): a short wake, three reads, nothing
-changed on any page.** No sale. Dailies not broken, `tok:` 1. Nobody
-arrived. **New: the Stripe read is one command,**
+**16 Nov, second wake: reading only, and one new job for the boss.
+Nothing changed on any page.** No sale (03:08 UTC). Nobody arrived.
+Dailies was not read again (its daily read was at 00:07) and not touched.
+I read the directories of AI agents and the listing places for small
+tools, each from its own pages, which I had never done for the tools the
+bot built. Two take a form with no account and no payment:
+**FutureTools** (for Comic Cover; one person curates, turns away over
+75%, never answers) and **Launching Next** (for the offer). The
+walkthrough, six minutes, a paste block per field:
+`forboss/2026-11-16-list-two-places.md`. It is on the Waiting list.
+Every other place read has a second price (a 36-week queue, a badge link
+on my page, an upvote score, a paid review); each is in
+`actual/2026-11-16.md`, "Second wake", with its address, so **no later
+wake reads them again**. AI Agents Directory's free tier (the boss's
+sign-in, their badge on my page, a nofollow link) is the next one to
+ask for, and only after the first two show whether a listing sends
+anyone: a referrer of futuretools.io or launchingnext.com in
+`scratch/loads.mjs`. aiagentstore.ai is a marketplace where AI agents
+sell fixed-price work; its board of paid jobs
+(`aiagentstore.ai/ai-agent-jobs`) had no open job. Look once a week; an
+open job there is a buyer in public, and selling there would be the
+boss's decision (an account, a 15% fee, payment through them).
+**The Search Console question is withdrawn** (mail to market-nana,
+03:18 UTC, thread `search-console-count`).
+
+**From the first wake of 16 Nov (judging day 1):** three reads, nothing
+changed on any page. Dailies not broken, `tok:` 1. **The Stripe read is one command,**
 `export $(grep -E "^STRIPE_RESTRICTED_KEY=" .git-credentials | xargs)`
 then `python3 scratch/sales.py` (read-only; "no sale of mine" or "A
 SALE"). The studio shares the Stripe account: its charges list has two
@@ -1075,8 +1099,18 @@ Playwright and Chrome are still under `/tmp`
   pet clip posted on 15 Nov stays posted. I sent no reply (none asked;
   the thread is at 4 of 6).
 
+## 16 Nov, second wake
+
+Reading only. The directories of AI agents and the listing places for
+small tools, each from its own pages; what each says, with its address,
+is in `actual/2026-11-16.md` ("Second wake"). Made:
+`forboss/2026-11-16-list-two-places.md` (FutureTools for Comic Cover,
+Launching Next for the offer; two forms, no account). Mail to
+market-nana at 03:18 UTC withdrew the Search Console question. No page
+changed, nothing deployed, no form sent by me, no account made.
+
 ## Waiting on Walker
-- How many VibeCider pages Search Console shows indexed now (0 on 20 Oct). Smaller than it was: Cloudflare's counts show Google fetches every page (15 Nov), so his number only says "indexed, not ranking" or "not indexed"; I write no new search pages either way. On his sheet through market-nana since 12 Nov.
+- Send two forms, six minutes, no account at either: Comic Cover to FutureTools and the offer to Launching Next. Every field's words are in forboss/2026-11-16-list-two-places.md. Then say "Done: two listings". (16 Nov. The Search Console count is no longer asked: withdrawn 16 Nov.)
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov and again on 14 Nov; not written anywhere).

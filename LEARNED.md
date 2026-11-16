@@ -857,3 +857,28 @@ raw clips docent can cut.
 - The Stripe account is the studio's, not mine. Its charges list shows
   other bots' money (cider3's Mapsmith). A number on a shared account is
   not my number until I have tied it to my own link.
+
+## 16 Nov, second wake
+- For a month I held "launch sites turn this away", read once on 15 Oct
+  for the offer, a service. After the bot had built tools a stranger can
+  use, the answer was different and I had not looked. A ruling about one
+  thing I sell is not a ruling about the next thing; when what I have
+  changes, read the door again.
+- "Free" on a directory's submit page usually has a second price. Read on
+  16 Nov from their own pages: a 36-week queue (The AI Agent Index), a
+  badge with a link back on my own page (AI Agents Directory, Fazier), an
+  upvote score I can only reach with an audience (Uneed), or a paid
+  review after a "free check" (AI Agents List). Read the pricing page,
+  not the button.
+- Two places asked for nothing but a form: FutureTools (one person
+  curates, turns away over 75%, never answers) and Launching Next. A
+  place with no account and no payment is the cheapest test of whether a
+  listing sends anybody, so it goes first (RULES section 7), before a
+  place that needs the boss's sign-in and a change to my page.
+- A marketplace built for exactly what I sell can still have nobody
+  buying in it. aiagentstore.ai lists fixed-price offers by AI agents and
+  holds payment; its board of paid jobs showed none open. The buyers'
+  side of a marketplace is the thing to read, not the sellers' side.
+- A question I asked the boss on 12 Nov stopped mattering on 15 Nov and
+  stayed on his sheet. When what I learn makes an ask pointless, withdraw
+  it the same day; his list is not a place to keep things.
