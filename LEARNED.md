@@ -1091,3 +1091,84 @@ article updated between 12 and 17 Nov 2026). Quotes are Etsy's.
   weeks as proof that people buy, and never asked whether the place in
   those words would take the thing I sell. A place named in my own
   proof is a place to read.
+
+## 17 Nov, fourth wake: where on Reddit a pet drawing can be offered
+
+Read once, from the public archive (Arctic Shift), reads only: the
+rules of 26 places, seven days of posts in five, four threads, one
+person. Do not read these places again; the result is below.
+
+- **The archive's rules are an old copy.** Each place's rules record
+  carries the day the archive took it, and every one I read was taken
+  between 25 Jan and 1 Feb 2025, about 22 months ago. I had quoted
+  rules from it on 16 and 17 Nov as if they were today's.
+  `scratch/asked.py rules` now prints the day beside each place.
+  Today's rules I cannot read at the source: on 17 Nov
+  `reddit.com/r/<sub>/about/rules.json` answered 403, the rules feed
+  404, old.reddit a redirect to a sign-in. Two ways around it: a member
+  or moderator quoting the sidebar in a recent comment (search the
+  comments for "rule" or "self-promotion"), and the boss reading the
+  sidebar himself, which is now the first step of any sheet that sends
+  him to post.
+- **By kind of place, can the boss put the $9 drawing or the free cover
+  maker there with its link?**
+  - Places where people ask for a drawing (r/HungryArtists,
+    r/commissions, r/artcommissions, r/DrawForMe, r/ICanDrawThat,
+    r/redditgetsdrawn): **no.** Each bans AI by name, one with "AI in
+    any form is a one-strike permaban". (r/hireanartist's rules are a
+    link to a wiki I did not read.)
+  - Places where people ask for a photo to be edited
+    (r/PhotoshopRequest, r/PhotoshopRequests, r/picrequests): **no.**
+    No self-promotion, a site named gets a permanent ban in one, only
+    approved editors may answer in another; and in seven days of the
+    one I read, nobody asked for a pet picture.
+  - Pet places (r/Pets, r/dogs, r/cats, r/pug, r/aww, r/dogpictures,
+    r/catpictures): **no,** and not for the reason I had written for
+    four weeks. They do not ban AI pictures by rule. They ban
+    advertising and linking to your own site, and r/pug bans sellers
+    of art prints who did not ask its moderators first.
+  - Places for AI pictures (r/aiArt, r/AIGeneratedArt, r/midjourney,
+    r/dalle2, r/ChatGPT): **no for selling.** r/aiArt: "Selling is
+    strictly forbidden and any attempts will result in an immediate
+    ban", self-promotion only in one pinned thread. That thread is
+    alive (comments up to 22 Oct 2026) and is makers showing makers.
+    The two picture posts I had waiting with the boss since 26 Oct and
+    10 Nov named r/aiArt, on a guess, with a "$9" reply ready. Both
+    are withdrawn.
+  - **Places where people ask what to give (r/Gifts, r/GiftIdeas):
+    this is where the buyers are.** In seven days, 953 posts in the
+    two; by my words alone 6 were about a gift for someone who loves
+    a pet or about a picture of one, and reading the threads shows
+    more than the words catch.
+    Other members answer those with exactly this kind of thing: a
+    custom painted portrait of the dog, a custom illustration, a
+    portrait of the dog in royal clothes, paint-by-number kits from a
+    photo, socks with the pet's face. No maker's own link was standing
+    in the four threads I read.
+    r/GiftIdeas is **closed to the boss today**: its sidebar, quoted
+    by a member on 12 Nov 2026, limits self-promotion in comments to
+    "10% of your activity in r/GiftIdeas. For every promo comment, you
+    must make 9 non-promotional ones", with a permanent ban.
+    r/Gifts is **narrowly open, if its rules still read as they did on
+    26 Jan 2025**: "If over 10% of your submissions and conversation
+    are your own site/content/affiliate links, you're almost certainly
+    a spammer", and "Links from trustworthy sites like Amazon, Etsy,
+    Ebay etc are preferred". Its AutoModerator removed four posts in 30
+    days with "the domain has been flagged for spam". So one honest
+    reply, rarely, from an account that mostly says other things. That
+    is the boss's account and his to judge.
+- **What that changes.** The pet drawing was being shown where people
+  make AI pictures, who do not buy one. The people who buy are asking
+  "what do I give someone who loves their dog", and the answer that
+  fits them is the free cover first (a joke gift, printable at comic
+  size), the $9 drawing second. One reply to one asker of 17 Nov is
+  drafted for the boss, with the reasons not to send it first. A 10%
+  rule means this door takes one reply at a time; it is not a channel
+  I can run.
+- The same finding as Etsy, from the other side: the words in my own
+  proof ("custom pet portrait") are typed by gift buyers, in gift
+  places and on Etsy, not by pet owners in pet places.
+- I wrote clock times from my head in a draft and a plan heading
+  (18:20, 18:35, about 19:00) when the clock said 18:09 to 18:15. The
+  note "times come from `date -u`, after the fact" was already in
+  Next. Corrected before the commit.

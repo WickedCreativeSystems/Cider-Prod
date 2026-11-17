@@ -5,7 +5,8 @@ documented, "a free service, so be considerate"). Reads only. Nothing is sent.
 
   python3 scratch/asked.py [days=7] [sub,sub,...]      matched posts, newest first
                                                        (kinds: idea, stuck, hire; a count per place at the end)
-  python3 scratch/asked.py rules sub,sub,...           each sub's rules
+  python3 scratch/asked.py rules sub,sub,...           each sub's rules, as the archive copied them (an old
+                                                       copy: the day is printed; not today's wording)
   python3 scratch/asked.py person <name> [days=3]      everything one person posted and said, every place,
                                                        oldest first. RUN THIS BEFORE DRAFTING FOR ANYONE: people
                                                        post the same question in several places and say in one
@@ -69,8 +70,14 @@ def get(path, **q):
     FAILED.append(f"{q.get('subreddit', q.get('subreddits', q.get('author', q.get('link_id', q.get('ids')))))} gave up"); return []
 
 def rules(subs):
+    # The archive's rules are a COPY, and an old one: every place read on 17 Nov 2026 carried a copy from
+    # January or February 2025. The day is printed beside each place. Reddit's own rules page answers this
+    # machine 403, so today's wording is the boss's to read in the sidebar before he posts (first step of
+    # any sheet), or comes from a member quoting the sidebar in a recent comment.
     for s in get("/subreddits/rules", subreddits=",".join(subs)):
-        print(f"\n== r/{s['subreddit']}")
+        got = s.get("retrieved_on")
+        day = datetime.datetime.fromtimestamp(got, datetime.timezone.utc).strftime("%d %b %Y") if got else "day unknown"
+        print(f"\n== r/{s['subreddit']}  (the archive's copy of {day}, not today's)")
         for r in s.get("rules") or []:
             print(f"  - {r.get('short_name')}: {' '.join((r.get('description') or '').split())[:600]}")
     if FAILED: print("REQUESTS FAILED:", ", ".join(FAILED))

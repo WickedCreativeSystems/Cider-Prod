@@ -2,11 +2,62 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the third wake, 17 Nov 15:20 UTC
+## Start here: state at the end of the fourth wake, 17 Nov 18:20 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-17.md`.
+
+**17 Nov, fourth wake: the pet drawing was being shown in the wrong
+kind of place, and one reply to one gift question waits with the
+boss.** The reads at 18:07 UTC, judging day 2: no sale; Dailies not
+broken, `tok:` 2, `user:` 2, `ses:` 3 (no third account, account 2 not
+back); nobody on either site I can call a reader. The scanner of 13:26
+came to Dailies at 18:01 UTC: 50 secret-file paths, every one 404.
+Nothing live changed, nothing deployed. Then one piece of work, reads
+only, from the public archive of Reddit:
+- **Where can the $9 pet drawing be offered?** Rules of 26 places,
+  seven days of posts in five. Places where people ask for a drawing
+  ban AI by name. Pet places ban advertising and your own links (not
+  AI pictures, as my drafts said). r/aiArt, where two picture posts
+  had been pointed since 26 Oct on a guess, says "Selling is strictly
+  forbidden and any attempts will result in an immediate ban". **The
+  people who would buy one ask in r/Gifts and r/GiftIdeas** ("what do
+  I give someone who loves their dog"), and other members answer with
+  custom pet portraits. r/GiftIdeas is closed to the boss today (nine
+  other comments for each one that promotes, or a permanent ban).
+  r/Gifts has a 10% line on your own site, in a copy of its rules from
+  26 Jan 2025. The quotes are in `LEARNED.md`, "17 Nov, fourth wake".
+  **Do not read these places' rules again.**
+- **The archive's rules are a copy from early 2025**, not today's.
+  `python3 scratch/asked.py rules <sub>` now prints the copy's day.
+  Reddit's own rules pages are closed to this machine. So every sheet
+  that sends the boss to post has "read the sidebar" as a step.
+- **One reply is drafted:** `outbox/2026-11-17-gifts-reply-one.md`, for
+  one person who asked in r/Gifts on 17 Nov for a joke gift for
+  relatives who love their pets. It leads with the free cover maker,
+  says the site is his before the link, and gives the $9 drawing one
+  clause. Six reasons not to send it are written first. His sheet:
+  `forboss/2026-11-17-answer-one-gift-asker.md`. It is worth most on
+  17 or 18 Nov. **If he says "Done: gift reply":** write the day in
+  FACTS.md, and read who arrived from Reddit that day
+  (`node scratch/loads.mjs vibecider.bananafest-destiny.com <day> <day>`
+  prints each page load's referrer and ran about two and a half hours
+  behind on 16 Nov; `scratch/requests.mjs` says at once whether
+  `/comiccover/` was asked for; `scratch/sales.py` for a $9). **If he says "not
+  sent", or the reply was taken down:** write that in LEARNED as the
+  answer for gift places and draft no more for them. **If he has said
+  nothing by 20 Nov:** the thread is old; mark the draft old in
+  `outbox/README.md`, and only then may `scratch/pets.py 2 Gifts` be
+  run once for a newer asker (one draft at most, the person read
+  first). Not before.
+- **The two picture posts (Bobo, the pug) are withdrawn.** The drafts
+  and the sheets say so on their first lines. Their line on "Waiting
+  on Walker" is now the reply's line; the list is still nine.
+- I wrote three clock times from my head and corrected them from
+  `date -u`. Run it; do not reckon it.
+**Item 5e's daily run is due at a wake after 21:00 UTC on 17 Nov. On
+18 Nov the weekly checks (Next item 6) are due.**
 
 **17 Nov, third wake: Etsy read once, and one yes-or-no question is on
 the boss's sheet.** The reads at 15:08 UTC, judging day 2: no sale;
@@ -1322,7 +1373,7 @@ changed, nothing built or drafted for Etsy.
 - Question, yes or no: do you already have an Etsy seller account that can list an item today? (17 Nov, on market-nana's sheet. Yes: I draft one listing for the $9 pet drawing for you to post, and each order is a few minutes of yours. No: I close Etsy and do not ask you to open a shop.)
 - Send two forms, six minutes, no account at either: Comic Cover to FutureTools and the offer to Launching Next. Every field's words are in forboss/2026-11-16-list-two-places.md. Then say "Done: two listings". (16 Nov. The Search Console count is no longer asked: withdrawn 16 Nov.)
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
-- A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
+- One reply on Reddit, four minutes, worth most on 17 or 18 Nov: someone in r/Gifts asked for a joke gift for relatives who love their pets, and the free comic cover is the answer. Steps and the words: forboss/2026-11-17-answer-one-gift-asker.md. Then say "Done: gift reply" or "not sent". (17 Nov. This replaces the Bobo and pug picture posts, which are withdrawn: the place they named bans selling.)
 - Whether to rotate the GitHub token (it was printed into session output on 9 Nov and again on 14 Nov; not written anywhere).
 - Whether to point the site's public-log links at WickedCreativeSystems/Cider-Prod (the repo moved; the old address 301s, so they work now). The repository's About box on GitHub has no website link either; his setting, if he wants the sales page there (16 Nov).
 - The forboss/ walkthroughs (sending the Dailies drafts, deleting the test items, renaming the Buffer app).
