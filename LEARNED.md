@@ -999,3 +999,95 @@ raw clips docent can cut.
 - When a plan says "not before 21:00" about a set of places, the script
   call has to be checked against that sentence before it runs. I typed
   one of the fifteen into the survey and read it nine hours early.
+
+## 17 Nov, third wake: Etsy, read once as a place to sell the $9 pet drawing
+
+Read on 17 Nov 2026 from Etsy's own help pages (help.etsy.com, each
+article updated between 12 and 17 Nov 2026). Quotes are Etsy's.
+
+- **Etsy's rules allow this product by name.** "What Can I Sell on
+  Etsy?": "Permitted examples might include a fantasy scene based on a
+  seller's original prompt and produced by an AI generator, or a custom
+  portrait of a buyer's pet generated using AI tools." The conditions,
+  same page: "Sellers must disclose within their listing description if
+  an item is created with the use of AI." "Digital items can either be
+  premade files, or files you custom make and deliver to the buyer
+  after purchase."
+- **Etsy's rules do not allow the way I work.** The same page lists
+  "Bot-generated content" as not allowed, and lets sellers use AI "as
+  long as they contribute their own creative input". Etsy's own article on its
+  update of 22 Oct 2026 is behind the wall (below); the trade press
+  that quotes it (Digital Commerce 360, 26 Oct 2026) says "Bot-generated
+  listings without human involvement are explicitly prohibited and will
+  result in listing removal", and that AI art stays when sellers "play
+  a clear role in what they create and are transparent about the
+  process". So a shop there is the boss's shop with the boss in it. He
+  posts the listing and he delivers. It is not a shop a bot runs, and I
+  may not open a store account anyway.
+- **A custom digital order is delivered by the seller's hand.**
+  "Made-to-order downloads: Custom files made to a buyer's specification
+  that will be sent to them upon completion." The seller completes the
+  order in Shop Manager and uploads "up to five files with a maximum
+  size of 20MB each". The buyer hands over the pet photo at checkout:
+  a file upload box ("Pet photos, logos"), "one upload field per
+  listing", "up to 10 files". "Private listings cannot be created for
+  digital items." Messages are scanned for "attempts to direct buyers
+  offsite to complete a transaction outside of Etsy", so a listing that
+  sends the buyer to my page to pay is out. For each order the boss
+  would download a photo, make the three drawings and upload them:
+  minutes of his per $9. Comic Cover makes the drawings only after a
+  Stripe payment today, so he would also need a way in that I have not
+  built.
+- **What opening a shop takes** ("How to Open an Etsy Shop"): a bank
+  account connected, a card on file, "a one-time, non-refundable shop
+  set-up fee" ("Cost varies by location"; Etsy's pages state no amount,
+  and the blogs that do say $15 to $29 and disagree), "a photo of your
+  government ID and a clear selfie", and two-factor sign-in. None of it
+  is mine to do, and I do not ask the boss to do it for a door nobody
+  has proved.
+- **What a $9 order pays Etsy** (fee pages, United States): $0.20 for
+  the listing (four months, and again on each sale), 6.5% of the order,
+  and 3% + $0.25 for payment. About $1.31, which leaves about $7.69
+  before the cost of the drawings. An order that comes from one of
+  Etsy's own ads elsewhere costs 15% more; a shop under $10,000 a year
+  may opt out.
+- **Pictures.** "Etsy requires at least one unedited photo for most
+  items." For a digital item: "include a preview of the actual content
+  buyers will receive." For made-to-order: "use photos of real,
+  finished items you've made in the past". Bobo's drawing and the
+  pug's are real finished ones.
+- **The buyers' side could not be read at the source.** www.etsy.com
+  answers 403 to this machine with a browser's user agent and to the
+  fetch tool: its search, a market page, its legal pages (tried 17
+  Nov). What search engines print of Etsy's pages, of uneven age and
+  not checked by me: market pages named "custom digital superhero pet
+  portrait" and "comic pet portrait" exist; digital listings show about
+  $2 to $20 after markdowns and some at $25 to $39; a few listings
+  carry more than a thousand reviews; three shops with AI in their
+  names show 5, 10 and 37 sales since 2025 or 2026. The press of 2026
+  says AI pet portraits crowded "custom dog portrait" and undercut the
+  people who draw. So the buyers are there and type these words, which
+  is the one thing Comic Cover has never had; the going price is at or
+  under mine; and a new shop with no reviews starts under listings with
+  thousands. Whether a new shop sells at all I could not count.
+- **The answer: yes if the boss already has an Etsy seller account, no
+  if he does not.** With a shop that exists, the test costs 20 cents, a
+  listing I draft and he posts, and some minutes of his for each order.
+  Without one it costs his ID, a selfie, his bank and a fee before the
+  first listing, and I do not ask for that. The question (does he have
+  one) is asked once, 17 Nov, through market-nana's sheet. Nothing is
+  built or drafted for Etsy before he answers. If the answer is no,
+  Etsy is closed: do not read it again.
+- A shop that walls its storefront may leave its help centre open.
+  help.etsy.com is a Zendesk help centre and its public API answers
+  (`/api/v2/help_center/articles/search.json?query=…` and
+  `/api/v2/help_center/en-us/articles/<id>.json`), each article with the
+  day it was last changed. That is the platform's own page, dated,
+  which is what RULES asks for.
+- Blogs about a marketplace's rules and fees disagree with each other
+  and with the marketplace (the set-up fee; a "Designed by" label one
+  of them dates to January). I quoted none of them as a rule.
+- I had the words "custom pet portraits etsy" in my notes for four
+  weeks as proof that people buy, and never asked whether the place in
+  those words would take the thing I sell. A place named in my own
+  proof is a place to read.

@@ -2,11 +2,50 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the second wake, 17 Nov 03:18 UTC
+## Start here: state at the end of the third wake, 17 Nov 15:20 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-17.md`.
+
+**17 Nov, third wake: Etsy read once, and one yes-or-no question is on
+the boss's sheet.** The reads at 15:08 UTC, judging day 2: no sale;
+Dailies not broken, `tok:` 2, `user:` 2, `ses:` 3 (no third account,
+account 2 not back); nobody on either site I can call a reader. A
+scanner asked the sales site for 63 secret-file paths at 13:26 UTC:
+every one answered 404, and the three deployed folders hold nothing
+that should not be public. Both pay links are active and the $9 one
+still lands on the paid page (15:12 UTC). Nothing live changed, nothing
+deployed. Then one piece of work, reads only:
+- **Is Etsy a door for the $9 pet drawing?** Etsy's own help page names
+  "a custom portrait of a buyer's pet generated using AI tools" as
+  allowed, with the AI said in the description. It also bans
+  "Bot-generated content", and a custom digital order is delivered by
+  the seller's hand (buyer uploads the photo at checkout, seller
+  uploads up to five files). So it could only be the boss's shop with
+  the boss in it. A new shop needs his ID, a selfie, his bank and a
+  set-up fee; I do not ask for that. All quotes, fees and what could
+  not be read are in `LEARNED.md`, "17 Nov, third wake".
+- **The one question, asked once (mail to market-nana, `for_boss: yes`,
+  thread `etsy-seller-account`): does he already have an Etsy seller
+  account that can list today?** Yes: draft one made-to-order listing
+  in `outbox/` with a `forboss/` sheet, and build him a way to make the
+  three drawings without a Stripe payment (there is none today), in
+  that order and not before. No: Etsy is closed, write the day in
+  LEARNED and do not read it again. **Until he answers: build nothing,
+  draft nothing, read nothing more of Etsy.**
+- **How Etsy was read:** www.etsy.com answers 403 to this machine and
+  to the fetch tool. help.etsy.com is a Zendesk help centre whose
+  public API answers
+  (`/api/v2/help_center/articles/search.json?query=…`,
+  `/api/v2/help_center/en-us/articles/<id>.json`). The buyers' side
+  (what sells, at what price) was seen only through search engines'
+  prints and is not counted.
+- The public archive of Reddit failed all eleven requests I made at
+  about 15:15 UTC (422 "Timeout. Maybe slow down a bit", one 429). If
+  item 5e's run prints failures, wait an hour; do not retry in a loop.
+**Item 5e's daily run is due at a wake after 21:00 UTC on 17 Nov. On
+18 Nov the weekly checks (Next item 6) are due.**
 
 **17 Nov, second wake: the message of 16 Nov is withdrawn, and the
 search reads eighteen places.** The reads at 03:07 UTC, judging day 2:
@@ -1269,7 +1308,18 @@ the person had ruled out an AI build in another copy of their post.
 `scratch/asked.py person <name>` reads one person everywhere and is to
 be run before any draft. Nothing live changed. No mail out.
 
+## 17 Nov, third wake
+
+Reads at 15:08 UTC: nothing new; a scanner's 63 secret-file paths all
+answered 404. Etsy read once from its own help pages as a place to sell
+the $9 pet drawing (`LEARNED.md`, "17 Nov, third wake"): allowed by
+name with the AI disclosed, bots banned, delivery by the seller's hand,
+a new shop needs ID, selfie, bank and a fee. One question to the boss
+through market-nana (thread `etsy-seller-account`). Nothing live
+changed, nothing built or drafted for Etsy.
+
 ## Waiting on Walker
+- Question, yes or no: do you already have an Etsy seller account that can list an item today? (17 Nov, on market-nana's sheet. Yes: I draft one listing for the $9 pet drawing for you to post, and each order is a few minutes of yours. No: I close Etsy and do not ask you to open a shop.)
 - Send two forms, six minutes, no account at either: Comic Cover to FutureTools and the offer to Launching Next. Every field's words are in forboss/2026-11-16-list-two-places.md. Then say "Done: two listings". (16 Nov. The Search Console count is no longer asked: withdrawn 16 Nov.)
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
