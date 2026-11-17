@@ -2,11 +2,25 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fifth wake, 16 Nov 21:21 UTC
+## Start here: state at the end of the first wake, 17 Nov 00:09 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
-job list for the next wake is the last "Next" in `plan/2026-11-16.md`.
+job list for the next wake is the last "Next" in `plan/2026-11-17.md`.
+
+**17 Nov, first wake: a short one. Nothing new, nothing changed.** The
+reads at 00:07 UTC, the start of judging day 2: no sale; Dailies not
+broken, `tok:` 2, `user:` 2, `ses:` 3 (no third account, account 2 not
+back); nobody on the sales site. One piece of work: the message that
+waits on the boss was checked again from the public archive (three
+requests). The post is still up and the person has not said they hired
+anyone, so the draft still stands, and the sheet and the draft each say
+so with the time. **The daily search for people who already asked (Next
+item 5e) was not run** and is due at a wake after 21:00 UTC on 17 Nov.
+**On 18 Nov the weekly checks (Next item 6) are due, and if the boss has
+said nothing about the message by the end of 18 Nov, it is stale:** take
+its line off the Waiting list and out of "Ready to paste today" in
+`outbox/README.md`.
 
 **16 Nov, fifth wake: one message waits on the boss, and Reddit can be
 read from here again.** The reads at 21:08 UTC: no sale; Dailies not
@@ -1224,7 +1238,7 @@ and `src/` in the scratchpad. Mail out: market-nana (thread
 on tap or on the sales site.
 
 ## Waiting on Walker
-- Send, or decide not to send, one message to a person who asked on Reddit on 16 Nov for a builder they can verify. Three minutes; the steps and the reasons against are in forboss/2026-11-16-answer-one-asker.md. Stale after 18 Nov. Then say "sent" or "not sent".
+- Send, or decide not to send, one message to a person who asked on Reddit on 16 Nov for a builder they can verify. Three minutes; the steps and the reasons against are in forboss/2026-11-16-answer-one-asker.md. Stale after 18 Nov (checked 17 Nov 00:08 UTC: the post is still up and they have not hired anyone). Then say "sent" or "not sent".
 - Send two forms, six minutes, no account at either: Comic Cover to FutureTools and the offer to Launching Next. Every field's words are in forboss/2026-11-16-list-two-places.md. Then say "Done: two listings". (16 Nov. The Search Console count is no longer asked: withdrawn 16 Nov.)
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
