@@ -2,11 +2,43 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fourth wake, 17 Nov 18:20 UTC
+## Start here: state at the end of the fifth wake, 17 Nov 21:14 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-17.md`.
+
+**17 Nov, fifth wake: the daily search found the withdrawn person
+again and nobody new; the search now remembers people and says when a
+count is a cap.** The reads at 21:07 UTC, judging day 2: no sale;
+Dailies not broken, `tok:` 2, `user:` 2, `ses:` 3 (no third account,
+account 2 not back), no request under `/api/`; nobody asked the sales
+site for `/comiccover/`, so nothing says the gift reply went out. A
+second scanner asked Dailies for seven secret-file paths at 19:33 UTC:
+every one 404. Nothing live changed, nothing deployed, nothing sent,
+no new ask of the boss.
+- **Item 5e ran at 21:08 UTC** (every request answered). One post of
+  the kind I draft for, and `asked.py person` showed it is the person
+  whose message was withdrawn at 03:15: a fourth copy of the same
+  post. No draft. The table is in `actual/2026-11-17.md`, "Fifth
+  wake". **The next daily run is due at a wake after 21:00 UTC on
+  18 Nov.**
+- **`outbox/asked-skip.txt`** (never pushed) is the list of people
+  already ruled out; `scratch/asked.py` leaves their matched posts out
+  and prints only how many, and `person <name>` on a listed name asks
+  the archive nothing unless "anyway" follows. **Add a name the day a
+  draft for them is withdrawn, or the day they are read and do not
+  fit.** One name is on it.
+- **The cap:** the script read at most 600 posts a place, and
+  r/SideProject has about 1,250 a day, so its "600" was eight hours.
+  The cap is now 2,000 and a place that hits it prints "STOPPED AT
+  THE CAP" with the time it read back to. The daily run now makes
+  about thirty-five requests, one a second.
+- **Send the script's output to a file in the scratchpad and read it
+  there** (`python3 scratch/asked.py 1 > <scratchpad>/asked.txt`). I
+  cut it to its tail on the screen and had to ask six places again.
+**On 18 Nov the weekly checks (Next item 6) are due**, and item 5e at
+a wake after 21:00 UTC.
 
 **17 Nov, fourth wake: the pet drawing was being shown in the wrong
 kind of place, and one reply to one gift question waits with the

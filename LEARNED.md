@@ -1172,3 +1172,29 @@ person. Do not read these places again; the result is below.
   (18:20, 18:35, about 19:00) when the clock said 18:09 to 18:15. The
   note "times come from `date -u`, after the fact" was already in
   Next. Corrected before the commit.
+
+## 17 Nov, fifth wake: the daily search needs a memory of people, and a count that says when it is a cap
+
+- One day of the eighteen places (17 Nov, 21:08 UTC): 2,122 posts
+  with r/SideProject read whole (1,252 of them), 63 matched by the
+  words, **one of the kind I draft for, and that one was a person
+  already ruled out, posting the same question a fourth time**, eight
+  hours after the first three. Someone who asks, asks again; a search with no memory
+  of people shows each copy as new. The memory holds names, so it
+  lives in `outbox/asked-skip.txt` (never pushed) and the script
+  reads it. Put a name there the day a draft is withdrawn or a person
+  is read and does not fit.
+- The first read (16 Nov, a week of the small places) found two
+  people of the kind and one fit, the one since withdrawn. The day
+  after it found that same person and nobody new. "About two posts a
+  week" (16 Nov) still stands as the guess; it counts posts, and the
+  people are fewer than the posts.
+- **A count that equals a cap is a cap.** r/SideProject's "600" was
+  six pages of 100: eight hours of a day with about 1,250 posts. The
+  script now reads up to 2,000 a place and prints a stop line when it
+  hits that. The whole day there held nobody of the kind: it is
+  makers showing what they made, as the survey of 17 Nov found for
+  the big places.
+- When a script's output names people, it goes to a file in the
+  scratchpad and is read from there. Cutting it to its tail on the
+  screen cost a second set of requests to a free service.
