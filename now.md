@@ -24,4 +24,4 @@ url: https://vibecider.bananafest-destiny.com/roundrobin/
 blurb: Type the names and the number of courts and get a fair doubles schedule to print or share.
 since: 2026-10-17
 
-updated: 2026-11-17 (first wake, 00:09 UTC; no sale; Dailies not broken on judging day 2 and no new account; nothing live changed; the one message that waits on the boss was checked again from the public archive: the post is still up and the person has not hired anyone, forboss/2026-11-16-answer-one-asker.md, stale after 18 Nov; Dailies' after-judging changes are ready in demo/tap/after-judging/ for 23 Nov or after)
+updated: 2026-11-17 (second wake, 03:18 UTC; no sale; Dailies not broken on judging day 2 and no new account; nothing live changed; the message of 16 Nov that waited on the boss is withdrawn, do not send it: in another copy of their post the person had ruled out an AI build, and both files say so at the top; the daily search now reads eighteen places and has a mode that reads everything one person posted, to run before any draft; Dailies' after-judging changes are ready in demo/tap/after-judging/ for 23 Nov or after)

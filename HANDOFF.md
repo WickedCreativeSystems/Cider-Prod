@@ -2,28 +2,51 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the first wake, 17 Nov 00:09 UTC
+## Start here: state at the end of the second wake, 17 Nov 03:18 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-17.md`.
 
-**17 Nov, first wake: a short one. Nothing new, nothing changed.** The
-reads at 00:07 UTC, the start of judging day 2: no sale; Dailies not
-broken, `tok:` 2, `user:` 2, `ses:` 3 (no third account, account 2 not
-back); nobody on the sales site. One piece of work: the message that
-waits on the boss was checked again from the public archive (three
-requests). The post is still up and the person has not said they hired
-anyone, so the draft still stands, and the sheet and the draft each say
-so with the time. **The daily search for people who already asked (Next
-item 5e) was not run** and is due at a wake after 21:00 UTC on 17 Nov.
-**On 18 Nov the weekly checks (Next item 6) are due, and if the boss has
-said nothing about the message by the end of 18 Nov, it is stale:** take
-its line off the Waiting list and out of "Ready to paste today" in
-`outbox/README.md`.
+**17 Nov, second wake: the message of 16 Nov is withdrawn, and the
+search reads eighteen places.** The reads at 03:07 UTC, judging day 2:
+no sale; Dailies not broken, `tok:` 2, `user:` 2, `ses:` 3 (no third
+account, account 2 not back); nobody on the sales site. Nothing live
+changed, nothing deployed, nothing sent. Then one piece of work:
+- **Is the list of fifteen places the right list?** Counted once, from
+  the public archive: 6,176 posts of seven days in 28 places (the table
+  is in `actual/2026-11-17.md`). The task boards and the idea boards
+  have no buyer of this offer; the big founder places are "I built it
+  and nobody comes", which I do not draft for. "Looking for a
+  developer" is posted in r/AppDevelopers and r/appdev, and once in
+  r/WebDeveloperJobs: those three were added to `SUBS` in
+  `scratch/asked.py`, whose comments say which places were counted and
+  left out. **Do not survey the left-out places again.**
+- **The one message is withdrawn: do not send.** The person had posted
+  the same question in three places and I had read one. In another
+  copy, before I drafted, they said they can make an AI-built first
+  version themselves and will not trust an AI build for the whole
+  product. `outbox/2026-11-16-asked-one.md` says DO NOT SEND at its
+  top (their words are there, not here);
+  `forboss/2026-11-16-answer-one-asker.md` says withdrawn on its first
+  line; `outbox/README.md` lists it under "Withdrawn"; its line is off
+  the Waiting list. If the boss says he had already sent it, write the
+  day in FACTS.md and wait for an answer.
+- **Before drafting for anyone:**
+  `python3 scratch/asked.py person <name> [days]` prints everything
+  that person posted and commented, in every place. The first wake's
+  check read one thread and missed this.
+**Item 5e's daily run was not run** (one of the fifteen, r/forhire, was
+read by a slip in the survey) and is due at a wake after 21:00 UTC on
+17 Nov. **On 18 Nov the weekly checks (Next item 6) are due.**
 
-**16 Nov, fifth wake: one message waits on the boss, and Reddit can be
-read from here again.** The reads at 21:08 UTC: no sale; Dailies not
+**17 Nov, first wake: a short one.** The reads at 00:07 UTC showed
+nothing new. The waiting message was checked from the archive by
+reading its one thread again; that check said "the draft still stands"
+and was wrong (see above).
+
+**16 Nov, fifth wake: Reddit can be read from here again (the one
+message drafted that day was withdrawn on 17 Nov).** The reads at 21:08 UTC: no sale; Dailies not
 broken, `tok:` 2, `user:` 2, `ses:` 3 (no third account, account 2 not
 back); nobody on the sales site. Then two pieces of work, nothing live
 changed and nothing deployed:
@@ -45,10 +68,9 @@ changed and nothing deployed:
   allows about one request a minute; Pullpush says it does not serve
   agents and is not used. In about 3,800 posts of the last four to seven
   days: two people with an idea and no builder, about a dozen whose app
-  is live and nobody comes. **One fits and has a draft:**
-  `outbox/2026-11-16-asked-one.md`, with the boss's three-minute sheet
-  `forboss/2026-11-16-answer-one-asker.md`. It goes stale in a day or
-  two. I do not draft for "live and nobody comes": the studio's number
+  is live and nobody comes. One seemed to fit and got a draft,
+  `outbox/2026-11-16-asked-one.md`, with the boss's sheet
+  `forboss/2026-11-16-answer-one-asker.md`. **Withdrawn 17 Nov.** I do not draft for "live and nobody comes": the studio's number
   does not carry that promise. How to repeat the search is Next item 5e.
 
 **16 Nov, fourth wake: Dailies has a link picture, link-preview tags and
@@ -1237,8 +1259,17 @@ and `src/` in the scratchpad. Mail out: market-nana (thread
 `commit-dates`, no reply asked). Nothing of Dailies changed, no deploy
 on tap or on the sales site.
 
+## 17 Nov, second wake
+
+Reads at 03:07 UTC: nothing new. One count of where people ask for a
+builder (28 places, 6,176 posts, seven days; `actual/2026-11-17.md`):
+three places added to `scratch/asked.py` (eighteen now), task boards
+and idea boards counted and left out. The message of 16 Nov withdrawn:
+the person had ruled out an AI build in another copy of their post.
+`scratch/asked.py person <name>` reads one person everywhere and is to
+be run before any draft. Nothing live changed. No mail out.
+
 ## Waiting on Walker
-- Send, or decide not to send, one message to a person who asked on Reddit on 16 Nov for a builder they can verify. Three minutes; the steps and the reasons against are in forboss/2026-11-16-answer-one-asker.md. Stale after 18 Nov (checked 17 Nov 00:08 UTC: the post is still up and they have not hired anyone). Then say "sent" or "not sent".
 - Send two forms, six minutes, no account at either: Comic Cover to FutureTools and the offer to Launching Next. Every field's words are in forboss/2026-11-16-list-two-places.md. Then say "Done: two listings". (16 Nov. The Search Console count is no longer asked: withdrawn 16 Nov.)
 - Edit RULES.md section 0 to the current offer (it says $100 for the first month, and the studio's page for me prints it). The lines to paste: forboss/2026-11-12-rules-offer-line.md. Also on his sheet, 12 Nov.
 - A pet post on Reddit: Bobo (asked 26 Oct) or the pug (ready 10 Nov), his to post. Either one is the only thing that puts the $9 drawing in front of strangers besides docent's videos.
