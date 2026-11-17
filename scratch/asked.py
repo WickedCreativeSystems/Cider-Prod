@@ -12,6 +12,12 @@ documented, "a free service, so be considerate"). Reads only. Nothing is sent.
                                                        post the same question in several places and say in one
                                                        thread what rules an offer out in another (17 Nov)
 
+People already read and ruled out are in outbox/asked-skip.txt (never pushed: it holds names). One a
+line: the name, then the day and a few words why. Their matched posts are not printed, only counted,
+and `person` on one of them prints that line and asks the archive nothing, unless the word "anyway"
+follows (for the day the boss pastes an answer from them). Added 17 Nov: a person whose message was
+withdrawn that morning posted the same question a fourth time, and the search showed it as new.
+
 Reddit itself answers this machine 403, except its feeds (/r/<sub>/new/.rss), which
 allow about one request a minute. The other archive, Pullpush, says it does not serve
 agents: not used.
@@ -19,9 +25,12 @@ agents: not used.
 The output names real people. It goes to the screen or to outbox/ (never pushed),
 never into plan/, actual/ or anything public. One request a second at most.
 """
-import sys, json, time, re, urllib.request, urllib.parse, datetime
+import sys, os, json, time, re, urllib.request, urllib.parse, datetime
 
 BASE = "https://arctic-shift.photon-reddit.com/api"
+SKIP_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "outbox", "asked-skip.txt")
+PAGES = 20           # pages of 100 a place. Six until 17 Nov, when r/SideProject (about 1,800 posts a day) was found
+                     # to stop at 600 and reach back eight hours of a day, printed as if it were the count
 FAILED = []          # requests that got no answer; printed beside the counts, so a zero is a real zero
 SUBS = ["AppIdeas", "AppBuilding", "cofounder", "nocode", "vibecoding", "lovable",
         "boltnewbuilders", "replit", "Startup_Ideas", "SaaS", "SideProject",
@@ -51,6 +60,20 @@ STUCK = re.compile(r"(?i)\b(stuck|can'?t finish|never finish|abandon|gave up|giv
 HIRE_TAG = re.compile(r"(?i)^\s*[\[(]\s*(hiring|task|paid|request|job)\b")
 HIRE_WHAT = re.compile(r"(?i)\b(web ?app|app|website|web ?site|landing page|mvp|saas|tool|script|bot|automation|"
                        r"dashboard|calculator|chrome extension|plugin|scraper|prototype)\b")
+
+def ruled_out():
+    """name (lower case, no u/) -> the rest of its line in outbox/asked-skip.txt. No file is an empty list."""
+    out = {}
+    try:
+        with open(SKIP_FILE, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"): continue
+                name, _, why = line.partition(" ")
+                out[name.removeprefix("u/").lower()] = why.strip()
+    except FileNotFoundError:
+        pass
+    return out
 
 def get(path, **q):
     url = f"{BASE}{path}?{urllib.parse.urlencode(q)}"
@@ -82,7 +105,12 @@ def rules(subs):
             print(f"  - {r.get('short_name')}: {' '.join((r.get('description') or '').split())[:600]}")
     if FAILED: print("REQUESTS FAILED:", ", ".join(FAILED))
 
-def person(name, days):
+def person(name, days, anyway=False):
+    why = ruled_out().get(name.lower())
+    if why is not None and not anyway:
+        print(f"u/{name} is in outbox/asked-skip.txt: {why or '(no reason written)'}")
+        print('Nothing was asked of the archive. Do not draft for them. To read them all the same: add the word "anyway".')
+        return
     since = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
     stamp = lambda ts: datetime.datetime.fromtimestamp(ts, datetime.timezone.utc).strftime("%d %b %H:%M")
     ps = get("/posts/search", author=name, after=since, limit=100, sort="asc",
@@ -102,9 +130,12 @@ def person(name, days):
 def posts(days, subs):
     since = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=days)
     found, counts, bykind = [], {}, {}
+    skip, left, stopped = ruled_out(), 0, {}
     for sub in subs:
         before, n, pages = None, 0, 0
-        while pages < 6:                       # at most 600 posts a sub
+        while True:
+            if pages >= PAGES:                 # the cap: say so, with how far back it reached; it is not the count
+                stopped[sub] = before; break
             q = dict(subreddit=sub, limit=100, sort="desc", after=since.strftime("%Y-%m-%dT%H:%M:%SZ"),
                      fields="id,title,selftext,author,created_utc,subreddit,num_comments,link_flair_text")
             if before: q["before"] = before
@@ -118,6 +149,8 @@ def posts(days, subs):
                 if (p.get("selftext") or "") in ("[removed]", "[deleted]"): continue
                 hire = HIRE_TAG.search(p.get("title", "")) and HIRE_WHAT.search(text)
                 kind = ("idea" if IDEA.search(text) else "") + (" stuck" if STUCK.search(text) else "") + (" hire" if hire else "")
+                if kind.strip() and (p.get("author") or "").lower() in skip:
+                    left += 1; continue        # read and ruled out before; not shown, not read again
                 if kind.strip():
                     found.append((p["created_utc"], kind.strip(), p))
                     for k in kind.split(): bykind[(sub, k)] = bykind.get((sub, k), 0) + 1
@@ -136,6 +169,12 @@ def posts(days, subs):
     print("\nby place (posts read: idea / stuck / hire, by the words alone, before any reading):")
     for s_ in counts:
         print(f"  {s_:24} {counts[s_]:4}: {bykind.get((s_, 'idea'), 0):3} / {bykind.get((s_, 'stuck'), 0):3} / {bykind.get((s_, 'hire'), 0):3}")
+    for s_, ts in stopped.items():
+        back = datetime.datetime.fromtimestamp(ts, datetime.timezone.utc).strftime("%d %b %H:%M UTC")
+        print(f"  STOPPED AT THE CAP: r/{s_} has {PAGES * 100} or more posts since {since.strftime('%d %b %H:%M UTC')}; "
+              f"read back to {back} only. {counts[s_]} is the cap, not the count.")
+    if left:
+        print(f"\nleft out: {left} matched post{'s' if left != 1 else ''} by people already ruled out (outbox/asked-skip.txt)")
     print("\nposts read:", ", ".join(f"{s} {c}" for s, c in counts.items()), "| matched:", len(found),
           "| REQUESTS FAILED: " + ", ".join(FAILED) if FAILED else "| every request answered")
 
@@ -144,7 +183,7 @@ if __name__ == "__main__":
     if a and a[0] == "rules":
         rules(a[1].split(",") if len(a) > 1 else SUBS)
     elif a and a[0] == "person" and len(a) > 1:
-        person(a[1].removeprefix("u/"), int(a[2]) if len(a) > 2 and a[2].isdigit() else 3)
+        person(a[1].removeprefix("u/"), next((int(x) for x in a[2:] if x.isdigit()), 3), anyway="anyway" in a[2:])
     else:
         days = int(a[0]) if a and a[0].isdigit() else 7
         subs = a[1].split(",") if len(a) > 1 else SUBS
