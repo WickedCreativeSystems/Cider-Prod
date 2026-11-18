@@ -2,11 +2,54 @@
 
 No keys or secrets here. Everything below is also in git unless noted.
 
-## Start here: state at the end of the fifth wake, 17 Nov 21:14 UTC
+## Start here: state at the end of the first wake, 18 Nov 00:16 UTC
 
 This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
-job list for the next wake is the last "Next" in `plan/2026-11-17.md`.
+job list for the next wake is the last "Next" in `plan/2026-11-18.md`.
+
+**18 Nov, first wake: the weekly checks are done and mark nothing;
+Google's crawler has been away since 14 Nov; one sitemap date fixed
+and live.** The reads at 00:08 UTC, the start of judging day 3: no
+sale; Dailies not broken, `tok:` 2, `user:` 2, `ses:` 3 (no third
+account, account 2 not back), no request under `/api/`; nobody asked
+the sales site for `/comiccover/` since 21:07, so nothing says the
+gift reply went out. Nothing sent, no new ask of the boss.
+- **The weekly checks (Next item 6) all ran on 18 Nov; next on
+  25 Nov.** Nothing marked: the number (22 live, $36.09, four sales),
+  both link-picture checks, the "More on this site" lists, the
+  README, joined words, the two ready drafts, the jobs page (no open
+  job). The week's loads: three strangers, nobody from search or a
+  listing. The table is in `actual/2026-11-18.md`.
+- **`python3 scratch/links.py` is new and is the weekly "every link
+  answers 200" in one command** (55 addresses, none dead; about a
+  minute). After the links it prints each sitemap date beside the UTC
+  day its page last changed and marks a difference (`links.py dates`
+  for that alone). **After any change to a page: commit, run
+  `python3 scratch/links.py dates`, fix the sitemap date it marks,
+  then deploy.** replit.com's price page prints "turned away 403";
+  it answers a browser, leave it.
+- **Google's crawler has not asked my host for anything on 15, 16 or
+  17 Nov** (it came on eleven of the twelve days before, and asks the
+  studio's main site daily). Nothing on my side turns it away
+  (checked: robots, noindex, canonical, sitemap). Bing's comes daily.
+  **Do nothing about it and do not ask the boss.** The weekly check
+  of 25 Nov says whether it came back (one day at a time:
+  `node scratch/crawlers.mjs vibecider.bananafest-destiny.com <day> <day>`);
+  a second quiet week is one line to him in the conversation, no
+  question.
+- **The sales site was deployed at 00:14 UTC**, the sitemap only (the
+  maker page's date, 14 to 15 Nov). Live is the repo's. No tap
+  deploy.
+- **A burst of 404s under `/assets/` on Dailies is not a fault of
+  Dailies:** a program followed the sign-in without cookies (17 Nov,
+  22:54 UTC, Poland), ended on Buffer's error page and asked my host
+  for that page's files at 23:21. Not a person, not an account.
+- I wrote one clock time from my head again (the plan's second
+  heading) and corrected it from the commit. `date -u +%H:%M`, run.
+**Item 5e's daily run is due at a wake after 21:00 UTC on 18 Nov.
+Nothing else is due before 20 Nov (item 5g, only if the boss has said
+nothing about the gift reply).**
 
 **17 Nov, fifth wake: the daily search found the withdrawn person
 again and nobody new; the search now remembers people and says when a
@@ -1400,6 +1443,16 @@ name with the AI disclosed, bots banned, delivery by the seller's hand,
 a new shop needs ID, selfie, bank and a fee. One question to the boss
 through market-nana (thread `etsy-seller-account`). Nothing live
 changed, nothing built or drafted for Etsy.
+
+## 18 Nov, first wake
+
+Reads at 00:08 UTC: nothing new (a cookie-less program asked Dailies
+for Buffer's error page's files, all 404). The weekly checks all ran
+and marked nothing on a page. Made: `scratch/links.py` (every link on
+the sales site asked once; sitemap dates against each page's last
+change). Found: Google's crawler away from my host since 14 Nov, Bing's
+not. Fixed: one sitemap date; the sales site deployed at 00:14 UTC, the
+sitemap only. No mail out, nothing of Dailies changed.
 
 ## Waiting on Walker
 - Question, yes or no: do you already have an Etsy seller account that can list an item today? (17 Nov, on market-nana's sheet. Yes: I draft one listing for the $9 pet drawing for you to post, and each order is a few minutes of yours. No: I close Etsy and do not ask you to open a shop.)

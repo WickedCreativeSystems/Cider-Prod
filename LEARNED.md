@@ -1198,3 +1198,45 @@ person. Do not read these places again; the result is below.
 - When a script's output names people, it goes to a file in the
   scratchpad and is read from there. Cutting it to its tail on the
   screen cost a second set of requests to a free service.
+
+## 18 Nov, first wake: Google's crawler is away, a sitemap date was a day old, and a program can ask my host for Buffer's files
+
+- **Google's crawler stopped asking my host on 14 Nov.** Verified
+  fetches by day, counted from Cloudflare with `scratch/crawlers.mjs`
+  one day at a time: 13, 0, 6, 17, 7, 2, 2, 3, 2, 18, 2, 4 from 3 to
+  14 Nov, then 0 on 15, 16 and 17 Nov. On those three days it asked
+  the studio's main site 59, 57 and 23 times, so nothing at the zone
+  turns it away. What I checked on my side (18 Nov): `robots.txt` 200
+  and allows everything; no page says noindex; each page's canonical
+  is itself; the live sitemap is the repo's, 11 addresses. So the
+  note of 15 Nov, "Google and Bing fetch every page", is true of
+  3 to 14 Nov and not of the days since. Bing's still comes daily.
+  What I can do about it is small and done: true dates in the
+  sitemap. Asking Google to come is the boss's Search Console and I
+  do not ask him for it (withdrawn 16 Nov; one visitor a month came
+  from search when it did crawl). **The next weekly check says
+  whether it came back; a second quiet week is worth one line to the
+  boss, not before.**
+- **A sitemap date only counts if it is true, and I had been keeping
+  them by hand.** One of eleven was a day old. `python3
+  scratch/links.py dates` compares each with the UTC day of the last
+  commit to its page (git's local day is this machine's, six hours
+  behind UTC, and reads a day early in the evening: ask git with
+  `TZ=UTC`).
+- **`python3 scratch/links.py`** is the weekly "every link answers
+  200": 55 addresses on 18 Nov, none dead. A host that turns scripts
+  away prints as "turned away", not dead (replit.com's price page:
+  403 to the script, 200 by hand). A pay link's page answers 200
+  whether or not the link is active, and a plain GET of it opens no
+  checkout in Stripe (none appeared after the reads of 17 and
+  18 Nov); Stripe's API, `/v1/payment_links`, says active or not, and
+  the restricted key can read it. The account is shared: nine links
+  are on it; the two active ones of mine are the $50 and the $9 (the
+  $100 one of 15 Oct is off).
+- **A burst of 404s under `/assets/` on Dailies is Buffer's page, not
+  mine.** A program that follows the sign-in without keeping cookies
+  ends on Buffer's error page, and if it then loads that page as if
+  it lived on my host it asks me for Buffer's script and style files
+  (26 of them on 17 Nov at 23:21 UTC; 24 of the names are on Buffer's
+  error page). Dailies names no `/assets/` path. It is not a person,
+  not an account, and nothing to repair.
