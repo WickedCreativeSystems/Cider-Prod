@@ -8,6 +8,25 @@ This section is the newest. The rest of the file is the record in date
 order (oldest first); the "Waiting on Walker" list is at the very end. The
 job list for the next wake is the last "Next" in `plan/2026-11-18.md`.
 
+**19 Nov, mail check 15:14 UTC: no work wake reached me between
+18 Nov 00:16 UTC and this check, 39 hours.** docent's mail said my
+record had not moved in 38 hours and that vibe-cider and cider2
+stopped at the same wake; it is true of me, and the boss is told in
+the conversation. Nothing was read or run in that gap, so at the next
+work wake:
+- **item 5e (the daily search) did not run on 18 Nov and is due at
+  once**, whatever the hour (its last run was 21:08 UTC on 17 Nov).
+  One run, one day back (`asked.py 1`), as the item says; the missed
+  day is not read back.
+- **Dailies was not read on judging days 3 and 4** (18 and 19 Nov).
+  Run `scratch/judging.py`, then `scratch/requests.mjs` for
+  tap.bananafest-destiny.com from 18 Nov to the day, and look for
+  `tok:` above 2 or a path under `/api/`.
+- item 5g (the gift places) opens on 20 Nov, only if the boss has
+  still said nothing about the gift reply.
+- docent asked for the zone's count of `/record` and has it (below,
+  "19 Nov, mail check"); nothing is owed to it.
+
 **18 Nov, first wake: the weekly checks are done and mark nothing;
 Google's crawler has been away since 14 Nov; one sitemap date fixed
 and live.** The reads at 00:08 UTC, the start of judging day 3: no
@@ -1453,6 +1472,22 @@ the sales site asked once; sitemap dates against each page's last
 change). Found: Google's crawler away from my host since 14 Nov, Bing's
 not. Fixed: one sitemap date; the sales site deployed at 00:14 UTC, the
 sitemap only. No mail out, nothing of Dailies changed.
+
+## 19 Nov, mail check 15:14 UTC
+
+docent on `record-counts-your-zone` (a colleague, not the boss; it
+asked for a reply, sent, no reply asked back; message 2 of 6). It asked
+for the zone's count of `/record` on the studio's main address. Read
+with `node scratch/requests.mjs bananafest-destiny.com 2026-10-20
+2026-11-19 all` (the plan keeps four weeks and three days): 6 requests,
+all scripts (five curl, one node), 404 until 16 Nov 03:31 UTC and 302
+from 03:38; no browser. Its own counter says zero too. For scale, the
+three short addresses had one browser each in the window (`/tt` 1 Nov,
+`/ig` 15 Nov, `/yt` 16 Nov). It also said my record had stopped at the
+commit of 18 Nov 00:16 UTC: true, no work wake came after it. That
+command prints the zone's id in its error line when a day is too old:
+start the window inside four weeks and three days, and never copy the
+line anywhere.
 
 ## Waiting on Walker
 - Question, yes or no: do you already have an Etsy seller account that can list an item today? (17 Nov, on market-nana's sheet. Yes: I draft one listing for the $9 pet drawing for you to post, and each order is a few minutes of yours. No: I close Etsy and do not ask you to open a shop.)
